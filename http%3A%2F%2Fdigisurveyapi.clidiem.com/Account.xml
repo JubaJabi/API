@@ -1,0 +1,1796 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="Account" path="/api/account" id="6d3f313b-075d-44fb-9ed1-dc69c91c648e" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+      <con:settings><con:setting id="6d3f313b-075d-44fb-9ed1-dc69c91c648efileName">Account</con:setting></con:settings>
+      <con:parameters/>
+      <con:resource name="checkfbaccountandpublicprofileexistsornot" path="checkfbaccountandpublicprofileexistsornot" id="1a94df7c-a9a1-4c3a-9978-b1742b7391db">
+        <con:settings/>
+        <con:parameters/>
+        <con:method name="Method 1" id="13a60b2d-0a35-4706-bee9-0d9521419f25" method="POST">
+          <con:settings/>
+          <con:parameters/>
+          <con:representation type="REQUEST">
+            <con:mediaType>application/json</con:mediaType>
+            <con:params/>
+          </con:representation>
+          <con:representation type="FAULT">
+            <con:mediaType>application/json; charset=utf-8</con:mediaType>
+            <con:status>401</con:status>
+            <con:params/>
+            <con:element xmlns:chec="http://digisurveyapi.clidiem.com/api/Account/checkfbaccountandpublicprofileexistsornot">chec:Fault</con:element>
+          </con:representation>
+          <con:request name="Request 1" id="ddd3b31b-7ec6-4b08-8e1b-7dd8342ba128" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint>
+            <con:request>{
+	"strloginid:"
+	userloginid
+}</con:request>
+            <con:originalUri>http://digisurveyapi.clidiem.com/api/Account/checkfbaccountandpublicprofileexistsornot</con:originalUri>
+            <con:credentials>
+              <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:parameters/>
+            <con:parameterOrder/>
+          <con:environmentSpec><con:entry environmentId="21c918eb-3b13-42fb-96a8-bb3ebe6d2bc3"><con:authProfile>No Authorization</con:authProfile></con:entry><con:entry environmentId="b2d1e67f-f8d6-4ebb-9fc8-ecd326158ded"><con:authProfile>No Authorization</con:authProfile></con:entry><con:entry environmentId="2b4e7ce8-224f-460c-9f23-ea2d140ff47e"><con:authProfile>No Authorization</con:authProfile></con:entry></con:environmentSpec></con:request>
+        </con:method>
+      </con:resource>
+      <con:resource name="saveapikeysession" path="saveapikeysession" id="4e2c2d04-5988-4ac7-8d8c-04fd7bcbb271">
+        <con:settings/>
+        <con:parameters/>
+        <con:method name="Method 1" id="13d5b328-36eb-4cb2-9050-9854efa7cf2d" method="POST">
+          <con:settings/>
+          <con:parameters/>
+          <con:representation type="FAULT">
+            <con:mediaType>application/json; charset=utf-8</con:mediaType>
+            <con:status>401</con:status>
+            <con:params/>
+            <con:element xmlns:sav="http://digisurveyapi.clidiem.com/api/Account/saveapikeysession">sav:Fault</con:element>
+          </con:representation>
+          <con:representation type="REQUEST">
+            <con:mediaType>application/json</con:mediaType>
+            <con:params/>
+          </con:representation>
+          <con:request name="Request 1" id="d6d8795e-77dc-4ed3-b08e-c04511b0f3c1" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint>
+            <con:request>{
+	userloginid
+	apikeyid
+	sessioncode
+}</con:request>
+            <con:originalUri>http://digisurveyapi.clidiem.com/api/Account/saveapikeysession</con:originalUri>
+            <con:credentials>
+              <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:parameters/>
+            <con:parameterOrder/>
+          <con:environmentSpec><con:entry environmentId="21c918eb-3b13-42fb-96a8-bb3ebe6d2bc3"><con:authProfile>No Authorization</con:authProfile></con:entry><con:entry environmentId="b2d1e67f-f8d6-4ebb-9fc8-ecd326158ded"><con:authProfile>No Authorization</con:authProfile></con:entry><con:entry environmentId="2b4e7ce8-224f-460c-9f23-ea2d140ff47e"><con:authProfile>No Authorization</con:authProfile></con:entry></con:environmentSpec></con:request>
+        </con:method>
+      </con:resource>
+      <con:resource name="checkisuservalidpassword" path="checkisuservalidpassword" id="364d8632-20be-4ed0-9183-eb9fd2dcaa2e">
+        <con:settings/>
+        <con:parameters/>
+        <con:method name="Method 1" id="6e595e5e-40bd-4da2-8c36-1b522c611b6c" method="POST">
+          <con:settings/>
+          <con:parameters/>
+          <con:representation type="FAULT">
+            <con:mediaType>application/json; charset=utf-8</con:mediaType>
+            <con:status>401</con:status>
+            <con:params/>
+            <con:element xmlns:chec="http://digisurveyapi.clidiem.com/api/Account/checkisuservalidpassword">chec:Fault</con:element>
+          </con:representation>
+          <con:representation type="REQUEST">
+            <con:mediaType>application/json</con:mediaType>
+            <con:params/>
+          </con:representation>
+          <con:request name="Request 1" id="1fb4658c-adde-4885-bf0d-0128ad5dad8a" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint>
+            <con:request>{
+	KeyValue
+	userloginid
+	password
+}</con:request>
+            <con:originalUri>http://digisurveyapi.clidiem.com/api/Account/checkisuservalidpassword</con:originalUri>
+            <con:credentials>
+              <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:parameters/>
+            <con:parameterOrder/>
+          <con:environmentSpec><con:entry environmentId="21c918eb-3b13-42fb-96a8-bb3ebe6d2bc3"><con:authProfile>No Authorization</con:authProfile></con:entry><con:entry environmentId="b2d1e67f-f8d6-4ebb-9fc8-ecd326158ded"><con:authProfile>No Authorization</con:authProfile></con:entry><con:entry environmentId="2b4e7ce8-224f-460c-9f23-ea2d140ff47e"><con:authProfile>No Authorization</con:authProfile></con:entry></con:environmentSpec></con:request>
+        </con:method>
+      </con:resource>
+      <con:resource name="getuserlogindetailsbysessionloginid" path="getuserlogindetailsbysessionloginid" id="dbab8d03-8eec-441e-8391-bd1c976e0b77">
+        <con:settings/>
+        <con:parameters/>
+        <con:method name="Method 1" id="e164d142-dc71-4c3c-9dfa-fc5e339f9078" method="POST">
+          <con:settings/>
+          <con:parameters/>
+          <con:representation type="RESPONSE">
+            <con:mediaType>application/json; charset=utf-8</con:mediaType>
+            <con:status>200</con:status>
+            <con:params/>
+            <con:element xmlns:get="http://digisurveyapi.clidiem.com/api/Account/getuserlogindetailsbysessionloginid">get:Response</con:element>
+          </con:representation>
+          <con:representation type="REQUEST">
+            <con:mediaType>application/json</con:mediaType>
+            <con:params/>
+          </con:representation>
+          <con:request name="Request 1" id="849cc77c-d882-4a24-b02c-60b0192e25fc" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint>
+            <con:request>{
+	KeyValue
+	sessionloginid
+}</con:request>
+            <con:originalUri>http://digisurveyapi.clidiem.com/api/Account/getuserlogindetailsbysessionloginid</con:originalUri>
+            <con:credentials>
+              <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:parameters/>
+            <con:parameterOrder/>
+          <con:environmentSpec><con:entry environmentId="21c918eb-3b13-42fb-96a8-bb3ebe6d2bc3"><con:authProfile>No Authorization</con:authProfile></con:entry><con:entry environmentId="b2d1e67f-f8d6-4ebb-9fc8-ecd326158ded"><con:authProfile>No Authorization</con:authProfile></con:entry><con:entry environmentId="2b4e7ce8-224f-460c-9f23-ea2d140ff47e"><con:authProfile>No Authorization</con:authProfile></con:entry></con:environmentSpec></con:request>
+        </con:method>
+      </con:resource>
+      <con:resource name="savecompanyloginlog" path="savecompanyloginlog" id="928a5696-9c40-4ad5-89f5-9da0fc5d9aeb">
+        <con:settings/>
+        <con:parameters/>
+        <con:method name="Method 1" id="b5588510-c84d-414d-b812-f359e12d9e7d" method="POST">
+          <con:settings/>
+          <con:parameters/>
+          <con:representation type="REQUEST">
+            <con:mediaType>application/json</con:mediaType>
+            <con:params/>
+          </con:representation>
+          <con:representation type="FAULT">
+            <con:mediaType>application/json; charset=utf-8</con:mediaType>
+            <con:status>401</con:status>
+            <con:params/>
+            <con:element xmlns:sav="http://digisurveyapi.clidiem.com/api/Account/savecompanyloginlog">sav:Fault</con:element>
+          </con:representation>
+          <con:request name="Request 1" id="5f8a40be-bcd3-4564-977d-ac5c460728e9" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint>
+            <con:request>{
+	UserLoginLogId
+	Remarks
+}</con:request>
+            <con:originalUri>http://digisurveyapi.clidiem.com/api/Account/savecompanyloginlog</con:originalUri>
+            <con:credentials>
+              <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:parameters/>
+            <con:parameterOrder/>
+          <con:environmentSpec><con:entry environmentId="21c918eb-3b13-42fb-96a8-bb3ebe6d2bc3"><con:authProfile>No Authorization</con:authProfile></con:entry><con:entry environmentId="b2d1e67f-f8d6-4ebb-9fc8-ecd326158ded"><con:authProfile>No Authorization</con:authProfile></con:entry><con:entry environmentId="2b4e7ce8-224f-460c-9f23-ea2d140ff47e"><con:authProfile>No Authorization</con:authProfile></con:entry></con:environmentSpec></con:request>
+        </con:method>
+      </con:resource>
+      <con:resource name="insertfbsignupdetails" path="insertfbsignupdetails" id="68933633-ffde-49c9-a335-ad7e9d9a4072">
+        <con:settings/>
+        <con:parameters/>
+        <con:method name="Method 1" id="b1cbd1ab-365c-4148-82d0-896b978a6544" method="POST">
+          <con:settings/>
+          <con:parameters/>
+          <con:representation type="REQUEST">
+            <con:mediaType>application/json</con:mediaType>
+            <con:params/>
+          </con:representation>
+          <con:representation type="RESPONSE">
+            <con:mediaType>application/json; charset=utf-8</con:mediaType>
+            <con:status>200</con:status>
+            <con:params/>
+            <con:element xmlns:ins="http://digisurveyapi.clidiem.com/api/Account/insertfbsignupdetails">ins:Response</con:element>
+          </con:representation>
+          <con:request name="Request 1" id="c830c0db-7627-4ec0-aa0a-5b28c290fe63" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint>
+            <con:request>{
+	UserName
+	UserId
+	EmailId
+	ProfilePicUrl
+	ContactNumber
+	Password
+	ReferralCode
+}</con:request>
+            <con:originalUri>http://digisurveyapi.clidiem.com/api/Account/insertfbsignupdetails</con:originalUri>
+            <con:credentials>
+              <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:parameters/>
+            <con:parameterOrder/>
+          <con:environmentSpec><con:entry environmentId="21c918eb-3b13-42fb-96a8-bb3ebe6d2bc3"><con:authProfile>No Authorization</con:authProfile></con:entry><con:entry environmentId="b2d1e67f-f8d6-4ebb-9fc8-ecd326158ded"><con:authProfile>No Authorization</con:authProfile></con:entry><con:entry environmentId="2b4e7ce8-224f-460c-9f23-ea2d140ff47e"><con:authProfile>No Authorization</con:authProfile></con:entry></con:environmentSpec></con:request>
+        </con:method>
+      </con:resource>
+      <con:resource name="updatecompanyloginlog" path="updatecompanyloginlog" id="a7481563-7188-416b-a4f6-7200891c7504">
+        <con:settings/>
+        <con:parameters/>
+        <con:method name="Method 1" id="c6611b63-9525-44e5-86f3-f40f39eccca8" method="POST">
+          <con:settings/>
+          <con:parameters/>
+          <con:representation type="REQUEST">
+            <con:mediaType>application/json</con:mediaType>
+            <con:params/>
+          </con:representation>
+          <con:representation type="FAULT">
+            <con:mediaType>application/json; charset=utf-8</con:mediaType>
+            <con:status>401</con:status>
+            <con:params/>
+            <con:element xmlns:upd="http://digisurveyapi.clidiem.com/api/Account/updatecompanyloginlog">upd:Fault</con:element>
+          </con:representation>
+          <con:request name="Request 1" id="b1152814-a543-4bb8-a036-c955b3827dfe" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint>
+            <con:request>{
+	objLoginLogModel
+	UserLoginLogId
+	Remarks
+}</con:request>
+            <con:originalUri>http://digisurveyapi.clidiem.com/api/Account/updatecompanyloginlog</con:originalUri>
+            <con:credentials>
+              <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:parameters/>
+            <con:parameterOrder/>
+          <con:environmentSpec><con:entry environmentId="21c918eb-3b13-42fb-96a8-bb3ebe6d2bc3"><con:authProfile>No Authorization</con:authProfile></con:entry><con:entry environmentId="b2d1e67f-f8d6-4ebb-9fc8-ecd326158ded"><con:authProfile>No Authorization</con:authProfile></con:entry><con:entry environmentId="2b4e7ce8-224f-460c-9f23-ea2d140ff47e"><con:authProfile>No Authorization</con:authProfile></con:entry></con:environmentSpec></con:request>
+        </con:method>
+      </con:resource>
+      <con:resource name="savecandidateloginlogs" path="savecandidateloginlogs" id="f1248a22-b143-4281-b4b4-4f49a883b9a3">
+        <con:settings/>
+        <con:parameters/>
+        <con:method name="Method 1" id="6d0291a6-84f8-4a13-8f6a-00dcf8c46afc" method="POST">
+          <con:settings/>
+          <con:parameters/>
+          <con:representation type="REQUEST">
+            <con:mediaType>application/json</con:mediaType>
+            <con:params/>
+          </con:representation>
+          <con:representation type="FAULT">
+            <con:mediaType>application/json; charset=utf-8</con:mediaType>
+            <con:status>401</con:status>
+            <con:params/>
+            <con:element xmlns:sav="http://digisurveyapi.clidiem.com/api/Account/savecandidateloginlogs">sav:Fault</con:element>
+          </con:representation>
+          <con:request name="Request 1" id="332edcd8-d7d5-4065-8947-4fd9b3a027a2" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint>
+            <con:request>{
+	objLoginLogModel
+	UserLoginLogId
+	Remarks
+}</con:request>
+            <con:originalUri>http://digisurveyapi.clidiem.com/api/Account/savecandidateloginlogs</con:originalUri>
+            <con:credentials>
+              <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:parameters/>
+            <con:parameterOrder/>
+          <con:environmentSpec><con:entry environmentId="21c918eb-3b13-42fb-96a8-bb3ebe6d2bc3"><con:authProfile>No Authorization</con:authProfile></con:entry><con:entry environmentId="b2d1e67f-f8d6-4ebb-9fc8-ecd326158ded"><con:authProfile>No Authorization</con:authProfile></con:entry><con:entry environmentId="2b4e7ce8-224f-460c-9f23-ea2d140ff47e"><con:authProfile>No Authorization</con:authProfile></con:entry></con:environmentSpec></con:request>
+        </con:method>
+      </con:resource>
+      <con:resource name="updatecandidateloginlogs" path="updatecandidateloginlogs" id="08879560-3e5a-4fee-8d72-cc4c35ccd5af">
+        <con:settings/>
+        <con:parameters/>
+        <con:method name="Method 1" id="61f84f52-0725-4b40-89a5-33c34b05d475" method="POST">
+          <con:settings/>
+          <con:parameters/>
+          <con:representation type="REQUEST">
+            <con:mediaType>application/json</con:mediaType>
+            <con:params/>
+          </con:representation>
+          <con:representation type="FAULT">
+            <con:mediaType>application/json; charset=utf-8</con:mediaType>
+            <con:status>401</con:status>
+            <con:params/>
+            <con:element xmlns:upd="http://digisurveyapi.clidiem.com/api/Account/updatecandidateloginlogs">upd:Fault</con:element>
+          </con:representation>
+          <con:request name="Request 1" id="0abfddd5-7fd6-4bea-91be-43fcae78b534" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint>
+            <con:request>{
+	objLoginLogModel
+	UserLoginLogId
+	Remarks
+}</con:request>
+            <con:originalUri>http://digisurveyapi.clidiem.com/api/Account/updatecandidateloginlogs</con:originalUri>
+            <con:credentials>
+              <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:parameters/>
+            <con:parameterOrder/>
+          <con:environmentSpec><con:entry environmentId="21c918eb-3b13-42fb-96a8-bb3ebe6d2bc3"><con:authProfile>No Authorization</con:authProfile></con:entry><con:entry environmentId="b2d1e67f-f8d6-4ebb-9fc8-ecd326158ded"><con:authProfile>No Authorization</con:authProfile></con:entry><con:entry environmentId="2b4e7ce8-224f-460c-9f23-ea2d140ff47e"><con:authProfile>No Authorization</con:authProfile></con:entry></con:environmentSpec></con:request>
+        </con:method>
+      </con:resource>
+      <con:resource name="updateuserpassword" path="updateuserpassword" id="adb3763b-ecde-4870-bebc-034d4d678e56">
+        <con:settings/>
+        <con:parameters/>
+        <con:method name="Method 1" id="5b84969c-0667-4314-a3e5-6bbaf8dead5e" method="POST">
+          <con:settings/>
+          <con:parameters/>
+          <con:representation type="FAULT">
+            <con:mediaType>application/json; charset=utf-8</con:mediaType>
+            <con:status>401</con:status>
+            <con:params/>
+            <con:element xmlns:upd="http://digisurveyapi.clidiem.com/api/Account/updateuserpassword">upd:Fault</con:element>
+          </con:representation>
+          <con:representation type="REQUEST">
+            <con:mediaType>application/json</con:mediaType>
+            <con:params/>
+          </con:representation>
+          <con:representation type="RESPONSE"><con:mediaType>application/json; charset=utf-8</con:mediaType><con:status>200</con:status><con:params/><con:element xmlns:upd="http://digisurveyapi.clidiem.com/api/Account/updateuserpassword">upd:Response</con:element></con:representation><con:request name="Request 1" id="23660513-557a-4cb7-ab0d-4d5201b288ba" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint>
+            <con:request>{
+	KeyValue
+	userloginid
+	oldpassword
+	newpassword
+}</con:request>
+            <con:originalUri>http://digisurveyapi.clidiem.com/api/Account/updateuserpassword</con:originalUri>
+            <con:credentials>
+              <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:parameters/>
+            <con:parameterOrder/>
+          <con:environmentSpec><con:entry environmentId="21c918eb-3b13-42fb-96a8-bb3ebe6d2bc3"><con:authProfile>No Authorization</con:authProfile></con:entry><con:entry environmentId="b2d1e67f-f8d6-4ebb-9fc8-ecd326158ded"><con:authProfile>No Authorization</con:authProfile></con:entry><con:entry environmentId="2b4e7ce8-224f-460c-9f23-ea2d140ff47e"><con:authProfile>No Authorization</con:authProfile></con:entry></con:environmentSpec></con:request>
+        </con:method>
+      </con:resource>
+      <con:resource name="getallpermissions" path="getallpermissions/{PackageId}" id="e742ee58-d1d7-4c29-a865-5afc48566d77">
+        <con:settings/>
+        <con:parameters>
+          <con:parameter>
+            <con:name>PackageId</con:name>
+            <con:value/>
+            <con:style>TEMPLATE</con:style>
+            <con:default/>
+            <con:description xsi:nil="true"/>
+          </con:parameter>
+        </con:parameters>
+        <con:method name="Method 1" id="f060b422-7428-4eb0-8390-292a6b9348d9" method="GET">
+          <con:settings/>
+          <con:parameters/>
+          <con:representation type="FAULT">
+            <con:mediaType>application/json; charset=utf-8</con:mediaType>
+            <con:status>401 400 404</con:status>
+            <con:params/>
+            <con:element xmlns:get="http://digisurveyapi.clidiem.com/api/account/getallpermissions">get:Fault</con:element>
+          </con:representation>
+          <con:request name="Request 1" id="da413416-a35c-4580-8ec2-d00706015a9c" mediaType="application/json">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="${#Project#access_token}" xmlns="http://eviware.com/soapui/config"/></con:setting>
+            </con:settings>
+            <con:endpoint>${#Project#EndPoint}</con:endpoint>
+            <con:request/>
+            <con:originalUri>http://digisurveyapi.clidiem.com/api/account/getallpermissions</con:originalUri>
+            <con:credentials>
+              <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:parameters>
+              <entry key="PackageId" value="3" xmlns="http://eviware.com/soapui/config"/>
+            </con:parameters>
+            <con:parameterOrder>
+              <con:entry>PackageId</con:entry>
+            </con:parameterOrder>
+          <con:environmentSpec><con:entry environmentId="21c918eb-3b13-42fb-96a8-bb3ebe6d2bc3"><con:authProfile>No Authorization</con:authProfile></con:entry><con:entry environmentId="b2d1e67f-f8d6-4ebb-9fc8-ecd326158ded"><con:authProfile>No Authorization</con:authProfile></con:entry><con:entry environmentId="2b4e7ce8-224f-460c-9f23-ea2d140ff47e"><con:authProfile>No Authorization</con:authProfile></con:entry></con:environmentSpec></con:request>
+        </con:method>
+      </con:resource>
+      <con:resource name="updatecandidatepassword" path="updatecandidatepassword" id="0cc41440-d99d-48a2-8d23-8d27cfe98e25">
+        <con:settings/>
+        <con:parameters/>
+        <con:method name="Method 1" id="6ec241b8-40ff-451e-8402-f30fdbe9e211" method="POST">
+          <con:settings/>
+          <con:parameters/>
+          <con:representation type="REQUEST">
+            <con:mediaType>application/json</con:mediaType>
+            <con:params/>
+          </con:representation>
+          <con:representation type="FAULT">
+            <con:mediaType>application/json; charset=utf-8</con:mediaType>
+            <con:status>401</con:status>
+            <con:params/>
+            <con:element xmlns:upd="http://digisurveyapi.clidiem.com/api/account/updatecandidatepassword">upd:Fault</con:element>
+          </con:representation>
+          <con:request name="Request 1" id="0c00d098-9a09-435e-bd8d-463bb94c074a" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint>
+            <con:request>{
+	KeyValue
+	userloginid
+	oldpasword
+	newpassword
+}</con:request>
+            <con:originalUri>http://digisurveyapi.clidiem.com/api/account/updatecandidatepassword</con:originalUri>
+            <con:credentials>
+              <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:parameters/>
+            <con:parameterOrder/>
+          <con:environmentSpec><con:entry environmentId="21c918eb-3b13-42fb-96a8-bb3ebe6d2bc3"><con:authProfile>No Authorization</con:authProfile></con:entry><con:entry environmentId="b2d1e67f-f8d6-4ebb-9fc8-ecd326158ded"><con:authProfile>No Authorization</con:authProfile></con:entry><con:entry environmentId="2b4e7ce8-224f-460c-9f23-ea2d140ff47e"><con:authProfile>No Authorization</con:authProfile></con:entry></con:environmentSpec></con:request>
+        </con:method>
+      </con:resource>
+      <con:resource name="sendcandidateforgotpasswordverificationcode" path="sendcandidateforgotpasswordverificationcode" id="b061d51b-15d7-4ab6-bb3a-1ea08fd5f349">
+        <con:settings/>
+        <con:parameters>
+          <con:parameter>
+            <con:name>emailid</con:name>
+            <con:value/>
+            <con:style>QUERY</con:style>
+            <con:default/>
+            <con:description xsi:nil="true"/>
+          </con:parameter>
+          <con:parameter>
+            <con:name>webproject</con:name>
+            <con:value/>
+            <con:style>QUERY</con:style>
+            <con:default/>
+            <con:description xsi:nil="true"/>
+          </con:parameter>
+        </con:parameters>
+        <con:method name="Method 1" id="8aaf4d7c-a10e-479f-8653-b09fd590e7a1" method="POST">
+          <con:settings/>
+          <con:parameters/>
+          <con:representation type="RESPONSE">
+            <con:mediaType>application/json; charset=utf-8</con:mediaType>
+            <con:status>200</con:status>
+            <con:params/>
+            <con:element xmlns:sen="http://digisurveyapi.clidiem.com/api/account/sendcandidateforgotpasswordverificationcode">sen:Response</con:element>
+          </con:representation>
+          <con:representation type="REQUEST">
+            <con:mediaType>application/json</con:mediaType>
+            <con:params/>
+          </con:representation>
+          <con:request name="Request 1" id="492f91e2-58f9-4565-9d14-28ea9751f51c" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint>
+            <con:request>{
+	emailId
+	webproject
+}</con:request>
+            <con:originalUri>http://digisurveyapi.clidiem.com/api/account/sendcandidateforgotpasswordverificationcode</con:originalUri>
+            <con:credentials>
+              <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:parameters/>
+            <con:parameterOrder>
+              <con:entry>emailid</con:entry>
+              <con:entry>webproject</con:entry>
+            </con:parameterOrder>
+          <con:environmentSpec><con:entry environmentId="21c918eb-3b13-42fb-96a8-bb3ebe6d2bc3"><con:authProfile>No Authorization</con:authProfile></con:entry><con:entry environmentId="b2d1e67f-f8d6-4ebb-9fc8-ecd326158ded"><con:authProfile>No Authorization</con:authProfile></con:entry><con:entry environmentId="2b4e7ce8-224f-460c-9f23-ea2d140ff47e"><con:authProfile>No Authorization</con:authProfile></con:entry></con:environmentSpec></con:request>
+        </con:method>
+      </con:resource>
+      <con:resource name="resendcandidateforgotpasswordverificationcode" path="resendcandidateforgotpasswordverificationcode" id="81866fea-6333-4946-b929-14afa7038f83">
+        <con:settings/>
+        <con:parameters>
+          <con:parameter>
+            <con:name>emailid</con:name>
+            <con:value/>
+            <con:style>QUERY</con:style>
+            <con:default/>
+            <con:description xsi:nil="true"/>
+          </con:parameter>
+          <con:parameter>
+            <con:name>webproject</con:name>
+            <con:value/>
+            <con:style>QUERY</con:style>
+            <con:default/>
+            <con:description xsi:nil="true"/>
+          </con:parameter>
+        </con:parameters>
+        <con:method name="Method 1" id="0d10d7d2-0ea5-42d9-ba44-6f001432580b" method="POST">
+          <con:settings/>
+          <con:parameters/>
+          <con:representation type="REQUEST">
+            <con:mediaType>application/json</con:mediaType>
+            <con:params/>
+          </con:representation>
+          <con:representation type="RESPONSE">
+            <con:mediaType>application/json; charset=utf-8</con:mediaType>
+            <con:status>200</con:status>
+            <con:params/>
+            <con:element xmlns:res="http://digisurveyapi.clidiem.com/api/account/resendcandidateforgotpasswordverificationcode">res:Response</con:element>
+          </con:representation>
+          <con:request name="Request 1" id="c8471f62-fcfc-42f6-9b75-ebe445d59c1f" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint>
+            <con:request>{
+	emailId
+	webproject
+}</con:request>
+            <con:originalUri>http://digisurveyapi.clidiem.com/api/account/resendcandidateforgotpasswordverificationcode</con:originalUri>
+            <con:credentials>
+              <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:parameters/>
+            <con:parameterOrder>
+              <con:entry>emailid</con:entry>
+              <con:entry>webproject</con:entry>
+            </con:parameterOrder>
+          <con:environmentSpec><con:entry environmentId="21c918eb-3b13-42fb-96a8-bb3ebe6d2bc3"><con:authProfile>No Authorization</con:authProfile></con:entry><con:entry environmentId="b2d1e67f-f8d6-4ebb-9fc8-ecd326158ded"><con:authProfile>No Authorization</con:authProfile></con:entry><con:entry environmentId="2b4e7ce8-224f-460c-9f23-ea2d140ff47e"><con:authProfile>No Authorization</con:authProfile></con:entry></con:environmentSpec></con:request>
+        </con:method>
+      </con:resource>
+      <con:resource name="sendCompanyUserforgotpasswordverificationcode" path="sendCompanyUserforgotpasswordverificationcode" id="0e468953-94eb-4fad-a027-8563c296e83f">
+        <con:settings/>
+        <con:parameters/>
+        <con:method name="Method 1" id="0ad228c4-43b3-4fbe-a9aa-e84eb9a3e38a" method="POST">
+          <con:settings/>
+          <con:parameters/>
+          <con:representation type="RESPONSE">
+            <con:mediaType>application/json; charset=utf-8</con:mediaType>
+            <con:status>200</con:status>
+            <con:params/>
+            <con:element xmlns:sen="http://digisurveyapi.clidiem.com/api/account/sendCompanyUserforgotpasswordverificationcode">sen:Response</con:element>
+          </con:representation>
+          <con:representation type="REQUEST">
+            <con:mediaType>application/json</con:mediaType>
+            <con:params/>
+          </con:representation>
+          <con:request name="Request 1" id="7c580774-a07f-43d3-bce4-d131e634ee0a" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint>
+            <con:request>{
+	emailId
+	webproject
+}</con:request>
+            <con:originalUri>http://digisurveyapi.clidiem.com/api/account/sendCompanyUserforgotpasswordverificationcode</con:originalUri>
+            <con:credentials>
+              <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:parameters/>
+            <con:parameterOrder/>
+          <con:environmentSpec><con:entry environmentId="21c918eb-3b13-42fb-96a8-bb3ebe6d2bc3"><con:authProfile>No Authorization</con:authProfile></con:entry><con:entry environmentId="b2d1e67f-f8d6-4ebb-9fc8-ecd326158ded"><con:authProfile>No Authorization</con:authProfile></con:entry><con:entry environmentId="2b4e7ce8-224f-460c-9f23-ea2d140ff47e"><con:authProfile>No Authorization</con:authProfile></con:entry></con:environmentSpec></con:request>
+        </con:method>
+      </con:resource>
+      <con:resource name="resendcompanyforgotpasswordverificationcode" path="resendcompanyforgotpasswordverificationcode" id="7c94bf3f-1761-4138-a504-1f2c1b5fdab6">
+        <con:settings/>
+        <con:parameters/>
+        <con:method name="Method 1" id="42c7ac8e-7686-41b8-bd92-f512db5ab076" method="POST">
+          <con:settings/>
+          <con:parameters/>
+          <con:representation type="REQUEST">
+            <con:mediaType>application/json</con:mediaType>
+            <con:params/>
+          </con:representation>
+          <con:representation type="RESPONSE">
+            <con:mediaType>application/json; charset=utf-8</con:mediaType>
+            <con:status>200</con:status>
+            <con:params/>
+            <con:element xmlns:res="http://digisurveyapi.clidiem.com/api/account/resendcompanyforgotpasswordverificationcode">res:Response</con:element>
+          </con:representation>
+          <con:request name="Request 1" id="3778b437-e7f3-4f06-a829-50740b9747ea" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint>
+            <con:request>{
+	emailId
+	webproject
+}</con:request>
+            <con:originalUri>http://digisurveyapi.clidiem.com/api/account/resendcompanyforgotpasswordverificationcode</con:originalUri>
+            <con:credentials>
+              <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:parameters/>
+            <con:parameterOrder/>
+          <con:environmentSpec><con:entry environmentId="21c918eb-3b13-42fb-96a8-bb3ebe6d2bc3"><con:authProfile>No Authorization</con:authProfile></con:entry><con:entry environmentId="b2d1e67f-f8d6-4ebb-9fc8-ecd326158ded"><con:authProfile>No Authorization</con:authProfile></con:entry><con:entry environmentId="2b4e7ce8-224f-460c-9f23-ea2d140ff47e"><con:authProfile>No Authorization</con:authProfile></con:entry></con:environmentSpec></con:request>
+        </con:method>
+      </con:resource>
+      <con:resource name="candidateresetforgetpassword" path="candidateresetforgetpassword" id="a4060a06-2b86-4161-b206-9a1bc48c035b">
+        <con:settings/>
+        <con:parameters/>
+        <con:method name="Method 1" id="732666a2-2842-4135-95cd-fa6b4f7aede5" method="POST">
+          <con:settings/>
+          <con:parameters/>
+          <con:representation type="REQUEST">
+            <con:mediaType>application/json</con:mediaType>
+            <con:params/>
+          </con:representation>
+          <con:representation type="RESPONSE">
+            <con:mediaType>application/json; charset=utf-8</con:mediaType>
+            <con:status>200</con:status>
+            <con:params/>
+            <con:element xmlns:can="http://digisurveyapi.clidiem.com/api/account/candidateresetforgetpassword">can:Response</con:element>
+          </con:representation>
+          <con:request name="Request 1" id="74ee5a89-f195-439f-9dc2-905f55c8d6eb" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint>
+            <con:request>{
+	randomkey
+	password
+	verificationCode
+}</con:request>
+            <con:originalUri>http://digisurveyapi.clidiem.com/api/account/candidateresetforgetpassword</con:originalUri>
+            <con:credentials>
+              <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:parameters/>
+            <con:parameterOrder/>
+          <con:environmentSpec><con:entry environmentId="21c918eb-3b13-42fb-96a8-bb3ebe6d2bc3"><con:authProfile>No Authorization</con:authProfile></con:entry><con:entry environmentId="b2d1e67f-f8d6-4ebb-9fc8-ecd326158ded"><con:authProfile>No Authorization</con:authProfile></con:entry><con:entry environmentId="2b4e7ce8-224f-460c-9f23-ea2d140ff47e"><con:authProfile>No Authorization</con:authProfile></con:entry></con:environmentSpec></con:request>
+        </con:method>
+      </con:resource>
+      <con:resource name="companyuserresetforgetpassword" path="companyuserresetforgetpassword" id="d2e2b6b2-18a4-4f03-b1ca-b2869265be70">
+        <con:settings/>
+        <con:parameters/>
+        <con:method name="Method 1" id="a1981c67-4a53-412f-937a-e4a5de0af4c8" method="POST">
+          <con:settings/>
+          <con:parameters/>
+          <con:representation type="REQUEST">
+            <con:mediaType>application/json</con:mediaType>
+            <con:params/>
+          </con:representation>
+          <con:representation type="RESPONSE">
+            <con:mediaType>application/json; charset=utf-8</con:mediaType>
+            <con:status>200</con:status>
+            <con:params/>
+            <con:element xmlns:com="http://digisurveyapi.clidiem.com/api/account/companyuserresetforgetpassword">com:Response</con:element>
+          </con:representation>
+          <con:request name="Request 1" id="2667360e-7556-472c-8fdb-88909cd40d26" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint>
+            <con:request>{
+	randomkey
+	password
+	verificationCode
+}</con:request>
+            <con:originalUri>http://digisurveyapi.clidiem.com/api/account/companyuserresetforgetpassword</con:originalUri>
+            <con:credentials>
+              <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:parameters/>
+            <con:parameterOrder/>
+          <con:environmentSpec><con:entry environmentId="21c918eb-3b13-42fb-96a8-bb3ebe6d2bc3"><con:authProfile>No Authorization</con:authProfile></con:entry><con:entry environmentId="b2d1e67f-f8d6-4ebb-9fc8-ecd326158ded"><con:authProfile>No Authorization</con:authProfile></con:entry><con:entry environmentId="2b4e7ce8-224f-460c-9f23-ea2d140ff47e"><con:authProfile>No Authorization</con:authProfile></con:entry></con:environmentSpec></con:request>
+        </con:method>
+      </con:resource>
+      <con:resource name="candidateresetforgetpasswordfromnewpage" path="candidateresetforgetpasswordfromnewpage" id="ec6271e5-e875-4b8b-b182-41de653892af">
+        <con:settings/>
+        <con:parameters/>
+        <con:method name="Method 1" id="953667ee-375e-40a0-b936-108a9af6c197" method="POST">
+          <con:settings/>
+          <con:parameters/>
+          <con:representation type="REQUEST">
+            <con:mediaType>application/json</con:mediaType>
+            <con:params/>
+          </con:representation>
+          <con:representation type="RESPONSE">
+            <con:mediaType>application/json; charset=utf-8</con:mediaType>
+            <con:status>200</con:status>
+            <con:params/>
+            <con:element xmlns:can="http://digisurveyapi.clidiem.com/api/account/candidateresetforgetpasswordfromnewpage">can:Response</con:element>
+          </con:representation>
+          <con:request name="Request 1" id="7d4407c3-4261-401f-b8e3-239cbbd689e3" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint>
+            <con:request>{
+	keyValue
+	randomkey
+	password
+	verificationCode
+}</con:request>
+            <con:originalUri>http://digisurveyapi.clidiem.com/api/account/candidateresetforgetpasswordfromnewpage</con:originalUri>
+            <con:credentials>
+              <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:parameters/>
+            <con:parameterOrder/>
+          <con:environmentSpec><con:entry environmentId="21c918eb-3b13-42fb-96a8-bb3ebe6d2bc3"><con:authProfile>No Authorization</con:authProfile></con:entry><con:entry environmentId="b2d1e67f-f8d6-4ebb-9fc8-ecd326158ded"><con:authProfile>No Authorization</con:authProfile></con:entry><con:entry environmentId="2b4e7ce8-224f-460c-9f23-ea2d140ff47e"><con:authProfile>No Authorization</con:authProfile></con:entry></con:environmentSpec></con:request>
+        </con:method>
+      </con:resource>
+      <con:resource name="companyuserresetforgetpasswordfromnewpage" path="companyuserresetforgetpasswordfromnewpage" id="20307326-a8d7-4d5e-a5cb-a03400abd357">
+        <con:settings/>
+        <con:parameters/>
+        <con:method name="Method 1" id="23ba33e1-b5cb-47c7-9300-d0789dc80c72" method="POST">
+          <con:settings/>
+          <con:parameters/>
+          <con:representation type="REQUEST">
+            <con:mediaType>application/json</con:mediaType>
+            <con:params/>
+          </con:representation>
+          <con:representation type="RESPONSE">
+            <con:mediaType>application/json; charset=utf-8</con:mediaType>
+            <con:status>200</con:status>
+            <con:params/>
+            <con:element xmlns:com="http://digisurveyapi.clidiem.com/api/account/companyuserresetforgetpasswordfromnewpage">com:Response</con:element>
+          </con:representation>
+          <con:request name="Request 1" id="0b71d6ec-40fb-471e-9e87-439a0856f242" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint>
+            <con:request>{
+	keyValue
+	randomkey
+	password
+	verificationCode
+}</con:request>
+            <con:originalUri>http://digisurveyapi.clidiem.com/api/account/companyuserresetforgetpasswordfromnewpage</con:originalUri>
+            <con:credentials>
+              <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:parameters/>
+            <con:parameterOrder/>
+          <con:environmentSpec><con:entry environmentId="21c918eb-3b13-42fb-96a8-bb3ebe6d2bc3"><con:authProfile>No Authorization</con:authProfile></con:entry><con:entry environmentId="b2d1e67f-f8d6-4ebb-9fc8-ecd326158ded"><con:authProfile>No Authorization</con:authProfile></con:entry><con:entry environmentId="2b4e7ce8-224f-460c-9f23-ea2d140ff47e"><con:authProfile>No Authorization</con:authProfile></con:entry></con:environmentSpec></con:request>
+        </con:method>
+      </con:resource>
+      <con:resource name="checkcandidateemailidexistsornot" path="checkcandidateemailidexistsornot" id="5c17223d-7c27-452a-85e1-b991d3675b9b">
+        <con:settings/>
+        <con:parameters/>
+        <con:method name="Method 1" id="71ef70fe-bd62-47e6-9712-bc327b998257" method="POST">
+          <con:settings/>
+          <con:parameters/>
+          <con:representation type="REQUEST">
+            <con:mediaType>application/json</con:mediaType>
+            <con:params/>
+          </con:representation>
+          <con:representation type="RESPONSE">
+            <con:mediaType>application/json; charset=utf-8</con:mediaType>
+            <con:status>200</con:status>
+            <con:params/>
+            <con:element xmlns:chec="http://digisurveyapi.clidiem.com/api/account/checkcandidateemailidexistsornot">chec:Response</con:element>
+          </con:representation>
+          <con:request name="Request 1" id="60ed24e5-01c3-4775-8284-f20cc09c397e" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint>
+            <con:request>{
+	emailId
+}</con:request>
+            <con:originalUri>http://digisurveyapi.clidiem.com/api/account/checkcandidateemailidexistsornot</con:originalUri>
+            <con:credentials>
+              <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:parameters/>
+            <con:parameterOrder/>
+          <con:environmentSpec><con:entry environmentId="21c918eb-3b13-42fb-96a8-bb3ebe6d2bc3"><con:authProfile>No Authorization</con:authProfile></con:entry><con:entry environmentId="b2d1e67f-f8d6-4ebb-9fc8-ecd326158ded"><con:authProfile>No Authorization</con:authProfile></con:entry><con:entry environmentId="2b4e7ce8-224f-460c-9f23-ea2d140ff47e"><con:authProfile>No Authorization</con:authProfile></con:entry></con:environmentSpec></con:request>
+        </con:method>
+      </con:resource>
+      <con:resource name="checkcompanyemailidexistsornot" path="checkcompanyemailidexistsornot" id="4f8b74a5-10d1-439d-8e69-f85e56817157">
+        <con:settings/>
+        <con:parameters/>
+        <con:method name="Method 1" id="4ef65b03-26e3-49d4-8478-1706142c72b2" method="POST">
+          <con:settings/>
+          <con:parameters/>
+          <con:representation type="RESPONSE">
+            <con:mediaType>application/json; charset=utf-8</con:mediaType>
+            <con:status>200</con:status>
+            <con:params/>
+            <con:element xmlns:chec="http://digisurveyapi.clidiem.com/api/account/checkcompanyemailidexistsornot">chec:Response</con:element>
+          </con:representation>
+          <con:representation type="REQUEST">
+            <con:mediaType>application/json</con:mediaType>
+            <con:params/>
+          </con:representation>
+          <con:request name="Request 1" id="47d0cc25-8f28-4375-a024-9dfbc0ff521e" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint>
+            <con:request>{
+	emailId
+}</con:request>
+            <con:originalUri>http://digisurveyapi.clidiem.com/api/account/checkcompanyemailidexistsornot</con:originalUri>
+            <con:credentials>
+              <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:parameters/>
+            <con:parameterOrder/>
+          <con:environmentSpec><con:entry environmentId="21c918eb-3b13-42fb-96a8-bb3ebe6d2bc3"><con:authProfile>No Authorization</con:authProfile></con:entry><con:entry environmentId="b2d1e67f-f8d6-4ebb-9fc8-ecd326158ded"><con:authProfile>No Authorization</con:authProfile></con:entry><con:entry environmentId="2b4e7ce8-224f-460c-9f23-ea2d140ff47e"><con:authProfile>No Authorization</con:authProfile></con:entry></con:environmentSpec></con:request>
+        </con:method>
+      </con:resource>
+      <con:resource name="checkcompanyfeinexistsornot" path="checkcompanyfeinexistsornot" id="84bd2554-8d84-436a-b462-d72cfc0eb844">
+        <con:settings/>
+        <con:parameters/>
+        <con:method name="Method 1" id="71260d86-3e25-4532-a699-4e35b3f8496c" method="POST">
+          <con:settings/>
+          <con:parameters/>
+          <con:representation type="RESPONSE">
+            <con:mediaType>application/json; charset=utf-8</con:mediaType>
+            <con:status>200</con:status>
+            <con:params/>
+            <con:element xmlns:chec="http://digisurveyapi.clidiem.com/api/account/checkcompanyfeinexistsornot">chec:Response</con:element>
+          </con:representation>
+          <con:representation type="REQUEST">
+            <con:mediaType>application/json</con:mediaType>
+            <con:params/>
+          </con:representation>
+          <con:representation type="REQUEST">
+            <con:mediaType>application/x-www-form-urlencoded</con:mediaType>
+            <con:params/>
+          </con:representation>
+          <con:request name="Request 1" id="c5d1472d-2ae4-47c0-9570-dd802003a212" mediaType="application/x-www-form-urlencoded" postQueryString="true">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint>
+            <con:request>{
+FEIN
+}</con:request>
+            <con:originalUri>http://digisurveyapi.clidiem.com/api/account/checkcompanyfeinexistsornot</con:originalUri>
+            <con:credentials>
+              <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:parameters/>
+            <con:parameterOrder/>
+          <con:environmentSpec><con:entry environmentId="21c918eb-3b13-42fb-96a8-bb3ebe6d2bc3"><con:authProfile>No Authorization</con:authProfile></con:entry><con:entry environmentId="b2d1e67f-f8d6-4ebb-9fc8-ecd326158ded"><con:authProfile>No Authorization</con:authProfile></con:entry><con:entry environmentId="2b4e7ce8-224f-460c-9f23-ea2d140ff47e"><con:authProfile>No Authorization</con:authProfile></con:entry></con:environmentSpec></con:request>
+        </con:method>
+      </con:resource>
+      <con:resource name="candidateregistration" path="CandidateRegistration" id="8bb32705-f9cb-469c-8aaa-046dac707cd3">
+        <con:settings/>
+        <con:parameters/>
+        <con:method name="Method 1" id="4595d59b-d36b-4ee5-8a47-9e61acd99c16" method="POST">
+          <con:settings/>
+          <con:parameters/>
+          <con:representation type="RESPONSE">
+            <con:mediaType>application/json; charset=utf-8</con:mediaType>
+            <con:status>200</con:status>
+            <con:params/>
+            <con:element xmlns:can="http://digisurveyapi.clidiem.com/api/account/candidateregistration">can:Response</con:element>
+          </con:representation>
+          <con:representation type="REQUEST">
+            <con:mediaType>application/json</con:mediaType>
+            <con:params/>
+          </con:representation>
+          <con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>0</con:status><con:params/><con:element>data</con:element></con:representation><con:request name="Request 1" id="4d056a9d-b86f-440a-b295-c3f82cb73fb5" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint>
+            <con:request>{
+	"FirstName" :"Sai",
+	"LastName" :"Ram",
+	"EmailId" :"Saketha.uitechnocrat@gmail.com",
+	"ContactNumber" :"9999999999",
+	"Password" :"Test@123",
+	"IPAddress" :"66.55.7.198",
+	"WebProjectId" :"2",
+	"Location" :"Atlanta",
+	"Browser" :"Chrome",
+	"Latitude" :"33.9829",
+	"Longitude" :"-84.3242",
+	"CountryName" :"United States",
+	"PackageId" :"0",
+	"ReferralCode" :""
+}</con:request>
+            <con:originalUri>http://digisurveyapi.clidiem.com/api/account/candidateregistration</con:originalUri>
+            <con:credentials>
+              <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:parameters/>
+            <con:parameterOrder/>
+          <con:environmentSpec><con:entry environmentId="21c918eb-3b13-42fb-96a8-bb3ebe6d2bc3"><con:authProfile>No Authorization</con:authProfile></con:entry><con:entry environmentId="b2d1e67f-f8d6-4ebb-9fc8-ecd326158ded"><con:authProfile>No Authorization</con:authProfile></con:entry><con:entry environmentId="2b4e7ce8-224f-460c-9f23-ea2d140ff47e"><con:authProfile>No Authorization</con:authProfile></con:entry></con:environmentSpec></con:request>
+        </con:method>
+      </con:resource>
+      <con:resource name="companyregistration" path="/companyregistration" id="1e7334a2-a1b1-4dc6-a71d-d69ba2971e9d">
+        <con:settings/>
+        <con:parameters/>
+        <con:method name="Method 1" id="1c173a7f-7f35-419f-9a77-5ce76ced366b" method="POST">
+          <con:settings/>
+          <con:parameters/>
+          <con:representation type="RESPONSE">
+            <con:mediaType>application/json; charset=utf-8</con:mediaType>
+            <con:status>200</con:status>
+            <con:params/>
+            <con:element xmlns:com="http://digisurveyapi.clidiem.com/api/account/companyregistration">com:Response</con:element>
+          </con:representation>
+          <con:representation type="REQUEST">
+            <con:mediaType>application/json</con:mediaType>
+            <con:params/>
+          </con:representation>
+          <con:request name="Request 1" id="b4647610-1552-4e4e-8913-951dcdd058d5" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint>
+            <con:request>{
+	firstName
+	lastName
+	emailId
+	contactNumber
+	password
+	ipaddress
+	webproject
+	location
+	browser
+	latitude
+	longitude
+	countryname
+	packageid
+	referralcode
+	KeyValue
+}</con:request>
+            <con:originalUri>http://digisurveyapi.clidiem.com/api/account/companyregistration</con:originalUri>
+            <con:credentials>
+              <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:parameters/>
+            <con:parameterOrder/>
+          <con:environmentSpec><con:entry environmentId="21c918eb-3b13-42fb-96a8-bb3ebe6d2bc3"><con:authProfile>No Authorization</con:authProfile></con:entry><con:entry environmentId="b2d1e67f-f8d6-4ebb-9fc8-ecd326158ded"><con:authProfile>No Authorization</con:authProfile></con:entry><con:entry environmentId="2b4e7ce8-224f-460c-9f23-ea2d140ff47e"><con:authProfile>No Authorization</con:authProfile></con:entry></con:environmentSpec></con:request>
+        </con:method>
+      </con:resource>
+      <con:resource name="verifycandidateverificationcode" path="verifycandidateverificationcode" id="1b74259c-e9ab-4970-b706-65abcc8ae264">
+        <con:settings/>
+        <con:parameters/>
+        <con:method name="Method 1" id="0c92c242-2758-4053-9f26-29f24dfec17f" method="POST">
+          <con:settings/>
+          <con:parameters/>
+          <con:representation type="REQUEST">
+            <con:mediaType>application/json</con:mediaType>
+            <con:params/>
+          </con:representation>
+          <con:representation type="RESPONSE">
+            <con:mediaType>application/json; charset=utf-8</con:mediaType>
+            <con:status>200</con:status>
+            <con:params/>
+            <con:element xmlns:ver="http://digisurveyapi.clidiem.com/api/account/verifycandidateverificationcode">ver:Response</con:element>
+          </con:representation>
+          <con:representation type="FAULT">
+            <con:mediaType>application/xml; charset=utf-8</con:mediaType>
+            <con:status>415</con:status>
+            <con:params/>
+            <con:element>Error</con:element>
+          </con:representation>
+          <con:representation type="REQUEST">
+            <con:mediaType>application/xml</con:mediaType>
+            <con:params/>
+          </con:representation>
+          <con:request name="Request 1" id="4064d8b4-17ea-4cf3-996c-59fd3a5fcf42" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint>
+            <con:request>{
+	registrationId
+	randomKey
+	verificationCode
+	webproject
+}</con:request>
+            <con:originalUri>http://digisurveyapi.clidiem.com/api/account/verifycandidateverificationcode</con:originalUri>
+            <con:credentials>
+              <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:parameters/>
+            <con:parameterOrder/>
+          <con:environmentSpec><con:entry environmentId="21c918eb-3b13-42fb-96a8-bb3ebe6d2bc3"><con:authProfile>No Authorization</con:authProfile></con:entry><con:entry environmentId="b2d1e67f-f8d6-4ebb-9fc8-ecd326158ded"><con:authProfile>No Authorization</con:authProfile></con:entry><con:entry environmentId="2b4e7ce8-224f-460c-9f23-ea2d140ff47e"><con:authProfile>No Authorization</con:authProfile></con:entry></con:environmentSpec></con:request>
+        </con:method>
+      </con:resource>
+      <con:resource name="verifycompanyverificationcode" path="verifycompanyverificationcode" id="f5c7807f-caff-4a7e-bd32-21cfd1760f04">
+        <con:settings/>
+        <con:parameters/>
+        <con:method name="Method 1" id="cffe0d1d-d211-40ef-8831-237febef60e6" method="POST">
+          <con:settings/>
+          <con:parameters/>
+          <con:representation type="REQUEST">
+            <con:mediaType>application/json</con:mediaType>
+            <con:params/>
+          </con:representation>
+          <con:representation type="RESPONSE">
+            <con:mediaType>application/json; charset=utf-8</con:mediaType>
+            <con:status>200</con:status>
+            <con:params/>
+            <con:element xmlns:ver="http://digisurveyapi.clidiem.com/api/account/verifycompanyverificationcode">ver:Response</con:element>
+          </con:representation>
+          <con:request name="Request 1" id="b8dfc6df-686f-4e68-8b39-1475f9eaf4cf" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint>
+            <con:request>{
+	registrationId
+	randomKey
+	verificationCode
+	webproject
+}</con:request>
+            <con:originalUri>http://digisurveyapi.clidiem.com/api/account/verifycompanyverificationcode</con:originalUri>
+            <con:credentials>
+              <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:parameters/>
+            <con:parameterOrder/>
+          <con:environmentSpec><con:entry environmentId="21c918eb-3b13-42fb-96a8-bb3ebe6d2bc3"><con:authProfile>No Authorization</con:authProfile></con:entry><con:entry environmentId="b2d1e67f-f8d6-4ebb-9fc8-ecd326158ded"><con:authProfile>No Authorization</con:authProfile></con:entry><con:entry environmentId="2b4e7ce8-224f-460c-9f23-ea2d140ff47e"><con:authProfile>No Authorization</con:authProfile></con:entry></con:environmentSpec></con:request>
+        </con:method>
+      </con:resource>
+      <con:resource name="productid" path="api/Account/getuserpermissions/roleid/parentroleid/packageid/productid" id="55ea3f0d-3248-4ff0-bfb2-9dab38c19dc2">
+        <con:settings/>
+        <con:parameters>
+          <con:parameter>
+            <con:name>roleid</con:name>
+            <con:value/>
+            <con:style>TEMPLATE</con:style>
+            <con:default/>
+          </con:parameter>
+          <con:parameter>
+            <con:name>parentroleid</con:name>
+            <con:style>TEMPLATE</con:style>
+          </con:parameter>
+          <con:parameter>
+            <con:name>packageid</con:name>
+            <con:style>TEMPLATE</con:style>
+          </con:parameter>
+          <con:parameter>
+            <con:name>productid</con:name>
+            <con:style>TEMPLATE</con:style>
+          </con:parameter>
+        </con:parameters>
+        <con:method name="Method 1" id="0ee7ae02-9c97-4b95-9765-d86d9f370c2a" method="GET">
+          <con:settings/>
+          <con:parameters/>
+          <con:representation type="FAULT">
+            <con:mediaType>text/html</con:mediaType>
+            <con:status>404</con:status>
+            <con:params/>
+            <con:element xmlns:xht="http://www.w3.org/1999/xhtml">xht:html</con:element>
+          </con:representation>
+          <con:request name="Request 1" id="53607cbf-11ae-493e-8cbc-8105854158b2" mediaType="application/json">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint>
+            <con:request/>
+            <con:originalUri>http://digisurveyapi.clidiem.com/api/account/api/Account/getuserpermissions/roleid/parentroleid/packageid/productid</con:originalUri>
+            <con:credentials>
+              <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:parameters>
+              <entry key="roleid" value="" xmlns="http://eviware.com/soapui/config"/>
+            </con:parameters>
+            <con:parameterOrder>
+              <con:entry>roleid</con:entry>
+              <con:entry>parentroleid</con:entry>
+              <con:entry>packageid</con:entry>
+              <con:entry>productid</con:entry>
+            </con:parameterOrder>
+          <con:environmentSpec><con:entry environmentId="21c918eb-3b13-42fb-96a8-bb3ebe6d2bc3"><con:authProfile>No Authorization</con:authProfile></con:entry><con:entry environmentId="b2d1e67f-f8d6-4ebb-9fc8-ecd326158ded"><con:authProfile>No Authorization</con:authProfile></con:entry><con:entry environmentId="2b4e7ce8-224f-460c-9f23-ea2d140ff47e"><con:authProfile>No Authorization</con:authProfile></con:entry></con:environmentSpec></con:request>
+        </con:method>
+      </con:resource>
+      <con:resource name="activatecompanyuseraccount" path="api/Account/activatecompanyuseraccount" id="a2ecc11c-1cad-439d-b99a-cea3a0f3ab81">
+        <con:settings/>
+        <con:parameters/>
+        <con:method name="Method 1" id="165768c1-7f7a-4666-b239-7ffa9d8befe4" method="POST">
+          <con:settings/>
+          <con:parameters/>
+          <con:representation type="REQUEST">
+            <con:mediaType>application/json</con:mediaType>
+            <con:params/>
+          </con:representation>
+          <con:representation type="FAULT">
+            <con:mediaType>application/json; charset=utf-8</con:mediaType>
+            <con:status>404</con:status>
+            <con:params/>
+            <con:element xmlns:act="http://digisurveyapi.clidiem.com/api/account/api/Account/activatecompanyuseraccount">act:Fault</con:element>
+          </con:representation>
+          <con:request name="Request 1" id="a5264595-c8e7-4f29-95f5-38da486f493a" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint>
+            <con:request>{
+	password
+	KeyValue 
+	randomkey 
+	verificationCode 
+	webproject
+}</con:request>
+            <con:originalUri>http://digisurveyapi.clidiem.com/api/account/api/Account/activatecompanyuseraccount</con:originalUri>
+            <con:credentials>
+              <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:parameters/>
+          <con:environmentSpec><con:entry environmentId="21c918eb-3b13-42fb-96a8-bb3ebe6d2bc3"><con:authProfile>No Authorization</con:authProfile></con:entry><con:entry environmentId="b2d1e67f-f8d6-4ebb-9fc8-ecd326158ded"><con:authProfile>No Authorization</con:authProfile></con:entry><con:entry environmentId="2b4e7ce8-224f-460c-9f23-ea2d140ff47e"><con:authProfile>No Authorization</con:authProfile></con:entry></con:environmentSpec></con:request>
+        </con:method>
+      </con:resource>
+      <con:resource name="resendcandidateverificationcode" path="api/Account/resendcandidateverificationcode" id="7502b39d-5111-478a-b0b0-280ed78f1040">
+        <con:settings/>
+        <con:parameters/>
+        <con:method name="Method 1" id="e944358e-c62d-4ed5-9505-960fb8467412" method="POST">
+          <con:settings/>
+          <con:parameters/>
+          <con:representation type="REQUEST">
+            <con:mediaType>application/json</con:mediaType>
+            <con:params/>
+          </con:representation>
+          <con:representation type="FAULT">
+            <con:mediaType>application/json; charset=utf-8</con:mediaType>
+            <con:status>404</con:status>
+            <con:params/>
+            <con:element xmlns:res="http://digisurveyapi.clidiem.com/api/account/api/Account/resendcandidateverificationcode">res:Fault</con:element>
+          </con:representation>
+          <con:request name="Request 1" id="00f9f8c0-dc23-41bf-8ca0-7a35ccaad1f3" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint>
+            <con:request>{
+	KeyValue
+	emailId
+	webproject
+}</con:request>
+            <con:originalUri>http://digisurveyapi.clidiem.com/api/account/api/Account/resendcandidateverificationcode</con:originalUri>
+            <con:credentials>
+              <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:parameters/>
+            <con:parameterOrder/>
+          <con:environmentSpec><con:entry environmentId="21c918eb-3b13-42fb-96a8-bb3ebe6d2bc3"><con:authProfile>No Authorization</con:authProfile></con:entry><con:entry environmentId="b2d1e67f-f8d6-4ebb-9fc8-ecd326158ded"><con:authProfile>No Authorization</con:authProfile></con:entry><con:entry environmentId="2b4e7ce8-224f-460c-9f23-ea2d140ff47e"><con:authProfile>No Authorization</con:authProfile></con:entry></con:environmentSpec></con:request>
+        </con:method>
+      </con:resource>
+      <con:resource name="resendcompanyverificationcode" path="resendcompanyverificationcode" id="63a67e3b-9403-45a4-b43b-625dbfe39ea4">
+        <con:settings/>
+        <con:parameters/>
+        <con:method name="Method 1" id="08e2eeda-8678-46b6-81a8-8b76bd680bb0" method="POST">
+          <con:settings/>
+          <con:parameters/>
+          <con:representation type="FAULT">
+            <con:mediaType>application/json; charset=utf-8</con:mediaType>
+            <con:status>404</con:status>
+            <con:params/>
+            <con:element xmlns:res="http://digisurveyapi.clidiem.com/api/account/api/Account/resendcompanyverificationcode">res:Fault</con:element>
+          </con:representation>
+          <con:representation type="REQUEST">
+            <con:mediaType>application/json</con:mediaType>
+            <con:params/>
+          </con:representation>
+          <con:representation type="RESPONSE"><con:mediaType>application/json; charset=utf-8</con:mediaType><con:status>200</con:status><con:params/><con:element xmlns:res="http://digisurveyapi.clidiem.com/api/account/api/Account/resendcompanyverificationcode">res:Response</con:element></con:representation><con:request name="Request 1" id="b4e51eb2-df58-4522-b9e1-a3d89b84e05a" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint>
+            <con:request>{
+	KeyValue
+	emailId
+	webproject
+}</con:request>
+            <con:originalUri>http://digisurveyapi.clidiem.com/api/account/api/Account/resendcompanyverificationcode</con:originalUri>
+            <con:credentials>
+              <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:parameters/>
+          <con:environmentSpec><con:entry environmentId="21c918eb-3b13-42fb-96a8-bb3ebe6d2bc3"><con:authProfile>No Authorization</con:authProfile></con:entry><con:entry environmentId="b2d1e67f-f8d6-4ebb-9fc8-ecd326158ded"><con:authProfile>No Authorization</con:authProfile></con:entry><con:entry environmentId="2b4e7ce8-224f-460c-9f23-ea2d140ff47e"><con:authProfile>No Authorization</con:authProfile></con:entry></con:environmentSpec></con:request>
+        </con:method>
+      </con:resource>
+      <con:resource name="getcompanyviewdata" path="api/Account/getcompanyviewdata" id="928d19bc-1902-4464-9846-79f5bb895622">
+        <con:settings/>
+        <con:parameters/>
+        <con:method name="Method 1" id="8fcc59ca-83b4-482e-8cc3-0e26921f033f" method="POST">
+          <con:settings/>
+          <con:parameters/>
+          <con:representation type="FAULT">
+            <con:mediaType>application/json; charset=utf-8</con:mediaType>
+            <con:status>404</con:status>
+            <con:params/>
+            <con:element xmlns:get="http://digisurveyapi.clidiem.com/api/account/api/Account/getcompanyviewdata">get:Fault</con:element>
+          </con:representation>
+          <con:representation type="REQUEST">
+            <con:mediaType>application/json</con:mediaType>
+            <con:params/>
+          </con:representation>
+          <con:request name="Request 1" id="2a56cf61-8592-4739-a675-37d5364e4546" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint>
+            <con:request>{
+	CompanyId
+}</con:request>
+            <con:originalUri>http://digisurveyapi.clidiem.com/api/account/api/Account/getcompanyviewdata</con:originalUri>
+            <con:credentials>
+              <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:parameters/>
+          <con:environmentSpec><con:entry environmentId="21c918eb-3b13-42fb-96a8-bb3ebe6d2bc3"><con:authProfile>No Authorization</con:authProfile></con:entry><con:entry environmentId="b2d1e67f-f8d6-4ebb-9fc8-ecd326158ded"><con:authProfile>No Authorization</con:authProfile></con:entry><con:entry environmentId="2b4e7ce8-224f-460c-9f23-ea2d140ff47e"><con:authProfile>No Authorization</con:authProfile></con:entry></con:environmentSpec></con:request>
+        </con:method>
+      </con:resource>
+      <con:resource name="submitcontactusdetails" path="api/Account/submitcontactusdetails" id="7eaa25db-84c4-4d7d-a077-7a2a4bbfd900">
+        <con:settings/>
+        <con:parameters/>
+        <con:method name="Method 1" id="98e01da1-c242-4fee-a219-18fc12a32c58" method="POST">
+          <con:settings/>
+          <con:parameters/>
+          <con:representation type="FAULT">
+            <con:mediaType>application/json; charset=utf-8</con:mediaType>
+            <con:status>404</con:status>
+            <con:params/>
+            <con:element xmlns:sub="http://digisurveyapi.clidiem.com/api/account/api/Account/submitcontactusdetails">sub:Fault</con:element>
+          </con:representation>
+          <con:representation type="REQUEST">
+            <con:mediaType>application/json</con:mediaType>
+            <con:params/>
+          </con:representation>
+          <con:request name="Request 1" id="eb89ff79-757f-4d8f-8561-788ee80de0e2" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint>
+            <con:request>{
+	Name
+	Subject
+	EmailId
+	MobileNumber
+	Message
+	Purpose
+	StatusId
+	StatusMessage
+}</con:request>
+            <con:originalUri>http://digisurveyapi.clidiem.com/api/account/api/Account/submitcontactusdetails</con:originalUri>
+            <con:credentials>
+              <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:parameters/>
+          <con:environmentSpec><con:entry environmentId="21c918eb-3b13-42fb-96a8-bb3ebe6d2bc3"><con:authProfile>No Authorization</con:authProfile></con:entry><con:entry environmentId="b2d1e67f-f8d6-4ebb-9fc8-ecd326158ded"><con:authProfile>No Authorization</con:authProfile></con:entry><con:entry environmentId="2b4e7ce8-224f-460c-9f23-ea2d140ff47e"><con:authProfile>No Authorization</con:authProfile></con:entry></con:environmentSpec></con:request>
+        </con:method>
+      </con:resource>
+      <con:resource name="submitFeedbackDetails" path="api/Account/submitFeedbackDetails" id="efdaaa03-c6a7-40f2-a5d6-f9eaabc3ac75">
+        <con:settings/>
+        <con:parameters/>
+        <con:method name="Method 1" id="9b7b93b2-563b-4238-8e0e-dfc02365909e" method="POST">
+          <con:settings/>
+          <con:parameters/>
+          <con:representation type="REQUEST">
+            <con:mediaType>application/json</con:mediaType>
+            <con:params/>
+          </con:representation>
+          <con:representation type="FAULT">
+            <con:mediaType>application/json; charset=utf-8</con:mediaType>
+            <con:status>404</con:status>
+            <con:params/>
+            <con:element xmlns:sub="http://digisurveyapi.clidiem.com/api/account/api/Account/submitFeedbackDetails">sub:Fault</con:element>
+          </con:representation>
+          <con:request name="Request 1" id="e74a700f-77d4-47c9-bc50-f70185b609b1" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint>
+            <con:request>{
+	FullName
+	EmailId
+	MobileNumber
+	Organization
+	Title
+	Description
+	StatusId
+	StatusMessage
+}</con:request>
+            <con:originalUri>http://digisurveyapi.clidiem.com/api/account/api/Account/submitFeedbackDetails</con:originalUri>
+            <con:credentials>
+              <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:parameters/>
+          <con:environmentSpec><con:entry environmentId="21c918eb-3b13-42fb-96a8-bb3ebe6d2bc3"><con:authProfile>No Authorization</con:authProfile></con:entry><con:entry environmentId="b2d1e67f-f8d6-4ebb-9fc8-ecd326158ded"><con:authProfile>No Authorization</con:authProfile></con:entry><con:entry environmentId="2b4e7ce8-224f-460c-9f23-ea2d140ff47e"><con:authProfile>No Authorization</con:authProfile></con:entry></con:environmentSpec></con:request>
+        </con:method>
+      </con:resource>
+      <con:resource name="userloginid" path="api/Account/getuserbillingdetails/userloginid{userloginid }" id="3555a094-7888-4369-b586-f78ce18722bd">
+        <con:settings/>
+        <con:parameters>
+          <con:parameter>
+            <con:name>userloginid</con:name>
+            <con:value/>
+            <con:style>TEMPLATE</con:style>
+            <con:default/>
+            <con:description xsi:nil="true"/>
+          </con:parameter>
+        </con:parameters>
+        <con:method name="Method 1" id="447a0d38-6a17-42f9-82a0-da9e42ec707f" method="GET">
+          <con:settings/>
+          <con:parameters/>
+          <con:representation type="FAULT">
+            <con:mediaType>application/json; charset=utf-8</con:mediaType>
+            <con:status>404</con:status>
+            <con:params/>
+            <con:element xmlns:user="http://digisurveyapi.clidiem.com/api/account/api/Account/getuserbillingdetails/userloginid">user:Fault</con:element>
+          </con:representation>
+          <con:request name="Request 1" id="c21112dd-aa1a-447a-b9d7-4203438e52b0" mediaType="application/json">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint>
+            <con:request/>
+            <con:originalUri>http://digisurveyapi.clidiem.com/api/account/api/Account/getuserbillingdetails/userloginid</con:originalUri>
+            <con:credentials>
+              <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:parameters/>
+            <con:parameterOrder>
+              <con:entry>userloginid</con:entry>
+            </con:parameterOrder>
+          <con:environmentSpec><con:entry environmentId="21c918eb-3b13-42fb-96a8-bb3ebe6d2bc3"><con:authProfile>No Authorization</con:authProfile></con:entry><con:entry environmentId="b2d1e67f-f8d6-4ebb-9fc8-ecd326158ded"><con:authProfile>No Authorization</con:authProfile></con:entry><con:entry environmentId="2b4e7ce8-224f-460c-9f23-ea2d140ff47e"><con:authProfile>No Authorization</con:authProfile></con:entry></con:environmentSpec></con:request>
+        </con:method>
+      </con:resource>
+      <con:resource name="getwalletrecenttransactions" path="getwalletrecenttransactions" id="3a026f26-147d-4dc9-bae0-3159a519befd">
+        <con:settings/>
+        <con:parameters/>
+        <con:method name="Method 1" id="92f94d4b-80c1-4cca-88d7-0be00326855f" method="POST">
+          <con:settings/>
+          <con:parameters/>
+          <con:representation type="REQUEST">
+            <con:mediaType>application/json</con:mediaType>
+            <con:params/>
+          </con:representation>
+          <con:representation type="FAULT">
+            <con:mediaType>application/json; charset=utf-8</con:mediaType>
+            <con:status>404</con:status>
+            <con:params/>
+            <con:element xmlns:get="http://digisurveyapi.clidiem.com/api/account/api/Account/getwalletrecenttransactions">get:Fault</con:element>
+          </con:representation>
+          <con:representation type="RESPONSE"><con:mediaType>application/json; charset=utf-8</con:mediaType><con:status>200</con:status><con:params/><con:element>Response</con:element></con:representation><con:request name="Request 1" id="1fe02ccd-b6d8-4712-a33a-9c50b2a16480" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint>
+            <con:request>{
+	loginid
+	userloginid
+}</con:request>
+            <con:originalUri>http://digisurveyapi.clidiem.com/api/account/api/Account/getwalletrecenttransactions</con:originalUri>
+            <con:credentials>
+              <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:parameters/>
+          <con:environmentSpec><con:entry environmentId="21c918eb-3b13-42fb-96a8-bb3ebe6d2bc3"><con:authProfile>No Authorization</con:authProfile></con:entry><con:entry environmentId="b2d1e67f-f8d6-4ebb-9fc8-ecd326158ded"><con:authProfile>No Authorization</con:authProfile></con:entry><con:entry environmentId="2b4e7ce8-224f-460c-9f23-ea2d140ff47e"><con:authProfile>No Authorization</con:authProfile></con:entry></con:environmentSpec></con:request>
+        </con:method>
+      </con:resource>
+      <con:resource name="getuserpaymentdetailstopay" path="getuserpaymentdetailstopay" id="db2fd657-cf89-4803-b2fc-01ff39280b72">
+        <con:settings/>
+        <con:parameters/>
+        <con:method name="Method 1" id="5f064a7c-278c-482e-a300-4bfbdd4c3879" method="POST">
+          <con:settings/>
+          <con:parameters/>
+          <con:representation type="REQUEST">
+            <con:mediaType>application/json</con:mediaType>
+            <con:params/>
+          </con:representation>
+          <con:representation type="FAULT">
+            <con:mediaType>application/json; charset=utf-8</con:mediaType>
+            <con:status>404</con:status>
+            <con:params/>
+            <con:element xmlns:get="http://digisurveyapi.clidiem.com/api/account/api/Account/getuserpaymentdetailstopay">get:Fault</con:element>
+          </con:representation>
+          <con:request name="Request 1" id="3c7ef13b-91ee-42f3-90e2-cd2dd4de422a" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint>
+            <con:request>{
+	userloginid
+	packageid
+	petitionsupporterid
+	isorganization
+	paymenttype
+}</con:request>
+            <con:originalUri>http://digisurveyapi.clidiem.com/api/account/api/Account/getuserpaymentdetailstopay</con:originalUri>
+            <con:credentials>
+              <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:parameters/>
+          <con:environmentSpec><con:entry environmentId="21c918eb-3b13-42fb-96a8-bb3ebe6d2bc3"><con:authProfile>No Authorization</con:authProfile></con:entry><con:entry environmentId="b2d1e67f-f8d6-4ebb-9fc8-ecd326158ded"><con:authProfile>No Authorization</con:authProfile></con:entry><con:entry environmentId="2b4e7ce8-224f-460c-9f23-ea2d140ff47e"><con:authProfile>No Authorization</con:authProfile></con:entry></con:environmentSpec></con:request>
+        </con:method>
+      </con:resource>
+      <con:resource name="userloginid 2" path="getuserpaymentdetailstopay/{userloginid}" id="5ab87ae9-4f5f-4e40-b652-35ed76448dab">
+        <con:settings/>
+        <con:parameters>
+          
+        <con:parameter><con:name>userloginid</con:name><con:value>1</con:value><con:style>TEMPLATE</con:style><con:default>1</con:default></con:parameter></con:parameters>
+        <con:method name="Method 1" id="0a3b72b4-0d93-4e66-9008-4eee457fa951" method="GET">
+          <con:settings/>
+          <con:parameters/>
+          <con:representation type="FAULT">
+            <con:mediaType>application/json; charset=utf-8</con:mediaType>
+            <con:status>404</con:status>
+            <con:params/>
+            <con:element xmlns:user="http://digisurveyapi.clidiem.com/api/account/api/Account/getuserpaymentdetailstopay/userloginid">user:Fault</con:element>
+          </con:representation>
+          <con:request name="Request 1" id="01bfab01-0cf1-497b-baf9-f3bde39adae9" mediaType="application/json">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint>
+            <con:request/>
+            <con:originalUri>http://digisurveyapi.clidiem.com/api/account/api/Account/getuserpaymentdetailstopay/userloginid</con:originalUri>
+            <con:credentials>
+              <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:parameters/>
+            <con:parameterOrder><con:entry>userloginid</con:entry></con:parameterOrder>
+          <con:environmentSpec><con:entry environmentId="21c918eb-3b13-42fb-96a8-bb3ebe6d2bc3"><con:authProfile>No Authorization</con:authProfile></con:entry><con:entry environmentId="b2d1e67f-f8d6-4ebb-9fc8-ecd326158ded"><con:authProfile>No Authorization</con:authProfile></con:entry><con:entry environmentId="2b4e7ce8-224f-460c-9f23-ea2d140ff47e"><con:authProfile>No Authorization</con:authProfile></con:entry></con:environmentSpec></con:request>
+        </con:method>
+      </con:resource>
+      <con:resource name="submitpayment" path="submitpayment" id="7b9c7797-89f9-4040-a7d4-f043ac27b1ff">
+        <con:settings/>
+        <con:parameters/>
+        <con:method name="Method 1" id="6723f655-7370-4cbd-8ea4-fb9618ac422d" method="POST">
+          <con:settings/>
+          <con:parameters/>
+          <con:representation type="FAULT">
+            <con:mediaType>application/json; charset=utf-8</con:mediaType>
+            <con:status>404</con:status>
+            <con:params/>
+            <con:element xmlns:sub="http://digisurveyapi.clidiem.com/api/account/api/Account/submitpayment">sub:Fault</con:element>
+          </con:representation>
+          <con:representation type="REQUEST">
+            <con:mediaType>application/json</con:mediaType>
+            <con:params/>
+          </con:representation>
+          <con:request name="Request 1" id="c6ed0758-7ce5-43d2-ac98-87ed9f195920" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint>
+            <con:request>{
+	cardNumber
+	expireDateFormat
+	amount
+	fundamount
+	cvv2
+	FirstName
+	LastName
+	BillingAddress
+	Street
+	City
+	State
+	PostalCode
+	Country
+	EmailId
+	ContactNumber
+	strPaymentType
+	strPetitionId
+	strPetitionUniqueCode
+	PaymentType
+	companyid
+	userid
+	KeyValue
+	accountID
+	secretKey
+	mode
+	accountnumber
+	routingnumber
+	ACHaccounttype
+}</con:request>
+            <con:originalUri>http://digisurveyapi.clidiem.com/api/account/api/Account/submitpayment</con:originalUri>
+            <con:credentials>
+              <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:parameters/>
+          <con:environmentSpec><con:entry environmentId="21c918eb-3b13-42fb-96a8-bb3ebe6d2bc3"><con:authProfile>No Authorization</con:authProfile></con:entry><con:entry environmentId="b2d1e67f-f8d6-4ebb-9fc8-ecd326158ded"><con:authProfile>No Authorization</con:authProfile></con:entry><con:entry environmentId="2b4e7ce8-224f-460c-9f23-ea2d140ff47e"><con:authProfile>No Authorization</con:authProfile></con:entry></con:environmentSpec></con:request>
+        </con:method>
+      </con:resource>
+      <con:resource name="referralcampaign" path="referralcampaign" id="f7bbc2f4-c768-400e-a3d2-be256914059c">
+        <con:settings/>
+        <con:parameters/>
+        <con:method name="Method 1" id="989a766e-4cbf-4628-ab68-3f2ccf11f4f2" method="POST">
+          <con:settings/>
+          <con:parameters/>
+          <con:representation type="FAULT">
+            <con:mediaType>application/json; charset=utf-8</con:mediaType>
+            <con:status>404</con:status>
+            <con:params/>
+            <con:element xmlns:ref="http://digisurveyapi.clidiem.com/api/account/api/Account/referralcampaign">ref:Fault</con:element>
+          </con:representation>
+          <con:representation type="REQUEST">
+            <con:mediaType>application/json</con:mediaType>
+            <con:params/>
+          </con:representation>
+          <con:request name="Request 1" id="cdf6f76e-734e-49ea-84ca-fd26dfe567c3" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint>
+            <con:request>{
+	userloginid
+	emailid
+	webprojects
+}</con:request>
+            <con:originalUri>http://digisurveyapi.clidiem.com/api/account/api/Account/referralcampaign</con:originalUri>
+            <con:credentials>
+              <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:parameters/>
+          <con:environmentSpec><con:entry environmentId="21c918eb-3b13-42fb-96a8-bb3ebe6d2bc3"><con:authProfile>No Authorization</con:authProfile></con:entry><con:entry environmentId="b2d1e67f-f8d6-4ebb-9fc8-ecd326158ded"><con:authProfile>No Authorization</con:authProfile></con:entry><con:entry environmentId="2b4e7ce8-224f-460c-9f23-ea2d140ff47e"><con:authProfile>No Authorization</con:authProfile></con:entry></con:environmentSpec></con:request>
+        </con:method>
+      </con:resource>
+      <con:resource name="GetReferrals" path="GetReferrals" id="0102d2f3-3ac7-4dc7-a7d5-a45be15db90a">
+        <con:settings/>
+        <con:parameters/>
+        <con:method name="Method 1" id="bdc90538-f94b-44cc-9a15-25592fd7359c" method="POST">
+          <con:settings/>
+          <con:parameters/>
+          <con:representation type="FAULT">
+            <con:mediaType>application/json; charset=utf-8</con:mediaType>
+            <con:status>404</con:status>
+            <con:params/>
+            <con:element xmlns:get="http://digisurveyapi.clidiem.com/api/account/api/Account/GetReferrals">get:Fault</con:element>
+          </con:representation>
+          <con:representation type="REQUEST">
+            <con:mediaType>application/json</con:mediaType>
+            <con:params/>
+          </con:representation>
+          <con:request name="Request 1" id="87fb45d9-6b6a-487c-81c5-400aad78bea9" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint>
+            <con:request>{
+	loginid
+	userloginid
+}</con:request>
+            <con:originalUri>http://digisurveyapi.clidiem.com/api/account/api/Account/GetReferrals</con:originalUri>
+            <con:credentials>
+              <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:parameters/>
+          <con:environmentSpec><con:entry environmentId="21c918eb-3b13-42fb-96a8-bb3ebe6d2bc3"><con:authProfile>No Authorization</con:authProfile></con:entry><con:entry environmentId="b2d1e67f-f8d6-4ebb-9fc8-ecd326158ded"><con:authProfile>No Authorization</con:authProfile></con:entry><con:entry environmentId="2b4e7ce8-224f-460c-9f23-ea2d140ff47e"><con:authProfile>No Authorization</con:authProfile></con:entry></con:environmentSpec></con:request>
+        </con:method>
+      </con:resource>
+      <con:resource name="registrationusingfb" path="registrationusingfb" id="53fb0159-bd9e-42e9-a413-6ca5f4539c2c">
+        <con:settings/>
+        <con:parameters/>
+        <con:method name="Method 1" id="f029e455-4d23-4f54-9761-c04df2776624" method="POST">
+          <con:settings/>
+          <con:parameters/>
+          <con:representation type="REQUEST">
+            <con:mediaType>application/json</con:mediaType>
+            <con:params/>
+          </con:representation>
+          <con:representation type="FAULT">
+            <con:mediaType>application/json; charset=utf-8</con:mediaType>
+            <con:status>404</con:status>
+            <con:params/>
+            <con:element xmlns:reg="http://digisurveyapi.clidiem.com/api/account/api/Account/registrationusingfb">reg:Fault</con:element>
+          </con:representation>
+          <con:request name="Request 1" id="f2bc3061-47d7-4257-a4a9-0a87b01108c7" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint>
+            <con:request>{
+	firstName
+	lastName
+	emailId
+	userid
+	password
+	profilepicur fblink
+	ipaddress
+	location
+	browser
+	latitude
+	longitud
+	countryname
+	referralcode
+	KeyValue
+}</con:request>
+            <con:originalUri>http://digisurveyapi.clidiem.com/api/account/api/Account/registrationusingfb</con:originalUri>
+            <con:credentials>
+              <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:parameters/>
+          <con:environmentSpec><con:entry environmentId="21c918eb-3b13-42fb-96a8-bb3ebe6d2bc3"><con:authProfile>No Authorization</con:authProfile></con:entry><con:entry environmentId="b2d1e67f-f8d6-4ebb-9fc8-ecd326158ded"><con:authProfile>No Authorization</con:authProfile></con:entry><con:entry environmentId="2b4e7ce8-224f-460c-9f23-ea2d140ff47e"><con:authProfile>No Authorization</con:authProfile></con:entry></con:environmentSpec></con:request>
+        </con:method>
+      </con:resource>
+      <con:resource name="submitpaymentbywepay" path="submitpaymentbywepay" id="87252808-3dd6-4bf2-b496-aa90a28ff9fc">
+        <con:settings/>
+        <con:parameters/>
+        <con:method name="Method 1" id="22db0996-5a10-4112-8b62-816d43212e79" method="POST">
+          <con:settings/>
+          <con:parameters/>
+          <con:representation type="FAULT">
+            <con:mediaType>application/json; charset=utf-8</con:mediaType>
+            <con:status>404</con:status>
+            <con:params/>
+            <con:element xmlns:sub="http://digisurveyapi.clidiem.com/api/account/api/Account/submitpaymentbywepay">sub:Fault</con:element>
+          </con:representation>
+          <con:representation type="REQUEST">
+            <con:mediaType>application/json</con:mediaType>
+            <con:params/>
+          </con:representation>
+          <con:representation type="RESPONSE"><con:mediaType>application/json; charset=utf-8</con:mediaType><con:status>200</con:status><con:params/><con:element xmlns:sub="http://digisurveyapi.clidiem.com/api/account/api/Account/submitpaymentbywepay">sub:Response</con:element></con:representation><con:request name="Request 1" id="f4bce0df-87d2-4d5f-b283-78223afd107f" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint>
+            <con:request>{
+	InsertPaymentByWePay
+	SubmitZipCode
+	SubmitCountry
+	SubmitCity
+	SubmitState
+	CompanyId
+	PackageId
+	UserId
+	IPAddress
+	Browser
+	Latitude
+	Longitude
+}</con:request>
+            <con:originalUri>http://digisurveyapi.clidiem.com/api/account/api/Account/submitpaymentbywepay</con:originalUri>
+            <con:credentials>
+              <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:parameters/>
+          <con:environmentSpec><con:entry environmentId="21c918eb-3b13-42fb-96a8-bb3ebe6d2bc3"><con:authProfile>No Authorization</con:authProfile></con:entry><con:entry environmentId="b2d1e67f-f8d6-4ebb-9fc8-ecd326158ded"><con:authProfile>No Authorization</con:authProfile></con:entry><con:entry environmentId="2b4e7ce8-224f-460c-9f23-ea2d140ff47e"><con:authProfile>No Authorization</con:authProfile></con:entry></con:environmentSpec></con:request>
+        </con:method>
+      </con:resource>
+      <con:resource name="updatewepaypaymentstatus" path="updatewepaypaymentstatus" id="102aa972-14e4-4704-9554-6882dfd85e3a">
+        <con:settings/>
+        <con:parameters/>
+        <con:method name="Method 1" id="a04df003-922b-405a-96ee-bcba6258de8a" method="POST">
+          <con:settings/>
+          <con:parameters/>
+          <con:representation type="FAULT">
+            <con:mediaType>application/json; charset=utf-8</con:mediaType>
+            <con:status>404</con:status>
+            <con:params/>
+            <con:element xmlns:upd="http://digisurveyapi.clidiem.com/api/account/api/Account/updatewepaypaymentstatus">upd:Fault</con:element>
+          </con:representation>
+          <con:representation type="REQUEST">
+            <con:mediaType>application/json</con:mediaType>
+            <con:params/>
+          </con:representation>
+          <con:representation type="RESPONSE"><con:mediaType>application/json; charset=utf-8</con:mediaType><con:status>200</con:status><con:params/><con:element xmlns:upd="http://digisurveyapi.clidiem.com/api/account/api/Account/updatewepaypaymentstatus">upd:Response</con:element></con:representation><con:request name="Request 1" id="9398a003-5f56-47a8-9fef-329356506253" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint>
+            <con:request>{
+	userid
+	companyid
+	creditpaymentid
+	paymenttransactionid
+	transactionid
+	amount
+	paymentstate
+	message
+}</con:request>
+            <con:originalUri>http://digisurveyapi.clidiem.com/api/account/api/Account/updatewepaypaymentstatus</con:originalUri>
+            <con:credentials>
+              <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:parameters/>
+          <con:environmentSpec><con:entry environmentId="21c918eb-3b13-42fb-96a8-bb3ebe6d2bc3"><con:authProfile>No Authorization</con:authProfile></con:entry><con:entry environmentId="b2d1e67f-f8d6-4ebb-9fc8-ecd326158ded"><con:authProfile>No Authorization</con:authProfile></con:entry><con:entry environmentId="2b4e7ce8-224f-460c-9f23-ea2d140ff47e"><con:authProfile>No Authorization</con:authProfile></con:entry></con:environmentSpec></con:request>
+        </con:method>
+      </con:resource>
+      <con:method name="Account" id="5909edac-6743-4441-9632-8b93f4468564" method="POST">
+        <con:settings/>
+        <con:parameters/>
+        <con:representation type="FAULT">
+          <con:mediaType>text/html</con:mediaType>
+          <con:status>404</con:status>
+          <con:params/>
+          <con:element xmlns:xht="http://www.w3.org/1999/xhtml">xht:html</con:element>
+        </con:representation>
+        <con:representation type="REQUEST">
+          <con:mediaType>application/json</con:mediaType>
+          <con:params/>
+        </con:representation>
+        <con:request name="Request 1" id="2e0f493a-11d3-4705-9650-8115d5178015" mediaType="application/json" postQueryString="false">
+          <con:settings>
+            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+          </con:settings>
+          <con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint>
+          <con:request/>
+          <con:originalUri>http://digisurveyapi.clidiem.com/api/Account</con:originalUri>
+          <con:credentials>
+            <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+            <con:authType>No Authorization</con:authType>
+          </con:credentials>
+          <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+          <con:parameters/>
+        <con:environmentSpec><con:entry environmentId="21c918eb-3b13-42fb-96a8-bb3ebe6d2bc3"><con:authProfile>No Authorization</con:authProfile></con:entry><con:entry environmentId="b2d1e67f-f8d6-4ebb-9fc8-ecd326158ded"><con:authProfile>No Authorization</con:authProfile></con:entry><con:entry environmentId="2b4e7ce8-224f-460c-9f23-ea2d140ff47e"><con:authProfile>No Authorization</con:authProfile></con:entry></con:environmentSpec></con:request>
+      </con:method>
+    </con:resource>

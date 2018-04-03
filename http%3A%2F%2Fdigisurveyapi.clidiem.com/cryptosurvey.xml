@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="cryptosurvey" path="/cryptosurvey/" id="1ff1eac6-d0b9-4926-b230-8249b515387e" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+      <con:settings><con:setting id="1ff1eac6-d0b9-4926-b230-8249b515387efileName">cryptosurvey</con:setting></con:settings>
+      <con:parameters/>
+      <con:resource name="acceptinglanguages" path="acceptinglanguages" id="8d2c0b9f-ea53-4b82-ae5b-d1aa54899c38">
+        <con:settings/>
+        <con:parameters/>
+        <con:method name="Method 1" id="f52f6694-46f2-49fc-85dd-0578067fe2ff" method="POST">
+          <con:settings/>
+          <con:parameters/>
+          <con:representation type="RESPONSE">
+            <con:mediaType>application/json; charset=utf-8</con:mediaType>
+            <con:status>200</con:status>
+            <con:params/>
+            <con:element>Response</con:element>
+          </con:representation>
+          <con:representation type="REQUEST">
+            <con:mediaType>application/json</con:mediaType>
+            <con:params/>
+          </con:representation>
+          <con:request name="Request 1" id="22974a0b-38ef-40fb-bc3a-4cbb4cb310fe" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint>
+            <con:request>{
+        apikey: "IkGfw3IkqbHxYfrpPBuUYoZ36DcB08Q2rR5A4Q0HUMQ=",
+        accountid: "91897177",
+       
+}</con:request>
+            <con:originalUri>http://digisurveyapi.clidiem.com/cryptosurvey/acceptinglanguages</con:originalUri>
+            <con:credentials>
+              <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:parameters/>
+          <con:environmentSpec><con:entry environmentId="21c918eb-3b13-42fb-96a8-bb3ebe6d2bc3"><con:authProfile>No Authorization</con:authProfile></con:entry><con:entry environmentId="b2d1e67f-f8d6-4ebb-9fc8-ecd326158ded"><con:authProfile>No Authorization</con:authProfile></con:entry><con:entry environmentId="2b4e7ce8-224f-460c-9f23-ea2d140ff47e"><con:authProfile>No Authorization</con:authProfile></con:entry></con:environmentSpec></con:request>
+        </con:method>
+      </con:resource>
+      <con:resource name="listofsurveys" path="listofsurveys" id="2084335f-409b-448a-a8b5-080eae4e9f07">
+        <con:settings/>
+        <con:parameters/>
+        <con:method name="Method 1" id="7de9aaef-adbc-4438-8f0d-fcd63b35a828" method="POST">
+          <con:settings/>
+          <con:parameters/>
+          <con:request name="Request 1" id="8dd6610e-e2d9-4dc8-9401-d062b855ad1f" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint>
+            <con:request>{
+        apikey: "IkGfw3IkqbHxYfrpPBuUYoZ36DcB08Q2rR5A4Q0HUMQ=",
+        accountid: "91897177",
+ }</con:request>
+            <con:credentials>
+              <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:parameters/>
+          <con:environmentSpec><con:entry environmentId="21c918eb-3b13-42fb-96a8-bb3ebe6d2bc3"><con:authProfile>No Authorization</con:authProfile></con:entry><con:entry environmentId="b2d1e67f-f8d6-4ebb-9fc8-ecd326158ded"><con:authProfile>No Authorization</con:authProfile></con:entry><con:entry environmentId="2b4e7ce8-224f-460c-9f23-ea2d140ff47e"><con:authProfile>No Authorization</con:authProfile></con:entry></con:environmentSpec></con:request>
+        </con:method>
+      </con:resource>
+      <con:resource name="surveyresponses" path="surveyresponses" id="0dde6959-0c75-456f-9ee3-6f933140503a">
+        <con:settings/>
+        <con:parameters/>
+        <con:method name="Method 1" id="beacc15e-aa14-48ae-856b-4cc1daaa9f56" method="POST">
+          <con:settings/>
+          <con:parameters/>
+          <con:representation type="RESPONSE">
+            <con:mediaType>application/json; charset=utf-8</con:mediaType>
+            <con:status>200</con:status>
+            <con:params/>
+            <con:element>Response</con:element>
+          </con:representation>
+          <con:representation type="REQUEST">
+            <con:mediaType>application/json</con:mediaType>
+            <con:params/>
+          </con:representation>
+          <con:request name="Request 1" id="19bdbde2-185b-4f69-9abf-8d93dd3913fd" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint>
+            <con:request>{
+        apikey: "IkGfw3IkqbHxYfrpPBuUYoZ36DcB08Q2rR5A4Q0HUMQ=",
+        accountid: "91897177",
+        surveyid: "KrQa-Zwzf6d5RYM4784How==",
+        submitteddate: "",//optional
+        submittedlocation: "",//optional city/state/country/zipcode
+        submittedlanguage: ""//optional
+}</con:request>
+            <con:originalUri>http://digisurveyapi.clidiem.com/cryptosurvey/surveyresponses</con:originalUri>
+            <con:credentials>
+              <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:parameters/>
+          <con:environmentSpec><con:entry environmentId="21c918eb-3b13-42fb-96a8-bb3ebe6d2bc3"><con:authProfile>No Authorization</con:authProfile></con:entry><con:entry environmentId="b2d1e67f-f8d6-4ebb-9fc8-ecd326158ded"><con:authProfile>No Authorization</con:authProfile></con:entry><con:entry environmentId="2b4e7ce8-224f-460c-9f23-ea2d140ff47e"><con:authProfile>No Authorization</con:authProfile></con:entry></con:environmentSpec></con:request>
+        </con:method>
+      </con:resource>
+      <con:method name="Method 1" id="f9a2cd17-5abe-43bc-bcce-3db72efe2703" method="GET">
+        <con:settings/>
+        <con:parameters/>
+        <con:request name="Request 1" id="6e0e5102-0baf-47d2-9a75-3b4c06b5c4c0" mediaType="application/json">
+          <con:settings/>
+          <con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint>
+          <con:request/>
+          <con:credentials>
+            <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+            <con:authType>No Authorization</con:authType>
+          </con:credentials>
+          <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+          <con:parameters/>
+        <con:environmentSpec><con:entry environmentId="21c918eb-3b13-42fb-96a8-bb3ebe6d2bc3"><con:authProfile>No Authorization</con:authProfile></con:entry><con:entry environmentId="b2d1e67f-f8d6-4ebb-9fc8-ecd326158ded"><con:authProfile>No Authorization</con:authProfile></con:entry><con:entry environmentId="2b4e7ce8-224f-460c-9f23-ea2d140ff47e"><con:authProfile>No Authorization</con:authProfile></con:entry></con:environmentSpec></con:request>
+      </con:method>
+    </con:resource>

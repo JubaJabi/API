@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="98bc5eaa-1424-4b51-a1fc-3a902e07e954" failOnError="false" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="APi Details" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword="" xmlns:con="http://eviware.com/soapui/config">
+      <con:settings><con:setting id="98bc5eaa-1424-4b51-a1fc-3a902e07e954fileName">APi-Details</con:setting></con:settings>
+      <con:savedRecentRuns>1</con:savedRecentRuns>
+      
+      
+      
+      
+      
+      
+      <con:properties/>
+      <con:reportParameters/>
+      <con:breakPoints>
+        <con:testStepId>64405c7b-28d4-4c2b-8c9b-d0a8d51590a7</con:testStepId>
+        <con:status>NONE</con:status>
+        <con:properties/>
+      </con:breakPoints>
+    <con:breakPoints><con:testStepId>3159e373-50c2-4f50-977a-8dbf7ab80150</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints><con:breakPoints><con:testStepId>37c0c0ff-a5c1-4b4c-9300-8313d104085d</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints><con:breakPoints><con:testStepId>71606d30-12f9-4c44-af70-43bdd696c157</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints><con:breakPoints><con:testStepId>05f04481-74e0-4125-9861-40f9263663ce</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints><con:breakPoints><con:testStepId>9d8906a0-de91-4fe0-abb8-4967f5c5ac53</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints><con:breakPoints><con:testStepId>c81c89d1-fcd4-4b20-84f2-7f87ba565728</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints><con:breakPoints><con:testStepId>9e63260f-d344-40d1-ab4a-1114fd03ab48</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints></con:testCase>

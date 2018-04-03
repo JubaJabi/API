@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="9b1f43a6-7cc5-4666-984a-394de08cc851" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="checkfbaccountandpublicprofileexistornot" searchProperties="true" timeout="0" disabled="true" maxResults="0" xmlns:con="http://eviware.com/soapui/config">
+      <con:settings><con:setting id="9b1f43a6-7cc5-4666-984a-394de08cc851fileName">checkfbaccountandpublicprofileexistornot</con:setting></con:settings>
+      <con:savedRecentRuns>1</con:savedRecentRuns>
+      <con:testStep type="restrequest" name="Method 1 - Request 1" id="b495a5e1-d098-4168-ae90-26bd4e758610">
+        <con:settings/>
+        <con:config service="http://digisurveyapi.clidiem.com" resourcePath="/api/account/checkfbaccountandpublicprofileexistsornot" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="Method 1 - Request 1" id="ddd3b31b-7ec6-4b08-8e1b-7dd8342ba128" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="${#Project#Token}" xmlns="http://eviware.com/soapui/config"/></con:setting>
+            </con:settings>
+            <con:endpoint>${#Project#EndPoint}</con:endpoint>
+            <con:request>{
+	strloginid
+	userloginid
+}</con:request>
+            <con:originalUri>http://digisurveyapi.clidiem.com/api/Account/checkfbaccountandpublicprofileexistsornot</con:originalUri>
+            <con:credentials>
+              <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:parameters/>
+            <con:parameterOrder/>
+          <con:environmentSpec><con:entry environmentId="21c918eb-3b13-42fb-96a8-bb3ebe6d2bc3"><con:authProfile>No Authorization</con:authProfile></con:entry><con:entry environmentId="b2d1e67f-f8d6-4ebb-9fc8-ecd326158ded"><con:authProfile>No Authorization</con:authProfile></con:entry><con:entry environmentId="2b4e7ce8-224f-460c-9f23-ea2d140ff47e"><con:authProfile>No Authorization</con:authProfile></con:entry></con:environmentSpec></con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:properties/>
+      <con:reportParameters/>
+    </con:testCase>

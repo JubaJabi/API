@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="f575463c-3249-401e-824f-893dd38cdc9a" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="CompanyRelated" searchProperties="true" timeout="0" maxResults="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword="" xmlns:con="http://eviware.com/soapui/config">
+      <con:settings><con:setting id="f575463c-3249-401e-824f-893dd38cdc9afileName">CompanyRelated</con:setting></con:settings>
+      <con:savedRecentRuns>1</con:savedRecentRuns>
+      <con:testStep type="restrequest" name="GetSurvyeStatusCompanyDashboard" id="128f0d47-3d70-4f8b-932c-cbb69330258f">
+        <con:settings/>
+        <con:config service="http://digisurveyapi.clidiem.com" resourcePath="/api/company/getsurveystatusinfocompanydashpanel" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="GetSurvyeStatusCompanyDashboard" id="486adf7d-2717-420a-8aa0-bac030f10285" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="${#Project#access_token}" xmlns="http://eviware.com/soapui/config"/></con:setting>
+            </con:settings>
+            <con:endpoint>${#Project#EndPoint}</con:endpoint>
+            <con:request>{
+	CompanyId: "${#Project#EncryptedCompanyId}",
+	UserLoginId: "${#Project#EncryptedLoginID}"
+}</con:request>
+            <con:originalUri>http://digisurveyapi.clidiem.com/api/company/getsurveystatusinfocompanydashpanel</con:originalUri>
+            <con:assertion type="Valid HTTP Status Codes" id="93f322f0-b2c7-4f78-8c64-967a44eb28d4" name="Valid HTTP Status Codes">
+              <con:settings/>
+              <con:configuration>
+                <codes>200</codes>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="32fef942-45aa-4536-b180-5d491734294a" name="AllSurveyCount">
+              <con:configuration>
+                <path>$['AllCrowdFunds']</path>
+                <content>*</content>
+                <allowWildcards>true</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:credentials>
+              <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:parameters/>
+          <con:environmentSpec><con:entry environmentId="21c918eb-3b13-42fb-96a8-bb3ebe6d2bc3"><con:authProfile>No Authorization</con:authProfile></con:entry><con:entry environmentId="b2d1e67f-f8d6-4ebb-9fc8-ecd326158ded"><con:authProfile>No Authorization</con:authProfile></con:entry><con:entry environmentId="2b4e7ce8-224f-460c-9f23-ea2d140ff47e"><con:authProfile>No Authorization</con:authProfile></con:entry></con:environmentSpec></con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="restrequest" name="GetCompanyProfiledetails" id="188c11b3-a52c-457d-b8a5-c79ee7758938">
+        <con:settings/>
+        <con:config service="http://digisurveyapi.clidiem.com" resourcePath="/api/company/getcompanyprofiledetails" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="GetCompanyProfiledetails" id="e8006a03-c800-4eff-8f2c-3791f116e932" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="${#Project#access_token}" xmlns="http://eviware.com/soapui/config"/></con:setting>
+            </con:settings>
+            <con:endpoint>${#Project#EndPoint}</con:endpoint>
+            <con:request>{
+	
+	Companyid: "${#Project#EncryptedCompanyId}"
+
+}</con:request>
+            <con:originalUri>http://digisurveyapi.clidiem.com/api/company/getcompanyprofiledetails</con:originalUri>
+            <con:assertion type="Valid HTTP Status Codes" id="df2d2616-ede4-406b-8989-a06269996bcd" name="Valid HTTP Status Codes">
+              <con:settings/>
+              <con:configuration>
+                <codes>200</codes>
+              </con:configuration>
+            </con:assertion>
+            <con:credentials>
+              <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:parameters/>
+          <con:environmentSpec><con:entry environmentId="21c918eb-3b13-42fb-96a8-bb3ebe6d2bc3"><con:authProfile>No Authorization</con:authProfile></con:entry><con:entry environmentId="b2d1e67f-f8d6-4ebb-9fc8-ecd326158ded"><con:authProfile>No Authorization</con:authProfile></con:entry><con:entry environmentId="2b4e7ce8-224f-460c-9f23-ea2d140ff47e"><con:authProfile>No Authorization</con:authProfile></con:entry></con:environmentSpec></con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="restrequest" name="GetCompanyList" id="90fb0b8b-12ca-4e08-a0df-e6881311c10c">
+        <con:settings/>
+        <con:config service="http://digisurveyapi.clidiem.com" resourcePath="/api/ClidiemUser/getcompanieslist/{filter}" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="GetCompanyList" id="eeec1513-1a7b-4243-a7a0-80bca868348f" mediaType="application/json">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="${#Project#Token}" xmlns="http://eviware.com/soapui/config"/></con:setting>
+            </con:settings>
+            <con:endpoint>${#Project#EndPoint}</con:endpoint>
+            <con:request/>
+            <con:originalUri>http://digisurveyapi.clidiem.com/api/ClidiemUser/getcompanieslist</con:originalUri>
+            <con:assertion type="Valid HTTP Status Codes" id="ec59285f-deeb-4a92-8567-6cb8c094748c" name="Valid HTTP Status Codes">
+              <con:settings/>
+              <con:configuration>
+                <codes>200</codes>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="Simple Contains" id="58d38a8c-d59d-4fc5-83b7-de9ec9a694cd" name="Contains">
+              <con:configuration>
+                <token/>
+                <ignoreCase>false</ignoreCase>
+                <useRegEx>false</useRegEx>
+              </con:configuration>
+            </con:assertion>
+            <con:credentials>
+              <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:jmsPropertyConfig/>
+            <con:parameters>
+              <entry key="filter" value="1" xmlns="http://eviware.com/soapui/config"/>
+            </con:parameters>
+            <con:parameterOrder>
+              <con:entry>filter</con:entry>
+            </con:parameterOrder>
+          <con:environmentSpec><con:entry environmentId="21c918eb-3b13-42fb-96a8-bb3ebe6d2bc3"><con:authProfile>No Authorization</con:authProfile></con:entry><con:entry environmentId="b2d1e67f-f8d6-4ebb-9fc8-ecd326158ded"><con:authProfile>No Authorization</con:authProfile></con:entry><con:entry environmentId="2b4e7ce8-224f-460c-9f23-ea2d140ff47e"><con:authProfile>No Authorization</con:authProfile></con:entry></con:environmentSpec></con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="restrequest" name="CompanyList-Request" id="fdc5daf6-9d4b-4509-8547-26a74057045e">
+        <con:settings/>
+        <con:config service="http://digisurveyapi.clidiem.com" resourcePath="/api/ClidiemUser/getcompanieslist/{filter}" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="CompanyList-Request" id="eeec1513-1a7b-4243-a7a0-80bca868348f" mediaType="application/json">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="${#Project#access_token}" xmlns="http://eviware.com/soapui/config"/></con:setting>
+            </con:settings>
+            <con:endpoint>${#Project#EndPoint}</con:endpoint>
+            <con:request/>
+            <con:originalUri>http://digisurveyapi.clidiem.com/api/ClidiemUser/getcompanieslist</con:originalUri>
+            <con:assertion type="Valid HTTP Status Codes" id="ec59285f-deeb-4a92-8567-6cb8c094748c" name="Valid HTTP Status Codes">
+              <con:settings/>
+              <con:configuration>
+                <codes>200</codes>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="Simple Contains" id="58d38a8c-d59d-4fc5-83b7-de9ec9a694cd" name="Contains">
+              <con:configuration>
+                <token/>
+                <ignoreCase>false</ignoreCase>
+                <useRegEx>false</useRegEx>
+              </con:configuration>
+            </con:assertion>
+            <con:credentials>
+              <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:jmsPropertyConfig/>
+            <con:parameters>
+              <entry key="filter" value="1" xmlns="http://eviware.com/soapui/config"/>
+            </con:parameters>
+            <con:parameterOrder>
+              <con:entry>filter</con:entry>
+            </con:parameterOrder>
+          <con:environmentSpec><con:entry environmentId="21c918eb-3b13-42fb-96a8-bb3ebe6d2bc3"><con:authProfile>No Authorization</con:authProfile></con:entry><con:entry environmentId="b2d1e67f-f8d6-4ebb-9fc8-ecd326158ded"><con:authProfile>No Authorization</con:authProfile></con:entry><con:entry environmentId="2b4e7ce8-224f-460c-9f23-ea2d140ff47e"><con:authProfile>No Authorization</con:authProfile></con:entry></con:environmentSpec></con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:properties/>
+      <con:reportParameters/>
+    </con:testCase>

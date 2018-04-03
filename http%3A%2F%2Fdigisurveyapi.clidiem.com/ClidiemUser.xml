@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="ClidiemUser" path="/api/ClidiemUser/" id="ff3b813e-c448-47fe-9511-c64c41380298" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+      <con:settings><con:setting id="ff3b813e-c448-47fe-9511-c64c41380298fileName">ClidiemUser</con:setting></con:settings>
+      <con:parameters/>
+      <con:resource name="getcompanieslist" path="getcompanieslist/{filter}" id="d17a1dcd-6973-47ab-bc72-65cdc9e5af0a">
+        <con:settings/>
+        <con:parameters>
+          <con:parameter>
+            <con:name>filter</con:name>
+            <con:value>1</con:value>
+            <con:style>TEMPLATE</con:style>
+            <con:default>1</con:default>
+          </con:parameter>
+        </con:parameters>
+        <con:method name="Method 1" id="12f487cd-5772-4539-b38d-ecaf191dc781" method="GET">
+          <con:settings/>
+          <con:parameters/>
+          <con:representation type="FAULT">
+            <con:mediaType>application/json; charset=utf-8</con:mediaType>
+            <con:status>401</con:status>
+            <con:params/>
+            <con:element xmlns:get="http://digisurveyapi.clidiem.com/api/ClidiemUser/getcompanieslist">get:Fault</con:element>
+          </con:representation>
+          <con:representation type="RESPONSE">
+            <con:mediaType>application/json; charset=utf-8</con:mediaType>
+            <con:status>200</con:status>
+            <con:params/>
+            <con:element>Response</con:element>
+          </con:representation>
+          <con:request name="Request 1" id="21980950-5bff-4b79-89ff-f2b93fb84f47" mediaType="application/json">
+            <con:settings/>
+            <con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint>
+            <con:request/>
+            <con:credentials>
+              <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:parameters/>
+            <con:parameterOrder>
+              <con:entry>filter</con:entry>
+            </con:parameterOrder>
+          <con:environmentSpec><con:entry environmentId="21c918eb-3b13-42fb-96a8-bb3ebe6d2bc3"><con:authProfile>No Authorization</con:authProfile></con:entry><con:entry environmentId="b2d1e67f-f8d6-4ebb-9fc8-ecd326158ded"><con:authProfile>No Authorization</con:authProfile></con:entry><con:entry environmentId="2b4e7ce8-224f-460c-9f23-ea2d140ff47e"><con:authProfile>No Authorization</con:authProfile></con:entry></con:environmentSpec></con:request>
+        </con:method>
+      </con:resource>
+      <con:method name="Method 1" id="5890f7b1-31da-4967-8de6-9b929716402d" method="GET">
+        <con:settings/>
+        <con:parameters/>
+        <con:request name="Request 1" id="3fe8e4d6-0dbb-4780-bd7a-7b2641597635" mediaType="application/json">
+          <con:settings/>
+          <con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint>
+          <con:request/>
+          <con:credentials>
+            <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType>
+          </con:credentials>
+          <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+          <con:parameters/>
+        <con:environmentSpec><con:entry environmentId="21c918eb-3b13-42fb-96a8-bb3ebe6d2bc3"><con:authProfile>No Authorization</con:authProfile></con:entry><con:entry environmentId="b2d1e67f-f8d6-4ebb-9fc8-ecd326158ded"><con:authProfile>No Authorization</con:authProfile></con:entry><con:entry environmentId="2b4e7ce8-224f-460c-9f23-ea2d140ff47e"><con:authProfile>No Authorization</con:authProfile></con:entry></con:environmentSpec></con:request>
+      </con:method>
+    </con:resource>

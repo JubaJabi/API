@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="52c18847-0599-47a5-8f6d-35182c2798c8" discardOkResults="true" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="GetDefaultRolePermissions" searchProperties="true" timeout="0" maxResults="0" xmlns:con="http://eviware.com/soapui/config">
+      <con:settings><con:setting id="52c18847-0599-47a5-8f6d-35182c2798c8fileName">GetDefaultRolePermissions</con:setting></con:settings>
+      <con:savedRecentRuns>1</con:savedRecentRuns>
+      <con:testStep type="restrequest" name="GetDefaultRoles" id="394e91a6-7bdf-49fd-95a9-76f89887beac">
+        <con:settings/>
+        <con:config service="http://digisurveyapi.clidiem.com" resourcePath="/api/role/getdefaultroles" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="GetDefaultRoles" id="8855105c-fac4-42a4-8053-99f5d246c8e5" mediaType="application/json">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="${#Project#access_token}" xmlns="http://eviware.com/soapui/config"/></con:setting>
+            </con:settings>
+            <con:endpoint>${#Project#EndPoint}</con:endpoint>
+            <con:request/>
+            <con:originalUri>http://digisurveyapi.clidiem.com/api/Role/getdefaultroles</con:originalUri>
+            <con:assertion type="Simple Contains" id="29f4f10a-8cb1-420c-9e9c-e9762e0279a5" name="Administrator"><con:configuration><token>Administrator</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:assertion type="Valid HTTP Status Codes" id="1b321ec6-68a3-4903-96ec-3d94bf619f0e" name="Valid HTTP Status Codes"><con:settings/><con:configuration><codes>200</codes></con:configuration></con:assertion><con:assertion type="Simple Contains" id="d9937de4-5c41-4da2-9537-abf9ee26b11d" name="Manager"><con:configuration><token>Manager</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:assertion type="Simple Contains" id="072129e8-7d86-4df5-b40e-caae2e5cd6a1" name="Employee"><con:configuration><token>Employee</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials>
+              <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:parameters/>
+          <con:environmentSpec><con:entry environmentId="21c918eb-3b13-42fb-96a8-bb3ebe6d2bc3"><con:authProfile>No Authorization</con:authProfile></con:entry><con:entry environmentId="b2d1e67f-f8d6-4ebb-9fc8-ecd326158ded"><con:authProfile>No Authorization</con:authProfile></con:entry><con:entry environmentId="2b4e7ce8-224f-460c-9f23-ea2d140ff47e"><con:authProfile>No Authorization</con:authProfile></con:entry></con:environmentSpec></con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="restrequest" name="GetDefaultRolePermissions" id="7b3d7465-d77b-4f61-8479-1f9cddc3c118">
+        <con:settings/>
+        <con:config service="http://digisurveyapi.clidiem.com" resourcePath="/api/role/getdefaultrolepermissions" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="GetDefaultRolePermissions" id="57fc016c-02a8-4519-9d60-d513dca701b9" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="${#Project#access_token}" xmlns="http://eviware.com/soapui/config"/></con:setting>
+            </con:settings>
+            <con:endpoint>${#Project#EndPoint}</con:endpoint>
+            <con:request>{
+
+
+	DefaultRoleId: "LP41ptSX%20yrmOXN8k3mbow==", 
+	CompanyRoleId: "hnI6On-WvQEIFFt-p90Thw==", 
+	ProductId: "${#Project#Comp_WebProjectId}"
+}
+
+
+//DefaultRoleId: 
+//CompanyRoleId: 
+
+//DefaultRoleId: "${#Project#EncryptedDefaultRoleId}", 
+//	CompanyRoleId: "${#Project#EncryptedCompanyRoleId}", 
+//	ProductId: "${#Project#Comp_WebProjectId}"</con:request>
+            <con:originalUri>http://cryptosurveystaging.clidiem.com/api/Role/getdefaultrolepermissions</con:originalUri>
+            <con:credentials>
+              <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:parameters/>
+            <con:parameterOrder/>
+          <con:environmentSpec><con:entry environmentId="21c918eb-3b13-42fb-96a8-bb3ebe6d2bc3"><con:authProfile>No Authorization</con:authProfile></con:entry><con:entry environmentId="b2d1e67f-f8d6-4ebb-9fc8-ecd326158ded"><con:authProfile>No Authorization</con:authProfile></con:entry><con:entry environmentId="2b4e7ce8-224f-460c-9f23-ea2d140ff47e"><con:authProfile>No Authorization</con:authProfile></con:entry></con:environmentSpec></con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="restrequest" name="GetRolelist" id="036ab43e-10c7-4a12-87a4-69b978ef8e9e"><con:settings/><con:config service="http://digisurveyapi.clidiem.com" resourcePath="/api/role/getroleslist" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="GetRolelist" id="3e071e4d-ec7a-4546-81f6-90922b780cb6" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="${#Project#access_token}" xmlns="http://eviware.com/soapui/config"/></con:setting></con:settings><con:endpoint>${#Project#Endpoint}</con:endpoint><con:request>{
+"CompanyId":"${#Project#EncryptedCompanyId}"
+}</con:request><con:originalUri>http://cryptosurveystaging.clidiem.com/api/Role/getroleslist</con:originalUri><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/><con:parameterOrder><con:entry>companyId</con:entry></con:parameterOrder><con:environmentSpec><con:entry environmentId="21c918eb-3b13-42fb-96a8-bb3ebe6d2bc3"><con:authProfile>No Authorization</con:authProfile></con:entry><con:entry environmentId="b2d1e67f-f8d6-4ebb-9fc8-ecd326158ded"><con:authProfile>No Authorization</con:authProfile></con:entry><con:entry environmentId="2b4e7ce8-224f-460c-9f23-ea2d140ff47e"><con:authProfile>No Authorization</con:authProfile></con:entry></con:environmentSpec></con:restRequest></con:config></con:testStep><con:testStep type="restrequest" name="SaveCompanyRole" id="24da2848-8fc5-479f-9a82-fca14e1ce743"><con:settings/><con:config service="http://digisurveyapi.clidiem.com" resourcePath="/api/role/savecompanyrole" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="SaveCompanyRole" id="fbbe93a8-1d91-4854-a536-38d378f139d5" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="${#Project#access_token}" xmlns="http://eviware.com/soapui/config"/></con:setting></con:settings><con:endpoint>${#Project#Endpoint}</con:endpoint><con:request> {
+ 	"RoleName": "gfdhrdghtfg",
+"RoleAs": "2",
+"CompanyId": "${#Project#EncryptedCompanyId}",
+"CreatedBy": "IdnyAenEspIV5Ek/mWSyyg=="
+ }
+</con:request><con:originalUri>http://cryptosurveystaging.clidiem.com/api/Role/savecompanyrole</con:originalUri><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/><con:parameterOrder><con:entry>roleName</con:entry><con:entry>companyId</con:entry><con:entry>roleAs</con:entry><con:entry>createdBy</con:entry></con:parameterOrder><con:environmentSpec><con:entry environmentId="21c918eb-3b13-42fb-96a8-bb3ebe6d2bc3"><con:authProfile>No Authorization</con:authProfile></con:entry><con:entry environmentId="b2d1e67f-f8d6-4ebb-9fc8-ecd326158ded"><con:authProfile>No Authorization</con:authProfile></con:entry><con:entry environmentId="2b4e7ce8-224f-460c-9f23-ea2d140ff47e"><con:authProfile>No Authorization</con:authProfile></con:entry></con:environmentSpec></con:restRequest></con:config></con:testStep><con:testStep type="restrequest" name="UpdateCompanyRolesDetails" id="fd2286b0-0318-4e44-9305-1b2663bd5753"><con:settings/><con:config service="http://digisurveyapi.clidiem.com" resourcePath="/api/role/updatecompanyrolesdetails" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="UpdateCompanyRolesDetails" id="e7b6f559-65ed-444b-9080-cc2d2a7bbbad" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="${#Project#access_token}" xmlns="http://eviware.com/soapui/config"/></con:setting></con:settings><con:endpoint>${#Project#Endpoint}</con:endpoint><con:request>
+{
+	"roleId":"${#Project#roleId}",
+	"rolename":"${#Project#rolename}", 
+	"companyid":"${#Project#EncryptedCompanyId}", 
+	"modifiedBy":"${#Project#modifiedBy}"
+
+}
+</con:request><con:originalUri>http://digisurveyapi.clidiem.com/api/Role/updatecompanyrolesdetails</con:originalUri><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/><con:parameterOrder><con:entry>roleId</con:entry><con:entry>rolename</con:entry><con:entry>companyId</con:entry><con:entry>modifiedBy</con:entry></con:parameterOrder><con:environmentSpec><con:entry environmentId="21c918eb-3b13-42fb-96a8-bb3ebe6d2bc3"><con:authProfile>No Authorization</con:authProfile></con:entry><con:entry environmentId="b2d1e67f-f8d6-4ebb-9fc8-ecd326158ded"><con:authProfile>No Authorization</con:authProfile></con:entry><con:entry environmentId="2b4e7ce8-224f-460c-9f23-ea2d140ff47e"><con:authProfile>No Authorization</con:authProfile></con:entry></con:environmentSpec></con:restRequest></con:config></con:testStep><con:testStep type="restrequest" name="UpdateCompanyRolesPermissions" id="71274d53-31d6-4b8e-a7a1-fcb514cf1eff"><con:settings/><con:config service="http://digisurveyapi.clidiem.com" resourcePath="/api/role/updatecompanyrolepermissions" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="UpdateCompanyRolesPermissions" id="82098fd6-f36b-4e00-a739-7bca9d93d615" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="${#Project#access_token}" xmlns="http://eviware.com/soapui/config"/></con:setting></con:settings><con:endpoint>${#Project#Endpoint}</con:endpoint><con:request>{
+	"RoleId": "4do2nYi6zFbfCSX9bLTZiw==",
+"Permissions": "13,16,17,1,24,22,4,29,23,25,26,27,18,11,6,5,2,7,8",
+"ModifiedBy": "IdnyAenEspIV5Ek/mWSyyg=="
+}
+</con:request><con:originalUri>http://digisurveyapi.clidiem.com/api/Role/updatecompanyrolepermissions</con:originalUri><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/><con:parameterOrder><con:entry>roleId</con:entry><con:entry>permissions</con:entry><con:entry>modifiedBy</con:entry></con:parameterOrder><con:environmentSpec><con:entry environmentId="21c918eb-3b13-42fb-96a8-bb3ebe6d2bc3"><con:authProfile>No Authorization</con:authProfile></con:entry><con:entry environmentId="b2d1e67f-f8d6-4ebb-9fc8-ecd326158ded"><con:authProfile>No Authorization</con:authProfile></con:entry><con:entry environmentId="2b4e7ce8-224f-460c-9f23-ea2d140ff47e"><con:authProfile>No Authorization</con:authProfile></con:entry></con:environmentSpec></con:restRequest></con:config></con:testStep><con:testStep type="restrequest" name="GetRoleslist" id="08162c85-d733-480a-9200-bd832b8dc7c2">
+        <con:settings/>
+        <con:config service="http://digisurveyapi.clidiem.com" resourcePath="/api/role/getroleslist" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="GetRoleslist" id="3e071e4d-ec7a-4546-81f6-90922b780cb6" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="${#Project#access_token}" xmlns="http://eviware.com/soapui/config"/></con:setting>
+            </con:settings>
+            <con:endpoint>${#Project#EndPoint}</con:endpoint>
+            <con:request>{
+
+	companyId:"${#[Setup#TokenGeneration#Token]#Response#$['EncryptedCompanyId']}"
+}</con:request>
+            <con:originalUri>http://digisurveyapi.clidiem.com/api/Role/getroleslist</con:originalUri>
+            <con:credentials>
+              <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:parameters/>
+            <con:parameterOrder/>
+          <con:environmentSpec><con:entry environmentId="21c918eb-3b13-42fb-96a8-bb3ebe6d2bc3"><con:authProfile>No Authorization</con:authProfile></con:entry><con:entry environmentId="b2d1e67f-f8d6-4ebb-9fc8-ecd326158ded"><con:authProfile>No Authorization</con:authProfile></con:entry><con:entry environmentId="2b4e7ce8-224f-460c-9f23-ea2d140ff47e"><con:authProfile>No Authorization</con:authProfile></con:entry></con:environmentSpec></con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:properties/>
+      <con:reportParameters/>
+      <con:breakPoints>
+        <con:testStepId>97005885-a2ca-4133-ae41-ed7350a783b8</con:testStepId>
+        <con:status>NONE</con:status>
+        <con:properties/>
+      </con:breakPoints>
+    </con:testCase>
