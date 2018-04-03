@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:testCase id="48e93c82-da02-4d14-9af7-f76a6449b016" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="Petition Details" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
+<con:testCase id="48e93c82-da02-4d14-9af7-f76a6449b016" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="Petition Details" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword="" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
     <con:setting id="48e93c82-da02-4d14-9af7-f76a6449b016fileName">Petition-Details</con:setting>
   </con:settings>
@@ -12,8 +12,8 @@
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="${#Project#access_token}" xmlns="http://eviware.com/soapui/config"/></con:setting>
         </con:settings>
         <con:request>{
-	"PetitionFiled":"1",
-"PetitionTitle":"its just for testing",
+"PetitionFiled":"1",
+"PetitionTitle":"Welcome to the world of Test",
 "Overview":"just testing",
 "OverviewImage":"http://isignfundstaging.clidiem.com/UploadFiles/CompanyUploadFiles/CompanyPetitionImages/8_05_08_2018_06_57_13.png",
 "SocialShareImage":"http://isignfundstaging.clidiem.com/UploadFiles/CompanyUploadFiles/CompanyPetitionImages/8_05_08_2018_06_57_13.png",
@@ -26,26 +26,26 @@
 "Solution":"", 
 "SolutionImage":"", 
 "Tags":"", 
-"GalleryPetitionImage1":"", 
-"GalleryPetitionImage2":"",
-"GalleryPetitionImage3":"",
-"GalleryPetitionImage4":"",
-"GalleryPetitionImage5":"",
-"VideoLink":"",
+"GalleryPetitionImage1":"http://isignfundstaging.clidiem.com/UploadFiles/CompanyUploadFiles/CompanyPetitionImages/8_05_08_2018_06_57_13.png", 
+"GalleryPetitionImage2":"http://isignfundstaging.clidiem.com/UploadFiles/CompanyUploadFiles/CompanyPetitionImages/8_05_08_2018_06_57_13.png",
+"GalleryPetitionImage3":"http://isignfundstaging.clidiem.com/UploadFiles/CompanyUploadFiles/CompanyPetitionImages/8_05_08_2018_06_57_13.png",
+"GalleryPetitionImage4":"http://isignfundstaging.clidiem.com/UploadFiles/CompanyUploadFiles/CompanyPetitionImages/8_05_08_2018_06_57_13.png",
+"GalleryPetitionImage5":"http://isignfundstaging.clidiem.com/UploadFiles/CompanyUploadFiles/CompanyPetitionImages/8_05_08_2018_06_57_13.png",
+"VideoLink":"https://www.youtube.com/watch?v=jUGyzyBT33Q",
 "FundingCurrency":"1",
-"FundingGoal":"0",
-"SignaturesRequired":"10",
+"FundingGoal":"1000",
+"SignaturesRequired":"1000",
 "RiskAndChallenges":"",
 "SliderImage5":"",
 "RiskChallengesimages":"", 
-"DecisionMaker[0][FullName]":"kumar",
-"DecisionMaker[0][Designation]":"status",
+"DecisionMaker[0][FullName]":"Narendra Modi",
+"DecisionMaker[0][Designation]":"Prime Minister",
 "EndDate":"",
 "Indefinite":"false",
-"IsoccupationsChecked":"false",
+"IsoccupationsChecked":"true",
 "IsVisastatusChecked":"false",
-"Age":"false",
-"Salary":"false",
+"Age":"true",
+"Salary":"true",
 "IsFundsCollectLater":"false",
 "DefaultQuestionType":"5",
 "DefaultQuestion":""
@@ -141,7 +141,7 @@
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="Getcontactforpetitionview" id="70547e7d-dd54-4cb9-a479-47f934ec79ef">
+  <con:testStep type="restrequest" name="Getcontactforpetitionview" id="70547e7d-dd54-4cb9-a479-47f934ec79ef" disabled="true">
     <con:settings/>
     <con:config service="http://digisurveyapi.clidiem.com" resourcePath="/api/company/getcontactforpetitionview" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:restRequest name="Getcontactforpetitionview" id="6a0d0fc0-bec5-4656-b6c4-6ecc704db362" mediaType="application/json" postQueryString="false">
@@ -285,6 +285,61 @@ PetitionId: "${Savepetitiondetails#Response#$['PetitionId']}"
       </con:restRequest>
     </con:config>
   </con:testStep>
+  <con:testStep type="restrequest" name="Getpetitiondetailsbyids-Afterupdate" id="b1168389-6f2d-433f-a176-e04ccd6f17be">
+    <con:settings/>
+    <con:config service="http://digisurveyapi.clidiem.com" resourcePath="/api/company/getpetitiondetailsbyids" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="Getpetitiondetailsbyids-Afterupdate" id="d792d777-859e-42a6-9203-b4e4d458bdb3" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="${#Project#access_token}" xmlns="http://eviware.com/soapui/config"/></con:setting>
+        </con:settings>
+        <con:request>{
+	"CompanyId":"${#Project#EncryptedCompanyId}",
+     "PetitionId":"${Savepetitiondetails#Response#$['PetitionId']}"
+}
+</con:request>
+        <con:originalUri>http://digisurveyapi.clidiem.com/api/company/getpetitiondetailsbyids</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="5905771b-eab0-4a0b-a9e0-0479409beded" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="a332b371-ead6-47ae-abf7-60655e3f9cc6" name="PetitionField">
+          <con:configuration>
+            <path>$['PetitionField']</path>
+            <content>Petitions for Signatures</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="8a235e3e-3209-45f9-acce-71d696b29a9c" name="PetitionId">
+          <con:configuration>
+            <path>$['PetitionId']</path>
+            <content>*</content>
+            <allowWildcards>true</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="fd673750-346e-492f-9942-6e8c976c46b7" name="ActiveStatusName">
+          <con:configuration>
+            <path>$['ActiveStatusName']</path>
+            <content>Draft</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
   <con:testStep type="restrequest" name="Deletepetitiondetails" id="8e4ec415-ce62-489c-98e1-f593309b0336">
     <con:settings/>
     <con:config service="http://digisurveyapi.clidiem.com" resourcePath="/api/company/deletepetitiondetails" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
@@ -297,7 +352,7 @@ PetitionId: "${Savepetitiondetails#Response#$['PetitionId']}"
      ModifiedBy:"${#Project#EncryptedLoginID}",
      CompanyId:"${#Project#EncryptedCompanyId}"
 }
-//CHyy9cRT8bXHmi 05rUh0w==</con:request>
+</con:request>
         <con:originalUri>http://digisurveyapi.clidiem.com/api/company/deletepetitiondetails</con:originalUri>
         <con:assertion type="Valid HTTP Status Codes" id="cc9fb97c-b72a-4655-8828-fa7eb266e8d9" name="Valid HTTP Status Codes">
           <con:settings/>
@@ -322,8 +377,55 @@ PetitionId: "${Savepetitiondetails#Response#$['PetitionId']}"
         <con:parameters/>
       </con:restRequest>
     </con:config>
-  </con:testStep>
-  <con:properties/>
+  </con:testStep><con:testStep type="restrequest" name="Getpetitiondetailsbyids-AfterDelete" id="7bbbdd4c-7b71-40ac-9e1a-be45906fb04e">
+    <con:settings/>
+    <con:config service="http://digisurveyapi.clidiem.com" resourcePath="/api/company/getpetitiondetailsbyids" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="Getpetitiondetailsbyids-AfterDelete" id="d792d777-859e-42a6-9203-b4e4d458bdb3" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="${#Project#access_token}" xmlns="http://eviware.com/soapui/config"/></con:setting>
+        </con:settings>
+        <con:request>{
+	"CompanyId":"${#Project#EncryptedCompanyId}",
+     "PetitionId":"${Savepetitiondetails#Response#$['PetitionId']}"
+}
+</con:request>
+        <con:originalUri>http://digisurveyapi.clidiem.com/api/company/getpetitiondetailsbyids</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="5905771b-eab0-4a0b-a9e0-0479409beded" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="a332b371-ead6-47ae-abf7-60655e3f9cc6" name="PetitionField">
+          <con:configuration>
+            <path>$['PetitionField']</path>
+            <content>Petitions for Signatures</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="8a235e3e-3209-45f9-acce-71d696b29a9c" name="PetitionId">
+          <con:configuration>
+            <path>$['PetitionId']</path>
+            <content>*</content>
+            <allowWildcards>true</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="fd673750-346e-492f-9942-6e8c976c46b7" name="ActiveStatusName">
+          <con:configuration><path>$['ActiveStatusName']</path><content>Deleted</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep><con:properties/>
   <con:reportParameters/>
   <con:breakPoints>
     <con:testStepId>7df26b1f-b718-4397-98cd-96eed82dea4d</con:testStepId>
@@ -335,4 +437,4 @@ PetitionId: "${Savepetitiondetails#Response#$['PetitionId']}"
     <con:status>NONE</con:status>
     <con:properties/>
   </con:breakPoints>
-</con:testCase>
+<con:breakPoints><con:testStepId>b1168389-6f2d-433f-a176-e04ccd6f17be</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints></con:testCase>

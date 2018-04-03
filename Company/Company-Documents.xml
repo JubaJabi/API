@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:testCase id="f3fb7689-af52-4f17-975f-85a2a08dcaa1" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="Company Documents" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
+<con:testCase id="f3fb7689-af52-4f17-975f-85a2a08dcaa1" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="Company Documents" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword="" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
     <con:setting id="f3fb7689-af52-4f17-975f-85a2a08dcaa1fileName">Company-Documents</con:setting>
   </con:settings>
@@ -153,13 +153,7 @@ messageExchange.modelItem.testCase.testSuite.project.setPropertyValue("NoofDocfi
           </con:configuration>
         </con:assertion>
         <con:assertion type="JsonPath Match" id="b3aa018e-9ce8-4643-99ab-b5f21c97a727" name="StatusMessage">
-          <con:configuration>
-            <path>$['StatusMessage']</path>
-            <content>Document details saved successfully</content>
-            <allowWildcards>false</allowWildcards>
-            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
-            <ignoreComments>false</ignoreComments>
-          </con:configuration>
+          <con:configuration><path>$['StatusMessage']</path><content>Document details saved successfully</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration>
         </con:assertion>
         <con:credentials>
           <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
@@ -204,13 +198,7 @@ messageExchange.modelItem.testCase.testSuite.project.setPropertyValue("NoofDocfi
           </con:configuration>
         </con:assertion>
         <con:assertion type="JsonPath Match" id="2e0c91f6-23d1-4a33-96e6-5bbb8144fcb0" name="Document1Name">
-          <con:configuration>
-            <path>$[3]['Documents'][0]['Document1Name']</path>
-            <content>${UpdateCompanydocuments#RawRequest#$['Document1Name']}</content>
-            <allowWildcards>false</allowWildcards>
-            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
-            <ignoreComments>false</ignoreComments>
-          </con:configuration>
+          <con:configuration><path>$[2]['Documents'][0]['Document1Name']</path><content>${UpdateCompanydocuments#RawRequest#$['Document1Name']}</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration>
         </con:assertion>
         <con:assertion type="JsonPath Match" id="20744171-d98f-485c-b69c-218cfbcbd18f" name="DocumentStatus">
           <con:configuration>
@@ -253,7 +241,7 @@ messageExchange.modelItem.testCase.testSuite.project.setPropertyValue("NoofDocfi
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="${#Project#access_token}" xmlns="http://eviware.com/soapui/config"/></con:setting>
         </con:settings>
         <con:request>{
-	"CompanyDocumentId":"${Getcompanydocuments#Response#$[2]['Documents'][0]['CompanyDocumentId']}",
+	"CompanyDocumentId":"${Getcompanydocuments- After Adding#Response#$[2]['Documents'][0]['CompanyDocumentId']}",
      "ModifiedBy":"${#Project#EncryptedLoginID}"
 }</con:request>
         <con:originalUri>http://digisurveyapi.clidiem.com/api/company/deletecompanydocument</con:originalUri>
@@ -300,13 +288,7 @@ messageExchange.modelItem.testCase.testSuite.project.setPropertyValue("NoofDocfi
           </con:configuration>
         </con:assertion>
         <con:assertion type="JsonPath Count" id="3483ad94-8ff9-48e7-9726-2956028e731e" name="JsonPath Count">
-          <con:configuration>
-            <path>$[*]['DocumentTypeId']</path>
-            <content>${#Project#NoofDocfinaldelete}</content>
-            <allowWildcards>false</allowWildcards>
-            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
-            <ignoreComments>false</ignoreComments>
-          </con:configuration>
+          <con:configuration><path>$[*]['DocumentTypeId']</path><content>${#Project#NoofDocfinaldelete}</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration>
         </con:assertion>
         <con:credentials>
           <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>

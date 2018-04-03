@@ -13,8 +13,8 @@
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
         </con:settings>
         <con:endpoint>${#Project#EndPoint}</con:endpoint>
-        <con:request>username=${DataSource#EmailId}&amp;
-password=${DataSource#Password}&amp;
+        <con:request>username=${#Project#CompanyEmailId}&amp;
+password=${#Project#LoginPassword}&amp;
 grant_type=password&amp;
 usertype=applicationuser&amp;
 isfbuser=false</con:request>

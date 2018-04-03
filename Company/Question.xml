@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:testCase id="c531fb1d-b8dd-4add-bc57-187708972e87" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="Question" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
+<con:testCase id="c531fb1d-b8dd-4add-bc57-187708972e87" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="Question" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword="" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
     <con:setting id="c531fb1d-b8dd-4add-bc57-187708972e87fileName">Question</con:setting>
-  </con:settings>
+  <con:setting id="IncludeOverview">true</con:setting><con:setting id="IncludeResults">true</con:setting><con:setting id="FlowLayout">false</con:setting><con:setting id="ErrorDetails">true</con:setting><con:setting id="IncludeCoverage">true</con:setting></con:settings>
   <con:savedRecentRuns>1</con:savedRecentRuns>
   <con:testStep type="restrequest" name="Getcompanyquestionlist" id="8a44e316-f8e7-43ec-a9ff-7ff624a01886">
     <con:settings/>
