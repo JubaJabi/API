@@ -1,0 +1,805 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="83d0d7a4-e53d-4ce8-8543-958d28161ade" failOnError="false" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="APi Detail" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword="" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="83d0d7a4-e53d-4ce8-8543-958d28161adefileName">APi-Detail</con:setting>
+  </con:settings>
+  <con:savedRecentRuns>1</con:savedRecentRuns>
+  <con:testStep type="restrequest" name="GetApiaccessdetails" id="c7860c0f-e0c4-4986-ac02-93f460cbfdde">
+    <con:settings/>
+    <con:config service="http://digisurveyapi.clidiem.com" resourcePath="/api/company/getapiaccessdetails" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="GetApiaccessdetails" id="0b798416-d77e-4cd6-a7fa-1d35e1399686" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="${#Project#access_token}" xmlns="http://eviware.com/soapui/config"/></con:setting>
+        </con:settings>
+        <con:endpoint>${#Project#Endpoint}</con:endpoint>
+        <con:request>{
+	"CompanyId": "${#Project#EncryptedCompanyId}",
+     "CreatedBy": "${#Project#EncryptedLoginID}"
+}</con:request>
+        <con:originalUri>http://digisurveyapi.clidiem.com/api/company/getapiaccessdetails</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="bac28b75-d9c1-4b10-a861-271e73ca863d" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="278b23b0-0ffb-4649-82cc-04ebf534ad1b" name="APIName">
+          <con:configuration>
+            <path>$[2]['APIName']</path>
+            <content>*</content>
+            <allowWildcards>true</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="GroovyScriptAssertion" id="ed7e92a4-6df1-4f14-95a1-cf95a3ed60ee" name="Script Assertion">
+          <con:configuration>
+            <scriptText>import groovy.json.JsonSlurper
+
+def slurper = new JsonSlurper()
+
+//get the response data from a test step
+def testCase = messageExchange.modelItem.testCase.getTestStepByName("GetApiaccessdetails").getPropertyValue("response")
+
+
+
+def NoofAPIKey = context.expand( '${GetApiaccessdetails#ResponseAsXml#count(//*:APIKeyId)}' ) as int
+
+def additionvalue = "1" as int
+def NoofAPIKeyfinal  = NoofAPIKey + additionvalue
+
+log.info NoofAPIKeyfinal
+
+
+messageExchange.modelItem.testCase.testSuite.project.setPropertyValue("NoofAPIKeyfinal",NoofAPIKeyfinal as String)</scriptText>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:parameters/>
+        <con:environmentSpec>
+          <con:entry environmentId="e6216270-ed4a-4883-87f9-32f234724588">
+            <con:authProfile>No Authorization</con:authProfile>
+          </con:entry>
+        </con:environmentSpec>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="InsertApiaccessdetails-1,2,3" id="a6ba073d-42d9-42ac-9a9f-7cdcd5e12431">
+    <con:settings/>
+    <con:config service="http://digisurveyapi.clidiem.com" resourcePath="/api/company/insertapiaccessdetails" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="InsertApiaccessdetails-1,2,3" id="a2349a58-f189-488d-adad-3008043dfc8e" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="${#Project#access_token}" xmlns="http://eviware.com/soapui/config"/></con:setting>
+        </con:settings>
+        <con:endpoint>${#Project#Endpoint}</con:endpoint>
+        <con:request>{
+	"APIName": "${#Project#APIName}${=((int)(Math.random()*100000))+1000000}",
+     "APINotes": "${#Project#APINotes}",
+     "CompanyId": "${#Project#EncryptedCompanyId}",
+     "selectPermissionID": "1,2,3",
+     "userloginId": "${#Project#EncryptedLoginID}"
+}</con:request>
+        <con:originalUri>http://digisurveyapi.clidiem.com/api/company/insertapiaccessdetails</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="b1ac62e8-45d3-4ff1-9f0b-881c71ed70ea" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="c7b0cf18-bd00-4ff7-abd0-af69eea49d49" name="API Key generated successfully">
+          <con:configuration>
+            <path>$['StatusMessage']</path>
+            <content>API Key generated successfully</content>
+            <allowWildcards>true</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:parameters/>
+        <con:environmentSpec>
+          <con:entry environmentId="e6216270-ed4a-4883-87f9-32f234724588">
+            <con:authProfile>No Authorization</con:authProfile>
+          </con:entry>
+        </con:environmentSpec>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="GetApiaccessdetails-AfterAdding" id="cd92f53b-b7da-412d-b208-210b8e41e7c0">
+    <con:settings/>
+    <con:config service="http://digisurveyapi.clidiem.com" resourcePath="/api/company/getapiaccessdetails" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="GetApiaccessdetails-AfterAdding" id="0b798416-d77e-4cd6-a7fa-1d35e1399686" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="${#Project#access_token}" xmlns="http://eviware.com/soapui/config"/></con:setting>
+        </con:settings>
+        <con:endpoint>${#Project#Endpoint}</con:endpoint>
+        <con:request>{
+	"CompanyId": "${#Project#EncryptedCompanyId}",
+     "CreatedBy": "${#Project#EncryptedLoginID}"
+}</con:request>
+        <con:originalUri>http://digisurveyapi.clidiem.com/api/company/getapiaccessdetails</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="bac28b75-d9c1-4b10-a861-271e73ca863d" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="de3e9600-c72b-486a-bd06-7af9efcf3785" name="APIKeyId">
+          <con:configuration>
+            <path>$[0]['APIKeyId']</path>
+            <content>*</content>
+            <allowWildcards>true</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="52dfd388-c4d5-44c4-9d9b-0f75c057b61d" name="APIName">
+          <con:configuration>
+            <path>$[0]['APIName']</path>
+            <content>${InsertApiaccessdetails-1,2,3#RawRequest#$['APIName']}</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="d7288563-abaa-4c00-9292-9e9674972d3a" name="APINotes">
+          <con:configuration>
+            <path>$[0]['APINotes']</path>
+            <content>${InsertApiaccessdetails-1,2,3#RawRequest#$['APINotes']}</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="74c13e33-2ca8-4d5e-a00d-4e6f14be8da0" name="ActiveStatus">
+          <con:configuration>
+            <path>$[0]['ActiveStatus']</path>
+            <content>0</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Count" id="f7472bdc-8801-4670-9fb1-e93dd9ca40d4" name="JsonPath Count">
+          <con:configuration>
+            <path>$[*]['APIKeyId']</path>
+            <content>${#Project#NoofAPIKeyfinal}</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:parameters/>
+        <con:environmentSpec>
+          <con:entry environmentId="e6216270-ed4a-4883-87f9-32f234724588">
+            <con:authProfile>No Authorization</con:authProfile>
+          </con:entry>
+        </con:environmentSpec>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="InsertApiaccessdetails-2" id="6b3cd2a3-71c7-4e0a-8187-042c98780fc1">
+    <con:settings/>
+    <con:config service="http://digisurveyapi.clidiem.com" resourcePath="/api/company/insertapiaccessdetails" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="InsertApiaccessdetails-2" id="a2349a58-f189-488d-adad-3008043dfc8e" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="${#Project#access_token}" xmlns="http://eviware.com/soapui/config"/></con:setting>
+        </con:settings>
+        <con:endpoint>${#Project#Endpoint}</con:endpoint>
+        <con:request>{
+	"APIName": "${#Project#APIName}${=((int)(Math.random()*10))+1009}",
+     "APINotes": "${#Project#APINotes}",
+     "CompanyId": "${#Project#EncryptedCompanyId}",
+     "selectPermissionID": "2",
+     "userloginId": "${#Project#EncryptedLoginID}"
+}</con:request>
+        <con:originalUri>http://digisurveyapi.clidiem.com/api/company/insertapiaccessdetails</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="b1ac62e8-45d3-4ff1-9f0b-881c71ed70ea" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="c7b0cf18-bd00-4ff7-abd0-af69eea49d49" name="API Key generated successfully">
+          <con:configuration>
+            <path>$['StatusMessage']</path>
+            <content>API Key generated successfully</content>
+            <allowWildcards>true</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:parameters/>
+        <con:environmentSpec>
+          <con:entry environmentId="e6216270-ed4a-4883-87f9-32f234724588">
+            <con:authProfile>No Authorization</con:authProfile>
+          </con:entry>
+        </con:environmentSpec>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="InsertApiaccessdetails-Duplicate API KeyCheck" id="d31dd518-f0a1-4f86-ba71-4cec67df2459">
+    <con:settings/>
+    <con:config service="http://digisurveyapi.clidiem.com" resourcePath="/api/company/insertapiaccessdetails" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="InsertApiaccessdetails-Duplicate API KeyCheck" id="a2349a58-f189-488d-adad-3008043dfc8e" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="${#Project#access_token}" xmlns="http://eviware.com/soapui/config"/></con:setting>
+        </con:settings>
+        <con:endpoint>${#Project#Endpoint}</con:endpoint>
+        <con:request>{
+	"APIName": "${InsertApiaccessdetails-1,2,3#RawRequest#$['APIName']}",
+     "APINotes": "${#Project#APINotes}",
+     "CompanyId": "${#Project#EncryptedCompanyId}",
+     "selectPermissionID": "${#Project#APIPermissionID}",
+     "userloginId": "${#Project#EncryptedLoginID}"
+}</con:request>
+        <con:originalUri>http://digisurveyapi.clidiem.com/api/company/insertapiaccessdetails</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="b1ac62e8-45d3-4ff1-9f0b-881c71ed70ea" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="c7b0cf18-bd00-4ff7-abd0-af69eea49d49" name="API Key generated successfully">
+          <con:configuration>
+            <path>$['StatusMessage']</path>
+            <content>API Key name already exists</content>
+            <allowWildcards>true</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:parameters/>
+        <con:environmentSpec>
+          <con:entry environmentId="e6216270-ed4a-4883-87f9-32f234724588">
+            <con:authProfile>No Authorization</con:authProfile>
+          </con:entry>
+        </con:environmentSpec>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="InsertApiaccessdetails-1,3" id="671328e2-a227-4af8-8447-1d9aa056ff56">
+    <con:settings/>
+    <con:config service="http://digisurveyapi.clidiem.com" resourcePath="/api/company/insertapiaccessdetails" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="InsertApiaccessdetails-1,3" id="a2349a58-f189-488d-adad-3008043dfc8e" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="${#Project#access_token}" xmlns="http://eviware.com/soapui/config"/></con:setting>
+        </con:settings>
+        <con:endpoint>${#Project#Endpoint}</con:endpoint>
+        <con:request>{
+	"APIName": "${#Project#APIName}${=((int)(Math.random()*10000))+100000}",
+     "APINotes": "${#Project#APINotes}",
+     "CompanyId": "${#Project#EncryptedCompanyId}",
+     "selectPermissionID": "1,3",
+     "userloginId": "${#Project#EncryptedLoginID}"
+}</con:request>
+        <con:originalUri>http://digisurveyapi.clidiem.com/api/company/insertapiaccessdetails</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="b1ac62e8-45d3-4ff1-9f0b-881c71ed70ea" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="c7b0cf18-bd00-4ff7-abd0-af69eea49d49" name="API Key generated successfully">
+          <con:configuration>
+            <path>$['StatusMessage']</path>
+            <content>API Key generated successfully</content>
+            <allowWildcards>true</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:parameters/>
+        <con:environmentSpec>
+          <con:entry environmentId="e6216270-ed4a-4883-87f9-32f234724588">
+            <con:authProfile>No Authorization</con:authProfile>
+          </con:entry>
+        </con:environmentSpec>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="GetApiaccessdetails-AfterAdding-1,3" id="0f487fb3-bac4-4649-b770-279ce0618b4c">
+    <con:settings/>
+    <con:config service="http://digisurveyapi.clidiem.com" resourcePath="/api/company/getapiaccessdetails" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="GetApiaccessdetails-AfterAdding-1,3" id="0b798416-d77e-4cd6-a7fa-1d35e1399686" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="${#Project#access_token}" xmlns="http://eviware.com/soapui/config"/></con:setting>
+        </con:settings>
+        <con:endpoint>${#Project#Endpoint}</con:endpoint>
+        <con:request>{
+	"CompanyId": "${#Project#EncryptedCompanyId}",
+     "CreatedBy": "${#Project#EncryptedLoginID}"
+}</con:request>
+        <con:originalUri>http://digisurveyapi.clidiem.com/api/company/getapiaccessdetails</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="bac28b75-d9c1-4b10-a861-271e73ca863d" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="de3e9600-c72b-486a-bd06-7af9efcf3785" name="APIKeyId">
+          <con:configuration>
+            <path>$[0]['APIKeyId']</path>
+            <content>*</content>
+            <allowWildcards>true</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="52dfd388-c4d5-44c4-9d9b-0f75c057b61d" name="APIName">
+          <con:configuration>
+            <path>$[0]['APIName']</path>
+            <content>${InsertApiaccessdetails-1,3#RawRequest#$['APIName']}</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="d7288563-abaa-4c00-9292-9e9674972d3a" name="APINotes">
+          <con:configuration>
+            <path>$[0]['APINotes']</path>
+            <content>${InsertApiaccessdetails-1,2,3#RawRequest#$['APINotes']}</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="74c13e33-2ca8-4d5e-a00d-4e6f14be8da0" name="ActiveStatus">
+          <con:configuration>
+            <path>$[0]['ActiveStatus']</path>
+            <content>0</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Count" id="f7472bdc-8801-4670-9fb1-e93dd9ca40d4" name="JsonPath Count" disabled="true">
+          <con:configuration>
+            <path>$[*]['APIKeyId']</path>
+            <content>${#Project#NoofAPIKeyfinal}</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="GroovyScriptAssertion" name="Script Assertion" id="58e48e2c-3c14-4c0b-a2d7-bdff414d3954">
+          <con:configuration>
+            <scriptText>import groovy.json.JsonSlurper
+
+def slurper = new JsonSlurper()
+
+//get the response data from a test step
+def testCase = messageExchange.modelItem.testCase.getTestStepByName("GetApiaccessdetails").getPropertyValue("response")
+
+
+
+def NoofAPIKey = context.expand( '${GetApiaccessdetails#ResponseAsXml#count(//*:APIKeyId)}' ) as int
+
+def additionvalue = "1" as int
+def NoofAPIKeyfinal  = NoofAPIKey + additionvalue
+
+log.info NoofAPIKeyfinal
+
+
+messageExchange.modelItem.testCase.testSuite.project.setPropertyValue("NoofAPIKeyfinal",NoofAPIKeyfinal as String)</scriptText>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:parameters/>
+        <con:environmentSpec>
+          <con:entry environmentId="e6216270-ed4a-4883-87f9-32f234724588">
+            <con:authProfile>No Authorization</con:authProfile>
+          </con:entry>
+        </con:environmentSpec>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="GetApidetails-2" id="cbef2823-ecc4-473b-be06-ec44e2381fe2">
+    <con:settings/>
+    <con:config service="http://digisurveyapi.clidiem.com" resourcePath="/api/company/getapidetails" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="GetApidetails-2" id="04c97d16-443f-48e2-b860-6d49c3bcf55e" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="${#Project#access_token}" xmlns="http://eviware.com/soapui/config"/></con:setting>
+        </con:settings>
+        <con:endpoint>${#Project#Endpoint}</con:endpoint>
+        <con:request>{
+	"APIKeyId": "${GetApiaccessdetails-AfterAdding#Response#$[0]['APIKeyId']}"
+}
+// k0W5SPTUK6N0xPu-RUmeSw==
+
+// ${GetApiaccessdetails#Response#$[2]['APIKeyId']}</con:request>
+        <con:originalUri>http://digisurveyapi.clidiem.com/api/company/getapidetails</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="e4707549-ba18-4dc2-9b12-3e110cce3eb4" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="c4e392b5-b38c-4bec-8175-5976a4b4b437" name="APIKey">
+          <con:configuration>
+            <path>$['GetAPIAccessde'][0]['APIKey']</path>
+            <content>*</content>
+            <allowWildcards>true</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="907927b4-af0e-4d18-b9c2-cf37bd13724a" name="Accepted Languages">
+          <con:configuration>
+            <path>$['ApiAccessDropDown'][0]['PermissionName']</path>
+            <content>Accepted Languages</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="f9378f34-19c8-4236-a79f-ee50507e8c8f" name="List of Surveys">
+          <con:configuration>
+            <path>$['ApiAccessDropDown'][1]['PermissionName']</path>
+            <content>List of Surveys</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="23771cbf-d605-4766-a65c-2c4b80356f85" name="Survey Responses" disabled="true">
+          <con:configuration>
+            <path>$['ApiAccessDropDown'][2]['PermissionName']</path>
+            <content>Survey Responses</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="a1f7939c-89c7-4831-a7da-88a3a5ac7a00" name="Survey Response" disabled="true">
+          <con:configuration>
+            <path>$['ApiAccessDropDown'][1]['PermissionName']</path>
+            <content>Survey Responses</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:parameters/>
+        <con:environmentSpec>
+          <con:entry environmentId="e6216270-ed4a-4883-87f9-32f234724588">
+            <con:authProfile>No Authorization</con:authProfile>
+          </con:entry>
+        </con:environmentSpec>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="GetApidetails-1,3" id="b7c67fa5-de2c-4ca0-9467-dba4789ded7f">
+    <con:settings/>
+    <con:config service="http://digisurveyapi.clidiem.com" resourcePath="/api/company/getapidetails" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="GetApidetails-1,3" id="04c97d16-443f-48e2-b860-6d49c3bcf55e" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="${#Project#access_token}" xmlns="http://eviware.com/soapui/config"/></con:setting>
+        </con:settings>
+        <con:endpoint>${#Project#Endpoint}</con:endpoint>
+        <con:request>{
+	"APIKeyId": "${GetApiaccessdetails-AfterAdding-1,3#Response#$[0]['APIKeyId']}"
+}
+// k0W5SPTUK6N0xPu-RUmeSw==
+
+// ${GetApiaccessdetails#Response#$[2]['APIKeyId']}</con:request>
+        <con:originalUri>http://digisurveyapi.clidiem.com/api/company/getapidetails</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="e4707549-ba18-4dc2-9b12-3e110cce3eb4" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="c4e392b5-b38c-4bec-8175-5976a4b4b437" name="APIKey">
+          <con:configuration>
+            <path>$['GetAPIAccessde'][0]['APIKey']</path>
+            <content>*</content>
+            <allowWildcards>true</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="907927b4-af0e-4d18-b9c2-cf37bd13724a" name="Accepted Languages">
+          <con:configuration>
+            <path>$['ApiAccessDropDown'][0]['PermissionName']</path>
+            <content>Accepted Languages</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="f9378f34-19c8-4236-a79f-ee50507e8c8f" name="List of Surveys" disabled="true">
+          <con:configuration>
+            <path>$['ApiAccessDropDown'][1]['PermissionName']</path>
+            <content>List of Surveys</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="23771cbf-d605-4766-a65c-2c4b80356f85" name="Survey Responses">
+          <con:configuration>
+            <path>$['ApiAccessDropDown'][1]['PermissionName']</path>
+            <content>Survey Responses</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="83ee54b3-b5f7-491f-b7d3-437c65b49c82" name="List of Survey" disabled="true">
+          <con:configuration>
+            <path>$['ApiAccessDropDown'][0]['PermissionName']</path>
+            <content>List of Surveys</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:parameters/>
+        <con:environmentSpec>
+          <con:entry environmentId="e6216270-ed4a-4883-87f9-32f234724588">
+            <con:authProfile>No Authorization</con:authProfile>
+          </con:entry>
+        </con:environmentSpec>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="Getapiviewlist" id="edf3bd60-12aa-4d7a-9762-75dc93a7d126">
+    <con:settings/>
+    <con:config service="http://digisurveyapi.clidiem.com" resourcePath="/api/company/getapiviewlist" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="Getapiviewlist" id="7a99101d-781c-4fe6-bb9e-1a0681305b2b" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="${#Project#access_token}" xmlns="http://eviware.com/soapui/config"/></con:setting>
+        </con:settings>
+        <con:endpoint>${#Project#Endpoint}</con:endpoint>
+        <con:request>{
+	"APIKeyId": "${GetApiaccessdetails#Response#$[1]['APIKeyId']}"
+}
+// 1R2B0e7bA-dfYT8r7DESmA==</con:request>
+        <con:originalUri>http://digisurveyapi.clidiem.com/api/company/getapiviewlist</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="d71e8ae4-a277-463c-9d4e-5dd4f4623cfe" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="2bf30214-8f09-4ae0-ac7f-2a2df3d47411" name="PermissionName">
+          <con:configuration>
+            <path>$[0]['PermissionName']</path>
+            <content>*</content>
+            <allowWildcards>true</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+        <con:environmentSpec>
+          <con:entry environmentId="e6216270-ed4a-4883-87f9-32f234724588">
+            <con:authProfile>No Authorization</con:authProfile>
+          </con:entry>
+        </con:environmentSpec>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="Apisviewdetails" id="d6cd1e06-98d7-4838-b3ef-676e12d05026">
+    <con:settings/>
+    <con:config service="http://digisurveyapi.clidiem.com" resourcePath="/api/company/apisviewdetails" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="Apisviewdetails" id="b3be8ec6-c7e8-41a5-ba39-b9040ba1b48c" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="${#Project#access_token}" xmlns="http://eviware.com/soapui/config"/></con:setting>
+        </con:settings>
+        <con:endpoint>${#Project#Endpoint}</con:endpoint>
+        <con:request>{
+	"PermissionId": "${GetApidetails-2#Response#$['ApiAccessDropDown'][0]['PermissionId']}"
+}
+// ydYQFFkrD9yj32HuS5hYFA==</con:request>
+        <con:originalUri>http://digisurveyapi.clidiem.com/api/company/apisviewdetails</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="3502620f-016b-44ec-a41c-8f28ad4a07da" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+        <con:environmentSpec>
+          <con:entry environmentId="e6216270-ed4a-4883-87f9-32f234724588">
+            <con:authProfile>No Authorization</con:authProfile>
+          </con:entry>
+        </con:environmentSpec>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="Deleteapiaccessdetails" id="0beb1634-bfcb-44ae-bb76-9bb1e5cb005c">
+    <con:settings/>
+    <con:config service="http://digisurveyapi.clidiem.com" resourcePath="/api/company/deleteapiaccessdetails" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="Deleteapiaccessdetails" id="5b8ff50c-d195-4482-8bf5-7b8f90926463" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="${#Project#access_token}" xmlns="http://eviware.com/soapui/config"/></con:setting>
+        </con:settings>
+        <con:endpoint>${#Project#Endpoint}</con:endpoint>
+        <con:request>{
+	ModifiedBy:"${#Project#EncryptedLoginID}",
+     APIKeyId:"${GetApiaccessdetails-AfterAdding-1,3#Response#$[0]['APIKeyId']}"
+}</con:request>
+        <con:originalUri>http://digisurveyapi.clidiem.com/api/company/deleteapiaccessdetails</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="f07d7a64-ac5c-4941-8fe2-71d660d79e41" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="fc07a9fe-cfe4-4e3e-ab8b-132c882442dd" name="StatusMessage">
+          <con:configuration>
+            <path>$['StatusMessage']</path>
+            <content>API Key removed successfully</content>
+            <allowWildcards>true</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+        <con:environmentSpec>
+          <con:entry environmentId="e6216270-ed4a-4883-87f9-32f234724588">
+            <con:authProfile>No Authorization</con:authProfile>
+          </con:entry>
+        </con:environmentSpec>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="GetApiaccessdetails-Afterdelete" id="cb037953-668c-4f2b-b072-33cde59b5163">
+    <con:settings/>
+    <con:config service="http://digisurveyapi.clidiem.com" resourcePath="/api/company/getapiaccessdetails" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="GetApiaccessdetails-Afterdelete" id="0b798416-d77e-4cd6-a7fa-1d35e1399686" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="${#Project#access_token}" xmlns="http://eviware.com/soapui/config"/></con:setting>
+        </con:settings>
+        <con:endpoint>${#Project#Endpoint}</con:endpoint>
+        <con:request>{
+	"CompanyId": "${#Project#EncryptedCompanyId}",
+     "CreatedBy": "${#Project#EncryptedLoginID}"
+}</con:request>
+        <con:originalUri>http://digisurveyapi.clidiem.com/api/company/getapiaccessdetails</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="bac28b75-d9c1-4b10-a861-271e73ca863d" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="278b23b0-0ffb-4649-82cc-04ebf534ad1b" name="APIName">
+          <con:configuration>
+            <path>$[2]['APIName']</path>
+            <content>*</content>
+            <allowWildcards>true</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:parameters/>
+        <con:environmentSpec>
+          <con:entry environmentId="e6216270-ed4a-4883-87f9-32f234724588">
+            <con:authProfile>No Authorization</con:authProfile>
+          </con:entry>
+        </con:environmentSpec>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+  <con:breakPoints>
+    <con:testStepId>64405c7b-28d4-4c2b-8c9b-d0a8d51590a7</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+  <con:breakPoints>
+    <con:testStepId>3159e373-50c2-4f50-977a-8dbf7ab80150</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+  <con:breakPoints>
+    <con:testStepId>37c0c0ff-a5c1-4b4c-9300-8313d104085d</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+  <con:breakPoints>
+    <con:testStepId>71606d30-12f9-4c44-af70-43bdd696c157</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+  <con:breakPoints>
+    <con:testStepId>05f04481-74e0-4125-9861-40f9263663ce</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+  <con:breakPoints>
+    <con:testStepId>9d8906a0-de91-4fe0-abb8-4967f5c5ac53</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+  <con:breakPoints>
+    <con:testStepId>c81c89d1-fcd4-4b20-84f2-7f87ba565728</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+  <con:breakPoints>
+    <con:testStepId>9e63260f-d344-40d1-ab4a-1114fd03ab48</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+  <con:breakPoints>
+    <con:testStepId>4b702162-2599-40e1-9b66-d5fbdede8dbf</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+</con:testCase>

@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="f6db4c3e-a43a-4d19-ad82-d73fcdab6b7e" failOnError="false" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Candidate registration details" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword="" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="f6db4c3e-a43a-4d19-ad82-d73fcdab6b7efileName">Candidate-registration-details</con:setting>
+  </con:settings>
+  <con:savedRecentRuns>1</con:savedRecentRuns>
+  <con:testStep type="restrequest" name="Candidate Registration" id="557d79ab-b161-4e69-a587-0d3c07a8037d">
+    <con:settings/>
+    <con:config service="http://digisurveyapi.clidiem.com" resourcePath="/api/account/CandidateRegistration" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="Candidate Registration" id="4d056a9d-b86f-440a-b295-c3f82cb73fb5" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint>
+        <con:request>{
+	 "FirstName":"${#Project#Cand_FirstName}",
+      "LastName":"${#Project#Cand_LastName}", 
+      "EmailId":"${=((int)(Math.random()*10000))+100000}${#Project#Cand_EmailId}",      
+      "ContactNumber": "${#Project#Comp_ContactNumber}",
+      "Password":"${#Project#Comp_Password}",
+      "IPAddress":"${#Project#Comp_IPAddress}",
+      "Location":"${#Project#Comp_Location}",
+      "Browser":"${#Project#Comp_Browser}",
+      "Latitude":"${#Project#Comp_Latitude}",
+      "Longitude":"${#Project#Comp_Longitude}",
+      "CountryName":"${#Project#Comp_CountryName}",
+      "PackageId":"${#Project#Comp_PackageId}",
+      "ReferralCode":"${#Project#Comp_ReferralCode}", 
+      "WebProjectId":"${#Project#Comp_WebProjectId}"
+}</con:request>
+        <con:originalUri>http://digisurveyapi.clidiem.com/api/account/candidateregistration</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="3f54a87a-0f18-42c7-a693-b541aec2e600" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="17a55f6e-14f9-4941-a8c2-b80386cefda9" name="StatusMessage">
+          <con:configuration>
+            <path>$['StatusMessage']</path>
+            <content>Please check your email &lt;span style="font-size: 14px; font-weight: bold;">${Candidate Registration#RawRequest#$['EmailId']}&lt;/span> for the Verification code and enter it below. Or You can use the verification link in the email to verify and login. The Code and link are valid for the next 24 Hours only. If you don't find the email please check in Spam or All Mail folder.</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="79c8702e-bae0-405e-8eb7-5aef8d94d77a" name="VerificationCode">
+          <con:configuration>
+            <path>$['VerificationCode']</path>
+            <content>*</content>
+            <allowWildcards>true</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:parameters/>
+        <con:parameterOrder/>
+        <con:environmentSpec>
+          <con:entry environmentId="e6216270-ed4a-4883-87f9-32f234724588">
+            <con:authProfile>No Authorization</con:authProfile>
+          </con:entry>
+        </con:environmentSpec>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="checkcandidateemailidexistsornot" id="0386bd40-0d80-46f9-b1a5-a165fa020e51">
+    <con:settings/>
+    <con:config service="http://digisurveyapi.clidiem.com" resourcePath="/api/account/checkcandidateemailidexistsornot" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="checkcandidateemailidexistsornot" id="60ed24e5-01c3-4775-8284-f20cc09c397e" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:endpoint>${#Project#Endpoint}</con:endpoint>
+        <con:request>{
+	"EmailId":"${Candidate Registration#RawRequest#$['EmailId']}"
+}</con:request>
+        <con:originalUri>http://digisurveyapi.clidiem.com/api/account/checkcandidateemailidexistsornot</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="3a8e06bd-ce4d-4924-9759-451b9455f4c3" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:parameters/>
+        <con:parameterOrder/>
+        <con:environmentSpec>
+          <con:entry environmentId="e6216270-ed4a-4883-87f9-32f234724588">
+            <con:authProfile>No Authorization</con:authProfile>
+          </con:entry>
+        </con:environmentSpec>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="resendcandidateverificationcode" id="176b7a6f-c7fc-4b0c-be51-970e09c7d5e3">
+    <con:settings/>
+    <con:config service="http://digisurveyapi.clidiem.com" resourcePath="/api/account/api/Account/resendcandidateverificationcode" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="resendcandidateverificationcode" id="00f9f8c0-dc23-41bf-8ca0-7a35ccaad1f3" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:endpoint>${#Project#Endpoint}</con:endpoint>
+        <con:request>{    
+	"EmailId":"${Candidate Registration#RawRequest#$['EmailId']}",
+      "WebProjectId":"${#Project#Comp_WebProjectId}"
+}
+// EmailId: hkjhkj@gmail.com
+// WebProjectId: 2</con:request>
+        <con:originalUri>http://digisurveyapi.clidiem.com/api/account/api/Account/resendcandidateverificationcode</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="a02a3cf7-d789-46fe-a6d6-a24bae5d850e" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="f1af94c7-e803-471e-b4fd-8d3bb372ce25" name="VerificationCode">
+          <con:configuration>
+            <path>$['VerificationCode']</path>
+            <content>*</content>
+            <allowWildcards>true</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="b041dbb1-018a-4a14-914d-2e3ca11e0893" name="StatusMessage">
+          <con:configuration>
+            <path>$['StatusMessage']</path>
+            <content>Please check your email &lt;span style="font-size: 14px; font-weight: bold;">${Candidate Registration#RawRequest#$['EmailId']}&lt;/span> for the Verification code and enter it below. Or You can use the verification link in the email to verify and login. The Code and link are valid for the next 24 Hours only. If you don't find the email please check in Spam or All Mail folder.</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="eb5a3b6e-0af4-49ba-bf3b-41092b9ba7c7" name="Name">
+          <con:configuration>
+            <path>$['Name']</path>
+            <content>${Candidate Registration#RawRequest#$['FirstName']} ${Candidate Registration#RawRequest#$['LastName']}</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:parameters/>
+        <con:parameterOrder/>
+        <con:environmentSpec>
+          <con:entry environmentId="e6216270-ed4a-4883-87f9-32f234724588">
+            <con:authProfile>No Authorization</con:authProfile>
+          </con:entry>
+        </con:environmentSpec>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="verifycandidateverificationcode" id="477c8f18-f34e-4227-9e56-162e0cbebf34">
+    <con:settings/>
+    <con:config service="http://digisurveyapi.clidiem.com" resourcePath="/api/account/verifycandidateverificationcode" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="verifycandidateverificationcode" id="4064d8b4-17ea-4cf3-996c-59fd3a5fcf42" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:endpoint>${#Project#Endpoint}</con:endpoint>
+        <con:request>{
+	"RegistrationId":"${Candidate Registration#Response#$['RegistrationIdString']}",
+     "RandomKey":"${resendcandidateverificationcode#Response#$['RandomKey']}",
+     "VerificationCode":"${resendcandidateverificationcode#Response#$['VerificationCode']}",
+     "WebProjectId":"${#Project#Comp_WebProjectId}"
+}</con:request>
+        <con:originalUri>http://digisurveyapi.clidiem.com/api/account/verifycandidateverificationcode</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="9728850f-b77e-4db0-acdf-1a6d0bfcd6d6" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="f41556e4-0ca1-4e49-ba21-fe5ea322de84" name="StatusMessage">
+          <con:configuration>
+            <path>$['StatusMessage']</path>
+            <content>Valid</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="115b3964-7f88-443c-9a90-ed15ba2c141d" name="EmailId">
+          <con:configuration>
+            <path>$['EmailId']</path>
+            <content>${Candidate Registration#RawRequest#$['EmailId']}</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="acac9c56-1290-4037-baf1-aba050ca08d3" name="Name">
+          <con:configuration>
+            <path>$['Name']</path>
+            <content>${Candidate Registration#RawRequest#$['FirstName']} ${Candidate Registration#RawRequest#$['LastName']}</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:parameters/>
+        <con:parameterOrder/>
+        <con:environmentSpec>
+          <con:entry environmentId="e6216270-ed4a-4883-87f9-32f234724588">
+            <con:authProfile>No Authorization</con:authProfile>
+          </con:entry>
+        </con:environmentSpec>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+  <con:breakPoints>
+    <con:testStepId>e8372df3-cb7e-40f9-baa3-67460c8a9496</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+  <con:breakPoints>
+    <con:testStepId>cc2f36fe-6dc0-4847-b759-e8e71d8680e2</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+  <con:breakPoints>
+    <con:testStepId>2503cff8-e444-497b-be48-f9ce6f8485a2</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+  <con:breakPoints>
+    <con:testStepId>663e1468-6a17-439a-940d-1f8c37353158</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+</con:testCase>

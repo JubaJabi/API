@@ -1,18 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <con:testCase id="61513409-dcd6-4789-8945-4183793a6294" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Wallet Transacations" searchProperties="true" xmlns:con="http://eviware.com/soapui/config">
-      <con:settings><con:setting id="61513409-dcd6-4789-8945-4183793a6294fileName">Wallet-Transacations</con:setting></con:settings>
-      <con:savedRecentRuns>1</con:savedRecentRuns>
-      <con:testStep type="restrequest" name="getwalletrecenttransactions" id="eb38337d-673a-4563-ae75-2719b5c1e407">
-        <con:settings/>
-        <con:config service="http://digisurveyapi.clidiem.com" resourcePath="/api/account/getwalletrecenttransactions" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-          <con:restRequest name="getwalletrecenttransactions" id="1fe02ccd-b6d8-4712-a33a-9c50b2a16480" mediaType="application/json" postQueryString="false">
-            <con:settings>
-              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="${#Project#access_token}" xmlns="http://eviware.com/soapui/config"/></con:setting>
-            </con:settings>
-            <con:endpoint>${#Project#Endpoint}</con:endpoint>
-            <con:request>{"UserLoginId":"${#Project#EncryptedLoginID}"}</con:request>
-            <con:originalUri>http://digisurveyapi.clidiem.com/api/account/api/Account/getwalletrecenttransactions</con:originalUri>
-            <con:assertion type="Valid HTTP Status Codes" id="fa5f202a-bae7-4803-b3fa-829345edb1a0" name="Valid HTTP Status Codes"><con:settings/><con:configuration><codes>200</codes></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="7676a23e-68c1-478c-9989-25ebc395a0d7" name="JsonPath Match"><con:configuration><path>$[0]['PaymentId']</path><content>*</content><allowWildcards>true</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="GroovyScriptAssertion" id="2e09c952-e573-43c8-a03b-8e37a34fae80" name="Script Assertion"><con:configuration><scriptText>import groovy.json.JsonSlurper
+  <con:settings>
+    <con:setting id="61513409-dcd6-4789-8945-4183793a6294fileName">Wallet-Transacations</con:setting>
+  </con:settings>
+  <con:savedRecentRuns>1</con:savedRecentRuns>
+  <con:testStep type="restrequest" name="getwalletrecenttransactions" id="eb38337d-673a-4563-ae75-2719b5c1e407">
+    <con:settings/>
+    <con:config service="http://digisurveyapi.clidiem.com" resourcePath="/api/account/getwalletrecenttransactions" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="getwalletrecenttransactions" id="1fe02ccd-b6d8-4712-a33a-9c50b2a16480" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="${#Project#access_token}" xmlns="http://eviware.com/soapui/config"/></con:setting>
+        </con:settings>
+        <con:endpoint>${#Project#Endpoint}</con:endpoint>
+        <con:request>{"UserLoginId":"${#Project#EncryptedLoginID}"}</con:request>
+        <con:originalUri>http://digisurveyapi.clidiem.com/api/account/api/Account/getwalletrecenttransactions</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="fa5f202a-bae7-4803-b3fa-829345edb1a0" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="7676a23e-68c1-478c-9989-25ebc395a0d7" name="JsonPath Match">
+          <con:configuration>
+            <path>$[0]['PaymentId']</path>
+            <content>*</content>
+            <allowWildcards>true</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="GroovyScriptAssertion" id="2e09c952-e573-43c8-a03b-8e37a34fae80" name="Script Assertion">
+          <con:configuration>
+            <scriptText>import groovy.json.JsonSlurper
 
 def slurper = new JsonSlurper()
 
@@ -37,27 +56,48 @@ log.info expectedSize
 
 assert object.matchingAddresses.addressList.size() &lt; expectedSize, "Address List size is less than expected size"
 
-*/
-
-</scriptText></con:configuration></con:assertion><con:assertion type="JsonPath Count" id="2174da00-d18e-42df-9087-413e5ee75b50" name="JsonPath Count"><con:configuration><path>$[*]['PaymentId']</path><content>8</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:credentials>
-              <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
-              <con:authType>No Authorization</con:authType>
-            </con:credentials>
-            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
-            <con:jmsPropertyConfig/>
-            <con:parameters/>
-          <con:environmentSpec><con:entry environmentId="21c918eb-3b13-42fb-96a8-bb3ebe6d2bc3"><con:authProfile>No Authorization</con:authProfile></con:entry><con:entry environmentId="b2d1e67f-f8d6-4ebb-9fc8-ecd326158ded"><con:authProfile>No Authorization</con:authProfile></con:entry><con:entry environmentId="2b4e7ce8-224f-460c-9f23-ea2d140ff47e"><con:authProfile>No Authorization</con:authProfile></con:entry></con:environmentSpec></con:restRequest>
-        </con:config>
-      </con:testStep>
-      <con:testStep type="restrequest" name="submitpaymentbywepay" id="b83cad84-9232-4ebc-9fd7-32ab694f1c15">
-        <con:settings/>
-        <con:config service="http://digisurveyapi.clidiem.com" resourcePath="/api/account/submitpaymentbywepay" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-          <con:restRequest name="submitpaymentbywepay" id="f4bce0df-87d2-4d5f-b283-78223afd107f" mediaType="application/json" postQueryString="false">
-            <con:settings>
-              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
-            </con:settings>
-            <con:endpoint>${#Project#Endpoint}</con:endpoint>
-            <con:request>{
+*/</scriptText>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Count" id="2174da00-d18e-42df-9087-413e5ee75b50" name="JsonPath Count">
+          <con:configuration>
+            <path>$[*]['PaymentId']</path>
+            <content>8</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:parameters/>
+        <con:environmentSpec>
+          <con:entry environmentId="21c918eb-3b13-42fb-96a8-bb3ebe6d2bc3">
+            <con:authProfile>No Authorization</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="b2d1e67f-f8d6-4ebb-9fc8-ecd326158ded">
+            <con:authProfile>No Authorization</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="2b4e7ce8-224f-460c-9f23-ea2d140ff47e">
+            <con:authProfile>No Authorization</con:authProfile>
+          </con:entry>
+        </con:environmentSpec>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="submitpaymentbywepay" id="b83cad84-9232-4ebc-9fd7-32ab694f1c15">
+    <con:settings/>
+    <con:config service="http://digisurveyapi.clidiem.com" resourcePath="/api/account/submitpaymentbywepay" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="submitpaymentbywepay" id="f4bce0df-87d2-4d5f-b283-78223afd107f" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:endpoint>${#Project#Endpoint}</con:endpoint>
+        <con:request>{
 	"Amount": "120",
      "CompanyId": "${#Project#EncryptedCompanyId}",
     "PackageId": "1",
@@ -70,26 +110,37 @@ assert object.matchingAddresses.addressList.size() &lt; expectedSize, "Address L
 "SubmitState": "Georgia",
 "SubmitCountry": "United States"
 }</con:request>
-            <con:originalUri>http://digisurveyapi.clidiem.com/api/account/api/Account/submitpaymentbywepay</con:originalUri>
-            <con:credentials>
-              <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
-              <con:authType>No Authorization</con:authType>
-            </con:credentials>
-            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
-            <con:jmsPropertyConfig/>
-            <con:parameters/>
-          <con:environmentSpec><con:entry environmentId="21c918eb-3b13-42fb-96a8-bb3ebe6d2bc3"><con:authProfile>No Authorization</con:authProfile></con:entry><con:entry environmentId="b2d1e67f-f8d6-4ebb-9fc8-ecd326158ded"><con:authProfile>No Authorization</con:authProfile></con:entry><con:entry environmentId="2b4e7ce8-224f-460c-9f23-ea2d140ff47e"><con:authProfile>No Authorization</con:authProfile></con:entry></con:environmentSpec></con:restRequest>
-        </con:config>
-      </con:testStep>
-      <con:testStep type="restrequest" name="updatewepaypaymentstatus" id="aa17f293-881f-46f6-bb93-7c34821f6c8b">
-        <con:settings/>
-        <con:config service="http://digisurveyapi.clidiem.com" resourcePath="/api/account/updatewepaypaymentstatus" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-          <con:restRequest name="updatewepaypaymentstatus" id="9398a003-5f56-47a8-9fef-329356506253" mediaType="application/json" postQueryString="false">
-            <con:settings>
-              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
-            </con:settings>
-            <con:endpoint>${#Project#Endpoint}</con:endpoint>
-            <con:request>{
+        <con:originalUri>http://digisurveyapi.clidiem.com/api/account/api/Account/submitpaymentbywepay</con:originalUri>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:parameters/>
+        <con:environmentSpec>
+          <con:entry environmentId="21c918eb-3b13-42fb-96a8-bb3ebe6d2bc3">
+            <con:authProfile>No Authorization</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="b2d1e67f-f8d6-4ebb-9fc8-ecd326158ded">
+            <con:authProfile>No Authorization</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="2b4e7ce8-224f-460c-9f23-ea2d140ff47e">
+            <con:authProfile>No Authorization</con:authProfile>
+          </con:entry>
+        </con:environmentSpec>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="updatewepaypaymentstatus" id="aa17f293-881f-46f6-bb93-7c34821f6c8b">
+    <con:settings/>
+    <con:config service="http://digisurveyapi.clidiem.com" resourcePath="/api/account/updatewepaypaymentstatus" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="updatewepaypaymentstatus" id="9398a003-5f56-47a8-9fef-329356506253" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:endpoint>${#Project#Endpoint}</con:endpoint>
+        <con:request>{
 	"UserId":"${#Project#EncryptedUserId}",
 	"CompanyId":"${#Project#EncryptedCompanyId}",
 	"PaymentId":"${submitpaymentbywepay#Response#$['EncryptPaymentId']}",
@@ -98,30 +149,57 @@ assert object.matchingAddresses.addressList.size() &lt; expectedSize, "Address L
 	"Amount":"${submitpaymentbywepay#Request#$['Amount']}",
 	"PaymentState":"${submitpaymentbywepay#Response#$['StatusId']}",
 	"Message":"${submitpaymentbywepay#Response#$['StatusMessage']}"
-}
-</con:request>
-            <con:originalUri>http://digisurveyapi.clidiem.com/api/account/api/Account/updatewepaypaymentstatus</con:originalUri>
-            <con:credentials>
-              <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
-              <con:authType>No Authorization</con:authType>
-            </con:credentials>
-            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
-            <con:jmsPropertyConfig/>
-            <con:parameters/>
-          <con:environmentSpec><con:entry environmentId="21c918eb-3b13-42fb-96a8-bb3ebe6d2bc3"><con:authProfile>No Authorization</con:authProfile></con:entry><con:entry environmentId="b2d1e67f-f8d6-4ebb-9fc8-ecd326158ded"><con:authProfile>No Authorization</con:authProfile></con:entry><con:entry environmentId="2b4e7ce8-224f-460c-9f23-ea2d140ff47e"><con:authProfile>No Authorization</con:authProfile></con:entry></con:environmentSpec></con:restRequest>
-        </con:config>
-      </con:testStep>
-      <con:testStep type="restrequest" name="getwalletrecenttransactionsafterrecentpay" id="197cadd3-200c-4a8c-b2a7-164e719ff36a">
-        <con:settings/>
-        <con:config service="http://digisurveyapi.clidiem.com" resourcePath="/api/account/getwalletrecenttransactions" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-          <con:restRequest name="getwalletrecenttransactionsafterrecentpay" id="1fe02ccd-b6d8-4712-a33a-9c50b2a16480" mediaType="application/json" postQueryString="false">
-            <con:settings>
-              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="${#Project#access_token}" xmlns="http://eviware.com/soapui/config"/></con:setting>
-            </con:settings>
-            <con:endpoint>${#Project#Endpoint}</con:endpoint>
-            <con:request>{"UserLoginId":"${#Project#EncryptedLoginID}"}</con:request>
-            <con:originalUri>http://digisurveyapi.clidiem.com/api/account/api/Account/getwalletrecenttransactions</con:originalUri>
-            <con:assertion type="Valid HTTP Status Codes" id="fa5f202a-bae7-4803-b3fa-829345edb1a0" name="Valid HTTP Status Codes"><con:settings/><con:configuration><codes>200</codes></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="7676a23e-68c1-478c-9989-25ebc395a0d7" name="JsonPath Match"><con:configuration><path>$[0]['PaymentId']</path><content>*</content><allowWildcards>true</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="GroovyScriptAssertion" id="2e09c952-e573-43c8-a03b-8e37a34fae80" name="Script Assertion" disabled="true"><con:configuration><scriptText>import groovy.json.JsonSlurper
+}</con:request>
+        <con:originalUri>http://digisurveyapi.clidiem.com/api/account/api/Account/updatewepaypaymentstatus</con:originalUri>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:parameters/>
+        <con:environmentSpec>
+          <con:entry environmentId="21c918eb-3b13-42fb-96a8-bb3ebe6d2bc3">
+            <con:authProfile>No Authorization</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="b2d1e67f-f8d6-4ebb-9fc8-ecd326158ded">
+            <con:authProfile>No Authorization</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="2b4e7ce8-224f-460c-9f23-ea2d140ff47e">
+            <con:authProfile>No Authorization</con:authProfile>
+          </con:entry>
+        </con:environmentSpec>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="getwalletrecenttransactionsafterrecentpay" id="197cadd3-200c-4a8c-b2a7-164e719ff36a">
+    <con:settings/>
+    <con:config service="http://digisurveyapi.clidiem.com" resourcePath="/api/account/getwalletrecenttransactions" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="getwalletrecenttransactionsafterrecentpay" id="1fe02ccd-b6d8-4712-a33a-9c50b2a16480" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="${#Project#access_token}" xmlns="http://eviware.com/soapui/config"/></con:setting>
+        </con:settings>
+        <con:endpoint>${#Project#Endpoint}</con:endpoint>
+        <con:request>{"UserLoginId":"${#Project#EncryptedLoginID}"}</con:request>
+        <con:originalUri>http://digisurveyapi.clidiem.com/api/account/api/Account/getwalletrecenttransactions</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="fa5f202a-bae7-4803-b3fa-829345edb1a0" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="7676a23e-68c1-478c-9989-25ebc395a0d7" name="JsonPath Match">
+          <con:configuration>
+            <path>$[0]['PaymentId']</path>
+            <content>*</content>
+            <allowWildcards>true</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="GroovyScriptAssertion" id="2e09c952-e573-43c8-a03b-8e37a34fae80" name="Script Assertion" disabled="true">
+          <con:configuration>
+            <scriptText>import groovy.json.JsonSlurper
 def jsonSlurper = new JsonSlurper()
 def object = jsonSlurper.parseText(context.response)
 
@@ -131,15 +209,39 @@ log.info expectedSize
 /*
 assert object.matchingAddresses.addressList.size() &lt; expectedSize, "Address List size is less than expected size"
 
-*/</scriptText></con:configuration></con:assertion><con:assertion type="JsonPath Count" id="2174da00-d18e-42df-9087-413e5ee75b50" name="JsonPath Count"><con:configuration><path>$[*]['PaymentId']</path><content>${#Project#WalletTransactionNumberfinal}</content><allowWildcards>true</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:credentials>
-              <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
-              <con:authType>No Authorization</con:authType>
-            </con:credentials>
-            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
-            <con:jmsPropertyConfig/>
-            <con:parameters/>
-          <con:environmentSpec><con:entry environmentId="21c918eb-3b13-42fb-96a8-bb3ebe6d2bc3"><con:authProfile>No Authorization</con:authProfile></con:entry><con:entry environmentId="b2d1e67f-f8d6-4ebb-9fc8-ecd326158ded"><con:authProfile>No Authorization</con:authProfile></con:entry><con:entry environmentId="2b4e7ce8-224f-460c-9f23-ea2d140ff47e"><con:authProfile>No Authorization</con:authProfile></con:entry></con:environmentSpec></con:restRequest>
-        </con:config>
-      </con:testStep><con:properties/>
-      <con:reportParameters/>
-    </con:testCase>
+*/</scriptText>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Count" id="2174da00-d18e-42df-9087-413e5ee75b50" name="JsonPath Count">
+          <con:configuration>
+            <path>$[*]['PaymentId']</path>
+            <content>${#Project#WalletTransactionNumberfinal}</content>
+            <allowWildcards>true</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:parameters/>
+        <con:environmentSpec>
+          <con:entry environmentId="21c918eb-3b13-42fb-96a8-bb3ebe6d2bc3">
+            <con:authProfile>No Authorization</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="b2d1e67f-f8d6-4ebb-9fc8-ecd326158ded">
+            <con:authProfile>No Authorization</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="2b4e7ce8-224f-460c-9f23-ea2d140ff47e">
+            <con:authProfile>No Authorization</con:authProfile>
+          </con:entry>
+        </con:environmentSpec>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testCase>

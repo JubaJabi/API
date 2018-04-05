@@ -1,95 +1,640 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <con:resource name="company" path="/api/company/" id="d31f4cdd-4b58-4ecc-9b34-c799ee678f94" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
-      <con:settings><con:setting id="d31f4cdd-4b58-4ecc-9b34-c799ee678f94fileName">company</con:setting></con:settings>
+  <con:settings>
+    <con:setting id="d31f4cdd-4b58-4ecc-9b34-c799ee678f94fileName">company</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:resource name="getsurveystatusinfocompanydashpanel" path="getsurveystatusinfocompanydashpanel" id="05b2ccdc-52bf-4814-9879-080e547dd240">
+    <con:settings/>
+    <con:parameters/>
+    <con:method name="Method 1" id="07977058-5573-4aad-a6c6-e1de5154cc87" method="POST">
+      <con:settings/>
       <con:parameters/>
-      <con:resource name="getsurveystatusinfocompanydashpanel" path="getsurveystatusinfocompanydashpanel" id="05b2ccdc-52bf-4814-9879-080e547dd240">
-        <con:settings/>
-        <con:parameters/>
-        <con:method name="Method 1" id="07977058-5573-4aad-a6c6-e1de5154cc87" method="POST">
-          <con:settings/>
-          <con:parameters/>
-          <con:representation type="REQUEST">
-            <con:mediaType>application/json</con:mediaType>
-            <con:params/>
-          </con:representation>
-          <con:representation type="FAULT">
-            <con:mediaType>application/json; charset=utf-8</con:mediaType>
-            <con:status>401 500</con:status>
-            <con:params/>
-            <con:element xmlns:get="http://digisurveyapi.clidiem.com/api/company/getsurveystatusinfocompanydashpanel">get:Fault</con:element>
-          </con:representation>
-          <con:representation type="RESPONSE">
-            <con:mediaType>application/json; charset=utf-8</con:mediaType>
-            <con:status>200</con:status>
-            <con:params/>
-            <con:element xmlns:get="http://digisurveyapi.clidiem.com/api/company/getsurveystatusinfocompanydashpanel">get:Response</con:element>
-          </con:representation>
-          <con:request name="Request 1" id="486adf7d-2717-420a-8aa0-bac030f10285" mediaType="application/json" postQueryString="false">
-            <con:settings>
-              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
-            </con:settings>
-            <con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint>
-            <con:request>{
+      <con:representation type="REQUEST">
+        <con:mediaType>application/json</con:mediaType>
+        <con:params/>
+      </con:representation>
+      <con:representation type="FAULT">
+        <con:mediaType>application/json; charset=utf-8</con:mediaType>
+        <con:status>401 500</con:status>
+        <con:params/>
+        <con:element xmlns:get="http://digisurveyapi.clidiem.com/api/company/getsurveystatusinfocompanydashpanel">get:Fault</con:element>
+      </con:representation>
+      <con:representation type="RESPONSE">
+        <con:mediaType>application/json; charset=utf-8</con:mediaType>
+        <con:status>200</con:status>
+        <con:params/>
+        <con:element xmlns:get="http://digisurveyapi.clidiem.com/api/company/getsurveystatusinfocompanydashpanel">get:Response</con:element>
+      </con:representation>
+      <con:request name="Request 1" id="486adf7d-2717-420a-8aa0-bac030f10285" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint>
+        <con:request>{
 	CompanyId: "Fa4SDTmM//9wP2D/fO/0kQ=="
 	UserLoginId: "sz0pbAl8vxkVQpkis6/Q1g=="
 }</con:request>
-            <con:credentials>
-              <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
-              <con:authType>No Authorization</con:authType>
-            </con:credentials>
-            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
-            <con:parameters/>
-          <con:environmentSpec><con:entry environmentId="21c918eb-3b13-42fb-96a8-bb3ebe6d2bc3"><con:authProfile>No Authorization</con:authProfile></con:entry><con:entry environmentId="b2d1e67f-f8d6-4ebb-9fc8-ecd326158ded"><con:authProfile>No Authorization</con:authProfile></con:entry><con:entry environmentId="2b4e7ce8-224f-460c-9f23-ea2d140ff47e"><con:authProfile>No Authorization</con:authProfile></con:entry></con:environmentSpec></con:request>
-        </con:method>
-      </con:resource>
-      <con:resource name="getcompanyprofiledetails" path="getcompanyprofiledetails" id="f8b912d6-717e-475f-b785-53bd68278526">
-        <con:settings/>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
         <con:parameters/>
-        <con:method name="Method 1" id="e98af939-ed35-4f2b-9c06-8d1eb6aae662" method="POST">
-          <con:settings/>
-          <con:parameters/>
-          <con:representation type="REQUEST">
-            <con:mediaType>application/json</con:mediaType>
-            <con:params/>
-          </con:representation>
-          <con:representation type="RESPONSE">
-            <con:mediaType>application/json; charset=utf-8</con:mediaType>
-            <con:status>200</con:status>
-            <con:params/>
-            <con:element xmlns:get="http://digisurveyapi.clidiem.com/api/company/getcompanyprofiledetails">get:Response</con:element>
-          </con:representation>
-          <con:request name="Request 1" id="e8006a03-c800-4eff-8f2c-3791f116e932" mediaType="application/json" postQueryString="false">
-            <con:settings>
-              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
-            </con:settings>
-            <con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint>
-            <con:request>{
+        <con:environmentSpec>
+          <con:entry environmentId="21c918eb-3b13-42fb-96a8-bb3ebe6d2bc3">
+            <con:authProfile>No Authorization</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="b2d1e67f-f8d6-4ebb-9fc8-ecd326158ded">
+            <con:authProfile>No Authorization</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="2b4e7ce8-224f-460c-9f23-ea2d140ff47e">
+            <con:authProfile>No Authorization</con:authProfile>
+          </con:entry>
+        </con:environmentSpec>
+      </con:request>
+    </con:method>
+  </con:resource>
+  <con:resource name="getcompanyprofiledetails" path="getcompanyprofiledetails" id="f8b912d6-717e-475f-b785-53bd68278526">
+    <con:settings/>
+    <con:parameters/>
+    <con:method name="Method 1" id="e98af939-ed35-4f2b-9c06-8d1eb6aae662" method="POST">
+      <con:settings/>
+      <con:parameters/>
+      <con:representation type="REQUEST">
+        <con:mediaType>application/json</con:mediaType>
+        <con:params/>
+      </con:representation>
+      <con:representation type="RESPONSE">
+        <con:mediaType>application/json; charset=utf-8</con:mediaType>
+        <con:status>200</con:status>
+        <con:params/>
+        <con:element xmlns:get="http://digisurveyapi.clidiem.com/api/company/getcompanyprofiledetails">get:Response</con:element>
+      </con:representation>
+      <con:request name="Request 1" id="e8006a03-c800-4eff-8f2c-3791f116e932" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint>
+        <con:request>{
 
 Companyid: Fa4SDTmM//9wP2D/fO/0kQ==
 
 }</con:request>
-            <con:credentials>
-              <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
-              <con:authType>No Authorization</con:authType>
-            </con:credentials>
-            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
-            <con:parameters/>
-          <con:environmentSpec><con:entry environmentId="21c918eb-3b13-42fb-96a8-bb3ebe6d2bc3"><con:authProfile>No Authorization</con:authProfile></con:entry><con:entry environmentId="b2d1e67f-f8d6-4ebb-9fc8-ecd326158ded"><con:authProfile>No Authorization</con:authProfile></con:entry><con:entry environmentId="2b4e7ce8-224f-460c-9f23-ea2d140ff47e"><con:authProfile>No Authorization</con:authProfile></con:entry></con:environmentSpec></con:request>
-        </con:method>
-      </con:resource>
-      <con:method name="Method 1" id="06c73521-e783-4a08-8e45-164592dece89" method="POST">
-        <con:settings/>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
         <con:parameters/>
-        <con:request name="Request 1" id="2e343409-f5a0-452e-95b6-186fcddc6bce" mediaType="application/json" postQueryString="false">
-          <con:settings/>
-          <con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint>
-          <con:request/>
-          <con:credentials>
-            <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
-            <con:authType>No Authorization</con:authType>
-          </con:credentials>
-          <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
-          <con:parameters/>
-        <con:environmentSpec><con:entry environmentId="21c918eb-3b13-42fb-96a8-bb3ebe6d2bc3"><con:authProfile>No Authorization</con:authProfile></con:entry><con:entry environmentId="b2d1e67f-f8d6-4ebb-9fc8-ecd326158ded"><con:authProfile>No Authorization</con:authProfile></con:entry><con:entry environmentId="2b4e7ce8-224f-460c-9f23-ea2d140ff47e"><con:authProfile>No Authorization</con:authProfile></con:entry></con:environmentSpec></con:request>
-      </con:method>
-    </con:resource>
+        <con:environmentSpec>
+          <con:entry environmentId="21c918eb-3b13-42fb-96a8-bb3ebe6d2bc3">
+            <con:authProfile>No Authorization</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="b2d1e67f-f8d6-4ebb-9fc8-ecd326158ded">
+            <con:authProfile>No Authorization</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="2b4e7ce8-224f-460c-9f23-ea2d140ff47e">
+            <con:authProfile>No Authorization</con:authProfile>
+          </con:entry>
+        </con:environmentSpec>
+      </con:request>
+    </con:method>
+  </con:resource>
+  <con:resource name="getapiaccessdetails" path="getapiaccessdetails" id="b8721ad2-6d1d-4613-9499-cd288fe99207">
+    <con:settings/>
+    <con:parameters/>
+    <con:method name="Method 1" id="702ee173-27f1-4842-ae49-f4b74f8b8ff6" method="POST">
+      <con:settings/>
+      <con:parameters/>
+      <con:request name="Request 1" id="7fd5e947-8534-4676-bfbe-26e8d1436b22" mediaType="application/json" postQueryString="false">
+        <con:settings/>
+        <con:request/>
+        <con:credentials>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:request>
+    </con:method>
+  </con:resource>
+  <con:resource name="insertapiaccessdetails" path="insertapiaccessdetails" id="7986136d-8391-4129-af20-ae5323b08dbb">
+    <con:settings/>
+    <con:parameters/>
+    <con:method name="Method 1" id="cac701c8-1bd5-405b-b6d8-e2adbabfc8b6" method="POST">
+      <con:settings/>
+      <con:parameters/>
+      <con:request name="Request 1" id="62c52bef-d439-4514-874a-d9798f2b3ad8" mediaType="application/json" postQueryString="false">
+        <con:settings/>
+        <con:request/>
+        <con:credentials>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:request>
+    </con:method>
+  </con:resource>
+  <con:resource name="getapidetails" path="getapidetails" id="4e878240-bc45-4006-84cb-dd8188af2248">
+    <con:settings/>
+    <con:parameters/>
+    <con:method name="Method 1" id="e8bcb0eb-d544-4da1-89ba-3c6d45968582" method="POST">
+      <con:settings/>
+      <con:parameters/>
+      <con:request name="Request 1" id="26b40dd7-facf-4b07-a7e7-f72d7f7c1517" mediaType="application/json" postQueryString="false">
+        <con:settings/>
+        <con:request/>
+        <con:credentials>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:request>
+    </con:method>
+  </con:resource>
+  <con:resource name="getapiviewlist" path="getapiviewlist" id="50bd9179-9d38-4904-b647-1773b88f40af">
+    <con:settings/>
+    <con:parameters/>
+    <con:method name="Method 1" id="e94fec04-f106-4656-a25e-9128d5f68a94" method="POST">
+      <con:settings/>
+      <con:parameters/>
+      <con:request name="Request 1" id="1d22c8fc-c982-434a-ad50-854a1d3cea16" mediaType="application/json" postQueryString="false">
+        <con:settings/>
+        <con:request/>
+        <con:credentials>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:request>
+    </con:method>
+  </con:resource>
+  <con:resource name="apisviewdetails" path="apisviewdetails" id="e7e2c483-532a-4c56-8d00-f278b315aaff">
+    <con:settings/>
+    <con:parameters/>
+    <con:method name="Method 1" id="0df6227c-5b96-4fc8-9ec0-fc4ce34bdcbf" method="POST">
+      <con:settings/>
+      <con:parameters/>
+      <con:request name="Request 1" id="76dfad62-cd02-4273-b256-3195f8727597" mediaType="application/json" postQueryString="false">
+        <con:settings/>
+        <con:request/>
+        <con:credentials>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:request>
+    </con:method>
+  </con:resource>
+  <con:resource name="deleteapiaccessdetails" path="deleteapiaccessdetails" id="132dfc9d-4871-44bd-b6c1-1856a2fc286a">
+    <con:settings/>
+    <con:parameters/>
+    <con:method name="Method 1" id="f054cde4-df42-4943-8784-5f4d1505a1c7" method="POST">
+      <con:settings/>
+      <con:parameters/>
+      <con:request name="Request 1" id="7f72ceed-9e82-4a59-ab28-f5cd6d5a9e45" mediaType="application/json" postQueryString="false">
+        <con:settings/>
+        <con:request/>
+        <con:credentials>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:request>
+    </con:method>
+  </con:resource>
+  <con:resource name="checkcompanypublicprofileexistsornot" path="checkcompanypublicprofileexistsornot" id="c331cad6-9a4a-4a8f-aa15-4c65bd6daeea">
+    <con:settings/>
+    <con:parameters/>
+    <con:method name="Method 1" id="e341051d-b3e1-461f-ae61-d71622a92828" method="POST">
+      <con:settings/>
+      <con:parameters/>
+      <con:request name="Request 1" id="e232d2e5-6067-40ab-b49d-35399d33423a" mediaType="application/json" postQueryString="false">
+        <con:settings/>
+        <con:request/>
+        <con:credentials>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:request>
+    </con:method>
+  </con:resource>
+  <con:resource name="insertsetup" path="insertsetup" id="6884c8c1-abfb-472f-ad47-f71d189e9841">
+    <con:settings/>
+    <con:parameters/>
+    <con:method name="Method 1" id="922fa349-d2bb-446a-a5af-0c5e6090a784" method="POST">
+      <con:settings/>
+      <con:parameters/>
+      <con:request name="Request 1" id="86ea6634-be42-4ff0-8b3b-be99903f1937" mediaType="application/json" postQueryString="false">
+        <con:settings/>
+        <con:request/>
+        <con:credentials>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:request>
+    </con:method>
+  </con:resource>
+  <con:resource name="updatecompanydetails" path="updatecompanydetails" id="e8aca284-a3d3-4e91-b61b-42f07adab9d8">
+    <con:settings/>
+    <con:parameters/>
+    <con:method name="Method 1" id="5d1c76d1-4076-43a6-a47e-2ca3c93b722f" method="POST">
+      <con:settings/>
+      <con:parameters/>
+      <con:request name="Request 1" id="f1a752ad-c4a4-46a6-a602-d4722f6d23b7" mediaType="application/json" postQueryString="false">
+        <con:settings/>
+        <con:request/>
+        <con:credentials>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:request>
+    </con:method>
+  </con:resource>
+  <con:resource name="getsurveydetailsbysurveyid" path="getsurveydetailsbysurveyid" id="170736e1-8fcd-42f3-9c14-a4574bd22e01">
+    <con:settings/>
+    <con:parameters/>
+    <con:method name="Method 1" id="a17a3a24-1685-4c3d-a6c1-06a63e7b861d" method="POST">
+      <con:settings/>
+      <con:parameters/>
+      <con:request name="Request 1" id="860c0ae1-785a-4284-a5a3-9d656a20ffbb" mediaType="application/json" postQueryString="false">
+        <con:settings/>
+        <con:request/>
+        <con:credentials>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:request>
+    </con:method>
+  </con:resource>
+  <con:resource name="surveysharedlistbysurveyid" path="surveysharedlistbysurveyid" id="ab8cb94c-5ee0-4b10-9949-d59123dec3a1">
+    <con:settings/>
+    <con:parameters/>
+    <con:method name="Method 1" id="31895049-8c63-4f41-9ab8-b8353caa1ab2" method="POST">
+      <con:settings/>
+      <con:parameters/>
+      <con:request name="Request 1" id="f57055a4-f547-45c3-8ff7-29df7b658143" mediaType="application/json" postQueryString="false">
+        <con:settings/>
+        <con:request/>
+        <con:credentials>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:request>
+    </con:method>
+  </con:resource>
+  <con:resource name="bindsurveyemaildetails" path="bindsurveyemaildetails" id="25590048-6c87-4b7f-8e87-c0e5c0c51817">
+    <con:settings/>
+    <con:parameters/>
+    <con:method name="Method 1" id="b8bdbdb7-7d13-4db3-863c-c0909780e5c2" method="POST">
+      <con:settings/>
+      <con:parameters/>
+      <con:request name="Request 1" id="8205407c-574d-44c3-bd1c-0899e9035223" mediaType="application/json" postQueryString="false">
+        <con:settings/>
+        <con:request/>
+        <con:credentials>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:request>
+    </con:method>
+  </con:resource>
+  <con:resource name="closecompanysurveyquestionnaire" path="closecompanysurveyquestionnaire" id="25180248-6bd3-4296-82cc-83335be4d986">
+    <con:settings/>
+    <con:parameters/>
+    <con:method name="Method 1" id="7558cf78-0d0d-4c4e-b89c-1b3373f0ce47" method="POST">
+      <con:settings/>
+      <con:parameters/>
+      <con:request name="Request 1" id="2e402bf3-4150-4730-af48-61f6dc7771c0" mediaType="application/json" postQueryString="false">
+        <con:settings/>
+        <con:request/>
+        <con:credentials>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:request>
+    </con:method>
+  </con:resource>
+  <con:resource name="deletequestionnairedetails" path="deletequestionnairedetails" id="87ab5be9-ec3f-44e4-951d-e2dccedb7e75">
+    <con:settings/>
+    <con:parameters/>
+    <con:method name="Method 1" id="efcf46b1-c57e-4933-ad0a-6d82af8cc1a4" method="POST">
+      <con:settings/>
+      <con:parameters/>
+      <con:request name="Request 1" id="de03d2b0-50ca-4577-891e-ad99387a49a6" mediaType="application/json" postQueryString="false">
+        <con:settings/>
+        <con:request/>
+        <con:credentials>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:request>
+    </con:method>
+  </con:resource>
+  <con:resource name="getsurveyquestionsdetailslist" path="getsurveyquestionsdetailslist" id="09596e76-f48c-4b17-a3b2-a331e2280397">
+    <con:settings/>
+    <con:parameters/>
+    <con:method name="Method 1" id="b18b3871-28f2-40c0-86a3-4828aa84a7a8" method="POST">
+      <con:settings/>
+      <con:parameters/>
+      <con:request name="Request 1" id="d3c705f1-239d-4c3b-a87d-ea17a8724b04" mediaType="application/json" postQueryString="false">
+        <con:settings/>
+        <con:request/>
+        <con:credentials>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:request>
+    </con:method>
+  </con:resource>
+  <con:resource name="getcompanybankdetails" path="getcompanybankdetails" id="29782030-32e2-4cc4-96b4-58e1a416e781">
+    <con:settings/>
+    <con:parameters/>
+    <con:method name="Method 1" id="7b563194-5d2d-4fef-b577-a9f57921853a" method="POST">
+      <con:settings/>
+      <con:parameters/>
+      <con:request name="Request 1" id="cd28a761-2b25-4bb4-99c4-af4319b74405" mediaType="application/json" postQueryString="false">
+        <con:settings/>
+        <con:request/>
+        <con:credentials>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:request>
+    </con:method>
+  </con:resource>
+  <con:resource name="updatecompanybankdetails" path="updatecompanybankdetails" id="0c1ece4e-cb3f-4688-af63-e385db54d48c">
+    <con:settings/>
+    <con:parameters/>
+    <con:method name="Method 1" id="91034d6d-5e39-4f9e-bff1-53737aa66352" method="POST">
+      <con:settings/>
+      <con:parameters/>
+      <con:request name="Request 1" id="e6da6f45-b318-4743-9335-43743300e26b" mediaType="application/json" postQueryString="false">
+        <con:settings/>
+        <con:request/>
+        <con:credentials>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:request>
+    </con:method>
+  </con:resource>
+  <con:resource name="getcompanyquestionlist" path="getcompanyquestionlist" id="4ca7e3f5-0779-4a8b-ba59-9700988bc367">
+    <con:settings/>
+    <con:parameters/>
+    <con:method name="Method 1" id="2c79639a-bf6c-4c8d-8800-0b83639781f0" method="POST">
+      <con:settings/>
+      <con:parameters/>
+      <con:request name="Request 1" id="09f8d4ce-d92c-459b-b44e-3f4b35c798a8" mediaType="application/json" postQueryString="false">
+        <con:settings/>
+        <con:request/>
+        <con:credentials>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:request>
+    </con:method>
+  </con:resource>
+  <con:resource name="updatequestionbyquestionid" path="updatequestionbyquestionid" id="5626afc5-4c97-44e3-b59b-6d8fade42b8b">
+    <con:settings/>
+    <con:parameters/>
+    <con:method name="Method 1" id="e37aeddc-389b-45f4-91ab-527a25950280" method="POST">
+      <con:settings/>
+      <con:parameters/>
+      <con:request name="Request 1" id="12b6b611-cf1b-4deb-bf8a-7cab4d90faa5" mediaType="application/json" postQueryString="false">
+        <con:settings/>
+        <con:request/>
+        <con:credentials>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:request>
+    </con:method>
+  </con:resource>
+  <con:resource name="getselectedquestionsbyselectedQuestion" path="getselectedquestionsbyselectedQuestion" id="b3d413dd-c782-43c2-81f7-5ec4ca4dd38b">
+    <con:settings/>
+    <con:parameters/>
+    <con:method name="Method 1" id="e7f56a82-7473-411f-869d-523f0522e469" method="POST">
+      <con:settings/>
+      <con:parameters/>
+      <con:request name="Request 1" id="175a1409-358d-45cb-84b9-e053c78c0773" mediaType="application/json" postQueryString="false">
+        <con:settings/>
+        <con:request/>
+        <con:credentials>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:request>
+    </con:method>
+  </con:resource>
+  <con:resource name="getcompanydocuments" path="getcompanydocuments" id="64c09627-390a-4ad3-8841-c8db98a320e8">
+    <con:settings/>
+    <con:parameters/>
+    <con:method name="Method 1" id="ccbcba99-b88b-4841-b776-2518976ace57" method="POST">
+      <con:settings/>
+      <con:parameters/>
+      <con:request name="Request 1" id="e0251959-aa0e-4a3c-8673-ecead7c5f789" mediaType="application/json" postQueryString="false">
+        <con:settings/>
+        <con:request/>
+        <con:credentials>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:request>
+    </con:method>
+  </con:resource>
+  <con:resource name="savedocumenttype" path="savedocumenttype" id="c2af396e-5c2c-4b43-9e22-268f3e2c22db">
+    <con:settings/>
+    <con:parameters/>
+    <con:method name="Method 1" id="2676fbc7-a948-438b-bf1d-b67e407d2a05" method="POST">
+      <con:settings/>
+      <con:parameters/>
+      <con:request name="Request 1" id="8596144e-06a9-4d41-a44a-4e6afa5cb36e" mediaType="application/json" postQueryString="false">
+        <con:settings/>
+        <con:request/>
+        <con:credentials>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:request>
+    </con:method>
+  </con:resource>
+  <con:resource name="updatecompanydocuments" path="updatecompanydocuments" id="cd13bb1f-0e74-4e83-940a-87c3393a6fad">
+    <con:settings/>
+    <con:parameters/>
+    <con:method name="Method 1" id="f02a9ba8-bdf3-4ea7-9b6e-3ac9f487c47f" method="POST">
+      <con:settings/>
+      <con:parameters/>
+      <con:request name="Request 1" id="045560ca-78ee-4200-85df-80d35f969417" mediaType="application/json" postQueryString="false">
+        <con:settings/>
+        <con:request/>
+        <con:credentials>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:request>
+    </con:method>
+  </con:resource>
+  <con:resource name="deletecompanydocument" path="deletecompanydocument" id="e9e7df9b-6b11-4623-bf59-29d3124e3d4d">
+    <con:settings/>
+    <con:parameters/>
+    <con:method name="Method 1" id="87a4b34c-428e-4ffe-a9df-c163237b597d" method="POST">
+      <con:settings/>
+      <con:parameters/>
+      <con:request name="Request 1" id="f83c065f-c791-43c3-96f9-d1dd3b920d20" mediaType="application/json" postQueryString="false">
+        <con:settings/>
+        <con:request/>
+        <con:credentials>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:request>
+    </con:method>
+  </con:resource>
+  <con:resource name="savepetitiondetails" path="savepetitiondetails" id="0f3c9079-160a-4045-93f3-8b02336e8145">
+    <con:settings/>
+    <con:parameters/>
+    <con:method name="Method 1" id="a9f57134-4f66-4c37-b32a-248a84ace5a9" method="POST">
+      <con:settings/>
+      <con:parameters/>
+      <con:request name="Request 1" id="5f13c6bf-1fee-48eb-8e7d-47bff64d0678" mediaType="application/json" postQueryString="false">
+        <con:settings/>
+        <con:request/>
+        <con:credentials>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:request>
+    </con:method>
+  </con:resource>
+  <con:resource name="getpetitiondetailsbyids" path="getpetitiondetailsbyids" id="bcdc69f5-87c1-47d6-ae73-9c17522c0846">
+    <con:settings/>
+    <con:parameters/>
+    <con:method name="Method 1" id="41140d27-2df7-41f4-b5eb-115702e7dbbf" method="POST">
+      <con:settings/>
+      <con:parameters/>
+      <con:request name="Request 1" id="272900d8-77e6-4fbf-87ba-2f25d68063ee" mediaType="application/json" postQueryString="false">
+        <con:settings/>
+        <con:request/>
+        <con:credentials>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:request>
+    </con:method>
+  </con:resource>
+  <con:resource name="getcontactforpetitionview" path="getcontactforpetitionview" id="8ed8123f-1e70-4bf4-8814-cbe81fe6ebd7">
+    <con:settings/>
+    <con:parameters/>
+    <con:method name="Method 1" id="d189f9ad-6f5f-49a1-b7d9-40a31ff75b6c" method="POST">
+      <con:settings/>
+      <con:parameters/>
+      <con:request name="Request 1" id="3ecf17d2-9ec1-42cf-9354-ef61a31ce7f6" mediaType="application/json" postQueryString="false">
+        <con:settings/>
+        <con:request/>
+        <con:credentials>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:request>
+    </con:method>
+  </con:resource>
+  <con:resource name="getpetitiondetailsbyidsforedit" path="getpetitiondetailsbyidsforedit" id="ecffc052-ba66-4522-9980-5bef8f3ce8b6">
+    <con:settings/>
+    <con:parameters/>
+    <con:method name="Method 1" id="11b6a3bf-8c19-472f-8b05-d946bb3f43b3" method="POST">
+      <con:settings/>
+      <con:parameters/>
+      <con:request name="Request 1" id="86e70b15-fcdb-4df7-a43c-3db041b10c39" mediaType="application/json" postQueryString="false">
+        <con:settings/>
+        <con:request/>
+        <con:credentials>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:request>
+    </con:method>
+  </con:resource>
+  <con:resource name="updatepetitiondetails" path="updatepetitiondetails" id="f3936054-063b-4231-8663-3c9e5cf4f7ec">
+    <con:settings/>
+    <con:parameters/>
+    <con:method name="Method 1" id="31f53785-a290-4440-862c-7f896e57e68c" method="POST">
+      <con:settings/>
+      <con:parameters/>
+      <con:request name="Request 1" id="06e75620-db2a-4295-a262-dafdf38e8b05" mediaType="application/json" postQueryString="false">
+        <con:settings/>
+        <con:request/>
+        <con:credentials>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:request>
+    </con:method>
+  </con:resource>
+  <con:resource name="deletepetitiondetails" path="deletepetitiondetails" id="ff75df38-f147-4956-95ab-1a02fc3fbf0f">
+    <con:settings/>
+    <con:parameters/>
+    <con:method name="Method 1" id="0c583a26-5603-407f-bc1b-5c3d6c43a0d4" method="POST">
+      <con:settings/>
+      <con:parameters/>
+      <con:request name="Request 1" id="9c9c8bba-b8f2-47c4-8d14-54f7cc0bc2c7" mediaType="application/json" postQueryString="false">
+        <con:settings/>
+        <con:request/>
+        <con:credentials>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:request>
+    </con:method>
+  </con:resource>
+  <con:method name="Method 1" id="06c73521-e783-4a08-8e45-164592dece89" method="POST">
+    <con:settings/>
+    <con:parameters/>
+    <con:request name="Request 1" id="2e343409-f5a0-452e-95b6-186fcddc6bce" mediaType="application/json" postQueryString="false">
+      <con:settings/>
+      <con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint>
+      <con:request/>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+      <con:environmentSpec>
+        <con:entry environmentId="21c918eb-3b13-42fb-96a8-bb3ebe6d2bc3">
+          <con:authProfile>No Authorization</con:authProfile>
+        </con:entry>
+        <con:entry environmentId="b2d1e67f-f8d6-4ebb-9fc8-ecd326158ded">
+          <con:authProfile>No Authorization</con:authProfile>
+        </con:entry>
+        <con:entry environmentId="2b4e7ce8-224f-460c-9f23-ea2d140ff47e">
+          <con:authProfile>No Authorization</con:authProfile>
+        </con:entry>
+      </con:environmentSpec>
+    </con:request>
+  </con:method>
+</con:resource>

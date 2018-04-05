@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="f3fb7689-af52-4f17-975f-85a2a08dcaa1" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="Company Documents" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="f3fb7689-af52-4f17-975f-85a2a08dcaa1fileName">Company-Documents</con:setting>
+  </con:settings>
+  <con:savedRecentRuns>1</con:savedRecentRuns>
+  <con:testStep type="restrequest" name="Getcompanydocuments" id="af34bbfd-5993-48b0-b8c0-413c728071ae">
+    <con:settings/>
+    <con:config service="http://digisurveyapi.clidiem.com" resourcePath="/api/company/getcompanydocuments" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="Getcompanydocuments" id="67941e5e-5c49-402d-b5b4-50c224d1f939" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="${#Project#access_token}" xmlns="http://eviware.com/soapui/config"/></con:setting>
+        </con:settings>
+        <con:endpoint>${#Project#Endpoint}</con:endpoint>
+        <con:request>{
+	"Companyid":"${#Project#EncryptedCompanyId}"
+}</con:request>
+        <con:originalUri>http://digisurveyapi.clidiem.com/api/company/getcompanydocuments</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="164d1270-8f00-4c17-82bc-25fddd6f9940" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="GroovyScriptAssertion" id="83843029-b3de-403c-9591-e20965af4d4c" name="Script Assertion- After Add">
+          <con:configuration>
+            <scriptText>import groovy.json.JsonSlurper
+
+def slurper = new JsonSlurper()
+
+//get the response data from a test step
+def testCase = messageExchange.modelItem.testCase.getTestStepByName("Getcompanydocuments").getPropertyValue("response")
+
+
+
+def NoofDoc = context.expand( '${Getcompanydocuments#ResponseAsXml#count(/Response/e/DocumentTypeId)}' ) as int
+
+def additionvalue = "1" as int
+def NoofDocfinal  = NoofDoc + additionvalue
+
+log.info NoofDocfinal
+
+
+messageExchange.modelItem.testCase.testSuite.project.setPropertyValue("NoofDocfinal",NoofDocfinal as String)</scriptText>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="GroovyScriptAssertion" id="5264f07b-d105-449b-addd-899af918533e" name="Script Assertion -After Delete">
+          <con:configuration>
+            <scriptText>import groovy.json.JsonSlurper
+
+def slurper = new JsonSlurper()
+
+//get the response data from a test step
+def testCase = messageExchange.modelItem.testCase.getTestStepByName("Getcompanydocuments").getPropertyValue("response")
+
+
+
+def NoofDoc = context.expand( '${Getcompanydocuments#ResponseAsXml#count(/Response/e/DocumentTypeId)}' ) as int
+
+//def additionvalue = "1" as int
+def NoofDocfinaldelete  = NoofDoc 
+
+//- additionvalue
+
+log.info NoofDocfinaldelete
+
+
+messageExchange.modelItem.testCase.testSuite.project.setPropertyValue("NoofDocfinaldelete",NoofDocfinaldelete as String)</scriptText>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:parameters/>
+        <con:environmentSpec>
+          <con:entry environmentId="e6216270-ed4a-4883-87f9-32f234724588">
+            <con:authProfile>No Authorization</con:authProfile>
+          </con:entry>
+        </con:environmentSpec>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="SaveDocumenttype" id="f91eabf6-681f-47ca-86ea-04c817a5cb2d">
+    <con:settings/>
+    <con:config service="http://digisurveyapi.clidiem.com" resourcePath="/api/company/savedocumenttype" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="SaveDocumenttype" id="636deda5-0a92-444d-889a-e430304c380d" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="${#Project#access_token}" xmlns="http://eviware.com/soapui/config"/></con:setting>
+        </con:settings>
+        <con:endpoint>${#Project#Endpoint}</con:endpoint>
+        <con:request>{
+	"CompanyId":"${#Project#EncryptedCompanyId}",
+     "CreatedBy":"${#Project#EncryptedLoginID}",
+     "DocumentType":"${=((int)(Math.random()*10000))+10007}${#Project#Comp_DocumentType}",
+     "Notes":"${#Project#APINotes}"
+}</con:request>
+        <con:originalUri>http://digisurveyapi.clidiem.com/api/company/savedocumenttype</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="820fc4a6-2fa4-472c-95b2-16bd8c8a132f" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="f3e64e41-2d51-4001-9f19-e1c4f0af83f9" name="Document Type details saved successfully">
+          <con:configuration>
+            <path>$['StatusMessage']</path>
+            <content>Document Type details saved successfully</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:parameters/>
+        <con:environmentSpec>
+          <con:entry environmentId="e6216270-ed4a-4883-87f9-32f234724588">
+            <con:authProfile>No Authorization</con:authProfile>
+          </con:entry>
+        </con:environmentSpec>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="UpdateCompanydocuments" id="33b45ebd-310b-467a-be23-987754ac201d">
+    <con:settings/>
+    <con:config service="http://digisurveyapi.clidiem.com" resourcePath="/api/company/updatecompanydocuments" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="UpdateCompanydocuments" id="9a30352c-341e-4a52-8b2d-d697aeec4a1a" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="${#Project#access_token}" xmlns="http://eviware.com/soapui/config"/></con:setting>
+        </con:settings>
+        <con:endpoint>${#Project#Endpoint}</con:endpoint>
+        <con:request>{
+	"CompanyId":"${#Project#EncryptedCompanyId}",
+     "EmployeeId":"${#Project#EncryptedLoginID}",
+     "CompanyDocumentId": "0",
+     "DocumentType": "${SaveDocumenttype#Response#$['DocTypeId']}",
+     "Document1Name": "${#Project#Comp_Document1Name}",
+     "Document1Path": "http://cryptosurveystaging.clidiem.com/UploadFiles/CompanyUploadFiles/CompanyDocuments/_$w It Works_04-17-2018_09-07-41.docx",
+     "Document1Comments":""
+}</con:request>
+        <con:originalUri>http://digisurveyapi.clidiem.com/api/company/updatecompanydocuments</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="f881feeb-df37-423d-a44a-0be12ed48b64" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="b3aa018e-9ce8-4643-99ab-b5f21c97a727" name="StatusMessage">
+          <con:configuration>
+            <path>$['StatusMessage']</path>
+            <content>Document details saved successfully</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:parameters/>
+        <con:environmentSpec>
+          <con:entry environmentId="e6216270-ed4a-4883-87f9-32f234724588">
+            <con:authProfile>No Authorization</con:authProfile>
+          </con:entry>
+        </con:environmentSpec>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="Getcompanydocuments- After Adding" id="54965ef4-9df6-4ae4-8122-ac38f4cee031">
+    <con:settings/>
+    <con:config service="http://digisurveyapi.clidiem.com" resourcePath="/api/company/getcompanydocuments" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="Getcompanydocuments- After Adding" id="67941e5e-5c49-402d-b5b4-50c224d1f939" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="${#Project#access_token}" xmlns="http://eviware.com/soapui/config"/></con:setting>
+        </con:settings>
+        <con:endpoint>${#Project#Endpoint}</con:endpoint>
+        <con:request>{
+	"Companyid":"${#Project#EncryptedCompanyId}"
+}</con:request>
+        <con:originalUri>http://digisurveyapi.clidiem.com/api/company/getcompanydocuments</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="164d1270-8f00-4c17-82bc-25fddd6f9940" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="93a26d63-026c-4966-88f1-41c311510f5d" name="DocumentType">
+          <con:configuration>
+            <path>$[0]['DocumentType']</path>
+            <content>*</content>
+            <allowWildcards>true</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="2e0c91f6-23d1-4a33-96e6-5bbb8144fcb0" name="Document1Name">
+          <con:configuration>
+            <path>$[3]['Documents'][0]['Document1Name']</path>
+            <content>${UpdateCompanydocuments#RawRequest#$['Document1Name']}</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="20744171-d98f-485c-b69c-218cfbcbd18f" name="DocumentStatus">
+          <con:configuration>
+            <path>$[0]['Documents'][0]['DocumentStatus']</path>
+            <content>Pending</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Count" id="8e46a7f0-7ce5-4b51-899c-9719a2ff1d72" name="JsonPath Count">
+          <con:configuration>
+            <path>$[*]['DocumentTypeId']</path>
+            <content>${#Project#NoofDocfinal}</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:parameters/>
+        <con:environmentSpec>
+          <con:entry environmentId="e6216270-ed4a-4883-87f9-32f234724588">
+            <con:authProfile>No Authorization</con:authProfile>
+          </con:entry>
+        </con:environmentSpec>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="Deletecompanydocument" id="11687621-04d1-43d7-b96f-5072d5f07a5c">
+    <con:settings/>
+    <con:config service="http://digisurveyapi.clidiem.com" resourcePath="/api/company/deletecompanydocument" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="Deletecompanydocument" id="5ab51ab1-99ad-4973-9907-bb37a369c1a8" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="${#Project#access_token}" xmlns="http://eviware.com/soapui/config"/></con:setting>
+        </con:settings>
+        <con:request>{
+	"CompanyDocumentId":"${Getcompanydocuments#Response#$[2]['Documents'][0]['CompanyDocumentId']}",
+     "ModifiedBy":"${#Project#EncryptedLoginID}"
+}</con:request>
+        <con:originalUri>http://digisurveyapi.clidiem.com/api/company/deletecompanydocument</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="a71b9a3a-35b9-4224-987c-c85e376916dc" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="e31c8327-0bf2-4bb5-a690-d840fd0faad1" name="Company document details removed successfully">
+          <con:configuration>
+            <path>$['StatusMessage']</path>
+            <content>Company document details removed successfully</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="Getcompanydocuments- After Deleting" id="1e71aabb-aee8-48e9-9ccb-db15b68cfe9b">
+    <con:settings/>
+    <con:config service="http://digisurveyapi.clidiem.com" resourcePath="/api/company/getcompanydocuments" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="Getcompanydocuments- After Deleting" id="67941e5e-5c49-402d-b5b4-50c224d1f939" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="${#Project#access_token}" xmlns="http://eviware.com/soapui/config"/></con:setting>
+        </con:settings>
+        <con:endpoint>${#Project#Endpoint}</con:endpoint>
+        <con:request>{
+	"Companyid":"${#Project#EncryptedCompanyId}"
+}</con:request>
+        <con:originalUri>http://digisurveyapi.clidiem.com/api/company/getcompanydocuments</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="164d1270-8f00-4c17-82bc-25fddd6f9940" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Count" id="3483ad94-8ff9-48e7-9726-2956028e731e" name="JsonPath Count">
+          <con:configuration>
+            <path>$[*]['DocumentTypeId']</path>
+            <content>${#Project#NoofDocfinaldelete}</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:parameters/>
+        <con:environmentSpec>
+          <con:entry environmentId="e6216270-ed4a-4883-87f9-32f234724588">
+            <con:authProfile>No Authorization</con:authProfile>
+          </con:entry>
+        </con:environmentSpec>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+  <con:breakPoints>
+    <con:testStepId>7748ac99-077e-4d25-ac90-1a3b54975891</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+  <con:breakPoints>
+    <con:testStepId>bc579414-ae29-488d-a0fe-4c4ae009b632</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+  <con:breakPoints>
+    <con:testStepId>b66b6a9f-6ddd-4f76-92a1-4f2a0498b618</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+  <con:breakPoints>
+    <con:testStepId>64d55acd-a292-4b51-b302-c9622a75c77c</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+  <con:breakPoints>
+    <con:testStepId>b341871a-b8aa-4ec9-b0e7-3637b8d08bdc</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+</con:testCase>

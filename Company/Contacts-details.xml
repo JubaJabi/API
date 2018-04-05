@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="f3ffabff-1bf6-4bbf-9e6e-d772b95c2b04" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Contacts details" searchProperties="true" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="f3ffabff-1bf6-4bbf-9e6e-d772b95c2b04fileName">Contacts-details</con:setting>
+  </con:settings>
+  <con:savedRecentRuns>1</con:savedRecentRuns>
+  <con:testStep type="restrequest" name="CheckCompanypublicprofileexistsornot" id="fb286727-c59a-4517-8aa6-909959e2bd1b">
+    <con:settings/>
+    <con:config service="http://digisurveyapi.clidiem.com" resourcePath="/api/company/checkcompanypublicprofileexistsornot" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="CheckCompanypublicprofileexistsornot" id="cf79f789-094a-49e0-8ade-c8895810eb3a" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="${#Project#access_token}" xmlns="http://eviware.com/soapui/config"/></con:setting>
+        </con:settings>
+        <con:endpoint>${#Project#Endpoint}</con:endpoint>
+        <con:request>{
+	CompanyId:"${#Project#EncryptedCompanyId}"
+}</con:request>
+        <con:originalUri>http://digisurveyapi.clidiem.com/api/company/checkcompanypublicprofileexistsornot</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="e75d4b61-4810-4fbb-9d27-0bf47171ac0b" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="92de8f3a-4605-4757-ad01-4e872faa4a76" name="Company details exists">
+          <con:configuration>
+            <path>$['StatusMessage']</path>
+            <content>Company details exists</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+        <con:environmentSpec>
+          <con:entry environmentId="e6216270-ed4a-4883-87f9-32f234724588">
+            <con:authProfile>No Authorization</con:authProfile>
+          </con:entry>
+        </con:environmentSpec>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testCase>

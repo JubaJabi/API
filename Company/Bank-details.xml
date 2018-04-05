@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="b89f2192-1dba-4151-8416-d2c8ccf8b177" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="Bank details" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="b89f2192-1dba-4151-8416-d2c8ccf8b177fileName">Bank-details</con:setting>
+  </con:settings>
+  <con:savedRecentRuns>1</con:savedRecentRuns>
+  <con:testStep type="restrequest" name="GetCompanyBankdetails" id="cb3da9d7-4835-42d7-bd75-e6f4eecd59be">
+    <con:settings/>
+    <con:config service="http://digisurveyapi.clidiem.com" resourcePath="/api/company/getcompanybankdetails" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="GetCompanyBankdetails" id="12d9006b-c778-4bbf-bcf8-e29507578329" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="${#Project#access_token}" xmlns="http://eviware.com/soapui/config"/></con:setting>
+        </con:settings>
+        <con:endpoint>${#Project#Endpoint}</con:endpoint>
+        <con:request>{
+	"Companyid":"${#Project#EncryptedCompanyId}"
+}</con:request>
+        <con:originalUri>http://digisurveyapi.clidiem.com/api/company/getcompanybankdetails</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="8bd9fc4e-9f09-4ebc-8ab4-46e262fb1e7a" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="9935a334-5717-4338-b416-02cb0bc9a711" name="BankName">
+          <con:configuration>
+            <path>$[0]['BankName']</path>
+            <content>Bank Of America</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="b923f1d8-295e-437c-9fd2-3f4b38638ef4" name="AccountType">
+          <con:configuration>
+            <path>$[0]['AccountType']</path>
+            <content>Checking Account</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="85239131-b3f0-41d1-8e77-0faf3c40f3b6" name="RoutingNumber">
+          <con:configuration>
+            <path>$[1]['RoutingNumber']</path>
+            <content>*</content>
+            <allowWildcards>true</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="9f79b10a-5f2c-43c2-a494-97ada35c9ce2" name="City">
+          <con:configuration>
+            <path>$[1]['City']</path>
+            <content>${Updatecompanybankdetails#Request#$['City']}</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:parameters/>
+        <con:environmentSpec>
+          <con:entry environmentId="e6216270-ed4a-4883-87f9-32f234724588">
+            <con:authProfile>No Authorization</con:authProfile>
+          </con:entry>
+        </con:environmentSpec>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="Updatecompanybankdetails" id="e473dd2e-8fd1-40ee-96b2-97f0388e28d4">
+    <con:settings/>
+    <con:config service="http://digisurveyapi.clidiem.com" resourcePath="/api/company/updatecompanybankdetails" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="Updatecompanybankdetails" id="b5da3c1b-4ec5-4cf0-bdf8-42a61177f893" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="${#Project#access_token}" xmlns="http://eviware.com/soapui/config"/></con:setting>
+        </con:settings>
+        <con:endpoint>${#Project#Endpoint}</con:endpoint>
+        <con:request>{
+	"CompanyId":"${#Project#EncryptedCompanyId}",
+     "EmployeeId":"${#Project#EncryptedLoginID}",
+      "CompanyBankId":"${GetCompanyBankdetails#Response#$[0]['CompanyBankId']}",
+      "RoutingNumber":"${GetCompanyBankdetails#Response#$[0]['RoutingNumber']}",
+      "BankName":"${GetCompanyBankdetails#Response#$[0]['BankName']}",
+      "PhoneNumber":"${GetCompanyBankdetails#Response#$[0]['PhoneNumber']}",
+      "AccountNumber":"${GetCompanyBankdetails#Response#$[0]['AccountNumber']}",
+      "AccountType":"${GetCompanyBankdetails#Response#$[0]['AccountTypeId']}",
+      "Street1":"",
+      "Street2":"",
+      "City":"${#Project#Cand_City}", 
+      "CountryName":"${#Project#Comp_CountryName}", 
+      "StateName":"", 
+      "Zipcode":"" 
+}</con:request>
+        <con:originalUri>http://digisurveyapi.clidiem.com/api/company/updatecompanybankdetails</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="7825adf8-3304-4ab7-9f5e-90a5c79d72b8" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="4e97c643-dae9-4177-af7a-38af8b31cc59" name="StatusMessage">
+          <con:configuration>
+            <path>$['StatusMessage']</path>
+            <content>Bank details updated successfully</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+        <con:environmentSpec>
+          <con:entry environmentId="e6216270-ed4a-4883-87f9-32f234724588">
+            <con:authProfile>No Authorization</con:authProfile>
+          </con:entry>
+        </con:environmentSpec>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+  <con:breakPoints>
+    <con:testStepId>9ad65f14-8fc1-4289-bb46-9bfd896260fe</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+</con:testCase>

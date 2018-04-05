@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="c531fb1d-b8dd-4add-bc57-187708972e87" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="Question" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="c531fb1d-b8dd-4add-bc57-187708972e87fileName">Question</con:setting>
+  </con:settings>
+  <con:savedRecentRuns>1</con:savedRecentRuns>
+  <con:testStep type="restrequest" name="Getcompanyquestionlist" id="8a44e316-f8e7-43ec-a9ff-7ff624a01886">
+    <con:settings/>
+    <con:config service="http://digisurveyapi.clidiem.com" resourcePath="/api/company/getcompanyquestionlist" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="Getcompanyquestionlist" id="42888413-ed63-47d8-bdad-4b335d615cbd" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="${#Project#access_token}" xmlns="http://eviware.com/soapui/config"/></con:setting>
+        </con:settings>
+        <con:endpoint>${#Project#Endpoint}</con:endpoint>
+        <con:request>{
+	"CompanyId": "${#Project#EncryptedCompanyId}",
+     "UserLoginId": "${#Project#EncryptedLoginID}"
+	
+}</con:request>
+        <con:originalUri>http://digisurveyapi.clidiem.com/api/company/getcompanyquestionlist</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="a27fe83f-7151-451e-8454-7030ac1c5986" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="ca71b41a-9873-44d4-b8a7-a2a18dedfbc3" name="CreatedBy">
+          <con:configuration>
+            <path>$[0]['CreatedBy']</path>
+            <content>Lavanya</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="c3d1190e-6121-425c-9da9-7c2a33982cfc" name="GroupName">
+          <con:configuration>
+            <path>$[0]['GroupName']</path>
+            <content>GC status</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+        <con:environmentSpec>
+          <con:entry environmentId="e6216270-ed4a-4883-87f9-32f234724588">
+            <con:authProfile>No Authorization</con:authProfile>
+          </con:entry>
+        </con:environmentSpec>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="Updatequestionbyquestionid" id="63dcbe98-690a-42c9-b441-16a830956a81">
+    <con:settings/>
+    <con:config service="http://digisurveyapi.clidiem.com" resourcePath="/api/company/updatequestionbyquestionid" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="Updatequestionbyquestionid" id="21810a05-2989-436d-b6d7-6f1fffe428d6" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="${#Project#access_token}" xmlns="http://eviware.com/soapui/config"/></con:setting>
+        </con:settings>
+        <con:endpoint>${#Project#Endpoint}</con:endpoint>
+        <con:request>{
+    "Companyid":"${#Project#EncryptedCompanyId}",
+    "UserLoginId":"${#Project#EncryptedLoginID}",
+    "answerTypeId":"7",
+   options:"0",
+QuestionId:"${Getcompanyquestionlist#Response#$[0]['QuestionId']}",
+QuestionGroupId:"${Getcompanyquestionlist#Response#$[0]['QuestionGroup']}",
+QuestionText:"${=((int)(Math.random()*10))+1000}${#Project#QuestionText}",
+textlabel:"", 
+firstAnswerName:"", 
+secondAnswer:"", 
+thirdAnswer:"", 
+fourthAnswer:"", 
+fifthAnswer: "",
+sixthAnswer: "",
+seventhAnswer:"", 
+eightAnswer: "",
+ninthAnswer: "",
+tenthAnswer: "",
+IsCopyAndEdit: "1",
+textGroupScaleLeft:"", 
+textGroupScaleRight: ""
+}</con:request>
+        <con:originalUri>http://digisurveyapi.clidiem.com/api/company/updatequestionbyquestionid</con:originalUri>
+        <con:assertion type="Simple Contains" id="74a20048-4a54-489d-a445-6e37a0f25f20" name="Contains">
+          <con:configuration>
+            <token>Question updated successfully</token>
+            <ignoreCase>false</ignoreCase>
+            <useRegEx>false</useRegEx>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Valid HTTP Status Codes" id="f2fc5cd4-a6f9-49ec-932c-a6b855a40dec" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="00a5fc29-e57a-4eb7-8dda-03e6c277ec85" name="Question updated successfully">
+          <con:configuration>
+            <path>$['StatusMessage']</path>
+            <content>Question updated successfully</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+        <con:environmentSpec>
+          <con:entry environmentId="e6216270-ed4a-4883-87f9-32f234724588">
+            <con:authProfile>No Authorization</con:authProfile>
+          </con:entry>
+        </con:environmentSpec>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="Getcompanyquestionlist- After update" id="c77040f8-00ff-4466-9dad-bca092260995">
+    <con:settings/>
+    <con:config service="http://digisurveyapi.clidiem.com" resourcePath="/api/company/getcompanyquestionlist" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="Getcompanyquestionlist- After update" id="42888413-ed63-47d8-bdad-4b335d615cbd" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="${#Project#access_token}" xmlns="http://eviware.com/soapui/config"/></con:setting>
+        </con:settings>
+        <con:endpoint>${#Project#Endpoint}</con:endpoint>
+        <con:request>{
+	"CompanyId": "${#Project#EncryptedCompanyId}",
+     "UserLoginId": "${#Project#EncryptedLoginID}"
+	
+}</con:request>
+        <con:originalUri>http://digisurveyapi.clidiem.com/api/company/getcompanyquestionlist</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="a27fe83f-7151-451e-8454-7030ac1c5986" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="ca71b41a-9873-44d4-b8a7-a2a18dedfbc3" name="CreatedBy">
+          <con:configuration>
+            <path>$[0]['CreatedBy']</path>
+            <content>Lavanya</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="c3d1190e-6121-425c-9da9-7c2a33982cfc" name="GroupName">
+          <con:configuration>
+            <path>$[0]['GroupName']</path>
+            <content>GC status</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="4409702e-a71d-4186-a520-13618998e3b0" name="QuestionText">
+          <con:configuration>
+            <path>$[0]['QuestionText']</path>
+            <content>${Updatequestionbyquestionid#RawRequest#$['QuestionText']}</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+        <con:environmentSpec>
+          <con:entry environmentId="e6216270-ed4a-4883-87f9-32f234724588">
+            <con:authProfile>No Authorization</con:authProfile>
+          </con:entry>
+        </con:environmentSpec>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="GetSelectedquestionsbyselectedQuestion" id="8d80e3b9-12c7-41a5-951d-6347782cc25e">
+    <con:settings/>
+    <con:config service="http://digisurveyapi.clidiem.com" resourcePath="/api/company/getselectedquestionsbyselectedQuestion" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="GetSelectedquestionsbyselectedQuestion" id="6ed577c1-8aaf-4434-8965-d418bd0d5c79" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="${#Project#access_token}" xmlns="http://eviware.com/soapui/config"/></con:setting>
+        </con:settings>
+        <con:endpoint>${#Project#Endpoint}</con:endpoint>
+        <con:request>{
+	"QuestionId": "${Getcompanyquestionlist#Response#$[0]['QuestionId']}"
+}</con:request>
+        <con:originalUri>http://digisurveyapi.clidiem.com/api/company/getselectedquestionsbyselectedQuestion</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="edc24166-1d18-4d4b-888c-52f8336c8eea" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="a4a8fb13-b55b-42b7-81c8-b35d91e46d66" name="AnswerType">
+          <con:configuration>
+            <path>$[0]['AnswerType']</path>
+            <content>Yes or No</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="9d74fc75-f2a5-49d6-8396-62a856d564c7" name="Question">
+          <con:configuration>
+            <path>$[0]['Question']</path>
+            <content>${Getcompanyquestionlist- After update#Response#$[0]['QuestionText']}</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="2e8a3074-f8ab-48bf-93d8-b7eb1f53071b" name="LanguageName">
+          <con:configuration>
+            <path>$[0]['LanguageName']</path>
+            <content>English</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:parameters/>
+        <con:environmentSpec>
+          <con:entry environmentId="e6216270-ed4a-4883-87f9-32f234724588">
+            <con:authProfile>No Authorization</con:authProfile>
+          </con:entry>
+        </con:environmentSpec>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+  <con:breakPoints>
+    <con:testStepId>96be8018-de46-4a09-9fd0-347d2feca867</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+</con:testCase>
