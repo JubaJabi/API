@@ -18,6 +18,11 @@
       </con:dataSource>
       <con:shared>true</con:shared>
       <con:restartShared>true</con:restartShared>
+      <con:preload>true</con:preload>
+      <con:property>Scenario</con:property>
+      <con:property>Run</con:property>
+      <con:property>EmailId</con:property>
+      <con:property>Password</con:property>
       <con:startRow/>
       <con:endRow/>
       <con:recordsPerIteration>1</con:recordsPerIteration>
