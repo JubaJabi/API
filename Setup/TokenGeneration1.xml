@@ -1,65 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:testCase id="b14d413a-14c8-4043-a40c-853323760509" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="DT_TokenGeneration" searchProperties="true" timeout="0" maxResults="0" disabled="true" xmlns:con="http://eviware.com/soapui/config">
+<con:testCase id="732e333f-b6d1-4995-a754-6237ced5ccff" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="TokenGeneration" searchProperties="true" timeout="0" maxResults="0" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
     <con:setting id="b14d413a-14c8-4043-a40c-853323760509fileName">TokenGeneration</con:setting>
+    <con:setting id="732e333f-b6d1-4995-a754-6237ced5ccfffileName">TokenGeneration1</con:setting>
   </con:settings>
   <con:savedRecentRuns>1</con:savedRecentRuns>
-  <con:testStep type="datasource" name="DataSource" id="210f18cb-864f-48d5-9476-40e02487a378">
-    <con:settings/>
-    <con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-      <con:dataSource type="Excel">
-        <con:configuration>
-          <file>CryptoSurveyAPI/SoapUI.xlsx</file>
-          <worksheet>Scenarios</worksheet>
-          <cell>A2</cell>
-          <ignoreEmpty>false</ignoreEmpty>
-          <evaluateFormulas>false</evaluateFormulas>
-        </con:configuration>
-      </con:dataSource>
-      <con:shared>true</con:shared>
-      <con:restartShared>true</con:restartShared>
-      <con:preload>true</con:preload>
-      <con:property>Scenario</con:property>
-      <con:property>Run</con:property>
-      <con:property>EmailId</con:property>
-      <con:property>Password</con:property>
-      <con:startRow/>
-      <con:endRow/>
-      <con:recordsPerIteration>1</con:recordsPerIteration>
-      <con:completeLastOperation>true</con:completeLastOperation>
-      <con:trimValues>false</con:trimValues>
-      <con:entitizeValues>false</con:entitizeValues>
-      <con:restartOnRun>true</con:restartOnRun>
-      <con:expandProperties>false</con:expandProperties>
-    </con:config>
-  </con:testStep>
-  <con:testStep type="groovy" name="Groovy Script" id="01f48f78-3d7b-4e56-a864-82dac1c0660a">
-    <con:settings/>
-    <con:config>
-      <script>def ds = testRunner.testCase.testSteps['DataSource']
-rowAdd = ds.getPropertyValue("Run")
-
-log.info rowAdd
-
-if (rowAdd=="X")
-
-{
-
-def testStep = testRunner.testCase.testSuite.project.getTestSuiteByName("Setup").getTestCaseByName("TokenGeneration").getTestStepByName("Token")
-
-testStep.run(testRunner, context)
-
-}
-else
-
-{
-def testStep2 = testRunner.testCase.testSuite.project.getTestSuiteByName("Account").getTestCaseByName("Wallet Transacations").getTestStepByName("getwalletrecenttransactions")
-
-testStep2.run(testRunner, context)
-}</script>
-    </con:config>
-  </con:testStep>
-  <con:testStep type="restrequest" name="Token" id="01628435-660d-4be3-a8c3-741c9f3c2030">
+  <con:testStep type="restrequest" name="Token" id="7bba4ab2-14e6-422c-87fd-5070cbf13c80">
     <con:settings/>
     <con:config service="http://digisurveyapi.clidiem.com" resourcePath="/token" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:restRequest name="Token" id="d3eda42a-9baa-4fb0-a1e4-3c721672c58c" mediaType="application/json" postQueryString="false">
@@ -179,24 +125,6 @@ messageExchange.modelItem.testCase.testSuite.project.setPropertyValue("Encrypted
           </con:entry>
         </con:environmentSpec>
       </con:restRequest>
-    </con:config>
-  </con:testStep>
-  <con:testStep type="goto" name="Conditional Goto" id="00e82bda-37a6-41b8-ac29-e7485d36662f" disabled="true">
-    <con:settings/>
-    <con:config xsi:type="con:GotoStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-      <con:condition>
-        <con:name>Condition 1</con:name>
-        <con:type>XPATH</con:type>
-        <con:targetStep>Token</con:targetStep>
-      </con:condition>
-    </con:config>
-  </con:testStep>
-  <con:testStep type="datasourceloop" name="DataSource Loop" id="1e808f02-ab4e-4f34-9c0d-6cd7ba2fdb0f">
-    <con:settings/>
-    <con:config>
-      <dataSourceStep>DataSource</dataSourceStep>
-      <targetStep>Token</targetStep>
-      <discardResults>true</discardResults>
     </con:config>
   </con:testStep>
   <con:properties/>
