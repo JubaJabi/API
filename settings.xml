@@ -3,6 +3,10 @@
   <con:settings>
     <con:setting id="18a9daec-f1c9-4298-99f1-3f41cafccdb1fileName">CryptoSurvey Regression</con:setting>
   </con:settings>
+  <con:vcsConfiguration>
+    <con:vcsName>Git</con:vcsName>
+    <con:repositoryIdentifier>https://github.com/JubaJabi/API</con:repositoryIdentifier>
+  </con:vcsConfiguration>
   <con:savedRecentRuns>1</con:savedRecentRuns>
   <con:requirements/>
   <con:properties>
@@ -229,19 +233,19 @@
     </con:property>
     <con:property>
       <con:name>EncryptedCompanyId</con:name>
-      <con:value>Fa4SDTmM//9wP2D/fO/0kQ==</con:value>
+      <con:value xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
     </con:property>
     <con:property>
       <con:name>EncryptedLoginID</con:name>
-      <con:value>sz0pbAl8vxkVQpkis6/Q1g==</con:value>
+      <con:value xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
     </con:property>
     <con:property>
       <con:name>EncryptedUserId</con:name>
-      <con:value>Fa4SDTmM//9wP2D/fO/0kQ==</con:value>
+      <con:value xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
     </con:property>
     <con:property>
       <con:name>EncryptedCompanyRoleId</con:name>
-      <con:value>S2TqMD3nmxyKm3Dn1Xc7aA==</con:value>
+      <con:value xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
     </con:property>
     <con:property>
       <con:name>EncryptedDefaultRoleId</con:name>
@@ -249,7 +253,7 @@
     </con:property>
     <con:property>
       <con:name>access_token</con:name>
-      <con:value>bearer   MNINlZWSQnA4Tw5jm-Y92ZuaxMb_QYXbKfvitgTYKUITOGspxACqMKPNFNVbXLHUURsZEvG-iPM7bCOocDwrHQHAaSeg9QbX08oOnSjJ7EFAtzD-32V5xY8NEm8Zd8TfqXA97laKmTggaccCRF32Es42t9Saz2ua6q6flWDpHMaL4xU-tTUSl2nOwVcDxn9O0TngRu1n-xVs0zQBcccOLOiKqdWINWHROTY_pQ-MDL7MyZGYHQLFkpMLGCcWg_G81O9FsKTO6NMW9t6tggScKXHQeexYQoVxzISuui09qu-gzIIPpJd3cR2rqXA48AiLMOxo46bgCvdsJEOqzn4TUeZFnU8b0QtfSop8tKT1YEF7q2Grx4DFWLscihDSIf16SupTav7Jy9FXgoGW5ACsvkDmkdeqVQQ3YoBjO60eEzihn925Nbm7fGSh2lwCUkrs89YMoRIKGrmrqi1d4CkuQ_JlkK9C5gqMSsfSb9wk3crLaZT_pWlmqUw6cima2xxA6Ec3LodMKUgZPS06nZSmZVsBdsdowdbgYjAN2M90B5brgJMrH2sNTqs0b2cfT_0OtmnVNMOQaNzNTs5WOBBB07kHz0H4QFQA3weLKM9JNPXy38nHKgRS9KQzbY7IND7pfdoneJcnF_5JQWO4lxduP9ncniJiuFzWGtzCRWMiqFnE00LTX6Ufg7NRO60AirlCdQonKs-ZQ0d87qeyiLJ2dRSkFwIANhArO1Ky9iDzyFTKe9310Qt3Kl4_NeDvWsY9</con:value>
+      <con:value>bearer   null</con:value>
     </con:property>
     <con:property>
       <con:name>WalletTransactionNumberfinal</con:name>
