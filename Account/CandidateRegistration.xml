@@ -1,17 +1,65 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <con:testCase id="4dbc8d2b-00fb-4cd8-9580-c65dfc783616" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="CandidateRegistration" searchProperties="true" timeout="0" maxResults="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword="" xmlns:con="http://eviware.com/soapui/config">
-      <con:settings><con:setting id="IncludeOverview">true</con:setting><con:setting id="IncludeResults">true</con:setting><con:setting id="FlowLayout">false</con:setting><con:setting id="ErrorDetails">true</con:setting><con:setting id="IncludeCoverage">true</con:setting><con:setting id="4dbc8d2b-00fb-4cd8-9580-c65dfc783616fileName">CandidateRegistration</con:setting></con:settings>
-      <con:savedRecentRuns>1</con:savedRecentRuns>
-      <con:testStep type="datasource" name="DataSource" id="7a50a4ad-f5f6-4656-8883-a5ffa1118c75"><con:settings/><con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:dataSource type="Excel"><con:configuration><file>SoapUI.xlsx</file><worksheet>Candidate</worksheet><cell>A2</cell><ignoreEmpty>false</ignoreEmpty><evaluateFormulas>false</evaluateFormulas></con:configuration></con:dataSource><con:shared>true</con:shared><con:restartShared>true</con:restartShared><con:property>FirstName</con:property><con:property>LastName</con:property><con:property>EmailID</con:property><con:property>ContactNumber</con:property><con:property>Password</con:property><con:property>IPAddress</con:property><con:property>WebProjectID</con:property><con:property>Location</con:property><con:property>Browser</con:property><con:property>Latitude</con:property><con:property>Longitude</con:property><con:property>CountryName</con:property><con:property>PackageID</con:property><con:property>ReferralCode</con:property><con:property>VerificationCode</con:property><con:property>RandomKey</con:property><con:property>RegistrationString</con:property><con:property>StatusMessage</con:property><con:startRow/><con:endRow>10</con:endRow><con:recordsPerIteration>1</con:recordsPerIteration><con:completeLastOperation>true</con:completeLastOperation><con:trimValues>false</con:trimValues><con:entitizeValues>false</con:entitizeValues><con:restartOnRun>true</con:restartOnRun><con:expandProperties>false</con:expandProperties></con:config></con:testStep>
-      <con:testStep type="restrequest" name="Candidate Registration" id="5d2e03c9-fd35-4daf-9de2-8caa956ecbec">
-        <con:settings/>
-        <con:config service="http://digisurveyapi.clidiem.com" resourcePath="/api/account/CandidateRegistration" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-          <con:restRequest name="Candidate Registration" id="4d056a9d-b86f-440a-b295-c3f82cb73fb5" mediaType="application/json" postQueryString="false">
-            <con:settings>
-              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
-            </con:settings>
-            <con:endpoint>${#Project#EndPoint}</con:endpoint>
-            <con:request>{
+  <con:settings>
+    <con:setting id="IncludeOverview">true</con:setting>
+    <con:setting id="IncludeResults">true</con:setting>
+    <con:setting id="FlowLayout">false</con:setting>
+    <con:setting id="ErrorDetails">true</con:setting>
+    <con:setting id="IncludeCoverage">true</con:setting>
+    <con:setting id="4dbc8d2b-00fb-4cd8-9580-c65dfc783616fileName">CandidateRegistration</con:setting>
+  </con:settings>
+  <con:savedRecentRuns>1</con:savedRecentRuns>
+  <con:testStep type="datasource" name="DataSource" id="7a50a4ad-f5f6-4656-8883-a5ffa1118c75">
+    <con:settings/>
+    <con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:dataSource type="Excel">
+        <con:configuration>
+          <file>CryptoSurveyAPI/SoapUI.xlsx</file>
+          <worksheet>Candidate</worksheet>
+          <cell>A2</cell>
+          <ignoreEmpty>false</ignoreEmpty>
+          <evaluateFormulas>false</evaluateFormulas>
+        </con:configuration>
+      </con:dataSource>
+      <con:shared>true</con:shared>
+      <con:restartShared>true</con:restartShared>
+      <con:property>FirstName</con:property>
+      <con:property>LastName</con:property>
+      <con:property>EmailID</con:property>
+      <con:property>ContactNumber</con:property>
+      <con:property>Password</con:property>
+      <con:property>IPAddress</con:property>
+      <con:property>WebProjectID</con:property>
+      <con:property>Location</con:property>
+      <con:property>Browser</con:property>
+      <con:property>Latitude</con:property>
+      <con:property>Longitude</con:property>
+      <con:property>CountryName</con:property>
+      <con:property>PackageID</con:property>
+      <con:property>ReferralCode</con:property>
+      <con:property>VerificationCode</con:property>
+      <con:property>RandomKey</con:property>
+      <con:property>RegistrationString</con:property>
+      <con:property>StatusMessage</con:property>
+      <con:startRow/>
+      <con:endRow>10</con:endRow>
+      <con:recordsPerIteration>1</con:recordsPerIteration>
+      <con:completeLastOperation>true</con:completeLastOperation>
+      <con:trimValues>false</con:trimValues>
+      <con:entitizeValues>false</con:entitizeValues>
+      <con:restartOnRun>true</con:restartOnRun>
+      <con:expandProperties>false</con:expandProperties>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="Candidate Registration" id="5d2e03c9-fd35-4daf-9de2-8caa956ecbec">
+    <con:settings/>
+    <con:config service="http://digisurveyapi.clidiem.com" resourcePath="/api/account/CandidateRegistration" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="Candidate Registration" id="4d056a9d-b86f-440a-b295-c3f82cb73fb5" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:endpoint>${#Project#EndPoint}</con:endpoint>
+        <con:request>{
 	"FirstName" :"${DataSource#FirstName}",
 	"LastName" :"${DataSource#LastName}",
 	"EmailId" :"${DataSource#EmailID}",
@@ -27,8 +75,28 @@
 	"PackageId" :"${DataSource#PackageID}",
 	"ReferralCode" :"${DataSource#ReferralCode}"
 }</con:request>
-            <con:originalUri>http://digisurveyapi.clidiem.com/api/account/candidateregistration</con:originalUri>
-            <con:assertion type="JsonPath Match" id="10dffd9a-46e5-4f75-b4ae-65e8c6c422fa" name="VerificationCodde"><con:configuration><path>$['VerificationCode']</path><content>*</content><allowWildcards>true</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="d2fbab75-bb89-4e59-8f0b-c36b6a60f418" name="StatusMessage"><con:configuration><path>$['StatusMessage']</path><content>Please check your email &lt;span style="font-size: 14px; font-weight: bold;">${DataSource#EmailID}&lt;/span> for the Verification code and enter it below. Or You can use the verification link in the email to verify and login. The Code and link are valid for the next 24 Hours only. If you don't find the email please check in Spam or All Mail folder.</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="GroovyScriptAssertion" id="c7f58054-0df8-42e0-8ec5-58f7ef2130c5" name="Script Assertion"><con:configuration><scriptText>import groovy.json.JsonSlurper
+        <con:originalUri>http://digisurveyapi.clidiem.com/api/account/candidateregistration</con:originalUri>
+        <con:assertion type="JsonPath Match" id="10dffd9a-46e5-4f75-b4ae-65e8c6c422fa" name="VerificationCodde">
+          <con:configuration>
+            <path>$['VerificationCode']</path>
+            <content>*</content>
+            <allowWildcards>true</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="d2fbab75-bb89-4e59-8f0b-c36b6a60f418" name="StatusMessage">
+          <con:configuration>
+            <path>$['StatusMessage']</path>
+            <content>Please check your email &lt;span style="font-size: 14px; font-weight: bold;">${DataSource#EmailID}&lt;/span> for the Verification code and enter it below. Or You can use the verification link in the email to verify and login. The Code and link are valid for the next 24 Hours only. If you don't find the email please check in Spam or All Mail folder.</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="GroovyScriptAssertion" id="c7f58054-0df8-42e0-8ec5-58f7ef2130c5" name="Script Assertion">
+          <con:configuration>
+            <scriptText>import groovy.json.JsonSlurper
 def groovyUtils = new com.eviware.soapui.support.GroovyUtils( context )
 
 def slurper = new JsonSlurper()
@@ -54,33 +122,81 @@ groovyUtils.setPropertyValue("DataSink", "VerificationCode", VerificationCode)
 
 groovyUtils.setPropertyValue("DataSink", "RandomKey", RandomKey)
 
-groovyUtils.setPropertyValue("DataSink", "RegistrationString", RegistrationIdString)
-</scriptText></con:configuration></con:assertion><con:assertion type="Response SLA Assertion" id="d2ef8db3-316c-4ed3-8786-fa11442d7e15" name="Response SLA"><con:configuration><SLA>200</SLA></con:configuration></con:assertion><con:credentials>
-              <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
-              <con:authType>No Authorization</con:authType>
-            </con:credentials>
-            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
-            <con:jmsPropertyConfig/><con:parameters/>
-            <con:parameterOrder/>
-          <con:environmentSpec><con:entry environmentId="21c918eb-3b13-42fb-96a8-bb3ebe6d2bc3"><con:authProfile>No Authorization</con:authProfile></con:entry><con:entry environmentId="b2d1e67f-f8d6-4ebb-9fc8-ecd326158ded"><con:authProfile>No Authorization</con:authProfile></con:entry><con:entry environmentId="2b4e7ce8-224f-460c-9f23-ea2d140ff47e"><con:authProfile>No Authorization</con:authProfile></con:entry></con:environmentSpec></con:restRequest>
-        </con:config>
-      </con:testStep>
-      <con:testStep type="restrequest" name="verifycandidateverificationcode" id="98abfff9-2b92-4f6a-b018-a2a28d25964c">
-        <con:settings/>
-        <con:config service="http://digisurveyapi.clidiem.com" resourcePath="/api/account/verifycandidateverificationcode" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-          <con:restRequest name="verifycandidateverificationcode" id="4064d8b4-17ea-4cf3-996c-59fd3a5fcf42" mediaType="application/json" postQueryString="false">
-            <con:settings>
-              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
-            </con:settings>
-            <con:endpoint>${#Project#Endpoint}</con:endpoint>
-            <con:request>{
+groovyUtils.setPropertyValue("DataSink", "RegistrationString", RegistrationIdString)</scriptText>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="d2ef8db3-316c-4ed3-8786-fa11442d7e15" name="Response SLA">
+          <con:configuration>
+            <SLA>200</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:parameters/>
+        <con:parameterOrder/>
+        <con:environmentSpec>
+          <con:entry environmentId="21c918eb-3b13-42fb-96a8-bb3ebe6d2bc3">
+            <con:authProfile>No Authorization</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="b2d1e67f-f8d6-4ebb-9fc8-ecd326158ded">
+            <con:authProfile>No Authorization</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="2b4e7ce8-224f-460c-9f23-ea2d140ff47e">
+            <con:authProfile>No Authorization</con:authProfile>
+          </con:entry>
+        </con:environmentSpec>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="verifycandidateverificationcode" id="98abfff9-2b92-4f6a-b018-a2a28d25964c">
+    <con:settings/>
+    <con:config service="http://digisurveyapi.clidiem.com" resourcePath="/api/account/verifycandidateverificationcode" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="verifycandidateverificationcode" id="4064d8b4-17ea-4cf3-996c-59fd3a5fcf42" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:endpoint>${#Project#Endpoint}</con:endpoint>
+        <con:request>{
 	"RegistrationId": "${Candidate Registration#Response#$['RegistrationIdString']}",
      "RandomKey": "${Candidate Registration#Response#$['RandomKey']}",
      "VerificationCode": "${Candidate Registration#Response#$['VerificationCode']}",
      "WebProjectId":"${DataSource#WebProjectID}"
 }</con:request>
-            <con:originalUri>http://digisurveyapi.clidiem.com/api/account/verifycandidateverificationcode</con:originalUri>
-            <con:assertion type="JsonPath Match" id="aade4bd0-2511-4d0d-a071-944c943f7bd2" name="StatusMessage"><con:configuration><path>$['StatusMessage']</path><content>Valid</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="04443b7b-d53c-4116-b366-680e6a9fac41" name="Name"><con:configuration><path>$['Name']</path><content>${DataSource#FirstName} ${DataSource#LastName}</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="0656959a-846a-408b-b878-97d55f5008f6" name="EmailId"><con:configuration><path>$['EmailId']</path><content>${DataSource#EmailID}</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="GroovyScriptAssertion" id="7b432a13-c473-4072-972a-38613d897028" name="Script Assertion"><con:configuration><scriptText>import groovy.json.JsonSlurper
+        <con:originalUri>http://digisurveyapi.clidiem.com/api/account/verifycandidateverificationcode</con:originalUri>
+        <con:assertion type="JsonPath Match" id="aade4bd0-2511-4d0d-a071-944c943f7bd2" name="StatusMessage">
+          <con:configuration>
+            <path>$['StatusMessage']</path>
+            <content>Valid</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="04443b7b-d53c-4116-b366-680e6a9fac41" name="Name">
+          <con:configuration>
+            <path>$['Name']</path>
+            <content>${DataSource#FirstName} ${DataSource#LastName}</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="0656959a-846a-408b-b878-97d55f5008f6" name="EmailId">
+          <con:configuration>
+            <path>$['EmailId']</path>
+            <content>${DataSource#EmailID}</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="GroovyScriptAssertion" id="7b432a13-c473-4072-972a-38613d897028" name="Script Assertion">
+          <con:configuration>
+            <scriptText>import groovy.json.JsonSlurper
 def groovyUtils = new com.eviware.soapui.support.GroovyUtils( context )
 
 def slurper = new JsonSlurper()
@@ -106,18 +222,67 @@ groovyUtils.setPropertyValue("DataSink", "VerificationCode", VerificationCode)
 
 groovyUtils.setPropertyValue("DataSink", "RandomKey", RandomKey)
 
-groovyUtils.setPropertyValue("DataSink", "RegistrationString", RegistrationIdString)
-</scriptText></con:configuration></con:assertion><con:credentials>
-              <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
-              <con:authType>No Authorization</con:authType>
-            </con:credentials>
-            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
-            <con:jmsPropertyConfig/>
-            <con:parameters/>
-            <con:parameterOrder/>
-          <con:environmentSpec><con:entry environmentId="21c918eb-3b13-42fb-96a8-bb3ebe6d2bc3"><con:authProfile>No Authorization</con:authProfile></con:entry><con:entry environmentId="b2d1e67f-f8d6-4ebb-9fc8-ecd326158ded"><con:authProfile>No Authorization</con:authProfile></con:entry><con:entry environmentId="2b4e7ce8-224f-460c-9f23-ea2d140ff47e"><con:authProfile>No Authorization</con:authProfile></con:entry></con:environmentSpec></con:restRequest>
-        </con:config>
-      </con:testStep><con:testStep type="datasink" name="DataSink" id="8f25a746-23e5-4a4d-97b8-350789251110"><con:settings/><con:config xsi:type="con:DataSinkStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:dataSink type="Excel"><con:configuration><file>SoapUI.xlsx</file><outfile>SoapUI.xlsx</outfile><worksheet>Candidate</worksheet><cell>O2</cell><evaluateFormulas>false</evaluateFormulas></con:configuration></con:dataSink><con:properties><con:property><con:name>VerificationCode</con:name><con:value>883750</con:value></con:property><con:property><con:name>RandomKey</con:name><con:value>UChU8TzblQpwT3pmDP4I%20LFgmuplCTD1mrjZpzrZuIo=</con:value></con:property><con:property><con:name>RegistrationString</con:name><con:value>DUMhygyFJPIvFXh9A898SQ==</con:value></con:property><con:property><con:name>StatusMessage</con:name><con:value> </con:value></con:property></con:properties></con:config></con:testStep><con:testStep type="groovy" name="Datasink-Wipeoff" id="9cebe4d5-41a8-4d92-b79e-7e9516b59913"><con:settings/><con:config><script>def groovyUtils = new com.eviware.soapui.support.GroovyUtils( context )
+groovyUtils.setPropertyValue("DataSink", "RegistrationString", RegistrationIdString)</scriptText>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:parameters/>
+        <con:parameterOrder/>
+        <con:environmentSpec>
+          <con:entry environmentId="21c918eb-3b13-42fb-96a8-bb3ebe6d2bc3">
+            <con:authProfile>No Authorization</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="b2d1e67f-f8d6-4ebb-9fc8-ecd326158ded">
+            <con:authProfile>No Authorization</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="2b4e7ce8-224f-460c-9f23-ea2d140ff47e">
+            <con:authProfile>No Authorization</con:authProfile>
+          </con:entry>
+        </con:environmentSpec>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="datasink" name="DataSink" id="8f25a746-23e5-4a4d-97b8-350789251110">
+    <con:settings/>
+    <con:config xsi:type="con:DataSinkStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:dataSink type="Excel">
+        <con:configuration>
+          <file>CryptoSurveyAPI/SoapUI.xlsx</file>
+          <outfile>CryptoSurveyAPI/SoapUI.xlsx</outfile>
+          <worksheet>Candidate</worksheet>
+          <cell>O2</cell>
+          <evaluateFormulas>false</evaluateFormulas>
+        </con:configuration>
+      </con:dataSink>
+      <con:properties>
+        <con:property>
+          <con:name>VerificationCode</con:name>
+          <con:value>883750</con:value>
+        </con:property>
+        <con:property>
+          <con:name>RandomKey</con:name>
+          <con:value>UChU8TzblQpwT3pmDP4I%20LFgmuplCTD1mrjZpzrZuIo=</con:value>
+        </con:property>
+        <con:property>
+          <con:name>RegistrationString</con:name>
+          <con:value>DUMhygyFJPIvFXh9A898SQ==</con:value>
+        </con:property>
+        <con:property>
+          <con:name>StatusMessage</con:name>
+          <con:value></con:value>
+        </con:property>
+      </con:properties>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="groovy" name="Datasink-Wipeoff" id="9cebe4d5-41a8-4d92-b79e-7e9516b59913">
+    <con:settings/>
+    <con:config>
+      <script>def groovyUtils = new com.eviware.soapui.support.GroovyUtils( context )
 
 groovyUtils.setPropertyValue("DataSink", "VerificationCode", " ")
 
@@ -125,33 +290,72 @@ groovyUtils.setPropertyValue("DataSink", "RandomKey", " ")
 
 groovyUtils.setPropertyValue("DataSink", "RegistrationString", " ")
 
-groovyUtils.setPropertyValue("DataSink", "StatusMessage", " ")
-
-
-</script></con:config></con:testStep><con:testStep type="datasourceloop" name="DataSource Loop" id="a2301ee8-5681-451e-86fd-f0d48562dbf4"><con:settings/><con:config><dataSourceStep>DataSource</dataSourceStep><targetStep>Candidate Registration</targetStep><discardResults>true</discardResults></con:config></con:testStep>
-      <con:testStep type="restrequest" name="resendcandidateverificationcode" id="d50f0745-4b04-4618-9de4-db0bedf34cfb" disabled="true">
-        <con:settings/>
-        <con:config service="http://digisurveyapi.clidiem.com" resourcePath="/api/account/api/Account/resendcandidateverificationcode" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-          <con:restRequest name="resendcandidateverificationcode" id="00f9f8c0-dc23-41bf-8ca0-7a35ccaad1f3" mediaType="application/json" postQueryString="false">
-            <con:settings>
-              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
-            </con:settings>
-            <con:endpoint>${#Project#Endpoint}</con:endpoint>
-            <con:request>{    
+groovyUtils.setPropertyValue("DataSink", "StatusMessage", " ")</script>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="datasourceloop" name="DataSource Loop" id="a2301ee8-5681-451e-86fd-f0d48562dbf4">
+    <con:settings/>
+    <con:config>
+      <dataSourceStep>DataSource</dataSourceStep>
+      <targetStep>Candidate Registration</targetStep>
+      <discardResults>true</discardResults>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="resendcandidateverificationcode" id="d50f0745-4b04-4618-9de4-db0bedf34cfb" disabled="true">
+    <con:settings/>
+    <con:config service="http://digisurveyapi.clidiem.com" resourcePath="/api/account/api/Account/resendcandidateverificationcode" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="resendcandidateverificationcode" id="00f9f8c0-dc23-41bf-8ca0-7a35ccaad1f3" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:endpoint>${#Project#Endpoint}</con:endpoint>
+        <con:request>{    
 	"EmailId": "lavanya14.mtech@gmail.com",
       "WebProjectId": "2"
 }</con:request>
-            <con:originalUri>http://digisurveyapi.clidiem.com/api/account/api/Account/resendcandidateverificationcode</con:originalUri>
-            <con:credentials>
-              <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
-              <con:authType>No Authorization</con:authType>
-            </con:credentials>
-            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
-            <con:jmsPropertyConfig/>
-            <con:parameters/>
-            <con:parameterOrder/>
-          <con:environmentSpec><con:entry environmentId="21c918eb-3b13-42fb-96a8-bb3ebe6d2bc3"><con:authProfile>No Authorization</con:authProfile></con:entry><con:entry environmentId="b2d1e67f-f8d6-4ebb-9fc8-ecd326158ded"><con:authProfile>No Authorization</con:authProfile></con:entry><con:entry environmentId="2b4e7ce8-224f-460c-9f23-ea2d140ff47e"><con:authProfile>No Authorization</con:authProfile></con:entry></con:environmentSpec></con:restRequest>
-        </con:config>
-      </con:testStep><con:properties/>
-      <con:reportParameters/>
-    <con:breakPoints><con:testStepId>7a50a4ad-f5f6-4656-8883-a5ffa1118c75</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints><con:breakPoints><con:testStepId>a2301ee8-5681-451e-86fd-f0d48562dbf4</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints><con:breakPoints><con:testStepId>8f25a746-23e5-4a4d-97b8-350789251110</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints><con:breakPoints><con:testStepId>9cebe4d5-41a8-4d92-b79e-7e9516b59913</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints></con:testCase>
+        <con:originalUri>http://digisurveyapi.clidiem.com/api/account/api/Account/resendcandidateverificationcode</con:originalUri>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:parameters/>
+        <con:parameterOrder/>
+        <con:environmentSpec>
+          <con:entry environmentId="21c918eb-3b13-42fb-96a8-bb3ebe6d2bc3">
+            <con:authProfile>No Authorization</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="b2d1e67f-f8d6-4ebb-9fc8-ecd326158ded">
+            <con:authProfile>No Authorization</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="2b4e7ce8-224f-460c-9f23-ea2d140ff47e">
+            <con:authProfile>No Authorization</con:authProfile>
+          </con:entry>
+        </con:environmentSpec>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+  <con:breakPoints>
+    <con:testStepId>7a50a4ad-f5f6-4656-8883-a5ffa1118c75</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+  <con:breakPoints>
+    <con:testStepId>a2301ee8-5681-451e-86fd-f0d48562dbf4</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+  <con:breakPoints>
+    <con:testStepId>8f25a746-23e5-4a4d-97b8-350789251110</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+  <con:breakPoints>
+    <con:testStepId>9cebe4d5-41a8-4d92-b79e-7e9516b59913</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+</con:testCase>

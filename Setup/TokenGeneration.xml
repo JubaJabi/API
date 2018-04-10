@@ -1,19 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <con:testCase id="b14d413a-14c8-4043-a40c-853323760509" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="TokenGeneration" searchProperties="true" timeout="0" maxResults="0" xmlns:con="http://eviware.com/soapui/config">
-      <con:settings><con:setting id="b14d413a-14c8-4043-a40c-853323760509fileName">TokenGeneration</con:setting></con:settings>
-      <con:savedRecentRuns>1</con:savedRecentRuns>
-      <con:testStep type="datasource" name="DataSource" id="210f18cb-864f-48d5-9476-40e02487a378">
-        <con:settings/>
-        <con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-          <con:dataSource type="Excel">
-            <con:configuration><file>SoapUI.xlsx</file><worksheet>Scenarios</worksheet><cell>A2</cell><ignoreEmpty>false</ignoreEmpty><evaluateFormulas>false</evaluateFormulas></con:configuration>
-          </con:dataSource>
-          <con:shared>true</con:shared>
-          <con:restartShared>true</con:restartShared>
-          
-          <con:property>Scenario</con:property><con:property>Run</con:property><con:property>EmailId</con:property><con:property>Password</con:property><con:startRow/><con:endRow/><con:recordsPerIteration>1</con:recordsPerIteration><con:completeLastOperation>true</con:completeLastOperation><con:trimValues>false</con:trimValues><con:entitizeValues>false</con:entitizeValues><con:restartOnRun>true</con:restartOnRun>
-        <con:expandProperties>false</con:expandProperties></con:config>
-      </con:testStep><con:testStep type="groovy" name="Groovy Script" id="01f48f78-3d7b-4e56-a864-82dac1c0660a"><con:settings/><con:config><script>def ds = testRunner.testCase.testSteps['DataSource']
+  <con:settings>
+    <con:setting id="b14d413a-14c8-4043-a40c-853323760509fileName">TokenGeneration</con:setting>
+  </con:settings>
+  <con:savedRecentRuns>1</con:savedRecentRuns>
+  <con:testStep type="datasource" name="DataSource" id="210f18cb-864f-48d5-9476-40e02487a378">
+    <con:settings/>
+    <con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:dataSource type="Excel">
+        <con:configuration>
+          <file>CryptoSurveyAPI/SoapUI.xlsx</file>
+          <worksheet>Scenarios</worksheet>
+          <cell>A2</cell>
+          <ignoreEmpty>false</ignoreEmpty>
+          <evaluateFormulas>false</evaluateFormulas>
+        </con:configuration>
+      </con:dataSource>
+      <con:shared>true</con:shared>
+      <con:restartShared>true</con:restartShared>
+      <con:property>Scenario</con:property>
+      <con:property>Run</con:property>
+      <con:property>EmailId</con:property>
+      <con:property>Password</con:property>
+      <con:startRow/>
+      <con:endRow/>
+      <con:recordsPerIteration>1</con:recordsPerIteration>
+      <con:completeLastOperation>true</con:completeLastOperation>
+      <con:trimValues>false</con:trimValues>
+      <con:entitizeValues>false</con:entitizeValues>
+      <con:restartOnRun>true</con:restartOnRun>
+      <con:expandProperties>false</con:expandProperties>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="groovy" name="Groovy Script" id="01f48f78-3d7b-4e56-a864-82dac1c0660a">
+    <con:settings/>
+    <con:config>
+      <script>def ds = testRunner.testCase.testSteps['DataSource']
 rowAdd = ds.getPropertyValue("Run")
 
 log.info rowAdd
@@ -33,22 +55,26 @@ else
 def testStep2 = testRunner.testCase.testSuite.project.getTestSuiteByName("Account").getTestCaseByName("Wallet Transacations").getTestStepByName("getwalletrecenttransactions")
 
 testStep2.run(testRunner, context)
-}</script></con:config></con:testStep><con:testStep type="restrequest" name="Token" id="01628435-660d-4be3-a8c3-741c9f3c2030">
-        <con:settings/>
-        <con:config service="http://digisurveyapi.clidiem.com" resourcePath="/token" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-          <con:restRequest name="Token" id="d3eda42a-9baa-4fb0-a1e4-3c721672c58c" mediaType="application/json" postQueryString="false">
-            <con:settings>
-              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
-            </con:settings>
-            <con:endpoint>${#Project#EndPoint}</con:endpoint>
-            <con:request>username=${DataSource#EmailId}&amp;
+}</script>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="Token" id="01628435-660d-4be3-a8c3-741c9f3c2030">
+    <con:settings/>
+    <con:config service="http://digisurveyapi.clidiem.com" resourcePath="/token" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="Token" id="d3eda42a-9baa-4fb0-a1e4-3c721672c58c" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:endpoint>${#Project#EndPoint}</con:endpoint>
+        <con:request>username=${DataSource#EmailId}&amp;
 password=${DataSource#Password}&amp;
 grant_type=password&amp;
 usertype=applicationuser&amp;
 isfbuser=false</con:request>
-            <con:originalUri>http://digisurveyapi.clidiem.com/token</con:originalUri>
-            <con:assertion type="GroovyScriptAssertion" id="aa53d94b-333f-4c28-95b0-4c999b8f7cb5" name="Script Assertion">
-              <con:configuration><scriptText>import groovy.json.JsonSlurper
+        <con:originalUri>http://digisurveyapi.clidiem.com/token</con:originalUri>
+        <con:assertion type="GroovyScriptAssertion" id="aa53d94b-333f-4c28-95b0-4c999b8f7cb5" name="Script Assertion">
+          <con:configuration>
+            <scriptText>import groovy.json.JsonSlurper
 
 def slurper = new JsonSlurper()
 
@@ -115,22 +141,73 @@ messageExchange.modelItem.testCase.testSuite.project.setPropertyValue("Encrypted
    ".issued" : "Tue, 10 Apr 2018 16:27:18 GMT",
    ".expires" : "Tue, 10 Apr 2018 18:27:18 GMT"
 }
-*/</scriptText></con:configuration>
-            </con:assertion>
-            <con:assertion type="Valid HTTP Status Codes" id="4ca6594a-0688-4fa4-9a7f-897ce01ac15d" name="Valid HTTP Status Codes"><con:settings/><con:configuration><codes>200</codes></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="c05b3e0a-c92e-4960-a2ec-62dc69943e58" name="Successful Login"><con:configuration><path>$['StatusMessage']</path><content>Successful login</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:credentials>
-              <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
-              <con:authType>No Authorization</con:authType>
-            </con:credentials>
-            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
-            <con:jmsPropertyConfig/><con:parameters/>
-          <con:environmentSpec><con:entry environmentId="21c918eb-3b13-42fb-96a8-bb3ebe6d2bc3"><con:authProfile>No Authorization</con:authProfile></con:entry><con:entry environmentId="b2d1e67f-f8d6-4ebb-9fc8-ecd326158ded"><con:authProfile>No Authorization</con:authProfile></con:entry><con:entry environmentId="2b4e7ce8-224f-460c-9f23-ea2d140ff47e"><con:authProfile>No Authorization</con:authProfile></con:entry></con:environmentSpec></con:restRequest>
-        </con:config>
-      </con:testStep>
-      <con:testStep type="goto" name="Conditional Goto" id="00e82bda-37a6-41b8-ac29-e7485d36662f" disabled="true"><con:settings/><con:config xsi:type="con:GotoStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:condition><con:name>Condition 1</con:name><con:type>XPATH</con:type><con:targetStep>Token</con:targetStep></con:condition></con:config></con:testStep>
-      <con:testStep type="datasourceloop" name="DataSource Loop" id="1e808f02-ab4e-4f34-9c0d-6cd7ba2fdb0f">
-        <con:settings/>
-        <con:config><dataSourceStep>DataSource</dataSourceStep><targetStep>Token</targetStep><discardResults>true</discardResults></con:config>
-      </con:testStep>
-      <con:properties/>
-      <con:reportParameters/>
-    <con:breakPoints><con:testStepId>00e82bda-37a6-41b8-ac29-e7485d36662f</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints><con:breakPoints><con:testStepId>01f48f78-3d7b-4e56-a864-82dac1c0660a</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints></con:testCase>
+*/</scriptText>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Valid HTTP Status Codes" id="4ca6594a-0688-4fa4-9a7f-897ce01ac15d" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="c05b3e0a-c92e-4960-a2ec-62dc69943e58" name="Successful Login">
+          <con:configuration>
+            <path>$['StatusMessage']</path>
+            <content>Successful login</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:parameters/>
+        <con:environmentSpec>
+          <con:entry environmentId="21c918eb-3b13-42fb-96a8-bb3ebe6d2bc3">
+            <con:authProfile>No Authorization</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="b2d1e67f-f8d6-4ebb-9fc8-ecd326158ded">
+            <con:authProfile>No Authorization</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="2b4e7ce8-224f-460c-9f23-ea2d140ff47e">
+            <con:authProfile>No Authorization</con:authProfile>
+          </con:entry>
+        </con:environmentSpec>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="goto" name="Conditional Goto" id="00e82bda-37a6-41b8-ac29-e7485d36662f" disabled="true">
+    <con:settings/>
+    <con:config xsi:type="con:GotoStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:condition>
+        <con:name>Condition 1</con:name>
+        <con:type>XPATH</con:type>
+        <con:targetStep>Token</con:targetStep>
+      </con:condition>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="datasourceloop" name="DataSource Loop" id="1e808f02-ab4e-4f34-9c0d-6cd7ba2fdb0f">
+    <con:settings/>
+    <con:config>
+      <dataSourceStep>DataSource</dataSourceStep>
+      <targetStep>Token</targetStep>
+      <discardResults>true</discardResults>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+  <con:breakPoints>
+    <con:testStepId>00e82bda-37a6-41b8-ac29-e7485d36662f</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+  <con:breakPoints>
+    <con:testStepId>01f48f78-3d7b-4e56-a864-82dac1c0660a</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+</con:testCase>
