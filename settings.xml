@@ -3,10 +3,6 @@
   <con:settings>
     <con:setting id="18a9daec-f1c9-4298-99f1-3f41cafccdb1fileName">CryptoSurvey Regression</con:setting>
   </con:settings>
-  <con:vcsConfiguration>
-    <con:vcsName>Git</con:vcsName>
-    <con:repositoryIdentifier>https://github.com/JubaJabi/API</con:repositoryIdentifier>
-  </con:vcsConfiguration>
   <con:savedRecentRuns>1</con:savedRecentRuns>
   <con:requirements/>
   <con:properties>
