@@ -1,0 +1,748 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="e2123fd5-baac-4c02-b5e1-688ccbec30db" created="2.3.0" activeEnvironment="Default" name="CryptosurveyAPI-Issai" resourceRoot="${projectDir}" updated="2.3.0 2018-03-06T16:28:42Z" encryptionMode="Not encrypted" abortOnError="false" runType="SEQUENTIAL" soapui-version="5.4.0" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:RestService" id="0e89c99b-bbf6-4364-bc79-8c339267574f" wadlVersion="http://wadl.dev.java.net/2009/02" name="http://digisurveyapi.clidiem.com" type="rest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart=""/><con:endpoints><con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint></con:endpoints><con:resource name="" path="/api/Company" id="19d416cf-5425-4bb4-977a-e1db595d5407"><con:settings/><con:parameters/><con:resource name="resendquestionnaireemails" path="resendquestionnaireemails" id="64f28bc5-c378-44e6-98f3-d888d06d3dfc"><con:settings/><con:parameters/><con:method name="Method 1" id="0b5845bc-afd0-4816-aaad-2b61d0935db1" method="POST"><con:settings/><con:parameters/><con:representation type="FAULT"><con:mediaType>application/json; charset=utf-8</con:mediaType><con:status>401</con:status><con:params/><con:element xmlns:res="http://digisurveyapi.clidiem.com/api/Company/resendquestionnaireemails">res:Fault</con:element></con:representation><con:representation type="REQUEST"><con:mediaType>application/json</con:mediaType><con:params/></con:representation><con:request name="Request 1" id="6199167e-d957-4ca1-be40-f21857742043" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint><con:request>{
+	QuestionnaireId,
+	EmailIds,
+	ContactIds,
+	SharedLinkIds,
+	CreatedBy,
+	DefaulLink,
+	FromMailId,
+}
+</con:request><con:originalUri>http://digisurveyapi.clidiem.com/api/Company/resendquestionnaireemails</con:originalUri><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/><con:parameterOrder/></con:request></con:method></con:resource><con:resource name="MapPetitionSignedContactsToContactGroup" path="MapPetitionSignedContactsToContactGroup" id="a45ea046-0525-4a90-bde2-d0c719f72498"><con:settings/><con:parameters/><con:method name="Method 1" id="bc8a3541-f432-40f1-9fd7-d07ca623dd8a" method="POST"><con:settings/><con:parameters/><con:representation type="FAULT"><con:mediaType>application/json; charset=utf-8</con:mediaType><con:status>401</con:status><con:params/><con:element xmlns:map="http://digisurveyapi.clidiem.com/api/Company/MapPetitionSignedContactsToContactGroup">map:Fault</con:element></con:representation><con:representation type="REQUEST"><con:mediaType>application/json</con:mediaType><con:params/></con:representation><con:request name="Request 1" id="46ec6c07-6fb5-49af-b5fb-c605e96f1f75" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint><con:request>{
+	companyid, 
+	userloginid, 
+	ContactGroupId, 
+	PetitionSignIds
+}
+</con:request><con:originalUri>http://digisurveyapi.clidiem.com/api/Company/MapPetitionSignedContactsToContactGroup</con:originalUri><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/><con:parameterOrder/></con:request></con:method></con:resource><con:resource name="surveysharedlistbysurveyid" path="surveysharedlistbysurveyid" id="cfd498d4-7460-4eda-b337-e288cd51d99a"><con:settings/><con:parameters/><con:method name="Method 1" id="68538c4b-ed31-4261-95d2-fb8f8d8a838e" method="POST"><con:settings/><con:parameters/><con:representation type="FAULT"><con:mediaType>application/json; charset=utf-8</con:mediaType><con:status>500</con:status><con:params/><con:element xmlns:sur="http://digisurveyapi.clidiem.com/api/Company/surveysharedlistbysurveyid">sur:Fault</con:element></con:representation><con:representation type="REQUEST"><con:mediaType>application/json</con:mediaType><con:params/></con:representation><con:request name="Request 1" id="470a3694-25d4-4c40-bbf3-6599e0e18d37" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint><con:request>{
+	QuestionnaireId,
+	ContactIds,
+	CreatedBy,
+	EmailSubject,
+	EmailBody,
+	FromMailId
+}
+</con:request><con:originalUri>http://digisurveyapi.clidiem.com/api/Company/surveysharedlistbysurveyid</con:originalUri><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/><con:parameterOrder/></con:request></con:method></con:resource><con:resource name="sharecompanysurveyquestionnairethroughcontacts" path="sharecompanysurveyquestionnairethroughcontacts" id="21d0b945-aeab-4fa8-811b-959a057a2565"><con:settings/><con:parameters/><con:method name="Method 1" id="d1f64922-f9f0-412f-9beb-42eebd8939e1" method="POST"><con:settings/><con:parameters/><con:representation type="FAULT"><con:mediaType>application/json; charset=utf-8</con:mediaType><con:status>401</con:status><con:params/><con:element xmlns:shar="http://digisurveyapi.clidiem.com/api/Company/sharecompanysurveyquestionnairethroughcontacts">shar:Fault</con:element></con:representation><con:representation type="REQUEST"><con:mediaType>application/json</con:mediaType><con:params/></con:representation><con:request name="Request 1" id="c7a43844-9aa2-4b83-af0f-aac4a1734ee8" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint><con:request>{
+	QuestionnaireId,
+	ContactIds,
+	CreatedBy,
+	EmailSubject,
+	EmailBody,
+	FromMailId
+}
+</con:request><con:originalUri>http://digisurveyapi.clidiem.com/api/Company/sharecompanysurveyquestionnairethroughcontacts</con:originalUri><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/><con:parameterOrder/></con:request></con:method></con:resource><con:resource name="sharecompanyquizthroughcontacts" path="sharecompanyquizthroughcontacts" id="e8f78b25-3764-4cac-8edf-001555ffc251"><con:settings/><con:parameters/><con:method name="Method 1" id="c0d99cc6-97af-460e-93c1-f9c87a31fb61" method="POST"><con:settings/><con:parameters/><con:representation type="REQUEST"><con:mediaType>application/json</con:mediaType><con:params/></con:representation><con:representation type="FAULT"><con:mediaType>application/json; charset=utf-8</con:mediaType><con:status>401</con:status><con:params/><con:element xmlns:shar="http://digisurveyapi.clidiem.com/api/Company/sharecompanyquizthroughcontacts">shar:Fault</con:element></con:representation><con:request name="Request 1" id="1d38f68b-fb63-4b7f-8df7-1681e0fedde9" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint><con:request>{
+	companyId, 
+	userloginid
+}
+</con:request><con:originalUri>http://digisurveyapi.clidiem.com/api/Company/sharecompanyquizthroughcontacts</con:originalUri><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/><con:parameterOrder/></con:request></con:method></con:resource><con:resource name="bindsurveyemaildetails" path="bindsurveyemaildetails" id="d9b1c518-b58e-48aa-b9eb-32fca8fa0ba7"><con:settings/><con:parameters/><con:method name="Method 1" id="427c556e-2d71-4cf9-ae19-d830b1fac4fe" method="GET"><con:settings/><con:parameters/><con:request name="Request 1" id="0d5c65bf-d7d9-4ea3-b324-4f1f5c73342a" mediaType="application/json"><con:settings/><con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint><con:request/><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:parameters/></con:request></con:method></con:resource><con:resource name="getquestionnairesurveyweblink" path="getquestionnairesurveyweblink" id="7cc5bac3-e74a-4560-9bfa-ea40df2adcd6"><con:settings/><con:parameters/><con:method name="Method 1" id="7f7935ff-4acc-457a-bce7-7d46a098bd72" method="POST"><con:settings/><con:parameters/><con:representation type="FAULT"><con:mediaType>application/json; charset=utf-8</con:mediaType><con:status>401</con:status><con:params/><con:element xmlns:get="http://digisurveyapi.clidiem.com/api/Company/getquestionnairesurveyweblink">get:Fault</con:element></con:representation><con:representation type="REQUEST"><con:mediaType>application/json</con:mediaType><con:params/></con:representation><con:request name="Request 1" id="cd25b029-c412-4326-b94a-77cc03493ec4" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint><con:request>{
+	surveyid
+}
+</con:request><con:originalUri>http://digisurveyapi.clidiem.com/api/Company/getquestionnairesurveyweblink</con:originalUri><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/><con:parameterOrder/></con:request></con:method></con:resource><con:resource name="getsurveydetailsfordashboardreport" path="getsurveydetailsfordashboardreport" id="4723d2d3-bd44-46e8-971b-805d13d408f3"><con:settings/><con:parameters><con:parameter><con:name>companyId</con:name><con:value/><con:style>QUERY</con:style><con:default/><con:description xsi:nil="true"/></con:parameter><con:parameter><con:name> userloginid</con:name><con:value/><con:style>QUERY</con:style><con:default/><con:description xsi:nil="true"/></con:parameter></con:parameters><con:method name="Method 1" id="7dc26be7-c06f-41b2-a03b-2aa058e0afb2" method="POST"><con:settings/><con:parameters/><con:representation type="FAULT"><con:mediaType>application/json; charset=utf-8</con:mediaType><con:status>401</con:status><con:params/><con:element xmlns:get="http://digisurveyapi.clidiem.com/api/Company/getsurveydetailsfordashboardreport">get:Fault</con:element></con:representation><con:representation type="REQUEST"><con:mediaType>application/json</con:mediaType><con:params/></con:representation><con:request name="Request 1" id="d629aa5b-dcd4-4eff-953a-e76c7ec009ee" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint><con:request/><con:originalUri>http://digisurveyapi.clidiem.com/api/Company/getsurveydetailsfordashboardreport</con:originalUri><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:parameters>
+  <con:entry key="companyId" value="1"/>
+  <con:entry key=" userloginid" value="1"/>
+</con:parameters><con:parameterOrder><con:entry>companyId</con:entry><con:entry> userloginid</con:entry></con:parameterOrder></con:request></con:method></con:resource><con:resource name="getsurveyresponsesreportdetailsbydate" path="getsurveyresponsesreportdetailsbydate" id="4b132b82-18f1-45a3-b248-8ae1c35cf95b"><con:settings/><con:parameters/><con:method name="Method 1" id="5f5f48a7-40cf-4fdc-aac0-9cf790bce51c" method="POST"><con:settings/><con:parameters/><con:representation type="FAULT"><con:mediaType>application/json; charset=utf-8</con:mediaType><con:status>401</con:status><con:params/><con:element xmlns:get="http://digisurveyapi.clidiem.com/api/Company/getsurveyresponsesreportdetailsbydate">get:Fault</con:element></con:representation><con:representation type="REQUEST"><con:mediaType>application/json</con:mediaType><con:params/></con:representation><con:request name="Request 1" id="c8f2634a-4fa4-4bcb-a6cd-a414f12e1a71" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint><con:request>{
+	companyId,
+	date
+}
+</con:request><con:originalUri>http://digisurveyapi.clidiem.com/api/Company/getsurveyresponsesreportdetailsbydate</con:originalUri><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/><con:parameterOrder/></con:request></con:method></con:resource><con:resource name="getquizresponsesreportdetailsbydate" path="getquizresponsesreportdetailsbydate{companyId}{date}" id="68e7dc7c-9bb7-4ead-8455-0dd9fccf9b9e"><con:settings/><con:parameters><con:parameter><con:name>companyId</con:name><con:value/><con:style>TEMPLATE</con:style><con:default/><con:description xsi:nil="true"/></con:parameter><con:parameter><con:name>date</con:name><con:value/><con:style>TEMPLATE</con:style><con:default/><con:description xsi:nil="true"/></con:parameter></con:parameters><con:method name="Method 1" id="8f12da9e-c67b-40e6-a206-e7d50a3e47d9" method="GET"><con:settings/><con:parameters/><con:representation type="FAULT"><con:mediaType>application/json; charset=utf-8</con:mediaType><con:status>404</con:status><con:params/><con:element xmlns:get="http://digisurveyapi.clidiem.com/api/Company/getquizresponsesreportdetailsbydate">get:Fault</con:element></con:representation><con:request name="Request 1" id="abf913df-2960-44b1-99ab-e5407e43f028" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint><con:request/><con:originalUri>http://digisurveyapi.clidiem.com/api/Company/getquizresponsesreportdetailsbydate</con:originalUri><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/><con:parameterOrder><con:entry>companyId</con:entry><con:entry>date</con:entry></con:parameterOrder></con:request></con:method></con:resource><con:resource name="insertsetup" path="insertsetup" id="31431fff-32e5-4b3f-b56a-0acbbddb7ff5"><con:settings/><con:parameters/><con:method name="Method 1" id="e13cd89b-8275-48b4-a7ea-ac70dddb758e" method="POST"><con:settings/><con:parameters/><con:representation type="REQUEST"><con:mediaType>application/json</con:mediaType><con:params/></con:representation><con:representation type="FAULT"><con:mediaType>application/json; charset=utf-8</con:mediaType><con:status>401</con:status><con:params/><con:element xmlns:ins="http://digisurveyapi.clidiem.com/api/Company/insertsetup">ins:Fault</con:element></con:representation><con:request name="Request 1" id="7ef3608e-fd5e-460d-8292-451d675b4a29" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint><con:request>{
+	LanguagesId, 
+	CompanyId, 
+	UserLoginId
+}
+</con:request><con:originalUri>http://digisurveyapi.clidiem.com/api/Company/insertsetup</con:originalUri><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/><con:parameterOrder/></con:request></con:method></con:resource><con:resource name="activequestion" path="activequestion" id="ffd21f3a-329a-4c70-a718-c69554d496a7"><con:settings/><con:parameters/><con:method name="Method 1" id="de374810-73f9-4aba-8a23-47b23efdb27e" method="POST"><con:settings/><con:parameters/><con:representation type="FAULT"><con:mediaType>application/json; charset=utf-8</con:mediaType><con:status>401</con:status><con:params/><con:element xmlns:act="http://digisurveyapi.clidiem.com/api/Company/activequestion">act:Fault</con:element></con:representation><con:representation type="REQUEST"><con:mediaType>application/json</con:mediaType><con:params/></con:representation><con:request name="Request 1" id="eef903ef-390e-41f9-a3bb-229ae07e46c9" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint><con:request>{
+	status, 
+	CompanyId, 
+	UserLoginId, 
+	QuestionId
+}
+</con:request><con:originalUri>http://digisurveyapi.clidiem.com/api/Company/activequestion</con:originalUri><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/><con:parameterOrder/></con:request></con:method></con:resource><con:resource name="getsurveyquestionsdetailslist" path="getsurveyquestionsdetailslist" id="5245c65a-0c0d-4554-bc8a-a45e903ef3cf"><con:settings/><con:parameters/><con:method name="Method 1" id="927f748b-c820-4f88-9a44-e2eca0db019a" method="POST"><con:settings/><con:parameters/><con:representation type="FAULT"><con:mediaType>application/json; charset=utf-8</con:mediaType><con:status>401</con:status><con:params/><con:element xmlns:get="http://digisurveyapi.clidiem.com/api/Company/getsurveyquestionsdetailslist">get:Fault</con:element></con:representation><con:representation type="REQUEST"><con:mediaType>application/json</con:mediaType><con:params/></con:representation><con:request name="Request 1" id="55c5161b-ede8-4e89-bdf7-7a63b838fe80" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint><con:request>{
+	SurveyId
+}
+</con:request><con:originalUri>http://digisurveyapi.clidiem.com/api/Company/getsurveyquestionsdetailslist</con:originalUri><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/><con:parameterOrder/></con:request></con:method></con:resource><con:resource name="shareemailthroughemailmarketing 2" path="shareemailthroughemailmarketing" id="2dd3375c-ac95-4112-bc0f-e1136c985144"><con:settings/><con:parameters/><con:method name="Method 1" id="8ef4df7c-16ee-4497-ae0e-8220a7fa8cd6" method="POST"><con:settings/><con:parameters/><con:request name="Request 1" id="60ebd0a7-0d3c-4e57-b996-c0204438a34e" mediaType="application/json" postQueryString="false"><con:settings/><con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint><con:request/><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/><con:parameterOrder><con:entry/></con:parameterOrder></con:request></con:method></con:resource><con:resource name="savepetitiondetails" path="savepetitiondetails" id="c8eb382f-b47c-459f-b588-3007a8160a36"><con:settings/><con:parameters/><con:method name="Method 1" id="2257f505-05b6-4db7-b33e-d914b75c14fb" method="POST"><con:settings/><con:parameters/><con:request name="Request 1" id="fb848e9e-3806-4238-b03f-41d2dc9e937a" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint><con:request/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:resource name="savecrowdfundingdetails" path="savecrowdfundingdetails" id="a904abf7-9b62-47c2-927a-4350dec99d6a"><con:settings/><con:parameters/><con:method name="Method 1" id="7122984f-c3ea-441e-a72a-6934686ea4e1" method="GET"><con:settings/><con:parameters/><con:request name="Request 1" id="a7637f39-14bf-416e-ad95-53fac5c84611" mediaType="application/json"><con:settings/><con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint><con:request/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:resource name="insertquizdetails" path="insertquizdetails" id="c84594f9-590a-457b-9af5-1b4f6eb67e83"><con:settings/><con:parameters/><con:method name="Method 1" id="9195b6ee-0ec0-42c3-b37e-9dd06ac9ff69" method="GET"><con:settings/><con:parameters/><con:request name="Request 1" id="ec86598f-a08f-4760-922a-fd6aa7ea9dc3" mediaType="application/json"><con:settings/><con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint><con:request/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:resource name="savelayout" path="savelayout" id="b78d8ffc-1bfe-477a-9c3d-dab6db9a8442"><con:settings/><con:parameters/><con:method name="Method 1" id="d2449fbf-88c2-4751-8986-e6ab9d647bf6" method="GET"><con:settings/><con:parameters/><con:representation type="FAULT"><con:mediaType>application/json; charset=utf-8</con:mediaType><con:status>405</con:status><con:params/><con:element xmlns:sav="http://digisurveyapi.clidiem.com/api/Company/savelayout">sav:Fault</con:element></con:representation><con:request name="Request 1" id="99687f2b-ac3d-421f-be50-9b0fbee14f63" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint><con:request/><con:originalUri>http://digisurveyapi.clidiem.com/api/Company/savelayout</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:resource name="insertquiztemplatedetails" path="insertquiztemplatedetails" id="4ca522a5-d91f-45a5-99c5-c7f9188c8548"><con:settings/><con:parameters/><con:method name="Method 1" id="33934dd8-7542-46c2-80a3-7e456226a1e0" method="POST"><con:settings/><con:parameters/><con:request name="Request 1" id="b64d8440-0d34-4305-a29c-0cfec8602e9c" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint><con:request/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:resource name="getsurveyquestionsdetailslist" path="getsurveyquestionsdetailslist" id="de697c7f-e111-471e-b685-c9a3e53c844e"><con:settings/><con:parameters/><con:method name="Method 1" id="7e594d32-cc0f-4ed3-8c32-8664a2d04c82" method="POST"><con:settings/><con:parameters/><con:request name="Request 1" id="768d0600-961d-47fb-915f-9afce936d709" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint><con:request>{
+	SurveyId
+}
+</con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:resource name="publishsurveydetails" path="publishsurveydetails" id="5a14f57c-f05e-414f-8fd7-2f43b6817de1"><con:settings/><con:parameters/><con:method name="Method 1" id="fb97cd04-e2a7-4229-8d64-6920f2756f8f" method="POST"><con:settings/><con:parameters/><con:request name="Request 1" id="70b04069-8b59-4f73-b048-3e671c768785" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint><con:request>{
+	QuestionnaireId
+	ModifiedBy
+}
+</con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/><con:parameterOrder/></con:request></con:method></con:resource><con:resource name="getquezzesslist" path="getquezzesslist" id="d50759d8-597f-42c7-9a83-67548647210e"><con:settings/><con:parameters/><con:method name="Method 1" id="70d2bf81-550e-4fdd-86bc-7bc37793421b" method="POST"><con:settings/><con:parameters/><con:request name="Request 1" id="90f87a23-2d70-4c1f-a5d5-fda266ea5765" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint><con:request>{
+	companyid 
+	filterid 
+	userloginid
+}
+</con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:resource name="getqueztemplatelist" path="getqueztemplatelist" id="966d51f6-2cac-45b9-aa63-8436987ca229"><con:settings/><con:parameters/><con:method name="Method 1" id="b8a5548b-dffe-4ccd-9dc9-5c2262bb830b" method="POST"><con:settings/><con:parameters/><con:request name="Request 1" id="f6291bd5-befd-48a0-a9be-506c2cfa4469" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint><con:request>{
+	companyid
+	filterid 
+	userloginid
+}
+</con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:resource name="publishquizdetails" path="publishquizdetails" id="e159b7af-5efe-479b-bba5-96bc7c7ce5cc"><con:settings/><con:parameters/><con:method name="Method 1" id="a7719d0c-b885-43f8-9299-bf6ea85e1ab2" method="POST"><con:settings/><con:parameters/><con:request name="Request 1" id="929c713f-02d8-4b29-b3d8-3defa26566b3" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint><con:request>{
+	quizid
+	modifiedBy
+}
+</con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:resource name="closecompanyquiz" path="closecompanyquiz" id="1d35dc59-e89b-46c8-a0cb-485937b48211"><con:settings/><con:parameters/><con:method name="Method 1" id="fc5c8cf5-0233-4e5f-9048-95b690fe2133" method="POST"><con:settings/><con:parameters/><con:request name="Request 1" id="91749652-1241-4921-b65e-0f64ca6e8e74" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint><con:request>{
+	modifiedBy
+	quizid 
+	companyid
+}
+</con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:resource name="deletequizdetails" path="deletequizdetails" id="31b95bd5-9c00-4b91-bcda-bfaf3739a517"><con:settings/><con:parameters/><con:method name="Method 1" id="b3f115e3-c3cb-46b5-b8b2-78ba007baaae" method="POST"><con:settings/><con:parameters/><con:request name="Request 1" id="59b20b08-0e01-4d22-b427-4ad7a4f7218d" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint><con:request>{
+	modifiedBy
+	quizId 
+	companyid
+}
+</con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:resource name="deletequiztemplatedetails" path="deletequiztemplatedetails" id="aea73d9f-2653-44c8-b8eb-ff22eee498ed"><con:settings/><con:parameters/><con:method name="Method 1" id="69d94b2c-29d0-4b41-b2e1-a29c4202cf1b" method="POST"><con:settings/><con:parameters/><con:request name="Request 1" id="912625dc-d50a-4975-aec7-26efb1fba6a3" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint><con:request>{
+	modifiedBy 
+	QuizTemplateId 
+	companyid
+}
+</con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:resource name="getquizweblink" path="getquizweblink" id="5d786b8f-e463-40de-87ad-4f4be375dce3"><con:settings/><con:parameters/><con:method name="Method 1" id="4c289002-4ee3-4a1f-aad0-fd534dd5d286" method="GET"><con:settings/><con:parameters/><con:request name="Request 1" id="d748bd03-709a-46e7-b643-df9e743d91c4" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint><con:request>{
+	QuizId
+}
+</con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:resource name="getpackageandbillingdetails" path="getpackageandbillingdetails" id="3e31689c-94a7-4b10-828d-4815426f1c28"><con:settings/><con:parameters/><con:method name="Method 1" id="f346430e-3ab1-4d2a-954c-8ada446fe57b" method="POST"><con:settings/><con:parameters/><con:request name="Request 1" id="b8de0edc-6851-4ec6-afac-c9f8c735fea7" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint><con:request>{
+	companyid 
+	userloginid 
+	packageid
+}
+</con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:resource name="sharecompanyquizdetails" path="sharecompanyquizdetails" id="0542b08a-d0a4-4b8b-94fa-21549914f096"><con:settings/><con:parameters/><con:method name="Method 1" id="0c837664-b1fb-4276-842d-91b2d6b5f815" method="POST"><con:settings/><con:parameters/><con:request name="Request 1" id="ed1aa162-9c5f-477d-b7bd-5e8a8c1b5818" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint><con:request>{
+	FromMailId
+	LoginUserId
+}
+</con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:resource name="bindquizemailtemplatedetails" path="bindquizemailtemplatedetails" id="5d16718a-c8ee-4405-9cf1-50e88f21c0e1"><con:settings/><con:parameters/><con:method name="Method 1" id="859b48c6-4f45-414f-9f50-8ec7a3f2cebc" method="GET"><con:settings/><con:parameters/><con:request name="Request 1" id="0c462dfe-b2e2-4ea3-8f62-be13d716e769" mediaType="application/json"><con:settings/><con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint><con:request/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:resource name="publishpetitiondetails" path="publishpetitiondetails" id="c7c376d0-4ea9-4014-a0c4-2dcc7df7cd2f"><con:settings/><con:parameters/><con:method name="Method 1" id="99dc806f-9974-4b94-a653-e170a8b2ec0c" method="POST"><con:settings/><con:parameters/><con:request name="Request 1" id="4ec32f94-66a9-47c8-9497-7766673e78e1" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint><con:request>{
+	PetitionId 
+	modifiedBy
+}
+</con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:resource name="closepetitiondetails" path="closepetitiondetails" id="a606d588-6d49-405a-9174-ff56a69c26ca"><con:settings/><con:parameters/><con:method name="Method 1" id="aa688e49-592e-4ad8-b68e-722c020457da" method="POST"><con:settings/><con:parameters/><con:request name="Request 1" id="5fb2fe8c-c8ae-4aed-9500-8c9fa553c352" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint><con:request>{
+	modifiedBy 
+	PetitionId 
+	companyid
+}
+</con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:resource name="deletepetitiondetails" path="deletepetitiondetails" id="84376081-d9a6-4abd-87f3-39efbc7fd26d"><con:settings/><con:parameters/><con:method name="Method 1" id="e63b471f-57e3-4eaf-9c4a-7b5f232e500b" method="POST"><con:settings/><con:parameters/><con:request name="Request 1" id="d3ae5066-6336-4719-8591-92c222857f7b" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint><con:request>{
+	modifiedBy
+	PetitionId
+	companyid
+}
+</con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:resource name="getpetitiondetailsbyids" path="getpetitiondetailsbyids" id="f6ebf72e-6123-4119-8368-34e13e0db10b"><con:settings/><con:parameters/><con:method name="Method 1" id="ccab027b-449d-4275-ae71-facb4ac4a370" method="POST"><con:settings/><con:parameters/><con:request name="Request 1" id="61d976ca-3761-4190-bbe2-69592e0c50f8" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint><con:request>{
+	companyid 
+	petitionId
+}
+</con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:resource name="getpetitiondetailsbyidsforedit" path="getpetitiondetailsbyidsforedit" id="e1e98868-53e2-4a54-a9c2-a22d1a95bdbe"><con:settings/><con:parameters/><con:method name="Method 1" id="8c7f4145-ae0f-4fd1-ab9d-fcc396d178f2" method="POST"><con:settings/><con:parameters/><con:request name="Request 1" id="48158b96-d998-4137-80da-10012199c7f6" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint><con:request>{
+ companyid 
+ petitionId
+}
+</con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:resource name="updatepetitiondetails" path="updatepetitiondetails" id="b22517c2-5efd-4435-84fc-3a5dc4930fbc"><con:settings/><con:parameters/><con:method name="Method 1" id="01efd642-b167-489e-a87d-f0fca9281344" method="POST"><con:settings/><con:parameters/><con:request name="Request 1" id="89596aa3-e9da-4ec2-9717-3e8dd567a204" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint><con:request>{
+	
+}
+</con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:resource name="updatecrowdfundingdetails" path="updatecrowdfundingdetails" id="3298ee09-eebd-4919-92e6-653239467aef"><con:settings/><con:parameters/><con:method name="Method 1" id="aaf7b438-1ce7-4fdd-92e5-98d4f9c685a6" method="POST"><con:settings/><con:parameters/><con:request name="Request 1" id="da80256d-03f0-47d7-8348-3f79b0d37848" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint><con:request/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:resource name="deletequiztemplatedetails" path="deletequiztemplatedetails" id="c006a600-42f3-40fb-92a4-a6920e8b3f39"><con:settings/><con:parameters/><con:method name="Method 1" id="83689146-5316-40ce-8d99-e18df6eadc03" method="POST"><con:settings/><con:parameters/><con:request name="Request 1" id="f2902974-35a9-4318-b119-fef41df129ef" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint><con:request>{
+	modifiedBy 
+	QuizTemplateId 
+	companyid
+}
+</con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:resource name="getquizweblink" path="getquizweblink" id="22484fc4-6126-4555-a706-b09269758ce9"><con:settings/><con:parameters/><con:method name="Method 1" id="cad0da77-0da8-46e4-a547-6f03d84c7986" method="POST"><con:settings/><con:parameters/><con:request name="Request 1" id="7477a617-a126-4f5c-a379-d6f23ec13f3e" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint><con:request>{
+	QuizId
+}
+</con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:resource name="getpackageandbillingdetails" path="getpackageandbillingdetails" id="c314385e-523d-4e19-bea8-386d16f297f8"><con:settings/><con:parameters/><con:method name="Method 1" id="f75bfcf4-3a03-4278-b907-83c5548c7b45" method="POST"><con:settings/><con:parameters/><con:request name="Request 1" id="ee4fe1dd-d15a-4470-b15f-30f284bca4a8" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint><con:request>{
+	companyid
+	userloginid 
+	packageid
+}
+</con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:resource name="sharecompanyquizdetails" path="sharecompanyquizdetails" id="5bffbb2f-4962-468e-8ad4-1d2712c5839b"><con:settings/><con:parameters/><con:method name="Method 1" id="80383191-b029-47ce-8cff-4e05dde7c32c" method="POST"><con:settings/><con:parameters/><con:request name="Request 1" id="6dd2beb3-d8ee-4d8f-bc21-9ba0e734917b" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint><con:request>{
+	FromMailId
+	LoginUserId
+}
+</con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:resource name="bindquizemailtemplatedetails" path="bindquizemailtemplatedetails" id="91091bb3-d345-4b3a-acbd-129ce54e8be4"><con:settings/><con:parameters/><con:method name="Method 1" id="53c601f3-e996-4aa0-8de6-8038acf5d2f2" method="GET"><con:settings/><con:parameters/><con:request name="Request 1" id="06ffe9a7-c6b6-43e6-9d7d-8ef674617d9b" mediaType="application/json"><con:settings/><con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint><con:request/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/><con:parameterOrder><con:entry/></con:parameterOrder></con:request></con:method></con:resource><con:resource name="publishpetitiondetails" path="publishpetitiondetails" id="0b9f4b3d-70a0-4fd8-88d2-8112405d9fd0"><con:settings/><con:parameters/><con:method name="Method 1" id="90768296-e85c-45b8-9046-7d44790fab88" method="POST"><con:settings/><con:parameters/><con:request name="Request 1" id="aace5bc0-fd37-4c93-b70b-0243a85a3df1" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint><con:request>{
+	PetitionId
+	modifiedBy
+}
+</con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:resource name="closepetitiondetails" path="closepetitiondetails" id="46f3bf90-d867-4e95-a523-532d576a8e4d"><con:settings/><con:parameters/><con:method name="Method 1" id="a00931fe-662f-4d6c-b15b-126c6fadc0a4" method="POST"><con:settings/><con:parameters/><con:request name="Request 1" id="6d59d98c-970a-407f-9c85-9c2e1fd1e5ea" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint><con:request>{
+	modifiedBy 
+	PetitionId 
+	companyid
+}
+</con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:resource name="deletepetitiondetails" path="deletepetitiondetails" id="ab7ded7a-cea0-4d38-a8ad-f470403b12c6"><con:settings/><con:parameters/><con:method name="Method 1" id="822c250f-bfcd-4fd3-a179-b94f268f3877" method="POST"><con:settings/><con:parameters/><con:request name="Request 1" id="fbd89296-fd2a-43f9-8480-91a8d3b93503" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint><con:request>{
+	modifiedBy 
+	PetitionId 
+	companyid
+}
+</con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:resource name="getpetitiondetailsbyids" path="getpetitiondetailsbyids" id="9e47667e-744a-4afe-99ba-dd81d8b24a72"><con:settings/><con:parameters/><con:method name="Method 1" id="fba98e36-e32e-44f1-8fbc-c80f6b8cd14e" method="POST"><con:settings/><con:parameters/><con:request name="Request 1" id="8c9e486a-9772-4153-a022-bd2a141915fa" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint><con:request>{
+	companyid 
+	petitionId
+}
+</con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:resource name="getpetitiondetailsbyidsforedit" path="getpetitiondetailsbyidsforedit" id="b44f782a-4470-4370-9902-ba19ac6225d3"><con:settings/><con:parameters/><con:method name="Method 1" id="3633204c-8260-46ba-bde9-bb4c1b2280a4" method="POST"><con:settings/><con:parameters/><con:request name="Request 1" id="2b8646de-9c9c-4820-b47f-0f6cc1d5cc5d" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint><con:request>{
+	companyid
+	petitionId
+}
+</con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:resource name="updatepetitiondetails" path="updatepetitiondetails" id="23da2a47-8f51-46dd-9886-a18858bedc35"><con:settings/><con:parameters/><con:method name="Method 1" id="e4c872e7-7630-468d-bc1d-00b091f32d2a" method="POST"><con:settings/><con:parameters/><con:request name="Request 1" id="e0521291-6502-47df-821e-e77abd7af608" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint><con:request/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:resource name="updatecrowdfundingdetails" path="updatecrowdfundingdetails" id="5caaec32-36cd-424e-903f-7f3354c1a2ee"><con:settings/><con:parameters/><con:method name="Method 1" id="b128bb4d-8c29-4ad7-ae0f-0f130d9041fc" method="POST"><con:settings/><con:parameters/><con:request name="Request 1" id="89e86e74-6576-4719-8172-788cd08bdcad" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint><con:request/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:resource name="getallquizquestionsbycategory" path="getallquizquestionsbycategory" id="a08342c2-c327-4413-8b48-e0016ceb180b"><con:settings/><con:parameters/><con:method name="Method 1" id="ad6f4478-2427-4221-8cb0-8cb4f3932d03" method="POST"><con:settings/><con:parameters/><con:request name="Request 1" id="92a80d6f-9089-461a-ae2a-b39170cfd15f" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint><con:request>{
+	categoryid 
+	CompanyId 
+	userloginid
+}
+</con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:resource name="getapiviewlist" path="getapiviewlist" id="37322a5b-fe7f-4066-a0c9-029d3e82c948"><con:settings/><con:parameters/><con:method name="Method 1" id="625d30b8-353c-4d7d-834b-fe80ea9669be" method="POST"><con:settings/><con:parameters/><con:representation type="REQUEST"><con:mediaType>application/json</con:mediaType><con:params/></con:representation><con:representation type="FAULT"><con:mediaType>application/json; charset=utf-8</con:mediaType><con:status>401</con:status><con:params/><con:element xmlns:get="http://digisurveyapi.clidiem.com/api/Company/getapiviewlist">get:Fault</con:element></con:representation><con:request name="Request 1" id="bb84f439-8e2e-4a8d-abe7-81cb3e19a9b1" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint><con:request>{
+	APIKeyId
+}
+</con:request><con:originalUri>http://digisurveyapi.clidiem.com/api/Company/getapiviewlist</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:resource name="getallquizquestionsbysurveytemplate" path="getallquizquestionsbysurveytemplate{templateid}" id="8c2b1257-e56d-4bbd-bd16-4b27ac85a090"><con:settings/><con:parameters><con:parameter><con:name>templateid</con:name><con:value/><con:style>TEMPLATE</con:style><con:default/><con:description xsi:nil="true"/></con:parameter></con:parameters><con:method name="Method 1" id="0d6fdf56-95b6-4ff3-8313-e7d7dea6e953" method="GET"><con:settings/><con:parameters/><con:representation type="FAULT"><con:mediaType>application/json; charset=utf-8</con:mediaType><con:status>404</con:status><con:params/><con:element xmlns:get="http://digisurveyapi.clidiem.com/api/Company/getallquizquestionsbysurveytemplate">get:Fault</con:element></con:representation><con:request name="Request 1" id="8556c008-ca87-471c-8c93-1c5299e583a5" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint><con:request/><con:originalUri>http://digisurveyapi.clidiem.com/api/Company/getallquizquestionsbysurveytemplate</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/><con:parameterOrder><con:entry>templateid</con:entry></con:parameterOrder></con:request></con:method></con:resource><con:resource name="getselectedtemplatequizquestionsbyselectedids" path="getselectedtemplatequizquestionsbyselectedids" id="69a7ee85-0e61-4451-b6be-77ecb8f2206a"><con:settings/><con:parameters/><con:method name="Method 1" id="26b1ba40-b7a1-462a-b9e7-6eefcdf0935d" method="POST"><con:settings/><con:parameters/><con:request name="Request 1" id="901a8d31-7058-4a8b-a911-2412a8c37709" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint><con:request/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:resource name="getapidetails" path="getapidetails" id="2c69787c-a0e0-47de-8566-6cf390a57848"><con:settings/><con:parameters/><con:method name="Method 1" id="09f96294-ab1d-4018-8c9e-fdfe0efad978" method="POST"><con:settings/><con:parameters/><con:representation type="FAULT"><con:mediaType>application/json; charset=utf-8</con:mediaType><con:status>401</con:status><con:params/><con:element xmlns:get="http://digisurveyapi.clidiem.com/api/Company/getapidetails">get:Fault</con:element></con:representation><con:representation type="REQUEST"><con:mediaType>application/json</con:mediaType><con:params/></con:representation><con:request name="Request 1" id="b5545b0e-b7d4-4605-b534-bb32b8229eb8" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint><con:request>{
+	APIKeyId
+}
+</con:request><con:originalUri>http://digisurveyapi.clidiem.com/api/Company/getapidetails</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:resource name="getpetitioncommentsresponse" path="getpetitioncommentsresponse" id="c1a9bcd9-33f1-475c-a59f-fe31b1e819f1"><con:settings/><con:parameters/><con:method name="Method 1" id="d1b09d38-a8a0-46e6-aa78-e25066a54e7d" method="POST"><con:settings/><con:parameters/><con:request name="Request 1" id="7664032f-41f6-4b92-8726-6d6ba22195fe" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint><con:request>{
+	PetitionId
+}
+</con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:resource name="checkcompanypublicprofileexistsornot" path="checkcompanypublicprofileexistsornot" id="6842db99-793c-4e1f-a0f2-05f65ec2aa7d"><con:settings/><con:parameters/><con:method name="Method 1" id="7d24492f-1bca-4bc1-b92f-a3298004350f" method="POST"><con:settings/><con:parameters/><con:request name="Request 1" id="ca23828d-85d0-4148-a443-0309af1c9864" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint><con:request>{
+	CompanyId
+}
+</con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:resource name="insertapiaccessdetails" path="insertapiaccessdetails" id="fe431173-a786-4389-9a8b-eb5f5b2985d8"><con:settings/><con:parameters/><con:method name="Method 1" id="597b3f2b-24e6-4c11-a3a5-91bfd3b399f9" method="POST"><con:settings/><con:parameters/><con:request name="Request 1" id="9ad7dfd9-9643-4868-b1ce-a794c54bc919" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint><con:request>{
+	CompanyId 
+	userloginid 
+	APIName 
+	APINotes 
+	SelectPermission 
+	APIKey
+}
+</con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:resource name="gettoporganizationslist" path="gettoporganizationslist" id="29182b62-2cf6-4822-aaf2-37095d4036db"><con:settings/><con:parameters/><con:method name="Method 1" id="c700791b-d3b4-4b65-98c4-205e55f27a8d" method="POST"><con:settings/><con:parameters/><con:request name="Request 1" id="3e895ffd-5661-4d99-a72f-ef8c23bcfe80" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint><con:request>{
+	CompanyType 
+	companyname
+}
+</con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:resource name="gettopthreeorganizationsondashboard" path="gettopthreeorganizationsondashboard" id="f653a7a8-d78b-4af2-9fea-d581b030a7cb"><con:settings/><con:parameters/><con:method name="Method 1" id="f1df1a2b-b50b-4213-abec-2b6da135a5d6" method="POST"><con:settings/><con:parameters/><con:request name="Request 1" id="4f765b8c-0ee0-4322-b40b-242a0a0b0801" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint><con:request>{
+	companyId
+	filter 
+	userloginid
+}
+</con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:resource name="getcrowdfundingdetailsbypetitionid" path="getcrowdfundingdetailsbypetitionid" id="a3545fe9-88f7-41a4-8523-eb08e6da0378"><con:settings/><con:parameters/><con:method name="Method 1" id="0271a480-0b26-40f1-8fc5-056a3dc1c62f" method="POST"><con:settings/><con:parameters/><con:request name="Request 1" id="e88a369c-01eb-4948-92c5-931e121643bc" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint><con:request>{
+	companyid 
+	petitionId
+}
+</con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:resource name="getapiaccessdetails" path="getapiaccessdetails" id="36e674bf-3586-4da2-81a4-a0f8bf37572f"><con:settings/><con:parameters/><con:method name="Method 1" id="27da111b-db90-435e-aaa1-a3204604c184" method="POST"><con:settings/><con:parameters/><con:representation type="FAULT"><con:mediaType>application/json; charset=utf-8</con:mediaType><con:status>401 500</con:status><con:params/><con:element xmlns:get="http://digisurveyapi.clidiem.com/api/Company/getapiaccessdetails">get:Fault</con:element></con:representation><con:representation type="REQUEST"><con:mediaType>application/json</con:mediaType><con:params/></con:representation><con:request name="Request 1" id="0964d600-e0b0-49b2-aabb-72b1868ff700" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="Bearer   ${#[Setup#TokenGeneration#Token Request]#Response#$['access_token']}" xmlns="http://eviware.com/soapui/config"/></con:setting></con:settings><con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint><con:request>{
+	CompanyId:"sz0pbAl8vxkVQpkis6/Q1g==",
+	CreatedBy:"T5qYELDSxb4QFbawhb7Bkg=="
+}
+</con:request><con:originalUri>http://digisurveyapi.clidiem.com/api/Company/getapiaccessdetails</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:resource name="createnewcompanycontactsdetails" path="createnewcompanycontactsdetails" id="ce3b60a2-ad85-46e9-83e9-afce61da7a33"><con:settings/><con:parameters/><con:method name="Method 1" id="f006adee-3ee1-4718-becb-a3acb5f803d4" method="POST"><con:settings/><con:parameters/><con:request name="Request 1" id="2771927e-16ce-42b5-aabc-863404681c30" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint><con:request/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:resource name="deleteapiaccessdetails" path="deleteapiaccessdetails" id="071ddeb0-3f87-4417-8693-240fa5666411"><con:settings/><con:parameters/><con:method name="Method 1" id="188b13f8-3692-467c-99e3-c5e9f26c7ca1" method="POST"><con:settings/><con:parameters/><con:request name="Request 1" id="63d7988c-efba-4051-97a9-1993acf0da83" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint><con:request>{
+	modifiedBy
+	APIKeyId
+}
+</con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:resource name="apisviewdetails" path="apisviewdetails" id="19f0f7d5-08a9-4043-88c6-4cf627a72099"><con:settings/><con:parameters/><con:method name="Method 1" id="efe1fcea-a145-47a7-a3b1-652185c28705" method="POST"><con:settings/><con:parameters/><con:request name="Request 1" id="f47db76f-f4f1-462d-948d-a41b636c03b0" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint><con:request>{
+	PermissionId
+}
+</con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:resource name="getcompanycontactslistresponse" path="getcompanycontactslistresponse" id="46e780a9-9c29-46b0-825e-808441df7bf2"><con:settings/><con:parameters/><con:method name="Method 1" id="b2b9ad66-a668-482c-ae1c-08271f06a062" method="POST"><con:settings/><con:parameters/><con:request name="Request 1" id="18b8d466-b540-4d02-9f38-3d4f65f0974c" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint><con:request>{
+	companyid 
+	ActiveStatus 
+	UserLoginId
+}
+</con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:resource name="getcompanyquestionlist" path="getcompanyquestionlist" id="319e9179-e5ca-421d-865f-2f1e01f61b17"><con:settings/><con:parameters/><con:method name="Method 1" id="a733a7d6-ed42-4093-b2bc-44033ee6a3e5" method="POST"><con:settings/><con:parameters/><con:request name="Request 1" id="9d1c064e-5ddf-4610-8f3e-6b8f559ed51a" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint><con:request>{
+	Companyid
+	UserLoginId
+}
+</con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:resource name="getselectedmenu" path="getselectedmenu" id="97de73cd-96f4-48af-a218-0496e33ad905"><con:settings/><con:parameters/><con:method name="Method 1" id="093bbaf6-8c89-48ee-a556-5b16a5591ad4" method="POST"><con:settings/><con:parameters/><con:request name="Request 1" id="e4b63459-de74-42d9-9c21-ab5daa40ec97" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint><con:request>{
+	CompanyId 
+	UserLoginId
+}
+</con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:resource name="translation" path="translation" id="35002967-7d46-4886-8a94-6b549731244b"><con:settings/><con:parameters/><con:method name="Method 1" id="eeca5f3c-692d-4604-bee9-4d588bfc5eab" method="POST"><con:settings/><con:parameters/><con:request name="Request 1" id="dbdf0b4b-4399-4405-952b-138724822be3" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint><con:request>{
+	text 
+	targetLanguageCode 
+	sourceLanguageCode
+}
+</con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:resource name="scheduleandsharesurveytocontacts" path="scheduleandsharesurveytocontacts" id="ce1aebff-0fd0-42ce-880b-d045dc4c5610"><con:settings/><con:parameters/><con:method name="Method 1" id="89174d77-b536-482f-8204-f83f63577120" method="POST"><con:settings/><con:parameters/><con:request name="Request 1" id="d964b8a9-8f50-4eae-93c4-3d270276e890" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint><con:request>{
+	QuestionnaireId
+	ContactIds
+	CreatedBy
+	EmailSubject
+	EmailBody
+	ScheduledTime
+	FromMailId
+}
+</con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:resource name="surveysharedlistbysurveyid" path="surveysharedlistbysurveyid" id="bfba066e-5bff-4ea1-ba8a-8ca892424ca5"><con:settings/><con:parameters/><con:method name="Method 1" id="39d56c74-74b4-4014-89a6-ace81924a439" method="POST"><con:settings/><con:parameters/><con:request name="Request 1" id="1f2d82c3-8f10-4d72-be51-f6d65501ab8c" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint><con:request>{
+	Surveyid
+}
+</con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:resource name="getmailbodybytemplateid" path="getmailbodybytemplateid" id="695ce68d-cedd-43a7-86b3-ad60a78d65ae"><con:settings/><con:parameters/><con:method name="Method 1" id="f1375a08-48cb-453d-9a75-bdf97563df87" method="POST"><con:settings/><con:parameters/><con:request name="Request 1" id="d63b55d3-7f11-42bf-9d6e-e7a0c6d90531" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint><con:request>{
+	CompanyId 
+	CreatedBy 
+	Templateid
+}
+</con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:resource name="shareemailthroughemailmarketing" path="shareemailthroughemailmarketing" id="f8343405-5f18-4e33-a290-2ee5f834f84e"><con:settings/><con:parameters/><con:method name="Method 1" id="5a33617d-4442-4e81-9e9a-e963d3b19faa" method="POST"><con:settings/><con:parameters/><con:request name="Request 1" id="0caa2adc-22d5-454c-ab17-5afebc57958e" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint><con:request>{
+	ContactOrContactGroupIds,
+	CreatedBy,
+	CompanyId,
+	EmailSubject,
+	EmailBody,
+	FromMailId,
+	IsContactGroup,
+	isSaveTemplate,
+	templatename,
+	Templateid,
+	CcEmailIds,
+	BccEmailIds,
+	ToEmails,
+	ScheduleDate,
+	ScheduleTime,
+	FromMailId,
+	EmailSubject,
+	EmailBody,
+	CcEmailIds,
+	BccEmailIds
+}
+</con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:resource name="sharecompanyquizthroughcontacts" path="sharecompanyquizthroughcontacts" id="f5cc6778-6dba-4f37-9744-6e594b029a8c"><con:settings/><con:parameters/><con:method name="Method 1" id="1639e535-744e-4b0f-8005-0a28fd75c1e2" method="POST"><con:settings/><con:parameters/><con:request name="Request 1" id="618e30a1-458b-4179-9f12-2c3f4292d011" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint><con:request>{
+	ContactOrContactGroupIds,
+	CreatedBy,
+	CompanyId,
+	EmailSubject,
+	EmailBody,
+	FromMailId,
+	IsContactGroup,
+	CcEmailIds,
+	BccEmailIds,
+	FromMailId,
+	EmailSubject,
+	EmailBody,
+	CcEmailIds,
+	BccEmailIds
+}
+</con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:resource name="savepetitiondetails" path="savepetitiondetails" id="aa75c532-27fa-45ee-b291-074e455651c8"><con:settings/><con:parameters/><con:method name="Method 1" id="aec4b244-391c-46d2-b15b-9ee68f2a0f1f" method="POST"><con:settings/><con:parameters/><con:request name="Request 1" id="27c67519-8fae-4d73-a662-5a807d4d188c" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint><con:request>{
+	petitionField, 
+	petitiontitle, 
+	createdby, 
+	companyid, 
+	overview, 
+	overviewimage_path,ispublished, 
+	petitiontypeid, background, 
+	backgroundimage_path, 
+	solution, 
+	solutionimage_path, 
+	tags, 
+	gallery1image_path, 
+	gallery2image_path, 
+	gallery3image_path, 
+	gallery4image_path, 
+	gallery5image_path, 
+	videolink, 
+	fundingcurrency, 
+	fundinggoal, 
+	signaturesrequired, 
+	riskAndChallenges, 
+	riskAndChallenges_image, 
+	dtpetitionFaqs, , 
+	endDate, 
+	age, 
+	salary, 
+	isoccupationsChecked, 
+	isVisastatusChecked, 
+	dtDecisionMaker,
+	indefinite, 
+	dtsignquestions, 
+	sliderImage5, 
+	isfundscollectlater, 
+	defaultquestiontype, 
+	defaultquestion, 
+	uniquecode, 
+	socialshareimage
+}
+</con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:resource name="savecrowdfundingdetails" path="savecrowdfundingdetails" id="2ec9b90e-12c3-48a1-a6d7-e8ecd87ce5fe"><con:settings/><con:parameters/><con:method name="Method 1" id="743bc878-8357-47f7-b615-a413ed9b9d73" method="POST"><con:settings/><con:parameters/><con:request name="Request 1" id="54813d25-1380-4966-98f6-c77abf9cc5cf" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint><con:request>{
+	petitionField, 
+	petitiontitle, 
+	createdby, 
+	companyid, 
+	overview, 
+	overviewimage_path, 
+	ispublished, 
+	petitiontypeid, 
+	background, 
+	backgroundimage_path, 
+	solution, 
+	solutionimage_path, 
+	tags, 
+	gallery1image_path, 
+	gallery2image_path, 
+	gallery3image_path, 
+	gallery4image_path, 
+	gallery5image_path, 
+	gallery6image_path, 
+	videolink, 
+	fundingcurrency, 
+	fundinggoal, 
+	signaturesrequired, 
+	riskAndChallenges, 
+	riskAndChallenges_image, 
+	dtpetitionFaqs, 
+	whomFor, 
+	someBodyName, 
+	someBodyRelation, 
+	someBodyImage, 
+	gallery7image_path, 
+	gallery8image_path, 
+	endDate, 
+	indefinite, 
+	sliderImage5, 
+	uniquecode, 
+	socialshareimage
+}
+</con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:resource name="insertquizdetails" path="insertquizdetails" id="48b7d87f-be8d-42b7-84a2-80b9df28c3cb"><con:settings/><con:parameters/><con:method name="Method 1" id="075177ce-6a2a-44c2-9cd8-6ca3e3a6630e" method="POST"><con:settings/><con:parameters/><con:request name="Request 1" id="1ee987f8-296e-4b82-a702-b79c72760877" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint><con:request>{
+	QuizName, 
+	QuizType, 
+	dtQuestionnairequestions, 
+	CreatedBy, 
+	CompanyId, 
+	IsPublished, 
+	ExpiresInDays, 
+	IsIndividualQuestionDuration, 
+	TotalDurationInMinutes, 
+	IsEqualWeightage, 
+	Description, 
+	QuizImage,
+	EqualWeightage, 
+	IsEqualDuration,
+	EqualDurationInSeconds, 
+	IsSavetemplate, 
+	Template, 
+	setownlandingpage, 
+	landingpage, 
+	languages, 
+	dttranslatedquestions
+}
+</con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:resource name="savelayout" path="savelayout" id="4ebee4fd-6e2f-4e51-be0e-a241e08cdf50"><con:settings/><con:parameters/><con:method name="Method 1" id="84bef3f7-5d8b-4fa4-90af-f02fe7d6f720" method="POST"><con:settings/><con:parameters/><con:request name="Request 1" id="d825284a-0a9b-4448-bdea-8aaebad7bf68" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint><con:request>{
+	LayoutcheckSurveys, 
+	LayoutcheckQuiz,
+	LayoutcheckPetition,
+	LayoutcheckBusinessCrowdFunding, 
+	LayoutcheckPersonalCrowdFunding, 
+	LayoutcheckJobBoards, 
+	LayoutcheckTimesheets, 
+	CompanyId, 
+	UserLoginId
+}
+</con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:resource name="insertquiztemplatedetails" path="insertquiztemplatedetails" id="89ec7ad6-e149-4d62-8b80-a8ae40e04d99"><con:settings/><con:parameters/><con:method name="Method 1" id="c1144fb5-e233-4e17-be61-2ac185dabbc5" method="POST"><con:settings/><con:parameters/><con:request name="Request 1" id="5f14dad3-d57a-45c8-a553-7ca6aae0748c" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint><con:request>{
+	QuizTemplateName, 
+	QuizType, 
+	dtQuestionnairequestions, 
+	IsPublished, 
+	ExpiresInDays, 
+	IsIndividualQuestionDuration, 
+	TotalDurationInMinutes, 
+	IsEqualWeightage,
+	EqualWeightage, 
+	IsEqualDuration, 
+	EqualDurationInSeconds CreatedBy, 
+	CompanyId, 
+	Description,
+}
+</con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource></con:resource><con:resource name="Consultant" path="/api/Consultant" id="10ce412d-4d85-482c-9d7b-0f3b100bbf57"><con:settings/><con:parameters/><con:resource name="filter" path="getconsultantlist/companyid/filter{filter}{companyid}" id="28f3c3da-bfea-4e39-afdc-bd37851bfc92"><con:settings/><con:parameters><con:parameter><con:name>filter</con:name><con:value/><con:style>TEMPLATE</con:style><con:default/><con:description xsi:nil="true"/></con:parameter><con:parameter><con:name>companyid</con:name><con:value/><con:style>TEMPLATE</con:style><con:default/><con:description xsi:nil="true"/></con:parameter></con:parameters><con:method name="Method 1" id="e51f2ac6-d670-4a25-8d23-61d1fca7e1be" method="GET"><con:settings/><con:parameters/><con:request name="Request 1" id="71eebce1-947b-4344-af3b-838a2c6a5861" mediaType="application/json"><con:settings/><con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint><con:request/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/><con:parameterOrder><con:entry>filter</con:entry><con:entry>companyid</con:entry></con:parameterOrder></con:request></con:method></con:resource><con:resource name="addconsultantnote" path="addconsultantnote" id="5dc645b8-6a55-4bfc-8d6c-953b6dc6f07b"><con:settings/><con:parameters/><con:method name="Method 1" id="9b3f60a9-7bb0-46d1-a2aa-43ab141f897f" method="POST"><con:settings/><con:parameters/><con:request name="Request 1" id="31184913-c841-47f5-aab1-530239ff4c34" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint><con:request>{
+	CompanyConsultantId 
+	RelatedToId 
+	Description 
+	CreatedBy
+}
+</con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:resource name="addchangestatus" path="addchangestatus" id="0772b491-5226-403a-8c63-d27b35ab0e27"><con:settings/><con:parameters/><con:method name="Method 1" id="b4b21a99-bb7e-482e-87e9-d3df0950277a" method="POST"><con:settings/><con:parameters/><con:request name="Request 1" id="c28828c7-0bae-4534-a9ce-d958731c0363" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint><con:request>{
+ConsultantStatusId 
+Comments 
+CompanyConsultantId
+CreatedBy
+}
+</con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:resource name="insertconsultantdetails" path="insertconsultantdetails" id="355a5ea1-7572-44e1-b515-2ae7271d7304"><con:settings/><con:parameters/><con:method name="Method 1" id="f4397080-6aed-466d-9576-2ccf21e98430" method="POST"><con:settings/><con:parameters/><con:request name="Request 1" id="9f5f3ab6-ea46-4a1f-9acd-83fefd1ad9ff" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint><con:request/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:resource name="addmarketingpriceforconsultant" path="addmarketingpriceforconsultant" id="d1411f02-c406-4716-8318-e12727f0b93a"><con:settings/><con:parameters/><con:method name="Method 1" id="85fc9cb2-514b-4500-9784-86f765b763b2" method="POST"><con:settings/><con:parameters/><con:request name="Request 1" id="af1341de-a33e-40db-bb04-a691c67bbc40" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint><con:request/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:resource name="searchconsultants" path="searchconsultants" id="8bac68a0-8d10-4edc-85c6-16326bc8ad33"><con:settings/><con:parameters/><con:method name="Method 1" id="dc6401a3-4012-47b8-982b-1ce334bbd1f7" method="POST"><con:settings/><con:parameters/><con:request name="Request 1" id="d670c948-a60b-47d9-82ea-8a48a09df9fb" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint><con:request>{
+	companyId
+	name 
+	clidiemID 
+	mobileNumber 
+	ssn 
+	country 
+	state 
+	zipCode
+}
+</con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:resource name="candidateId" path="getconsultantdetailbycandidateid/candidateId{candidateId}" id="d1af8f59-fc92-4e73-a961-c83cd30234ab"><con:settings/><con:parameters><con:parameter><con:name>candidateId</con:name><con:value/><con:style>TEMPLATE</con:style><con:default/><con:description xsi:nil="true"/></con:parameter></con:parameters><con:method name="Method 1" id="e40f86de-6936-4028-b67f-5d0382519c12" method="GET"><con:settings/><con:parameters/><con:request name="Request 1" id="e6465e47-9200-4f16-a60e-4a6a5c072a27" mediaType="application/json"><con:settings/><con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint><con:request/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/><con:parameterOrder><con:entry>candidateId</con:entry></con:parameterOrder></con:request></con:method></con:resource><con:resource name="invitingconsultant" path="invitingconsultant" id="f6debf4b-7a77-45a3-8231-41d5d748615c"><con:settings/><con:parameters/><con:method name="Method 1" id="d88c1ba8-b3b9-4127-b441-12da23e8e7d4" method="POST"><con:settings/><con:parameters/><con:request name="Request 1" id="a5d6b19d-4c78-486a-8259-4eff1c4153a6" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint><con:request>{
+     companyId
+	consultantId
+	createdBy
+	isEmployer 
+	consultantEmailId 
+	consultantname 
+	consultantType
+}
+</con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:resource name="invitingnewconsultant" path="invitingnewconsultant" id="3175276e-b419-4ccc-aab3-a4981b07834e"><con:settings/><con:parameters/><con:method name="Method 1" id="efcc5ce3-52c6-4cc4-adfe-67062f9a869e" method="POST"><con:settings/><con:parameters/><con:request name="Request 1" id="9a580292-48c4-4506-a41c-1f64e79cc1e5" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint><con:request>{
+	firstName 
+	lastName 
+	emailId 
+	ssn
+	contactNumber 
+	isEmployer 
+	companyId 
+	userLoginId
+	consultantType
+
+	
+}
+
+	</con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:resource name="companyid" path="getsliderlistconsultantsfilter/companyid{companyid}" id="955bacb5-86aa-4200-ab8a-f7bcf9031d72"><con:settings/><con:parameters><con:parameter><con:name>companyid</con:name><con:value/><con:style>TEMPLATE</con:style><con:default/><con:description xsi:nil="true"/></con:parameter></con:parameters><con:method name="Method 1" id="dc5d696c-803c-4646-b370-c0472c20af2c" method="GET"><con:settings/><con:parameters/><con:request name="Request 1" id="1afd8f52-b485-4d97-a9c5-d0d456df8a65" mediaType="application/json"><con:settings/><con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint><con:request/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/><con:parameterOrder><con:entry>companyid</con:entry></con:parameterOrder></con:request></con:method></con:resource><con:resource name="createnewcompanyconsultant" path="createnewcompanyconsultant" id="9c6a4506-946a-41a8-b030-8e3a274eaa05"><con:settings/><con:parameters/><con:method name="Method 1" id="6cd5e772-1ae8-40a5-8fcd-dd45599a4798" method="POST"><con:settings/><con:parameters/><con:request name="Request 1" id="f437f714-7364-43db-a41e-955c4a418a59" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint><con:request>
+</con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:resource name="updatecompanyconsultantsalesdetails" path="updatecompanyconsultantsalesdetails" id="f05522a1-3971-43ca-b842-1e87fa00550c"><con:settings/><con:parameters/><con:method name="Method 1" id="654c4cb6-ce59-44f1-961b-a4a41b00f933" method="POST"><con:settings/><con:parameters/><con:request name="Request 1" id="d0069ab9-fb56-4331-a554-235ee577ef51" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint><con:request/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:resource name="updatecompanyconsultantsalesdetails" path="updatecompanyconsultantsalesdetails" id="1e5ceef7-9121-4b14-aedd-570b398b4b4e"><con:settings/><con:parameters/><con:method name="Method 1" id="a2d77938-8934-4be5-900c-c5c8dfd62138" method="GET"><con:settings/><con:parameters/><con:request name="Request 1" id="d1b80ae2-6eac-4865-9f38-678e6b78f4bc" mediaType="application/json"><con:settings/><con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint><con:request/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:resource name="createcompanyconsultantjobrequirementdetails" path="createcompanyconsultantjobrequirementdetails" id="fc54b6bb-4814-48ce-97ef-c1b88aee10ee"><con:settings/><con:parameters/><con:method name="Method 1" id="9af2398f-ab70-4f78-b4e7-ba30bcc0e94f" method="POST"><con:settings/><con:parameters/><con:representation type="REQUEST"><con:mediaType>application/json</con:mediaType><con:params/></con:representation><con:representation type="FAULT"><con:mediaType>application/json; charset=utf-8</con:mediaType><con:status>401</con:status><con:params/><con:element xmlns:cre="http://digisurveyapi.clidiem.com/api/Consultant/createcompanyconsultantjobrequirementdetails">cre:Fault</con:element></con:representation><con:request name="Request 1" id="bfdf385b-4c64-4ca5-95cf-acf15c4a6a44" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint><con:request>{
+	Availability,
+	CandidateId,
+	Category,
+	CurrentLocation,
+	ExperienceMonths,
+	ExperienceYears,
+	F2FatCurrentLocation,
+	JobTitle,
+	MinRate,
+	MinRateCurrency,
+	MinSalary,
+	MinSalaryCurrency,
+	OpenToNegotiation,
+	Relocation,
+	SecurityClearance,
+	SponsorOption,
+	SubCategory,
+	VisaType,
+	IndustriesWorkedFor,
+	JobTypes
+}
+
+</con:request><con:originalUri>http://digisurveyapi.clidiem.com/api/Consultant/createcompanyconsultantjobrequirementdetails</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:resource name="createcompanyconsultantprofessionalreferencedetails" path="createcompanyconsultantprofessionalreferencedetails" id="13d0d696-445c-4e06-82ce-d5fef5107b32"><con:settings/><con:parameters/><con:method name="Method 1" id="85178819-624d-4e33-b8a5-c9430eeaa746" method="POST"><con:settings/><con:parameters/><con:request name="Request 1" id="3648ae39-cc1c-4b40-b9f1-b636e0df91d7" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint><con:request>{
+	CandidateReferenceId,
+	CandidateId,
+	Email,
+	FullName,
+	HaveClidiemId,
+	Phone,
+	PhoneCode,
+	Project,
+	Title
+}
+</con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:resource name="createcompanyconsultantskills" path="createcompanyconsultantskills" id="6c345489-0b55-49c5-8d09-2c93308877d9"><con:settings/><con:parameters/><con:method name="Method 1" id="7a21713f-e7b5-4907-9119-d5e3380d0236" method="POST"><con:settings/><con:parameters/><con:request name="Request 1" id="1731622a-1d94-4244-b54e-e688f7ca894e" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint><con:request>{
+	loginId, 
+	skills
+}
+</con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:resource name="createcompanyconsultantlanguagedetails" path="createcompanyconsultantlanguagedetails" id="a91406b3-f548-4f17-bd98-d25ed76ec7a9"><con:settings/><con:parameters/><con:method name="Method 1" id="aaf1a5c1-1e85-4e43-8cc5-6cc697af05f3" method="POST"><con:settings/><con:parameters/><con:representation type="FAULT"><con:mediaType>application/json; charset=utf-8</con:mediaType><con:status>401</con:status><con:params/><con:element xmlns:cre="http://digisurveyapi.clidiem.com/api/Consultant/createcompanyconsultantlanguagedetails">cre:Fault</con:element></con:representation><con:representation type="REQUEST"><con:mediaType>application/json</con:mediaType><con:params/></con:representation><con:request name="Request 1" id="c1c7ac79-9e7d-4f0b-ae70-ccd79259c202" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint><con:request>{
+	loginId, 
+	candidateLanguageId, 
+	languageId, 
+	read, 
+	write, 
+	speak
+}
+</con:request><con:originalUri>http://digisurveyapi.clidiem.com/api/Consultant/createcompanyconsultantlanguagedetails</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:resource name="candidateid" path="getcompanyconsultantlanguages/candidateid{candidateid}" id="74228e75-d293-46c4-bfc1-253b7b04ddcc"><con:settings/><con:parameters><con:parameter><con:name>candidateid</con:name><con:value/><con:style>TEMPLATE</con:style><con:default/><con:description xsi:nil="true"/></con:parameter></con:parameters><con:method name="Method 1" id="7cfa93bd-1d65-4021-bc34-be1a0ab42782" method="GET"><con:settings/><con:parameters/><con:request name="Request 1" id="161e4907-2fe9-4edc-9442-6579949cf834" mediaType="application/json"><con:settings/><con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint><con:request/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/><con:parameterOrder><con:entry>candidateid</con:entry></con:parameterOrder></con:request></con:method></con:resource><con:resource name="createcompanyconsultantcertificationdetails" path="createcompanyconsultantcertificationdetails" id="319a5006-6f35-4f3d-97e2-eeeff97f4a53"><con:settings/><con:parameters/><con:method name="Method 1" id="f16bb440-03f6-4318-a97a-8ee850b00841" method="POST"><con:settings/><con:parameters/><con:request name="Request 1" id="8711d266-bbb8-44aa-9894-2c03f6c8ee2f" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint><con:request>{
+	loginId, 
+	CandidateId,
+	candidateCertificationId,   
+	attachment3Name, 
+	attachment3Path, 
+	attachment3Comments);
+	certificationName, 
+	score, 
+	dateTaken, 
+	validFrom,     
+	attachment2Name, 
+	attachment2Path, 
+	attachment2Comments, 
+	validTo,   
+	attachment1Name, 
+	attachment1Path, 
+	attachment1Comments,
+}
+</con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:resource name="candidateid" path="getcompanyconsultantcertificationdetails/candidateid{candidateid}" id="39ac322d-b7a3-441e-9da0-b88877394e2c"><con:settings/><con:parameters><con:parameter><con:name>candidateid</con:name><con:value/><con:style>TEMPLATE</con:style><con:default/><con:description xsi:nil="true"/></con:parameter></con:parameters><con:method name="Method 1" id="5c8280e5-2869-4ded-85de-938e82500f95" method="GET"><con:settings/><con:parameters/><con:request name="Request 1" id="68bf1089-d78d-404b-afa0-4f27c2bd88ee" mediaType="application/json"><con:settings/><con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint><con:request/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/><con:parameterOrder><con:entry>candidateid</con:entry></con:parameterOrder></con:request></con:method></con:resource><con:resource name="createcompanyconsultantaddressdetails" path="createcompanyconsultantaddressdetails" id="d4905394-8704-497b-9977-5683061d10c8"><con:settings/><con:parameters/><con:method name="Method 1" id="09516bb2-d987-4b84-add0-c6ad2c55f64d" method="POST"><con:settings/><con:parameters/><con:request name="Request 1" id="73b9a007-1f19-492f-a41e-9d1c63f3e6b8" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint><con:request>{
+	  CandidateId,
+	  MailingCity,
+	  MailingCountry,
+	  MailingState,
+	  MailingStreet1,
+	  MailingStreet2,
+	  MailingZipcode,                                                  IsMailingSameAsPrimary,PrimaryCity,PrimaryCountry,PrimaryState,PrimaryStreet1,PrimaryStreet2,PrimaryZipcode
+}
+</con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:resource name="createcompanyconsultantemergencycontactdetails" path="createcompanyconsultantemergencycontactdetails" id="816986ff-e96c-4431-a6b1-1edd2ef0ef51"><con:settings/><con:parameters/><con:method name="Method 1" id="e66b8b9c-723d-41cd-9d31-b36436c81fee" method="POST"><con:settings/><con:parameters/><con:request name="Request 1" id="9d1b7561-595b-4302-a06f-640c3afcb90d" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint><con:request>
+{
+	CandidateEmergencyContactId,
+	CandidateId,
+	EmergencyCity,
+	EmergencyContactName,
+	EmergencyContactNumber,
+	EmergencyCountry,
+	EmergencyCountryCode,
+	EmergencyEmailID,
+	EmergencyNotes,
+	EmergencyRelationship,
+	EmergencyState,
+	EmergencyStreet1,
+	EmergencyStreet2,
+	EmergencyZipcode
+
+}
+</con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:resource name="deletecompanyconsultantemergencycontactdetails" path="deletecompanyconsultantemergencycontactdetails{candidateemergencycontactid}" id="22cb26a3-5b99-4fba-950e-cb21e8308ed7"><con:settings/><con:parameters><con:parameter><con:name>candidateemergencycontactid</con:name><con:value/><con:style>TEMPLATE</con:style><con:default/><con:description xsi:nil="true"/></con:parameter></con:parameters><con:method name="Method 1" id="0fb69e9b-5848-40f2-a2ba-eb013d758c3f" method="GET"><con:settings/><con:parameters/><con:request name="Request 1" id="3d7943de-0590-4655-bb30-fe952252e4eb" mediaType="application/json"><con:settings/><con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint><con:request/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/><con:parameterOrder><con:entry>candidateemergencycontactid</con:entry></con:parameterOrder></con:request></con:method></con:resource><con:resource name="createcompanyconsultanteducationdetails" path="createcompanyconsultanteducationdetails" id="7ff084a4-2a84-4f83-bb7b-83067c66b5de"><con:settings/><con:parameters/><con:method name="Method 1" id="7aeaebc7-323f-42bc-90a4-5e3d7dde5ff0" method="POST"><con:settings/><con:parameters/><con:request name="Request 1" id="23b97778-1830-4210-91ac-3555a71aa9a4" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint><con:request>{
+	loginId, 
+	candidateEducationId, 
+	educationalQualificationId, 
+	majorStudy, 
+	institute startDate, 
+	endDate, 
+	city, 
+	stateId, 
+	countryId
+}
+</con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:resource name="createcompanyconsultantworkauthorizationdetails" path="createcompanyconsultantworkauthorizationdetails" id="a9432cbe-d5e6-431a-8e0a-c1fa13f77a5e"><con:settings/><con:parameters/><con:method name="Method 1" id="9ad57a97-54df-40ee-9ef3-ed34ddc5b330" method="POST"><con:settings/><con:parameters/><con:request name="Request 1" id="3fb3dce6-41f0-4487-9c62-4e99ee5c9db4" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint><con:request>{
+	loginId, 
+	country, 
+	documentType, 
+	documentNumber, 
+	documentStatus, 
+	issuedDate, 
+	validFrom, 
+	expiryDat , 
+	attachment1Name, 
+	attachment1Path, 
+	attachment1Comments, 
+	attachment2Name, 
+	attachment2Path, 
+	attachment2Comments, 
+	attachment3Name, 
+	attachment3Path, 
+	attachment3Comments
+}
+</con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:resource name="createcompanyconsultantdocumentdetails" path="createcompanyconsultantdocumentdetails" id="3a4d0e9b-a18f-4c87-b08e-d69b0b37e9a8"><con:settings/><con:parameters/><con:method name="Method 1" id="53f57994-1eb9-4c7d-ab2a-cb4605f8bbba" method="POST"><con:settings/><con:parameters/><con:request name="Request 1" id="af3e128c-d91a-47e0-aebf-e48ba951ea89" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint><con:request>{
+	"loginId, 
+	candidateDocumentId,  
+	documentType, 
+	documentTitle, 
+	expiryDate,
+	documentStatus, 
+	comments,
+     document1Name, 
+     document1Path, 
+     document2Name, 
+     document2Path, 
+     document3Name, 
+     document3Path"
+}
+</con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:resource name="candidatedocumentid" path="deletecompanyconsultantdocumentdetails/candidatedocumentid{candidatedocumentid}" id="08b19af5-df9b-4097-a4c7-29e7e847f498"><con:settings/><con:parameters><con:parameter><con:name>candidatedocumentid</con:name><con:value/><con:style>TEMPLATE</con:style><con:default/><con:description xsi:nil="true"/></con:parameter></con:parameters><con:method name="Method 1" id="d2173585-b7ec-4c93-bcbc-41bdc666406b" method="GET"><con:settings/><con:parameters/><con:request name="Request 1" id="3e625533-1ef9-483d-a598-852a6e56c203" mediaType="application/json"><con:settings/><con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint><con:request/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/><con:parameterOrder><con:entry>candidatedocumentid</con:entry></con:parameterOrder></con:request></con:method></con:resource><con:resource name="deletecompanyconsultantreferencedetails" path="deletecompanyconsultantreferencedetails" id="a59b6478-d8f6-43d2-b93a-419eb58c98ce"><con:settings/><con:parameters/><con:method name="Method 1" id="bcc9d829-2d00-43ac-9968-d89258396a45" method="POST"><con:settings/><con:parameters/><con:request name="Request 1" id="1282845a-5722-42b3-9587-63a619e889c6" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint><con:request>{
+	CandidateReferenceId
+}
+</con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:resource name="candidatereferenceid" path="deletecompanyconsultantprofessionalreferencedetails/candidatereferenceid{candidatereferenceid}" id="8060940b-e092-4605-b9aa-f76fd1ea3fb2"><con:settings/><con:parameters><con:parameter><con:name>candidatereferenceid</con:name><con:value/><con:style>TEMPLATE</con:style><con:default/><con:description xsi:nil="true"/></con:parameter></con:parameters><con:method name="Method 1" id="9cf143d2-f96d-4178-84c1-cc5c415dbff6" method="GET"><con:settings/><con:parameters/><con:request name="Request 1" id="fb68c7bc-91b2-44b7-86ec-730238b10866" mediaType="application/json"><con:settings/><con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint><con:request/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/><con:parameterOrder><con:entry>candidatereferenceid</con:entry></con:parameterOrder></con:request></con:method></con:resource><con:resource name="candidateexperienceid" path="deletecompanyconsultantexperiencedetails/candidateexperienceid{candidateexperienceid}" id="f7f65b7c-1157-4683-ab67-377eb5eb2bca"><con:settings/><con:parameters><con:parameter><con:name>candidateexperienceid</con:name><con:value/><con:style>TEMPLATE</con:style><con:default/><con:description xsi:nil="true"/></con:parameter></con:parameters><con:method name="Method 1" id="4108972a-7e15-4c7b-b38d-8f16a239dd1a" method="GET"><con:settings/><con:parameters/><con:request name="Request 1" id="ffaae0ef-7a61-4b72-9207-663272509e8b" mediaType="application/json"><con:settings/><con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint><con:request/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/><con:parameterOrder><con:entry>candidateexperienceid</con:entry></con:parameterOrder></con:request></con:method></con:resource><con:resource name="candidateid" path="getcompanyconsultantemployments/candidateid{candidateid}" id="0bdb1386-cc4a-484a-a3dd-c3bbb52db887"><con:settings/><con:parameters><con:parameter><con:name>candidateid</con:name><con:value/><con:style>TEMPLATE</con:style><con:default/><con:description xsi:nil="true"/></con:parameter></con:parameters><con:method name="Method 1" id="7454067a-84ca-4768-a8b1-3f54d96201f3" method="GET"><con:settings/><con:parameters/><con:request name="Request 1" id="7e8fcc0f-8884-4a13-8043-a6dc78c9e1ea" mediaType="application/json"><con:settings/><con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint><con:request/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/><con:parameterOrder><con:entry>candidateid</con:entry></con:parameterOrder></con:request></con:method></con:resource><con:resource name="candidateid" path="getcompanyconsultantdocuments/candidateid{candidateid}" id="a7012739-2995-4a9c-a7a2-75de858cf941"><con:settings/><con:parameters><con:parameter><con:name>candidateid</con:name><con:value/><con:style>TEMPLATE</con:style><con:default/><con:description xsi:nil="true"/></con:parameter></con:parameters><con:method name="Method 1" id="ffa525e7-4bbe-4615-95d2-f863aa5a94e5" method="GET"><con:settings/><con:parameters/><con:request name="Request 1" id="f4c0aee0-7c94-4ec3-943c-761c4ecb9c85" mediaType="application/json"><con:settings/><con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint><con:request/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/><con:parameterOrder><con:entry>candidateid</con:entry></con:parameterOrder></con:request></con:method></con:resource><con:resource name="candidateid" path="getcompanyconsultantemergencycontacts/candidateid{candidateid}" id="782f7441-5e78-4e66-8a9d-4b862eb614e8"><con:settings/><con:parameters><con:parameter><con:name>candidateid</con:name><con:value/><con:style>TEMPLATE</con:style><con:default/><con:description xsi:nil="true"/></con:parameter></con:parameters><con:method name="Method 1" id="fb8d29e5-e6cf-44a4-9f89-13d3a04ab267" method="GET"><con:settings/><con:parameters/><con:request name="Request 1" id="e5896cd0-f4bb-4c59-b6bd-cb84c911c083" mediaType="application/json"><con:settings/><con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint><con:request/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/><con:parameterOrder><con:entry>candidateid</con:entry></con:parameterOrder></con:request></con:method></con:resource><con:resource name="candidateid" path="getcompanyconsultantprofessionalreferences/candidateid{candidateid}" id="a53089c3-ebfc-433a-9853-4d1a9e1a8b4d"><con:settings/><con:parameters><con:parameter><con:name>candidateid</con:name><con:value/><con:style>TEMPLATE</con:style><con:default/><con:description xsi:nil="true"/></con:parameter></con:parameters><con:method name="Method 1" id="52b0a5c6-3447-472e-af08-e7ff8f0d6029" method="GET"><con:settings/><con:parameters/><con:request name="Request 1" id="ac69f8f2-f76d-4221-a7d9-77166f0acf77" mediaType="application/json"><con:settings/><con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint><con:request/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/><con:parameterOrder><con:entry>candidateid</con:entry></con:parameterOrder></con:request></con:method></con:resource><con:resource name="candidateid" path="getcompanyconsultanteducationdetails/candidateid{candidateid}" id="08c0f045-471e-43eb-8052-f1b16ba57cca"><con:settings/><con:parameters><con:parameter><con:name>candidateid</con:name><con:value/><con:style>TEMPLATE</con:style><con:default/><con:description xsi:nil="true"/></con:parameter></con:parameters><con:method name="Method 1" id="83514ba5-c27d-4652-a9d1-a3665eb2f581" method="GET"><con:settings/><con:parameters/><con:request name="Request 1" id="44dd171e-c073-4aea-abe3-6fd7d481f53f" mediaType="application/json"><con:settings/><con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint><con:request/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/><con:parameterOrder><con:entry>candidateid</con:entry></con:parameterOrder></con:request></con:method></con:resource><con:resource name="createcompanyconsultanti94details" path="createcompanyconsultanti94details" id="59c3c1a6-56da-4f4c-b156-f8daa1387a8a"><con:settings/><con:parameters/><con:method name="Method 1" id="19f98036-4e64-41a4-a2b5-992f2cc8d007" method="POST"><con:settings/><con:parameters/><con:request name="Request 1" id="5b85e204-e7e9-4e7c-9da1-c204e0cabceb" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint><con:request>{
+	loginId, 
+	i94Number, 
+	lastArrivalDate, 
+	i94ExpiryDate, 
+	i94Status , 
+	attachment1Name, 
+	attachment1Path, 
+	attachment1Comments, 
+	attachment2Name, 
+	attachment2Path, 
+	attachment2Comments   , 
+	attachment3Name, 
+	attachment3Path, 
+	attachment3Comments
+	
+}
+</con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:resource name="createcompanyconsultanteverificationdetails" path="createcompanyconsultanteverificationdetails" id="d5ace035-8011-42b0-8d91-819b451c191e"><con:settings/><con:parameters/><con:method name="Method 1" id="dba059f6-26b6-4033-870a-5144d31ecdd6" method="POST"><con:settings/><con:parameters/><con:request name="Request 1" id="cb253034-8426-4d6f-a9d6-f62f9f7ee78f" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint><con:request>{
+	CandidateId, 
+	eVerificationNumber, 
+	eVerificationDate, 
+	eVerificationStatus, 
+	eVerificationBy
+}
+</con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:resource name="createcompanyconsultantexperiencedetails" path="createcompanyconsultantexperiencedetails" id="7e3b5039-f2fb-47d2-80cf-3bfba77ef7f2"><con:settings/><con:parameters/><con:method name="Method 1" id="b33c6834-5ba0-4944-ad48-e4a847843f60" method="POST"><con:settings/><con:parameters/><con:request name="Request 1" id="41325842-c6bb-4bef-88fd-7d5b5c658474" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint><con:request>{
+	loginId, 
+	candidateExperienceId, 
+	company, 
+	jobTitle, 
+	employementType, 
+	employer1, 
+	fromDate1, 
+	toDate1, 
+	currentWorking1, 
+	employer2, 
+	fromDate2, 
+	toDate2, 
+	currentWorking2, 
+	employer3, 
+	fromDate3, 
+	toDate3, 
+	currentWorking3, 
+	supervisorEmail,  
+	supervisorDesignation, 
+	employerContactNumber, 
+	address, 
+	city, 
+	stateId, 
+	countryId, 
+	zipcode, 
+	mayContactEmployer,
+	responsibilities, 
+	reasonsForLeaving
+}
+</con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:resource name="candidatelanguageid" path="deletecompanyconsultantlanguagedetails/candidatelanguageid{candidateeducationid}" id="5acfc72f-253a-47f2-8f36-009626fb521e"><con:settings/><con:parameters><con:parameter><con:name>candidateeducationid</con:name><con:value/><con:style>TEMPLATE</con:style><con:default/><con:description xsi:nil="true"/></con:parameter></con:parameters><con:method name="Method 1" id="9d1e9f23-f5c2-44b2-92f0-139d130840ea" method="GET"><con:settings/><con:parameters/><con:request name="Request 1" id="6f0fcf16-4a49-4c82-b3b3-baf26812ebc9" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint><con:request>{
+	candidatelanguageid
+}
+</con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/><con:parameterOrder><con:entry>candidateeducationid</con:entry></con:parameterOrder></con:request></con:method></con:resource><con:resource name="candidatelanguageid" path="deletecompanyconsultanteducationdetails/candidatelanguageid{candidateeducationid}" id="2724f017-a9ac-4d74-981f-c4d7451c1931"><con:settings/><con:parameters><con:parameter><con:name>candidateeducationid</con:name><con:value/><con:style>TEMPLATE</con:style><con:default/><con:description xsi:nil="true"/></con:parameter></con:parameters><con:method name="Method 1" id="9b690eb9-3d2e-4ce4-ab91-cbfe5240c09d" method="GET"><con:settings/><con:parameters/><con:request name="Request 1" id="595b5fbd-029e-40aa-87e8-6fc72fd7ea66" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint><con:request/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/><con:parameterOrder><con:entry>candidateeducationid</con:entry></con:parameterOrder></con:request></con:method></con:resource><con:resource name="candidatelanguageid" path="deletecompanyconsultantcertificationdetails/candidatelanguageid{candidatecertificationid}" id="4d69beb3-6624-4a1c-b27e-8ca0b776e890"><con:settings/><con:parameters><con:parameter><con:name>candidatecertificationid</con:name><con:value/><con:style>TEMPLATE</con:style><con:default/><con:description xsi:nil="true"/></con:parameter></con:parameters><con:method name="Method 1" id="8b44b650-3f33-48d9-b269-e0ce49ac1ec6" method="GET"><con:settings/><con:parameters/><con:request name="Request 1" id="fbc7d2be-68aa-452e-b860-dcd89a08cc26" mediaType="application/json"><con:settings/><con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint><con:request/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/><con:parameterOrder><con:entry>candidatecertificationid</con:entry></con:parameterOrder></con:request></con:method></con:resource><con:resource name="updatecompanyconsultantpassport" path="updatecompanyconsultantpassport" id="b22c61c7-b56f-4736-b6d4-d91e46473207"><con:settings/><con:parameters/><con:method name="Method 1" id="8521b8c7-d4d7-494d-8979-3dd524b5b3c8" method="POST"><con:settings/><con:parameters/><con:request name="Request 1" id="6c23847f-dc37-4ec6-97b0-571afaf57ada" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint><con:request>{
+	loginId, 
+	passportNumber, 
+	attachment1Name, 
+	attachment1Path, 
+	attachment1Comments, 
+	attachment2Name, 
+	attachment2Path, 
+	attachment2Comments  , 
+	attachment3Name, 
+	attachment3Path, 
+	attachment3CommentspassportStatus, 
+	issuedPlace, 
+	birthPlace, 
+	issuedDate, 
+	expiryDate, 
+	issuedCountry
+}
+</con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:resource name="candidateid" path="getcompanyconsultantpassportdetails/candidateid{candidateid}" id="3710c114-91c3-4412-a5bc-8bd5364b26f6"><con:settings/><con:parameters><con:parameter><con:name>candidateid</con:name><con:value/><con:style>TEMPLATE</con:style><con:default/><con:description xsi:nil="true"/></con:parameter></con:parameters><con:method name="Method 1" id="765f32a5-3862-4a91-be31-d500b7d02016" method="GET"><con:settings/><con:parameters/><con:request name="Request 1" id="d2ea93d3-82a4-438c-9fad-8119476d6e1f" mediaType="application/json"><con:settings/><con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint><con:request/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/><con:parameterOrder><con:entry>candidateid</con:entry></con:parameterOrder></con:request></con:method></con:resource><con:resource name="companyconsultantId" path="getcompanyownnewconsultantprofile/companyconsultantId{companyconsultantId}" id="0ea82221-b735-4e96-ac68-2bf3d88751db"><con:settings/><con:parameters><con:parameter><con:name>companyconsultantId</con:name><con:value/><con:style>TEMPLATE</con:style><con:default/><con:description xsi:nil="true"/></con:parameter></con:parameters><con:method name="Method 1" id="92f36220-0573-4cd9-bb93-0e5e1876188e" method="GET"><con:settings/><con:parameters/><con:request name="Request 1" id="31ee7354-8057-4182-9602-d8e6295fa70a" mediaType="application/json"><con:settings/><con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint><con:request/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/><con:parameterOrder><con:entry>companyconsultantId</con:entry></con:parameterOrder></con:request></con:method></con:resource><con:resource name="addconsultanttag" path="addconsultanttag" id="f1c8688e-f49d-4b54-81f6-f318591bfc74"><con:settings/><con:parameters/><con:method name="Method 1" id="ad794c67-dcea-4de5-be86-cfcb2bd9d0fc" method="POST"><con:settings/><con:parameters/><con:request name="Request 1" id="1b707d23-468f-433d-9adc-dbf2dfd43d93" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint><con:request>{
+	CandidateId, 
+	tagname, 
+	CreatedBy, 
+	companyconsultantid
+}
+</con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:resource name="modifiedby" path="removecompanycandidatetag/tagid/ modifiedby{tagid, }{modifiedby}" id="4624c4d7-5f63-49d3-8ab5-05066d0eba40"><con:settings/><con:parameters><con:parameter><con:name>tagid, </con:name><con:value/><con:style>TEMPLATE</con:style><con:default/><con:description xsi:nil="true"/></con:parameter><con:parameter><con:name>modifiedby</con:name><con:value/><con:style>TEMPLATE</con:style><con:default/><con:description xsi:nil="true"/></con:parameter></con:parameters><con:method name="Method 1" id="50f9b3cd-a165-408b-ada4-3fb15594ad1d" method="GET"><con:settings/><con:parameters/><con:request name="Request 1" id="829cb49e-8555-4545-95a6-0408fc45f230" mediaType="application/json"><con:settings/><con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint><con:request/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/><con:parameterOrder><con:entry>tagid, </con:entry><con:entry>modifiedby</con:entry></con:parameterOrder></con:request></con:method></con:resource><con:resource name="companyconsultantid" path="getcandidateprofilehashtags/companyconsultantid{companyconsultantid}" id="a5a993e8-bf93-4ef9-b4f8-71f2ccf93ecb"><con:settings/><con:parameters><con:parameter><con:name>companyconsultantid</con:name><con:value/><con:style>TEMPLATE</con:style><con:default/><con:description xsi:nil="true"/></con:parameter></con:parameters><con:method name="Method 1" id="77ad46b8-6c58-487f-b2a5-7c1d64ba72bd" method="GET"><con:settings/><con:parameters/><con:request name="Request 1" id="4dca61a1-7d09-484a-afdf-121de306a8e6" mediaType="application/json"><con:settings/><con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint><con:request/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/><con:parameterOrder><con:entry>companyconsultantid</con:entry></con:parameterOrder></con:request></con:method></con:resource><con:resource name="saveconsultanttimelinecomments" path="saveconsultanttimelinecomments" id="1234a55b-5125-49dd-8cd3-ca3ab5b3dd79"><con:settings/><con:parameters/><con:method name="Method 1" id="176f9108-375a-4b96-ba45-3063fe1d2769" method="POST"><con:settings/><con:parameters/><con:request name="Request 1" id="aad1d46e-35d5-407a-8d3c-68905a33ee70" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint><con:request>{
+	candidateId,
+	companyid, 
+	companyconsultantid, 
+	timeline, 
+	timelinetype, 
+	participants, 
+	commentedby
+}
+</con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:resource name="saveconsultanttimelineratings" path="saveconsultanttimelineratings" id="ad5ce592-7208-4c42-8817-49a4b77108cf"><con:settings/><con:parameters/><con:method name="Method 1" id="d3b71742-9330-4e94-84cc-c3fbf09b8d83" method="POST"><con:settings/><con:parameters/><con:request name="Request 1" id="b1efbb61-d1e1-41c9-86ee-77c124add669" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint><con:request>{
+	candidateId, 
+	companyconsultantid, 
+	companyid, 
+	skillsrating, 
+	behaviourrating, 
+	fluencyrating, 
+	attituderating, 
+	professionalrating, 
+	comments, 
+	userlogid
+}
+</con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:resource name="ConsultantTimelineReply" path="ConsultantTimelineReply" id="85cc36f8-3c6d-43ab-90c8-26adcf8b0a1f"><con:settings/><con:parameters/><con:method name="Method 1" id="831c1058-7f12-41b1-b675-d45a3e6dbce1" method="POST"><con:settings/><con:parameters/><con:request name="Request 1" id="34f9045a-a46f-4eba-b11d-b708217d3de2" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint><con:request>{
+	timelineid, 
+	replydesc, 
+	createdby, 
+	timelinetype
+}
+</con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:resource name="getconsultanttimelinecommentsdetails" path="getconsultanttimelinecommentsdetails{companyconsultantid, }{companyId}{userloginid, }" id="0e767150-0672-46a5-b661-502e8cba14d3"><con:settings/><con:parameters><con:parameter><con:name>companyconsultantid, </con:name><con:value/><con:style>TEMPLATE</con:style><con:default/><con:description xsi:nil="true"/></con:parameter><con:parameter><con:name>companyId</con:name><con:value/><con:style>TEMPLATE</con:style><con:default/><con:description xsi:nil="true"/></con:parameter><con:parameter><con:name>userloginid, </con:name><con:value/><con:style>TEMPLATE</con:style><con:default/><con:description xsi:nil="true"/></con:parameter></con:parameters><con:method name="Method 1" id="1ce7ac77-4ebe-4958-ba92-fad5c8f8269f" method="GET"><con:settings/><con:parameters/><con:request name="Request 1" id="12964f9b-fc56-4ece-a3e0-188987765012" mediaType="application/json"><con:settings/><con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint><con:request/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/><con:parameterOrder><con:entry>companyconsultantid, </con:entry><con:entry>companyId</con:entry><con:entry>userloginid, </con:entry></con:parameterOrder></con:request></con:method></con:resource><con:resource name="timelinetype" path="getconsultanttimelinereplies/timelineId/companyid/timelinetype{timelineId}{companyid}{timelinetype }" id="b8eb011d-b8f5-4f25-b701-cd74d12287a3"><con:settings/><con:parameters><con:parameter><con:name>timelineId</con:name><con:value/><con:style>TEMPLATE</con:style><con:default/><con:description xsi:nil="true"/></con:parameter><con:parameter><con:name>companyid</con:name><con:value/><con:style>TEMPLATE</con:style><con:default/><con:description xsi:nil="true"/></con:parameter><con:parameter><con:name>timelinetype </con:name><con:value/><con:style>TEMPLATE</con:style><con:default/><con:description xsi:nil="true"/></con:parameter></con:parameters><con:method name="Method 1" id="1539cba5-e359-4fe8-8406-8152bee55934" method="GET"><con:settings/><con:parameters/><con:request name="Request 1" id="0fc9919f-eb81-4d67-8445-4c65d2d119ae" mediaType="application/json"><con:settings/><con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint><con:request/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/><con:parameterOrder><con:entry>companyid</con:entry><con:entry>timelineId</con:entry><con:entry>timelinetype </con:entry></con:parameterOrder></con:request></con:method></con:resource><con:resource name="createdby" path="getconsultanttimelineoverallratings/companyconsultantid/companyid/createdby{companyconsultantid }{companyid}{createdby}" id="c7629b20-19ba-46d2-bf31-00c79a574c7d"><con:settings/><con:parameters><con:parameter><con:name>companyconsultantid </con:name><con:value/><con:style>TEMPLATE</con:style><con:default/><con:description xsi:nil="true"/></con:parameter><con:parameter><con:name>companyid</con:name><con:value/><con:style>TEMPLATE</con:style><con:default/><con:description xsi:nil="true"/></con:parameter><con:parameter><con:name>createdby</con:name><con:value/><con:style>TEMPLATE</con:style><con:default/><con:description xsi:nil="true"/></con:parameter></con:parameters><con:method name="Method 1" id="f6b4d059-40d6-460e-8ec6-9bc006d521a7" method="GET"><con:settings/><con:parameters/><con:request name="Request 1" id="cec33085-e8b1-4c92-b34b-04bb29eebb19" mediaType="application/json"><con:settings/><con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint><con:request/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/><con:parameterOrder><con:entry>companyconsultantid </con:entry><con:entry>companyid</con:entry><con:entry>createdby</con:entry></con:parameterOrder></con:request></con:method></con:resource><con:resource name="companyconsultantid" path="getcompanyconsultantsalesdetails/companyconsultantid{companyconsultantid}" id="4a9f0ae0-083e-4a86-ae61-cd8a94087757"><con:settings/><con:parameters><con:parameter><con:name>companyconsultantid</con:name><con:value/><con:style>TEMPLATE</con:style><con:default/><con:description xsi:nil="true"/></con:parameter></con:parameters><con:method name="Method 1" id="48ae1f8e-cd53-48f5-9ed2-8ddd24940134" method="GET"><con:settings/><con:parameters/><con:request name="Request 1" id="20ee083e-c259-47e6-8055-2e0b370806c6" mediaType="application/json"><con:settings/><con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint><con:request/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/><con:parameterOrder><con:entry>companyconsultantid</con:entry></con:parameterOrder></con:request></con:method></con:resource><con:method name="Method 1" id="22e47fb9-1f02-4403-aa84-f37600693aea" method="GET"><con:settings/><con:parameters/><con:request name="Request 1" id="b00a3cf1-12bc-40e4-88ba-a48ad1b2b961" mediaType="application/json"><con:settings/><con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint><con:request/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource></con:interface><con:savedRecentRuns>1</con:savedRecentRuns><con:testSuite id="bf42898c-8cd6-4fbd-a0a1-a81c179272b8" name="Setup"><con:settings/><con:savedRecentRuns>1</con:savedRecentRuns><con:runType>SEQUENTIAL</con:runType><con:testCase id="cf2fc842-418b-40de-a382-c0925791684f" discardOkResults="true" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="TokenGeneration" searchProperties="true" timeout="0" maxResults="0"><con:settings/><con:savedRecentRuns>1</con:savedRecentRuns><con:testStep type="restrequest" name="Token Request" id="52ebad04-bc93-4dbe-a78f-d27c0793de64"><con:settings/><con:config service="http://digisurveyapi.clidiem.com" resourcePath="/api/Company/getapiaccessdetails" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Token Request" id="8869b705-635c-4f81-b002-f0f365804835" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>${#Project#EndPoint}</con:endpoint><con:request>username=Siva@clidiem.com&amp;
+password=Test@123&amp;
+grant_type=password&amp;
+usertype=applicationuser&amp;
+isfbuser=false</con:request><con:originalUri>http://digisurveyapi.clidiem.com/token</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="dba40d26-3f0f-4db1-9c9c-e806712bb0c1" name="Valid HTTP Status Codes"><con:settings/><con:configuration><codes>200</codes></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="330d424b-a5ef-43ee-aa23-c6bb7dfac486" name="Successful Login"><con:configuration><path>$['StatusMessage']</path><content>Successful login</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:restRequest></con:config></con:testStep><con:testStep type="datasource" name="DataSource" id="c3807b86-dd3c-4a36-a609-44f06c0812e3" disabled="true"><con:settings/><con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:dataSource type="Grid"><con:configuration><check><![CDATA[<xml-fragment><con:entry xmlns:con="http://eviware.com/soapui/config">true</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">true</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">true</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">true</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">true</con:entry></xml-fragment>]]></check><row>&lt;xml-fragment>&lt;con:entry xmlns:con="http://eviware.com/soapui/config"/>&lt;con:entry xmlns:con="http://eviware.com/soapui/config"/>&lt;/xml-fragment></row><row>&lt;xml-fragment>&lt;con:entry xmlns:con="http://eviware.com/soapui/config"/>&lt;con:entry xmlns:con="http://eviware.com/soapui/config"/>&lt;/xml-fragment></row><row>&lt;xml-fragment>&lt;con:entry xmlns:con="http://eviware.com/soapui/config"/>&lt;con:entry xmlns:con="http://eviware.com/soapui/config"/>&lt;/xml-fragment></row><row>&lt;xml-fragment>&lt;con:entry xmlns:con="http://eviware.com/soapui/config"/>&lt;con:entry xmlns:con="http://eviware.com/soapui/config"/>&lt;/xml-fragment></row><row>&lt;xml-fragment>&lt;con:entry xmlns:con="http://eviware.com/soapui/config"/>&lt;con:entry xmlns:con="http://eviware.com/soapui/config"/>&lt;/xml-fragment></row><recognizeAsPlainText>true</recognizeAsPlainText></con:configuration></con:dataSource><con:shared>true</con:shared><con:restartShared>true</con:restartShared><con:property>Form editor is not applicable for this request</con:property><con:completeLastOperation>true</con:completeLastOperation><con:restartOnRun>true</con:restartOnRun></con:config></con:testStep><con:testStep type="datasourceloop" name="DataSource Loop" id="5257172d-f113-4e45-956b-47f886ff32cf" disabled="true"><con:settings/><con:config><dataSourceStep>DataSource</dataSourceStep><targetStep>Token</targetStep></con:config></con:testStep><con:testStep type="transfer" name="Property Transfer" id="e658b9ba-c55c-4566-8b02-3fe57d51f250" disabled="true"><con:settings/><con:config xsi:type="con:PropertyTransfersStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" entitize="false" transferChildNodes="false"><con:name>Token</con:name><con:sourceType>Response</con:sourceType><con:sourceStep>Token</con:sourceStep><con:sourcePath>$['access_token']</con:sourcePath><con:targetType>Token</con:targetType><con:targetStep>Properties</con:targetStep><con:targetPath/><con:type>JSONPATH</con:type><con:upgraded>true</con:upgraded></con:transfers></con:config></con:testStep><con:testStep type="properties" name="Properties" id="98063a05-9ebe-4962-aa6a-3a3ac0407efd" disabled="true"><con:settings/><con:config xsi:type="con:PropertiesStep" saveFirst="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:properties><con:property><con:name>Token</con:name><con:value>NxasOtnL5mc-3xmG4SQIedpx0WamWRcuhwrki8WQpQ_g_MDzby0d2KYHR9UzMS_0_-N2RdK0R41A-6Sg-0WBN7AZidIwQBE9kmlRPSZcc-2dJ82afSFzjwJApBLlHfsCvDcO6S8Oy4wg981BFLZxJfCKLCF4nk94X5C8E3_QLozEhzv-g1OiAeMEin13yb4UFbPAOGhlf1Np9DT-1BcZkgGi25KW6a7_aycbjW2yt1Y4IwH5xNWA4D_PBSSxbTaRRxYL3Sx6_QBmgkBBu9kYjHMOAS2Rv7QTrO_9yACuCpKOlYhh_5yIt7350mjsTlRfHDp0Z0LXFzYTv0p8CBR7WS2OZYUQqVjBtV3jGLdHLlQK94DiQ96cArK9TA9tJZZwlsVHaqYAlDSSXDPkz4tD2vlR9EgMVyOK3LD4XKAcld2IN2uOBGEo8t0KBW0D1gzivZX3LNf0gFaZ7-DgFbdq_feEGhIODWsOjuIMkR5X7-fGHS6PNwJLZOoK8h7_okpFC9joPba6y4f8rsFtV-HgeyTAYxVQoAhstAFhqsWNS9FDbbuqyT8MxnsJHyYx6gP962TsJuQmkRLn261Y4KpAFVoyBqHbgjN5iCpzZaJin5nWrmJ8gYBz-Gvp_ttFAFWI85YYIOHVVprqIEjgZr2gDg</con:value></con:property></con:properties></con:config></con:testStep><con:testStep type="groovy" name="xfer_bearer_token" id="7d003463-5e75-475b-b0c3-b6f14b4af0e7" disabled="true"><con:settings/><con:config><script>def token = context.expand( '${#Project#Token}' )
+return 'Bearer' + ' ' + token
+def result = context.expand( '${xfer_bearer_token#result}' )
+
+
+import org.apache.commons.lang.RandomStringUtils
+import com.eviware.soapui.support.types.StringToStringMap
+
+import groovy.json.JsonSlurper;
+import java.util.Date;
+
+def tc = context.testCase.testSuite.project.testSuites['Setup'].testCases['TokenGeneration']
+
+def response = tc.getTestStepByName('xfer_bearer_token').getProperty('Response').getValue()
+def slurper = new JsonSlurper();
+def jsonResponse = slurper.parseText response;
+
+
+// Token capture
+Authorization = jsonResponse.access_token
+log.info Authorization
+
+if (Authorization==null) {
+		testRunner.fail(">>>>>>>>>> FAIL: did not find access_Token. Check the Service")
+} else {
+	
+	context.testCase.testSuite.project.setPropertyValue( "Authorization", Authorization)
+	//log.info ">>>>>>>>>> worker.hire - manager - US SSN -->" + context.testCase.testSuite.project.getPropertyValue( "NH-MGR-US-SSN")
+}</script></con:config></con:testStep><con:testStep type="datasink" name="DataSink" id="cf26bbac-b2df-4bce-8b6a-94b218463757" disabled="true"><con:settings/><con:config xsi:type="con:DataSinkStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:properties/></con:config></con:testStep><con:testStep type="datasourceloop" name="DataSource Loop 2" id="18552b35-c338-4919-9b9a-df5ba65201dc" disabled="true"><con:settings/><con:config><dataSourceStep/><targetStep/></con:config></con:testStep><con:properties/><con:reportParameters/><con:breakPoints><con:testStepId>da175bf4-6480-4bc1-bd90-19f17d9ca39d</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints><con:breakPoints><con:testStepId>2d1c43dd-9953-4add-b3f2-b5fdeb9dfc05</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints><con:breakPoints><con:testStepId>28727714-a52a-4aa3-bf5d-199120380531</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints></con:testCase><con:properties/><con:reportParameters/></con:testSuite><con:properties/><con:wssContainer/><con:databaseConnectionContainer/><con:jmsConnectionContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:reporting><con:xmlTemplates/><con:parameters/></con:reporting><con:authRepository/><con:tags/><con:sensitiveInformation/></con:soapui-project>
