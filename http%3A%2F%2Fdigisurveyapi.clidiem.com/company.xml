@@ -396,7 +396,7 @@ Companyid: Fa4SDTmM//9wP2D/fO/0kQ==
     <con:method name="Method 1" id="2c79639a-bf6c-4c8d-8800-0b83639781f0" method="POST">
       <con:settings/>
       <con:parameters/>
-      <con:representation type="RESPONSE"><con:mediaType>application/json; charset=utf-8</con:mediaType><con:status>200</con:status><con:params/><con:element>Response</con:element></con:representation><con:representation type="REQUEST"><con:mediaType>application/json</con:mediaType><con:params/></con:representation><con:request name="Request 1" id="09f8d4ce-d92c-459b-b44e-3f4b35c798a8" mediaType="application/json" postQueryString="false">
+      <con:representation type="RESPONSE"><con:mediaType>application/json; charset=utf-8</con:mediaType><con:status>200</con:status><con:params/><con:element>Response</con:element></con:representation><con:representation type="REQUEST"><con:mediaType>application/json</con:mediaType><con:params/></con:representation><con:representation type="FAULT"><con:mediaType>application/json; charset=utf-8</con:mediaType><con:status>401</con:status><con:params/><con:element xmlns:get="http://digisurveyapi.clidiem.com/api/company/getcompanyquestionlist">get:Fault</con:element></con:representation><con:request name="Request 1" id="09f8d4ce-d92c-459b-b44e-3f4b35c798a8" mediaType="application/json" postQueryString="false">
         <con:settings/>
         <con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint><con:request/>
         <con:credentials>
@@ -413,7 +413,7 @@ Companyid: Fa4SDTmM//9wP2D/fO/0kQ==
     <con:method name="Method 1" id="e37aeddc-389b-45f4-91ab-527a25950280" method="POST">
       <con:settings/>
       <con:parameters/>
-      <con:request name="Request 1" id="12b6b611-cf1b-4deb-bf8a-7cab4d90faa5" mediaType="application/json" postQueryString="false">
+      <con:representation type="FAULT"><con:mediaType>application/json; charset=utf-8</con:mediaType><con:status>401</con:status><con:params/><con:element xmlns:upd="http://digisurveyapi.clidiem.com/api/company/updatequestionbyquestionid">upd:Fault</con:element></con:representation><con:representation type="REQUEST"><con:mediaType>application/json</con:mediaType><con:params/></con:representation><con:request name="Request 1" id="12b6b611-cf1b-4deb-bf8a-7cab4d90faa5" mediaType="application/json" postQueryString="false">
         <con:settings/>
         <con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint><con:request/>
         <con:credentials>
@@ -430,7 +430,7 @@ Companyid: Fa4SDTmM//9wP2D/fO/0kQ==
     <con:method name="Method 1" id="e7f56a82-7473-411f-869d-523f0522e469" method="POST">
       <con:settings/>
       <con:parameters/>
-      <con:request name="Request 1" id="175a1409-358d-45cb-84b9-e053c78c0773" mediaType="application/json" postQueryString="false">
+      <con:representation type="FAULT"><con:mediaType>application/json; charset=utf-8</con:mediaType><con:status>401</con:status><con:params/><con:element xmlns:get="http://digisurveyapi.clidiem.com/api/company/getselectedquestionsbyselectedQuestion">get:Fault</con:element></con:representation><con:representation type="REQUEST"><con:mediaType>application/json</con:mediaType><con:params/></con:representation><con:request name="Request 1" id="175a1409-358d-45cb-84b9-e053c78c0773" mediaType="application/json" postQueryString="false">
         <con:settings/>
         <con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint><con:request/>
         <con:credentials>
@@ -447,7 +447,7 @@ Companyid: Fa4SDTmM//9wP2D/fO/0kQ==
     <con:method name="Method 1" id="ccbcba99-b88b-4841-b776-2518976ace57" method="POST">
       <con:settings/>
       <con:parameters/>
-      <con:representation type="REQUEST"><con:mediaType>application/json</con:mediaType><con:params/></con:representation><con:representation type="RESPONSE"><con:mediaType>application/json; charset=utf-8</con:mediaType><con:status>200</con:status><con:params/><con:element>Response</con:element></con:representation><con:request name="Request 1" id="e0251959-aa0e-4a3c-8673-ecead7c5f789" mediaType="application/json" postQueryString="false">
+      <con:representation type="REQUEST"><con:mediaType>application/json</con:mediaType><con:params/></con:representation><con:representation type="RESPONSE"><con:mediaType>application/json; charset=utf-8</con:mediaType><con:status>200</con:status><con:params/><con:element>Response</con:element></con:representation><con:representation type="FAULT"><con:mediaType>application/json; charset=utf-8</con:mediaType><con:status>401</con:status><con:params/><con:element xmlns:get="http://digisurveyapi.clidiem.com/api/company/getcompanydocuments">get:Fault</con:element></con:representation><con:request name="Request 1" id="e0251959-aa0e-4a3c-8673-ecead7c5f789" mediaType="application/json" postQueryString="false">
         <con:settings/>
         <con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint><con:request/>
         <con:credentials>
@@ -464,7 +464,7 @@ Companyid: Fa4SDTmM//9wP2D/fO/0kQ==
     <con:method name="Method 1" id="2676fbc7-a948-438b-bf1d-b67e407d2a05" method="POST">
       <con:settings/>
       <con:parameters/>
-      <con:request name="Request 1" id="8596144e-06a9-4d41-a44a-4e6afa5cb36e" mediaType="application/json" postQueryString="false">
+      <con:representation type="FAULT"><con:mediaType>application/json; charset=utf-8</con:mediaType><con:status>401</con:status><con:params/><con:element xmlns:sav="http://digisurveyapi.clidiem.com/api/company/savedocumenttype">sav:Fault</con:element></con:representation><con:representation type="REQUEST"><con:mediaType>application/json</con:mediaType><con:params/></con:representation><con:representation type="RESPONSE"><con:mediaType>application/json; charset=utf-8</con:mediaType><con:status>200</con:status><con:params/><con:element xmlns:sav="http://digisurveyapi.clidiem.com/api/company/savedocumenttype">sav:Response</con:element></con:representation><con:request name="Request 1" id="8596144e-06a9-4d41-a44a-4e6afa5cb36e" mediaType="application/json" postQueryString="false">
         <con:settings/>
         <con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint><con:request/>
         <con:credentials>
