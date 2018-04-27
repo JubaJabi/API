@@ -5037,13 +5037,21 @@ Companyid: Fa4SDTmM//9wP2D/fO/0kQ==
       </con:resource>
       <con:resource name="QuizList" path="GetAllQuizList/" id="744efa30-28a2-4fe6-bf1d-e68b983a3243">
         <con:settings/>
-        <con:parameters/>
+        <con:parameters>
+          <con:parameter>
+            <con:name>filter</con:name>
+            <con:value/>
+            <con:style>QUERY</con:style>
+            <con:default/>
+            <con:description xsi:nil="true"/>
+          </con:parameter>
+        </con:parameters>
         <con:method name="Method 1" id="3bfe75ed-5f60-464d-9b58-55018843b21e" method="GET">
           <con:settings/>
           <con:parameters/>
           <con:representation type="FAULT">
             <con:mediaType>application/json; charset=utf-8</con:mediaType>
-            <con:status>401</con:status>
+            <con:status>401 404</con:status>
             <con:params/>
             <con:element xmlns:get="http://digisurveyapi.clidiem.com/api/ClidiemUser/GetAllQuizList/">get:Fault</con:element>
           </con:representation>
@@ -5066,7 +5074,12 @@ Companyid: Fa4SDTmM//9wP2D/fO/0kQ==
             </con:credentials>
             <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
             <con:jmsPropertyConfig/>
-            <con:parameters/>
+            <con:parameters>
+              <entry key="filter" value="1" xmlns="http://eviware.com/soapui/config"/>
+            </con:parameters>
+            <con:parameterOrder>
+              <con:entry>filter</con:entry>
+            </con:parameterOrder>
           </con:request>
         </con:method>
       </con:resource>
@@ -6238,87 +6251,12 @@ groovyUtils.setPropertyValue("DataSink", "StatusMessage", " ")</script>
     <con:settings/>
     <con:savedRecentRuns>1</con:savedRecentRuns>
     <con:runType>SEQUENTIAL</con:runType>
-    <con:testCase id="75b92795-9ed8-4604-abdc-715a8d3d8c09" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="AllSurveyList" searchProperties="true">
-      <con:settings>
-        <con:setting id="7b897e67-4517-460a-9b86-6872b291c2b2fileName">AllSurveyList</con:setting>
-      </con:settings>
-      <con:savedRecentRuns>1</con:savedRecentRuns>
-      <con:testStep type="restrequest" name="AllSurveyListRequest" id="f4c14581-50d4-4ad0-84a9-938b68fc9f18">
-        <con:settings/>
-        <con:config service="http://digisurveyapi.clidiem.com" resourcePath="/api/ClidiemUser/" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-          <con:restRequest name="AllSurveyListRequest" id="944490ed-242d-42a3-bcc0-54f612719980" mediaType="application/json">
-            <con:settings>
-              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="${#Project#access_token}" xmlns="http://eviware.com/soapui/config"/></con:setting>
-            </con:settings>
-            <con:endpoint>${#Project#EndPoint}</con:endpoint>
-            <con:request/>
-            <con:originalUri>http://digisurveyapi.clidiem.com/api/ClidiemUser/getallsurveylist</con:originalUri>
-            <con:assertion type="Valid HTTP Status Codes" id="32174d5b-3f43-4168-9808-ce815d7ef3a9" name="Valid HTTP Status Codes">
-              <con:settings/>
-              <con:configuration>
-                <codes>200</codes>
-              </con:configuration>
-            </con:assertion>
-            <con:assertion type="JsonPath Match" id="a99f0cd6-fe0f-4fd3-8b00-f9d367ba7775" name="SurveyId">
-              <con:configuration>
-                <path>$[0].['SurveyId']</path>
-                <content>74</content>
-                <allowWildcards>false</allowWildcards>
-                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
-                <ignoreComments>false</ignoreComments>
-              </con:configuration>
-            </con:assertion>
-            <con:assertion type="JsonPath Match" id="a99f0cd6-fe0f-4fd3-8b00-f9d367ba7775" name="SurveyName">
-              <con:configuration>
-                <path>$[0].['SurveyName']</path>
-                <content>survey3</content>
-                <allowWildcards>true</allowWildcards>
-                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
-                <ignoreComments>false</ignoreComments>
-              </con:configuration>
-            </con:assertion>
-            <con:assertion type="JsonPath Match" id="a99f0cd6-fe0f-4fd3-8b00-f9d367ba7775" name="CompanyName">
-              <con:configuration>
-                <path>$[0].['CompanyName']</path>
-                <content>Cldiiem</content>
-                <allowWildcards>false</allowWildcards>
-                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
-                <ignoreComments>false</ignoreComments>
-              </con:configuration>
-            </con:assertion>
-            <con:assertion type="JsonPath Match" id="a99f0cd6-fe0f-4fd3-8b00-f9d367ba7775" name="EncryptedPetitionId">
-              <con:configuration>
-                <path>$[0].['EncryptedPetitionId']</path>
-                <content>tOb4qPH5OSO3NNUlPGoiyw==</content>
-                <allowWildcards>true</allowWildcards>
-                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
-                <ignoreComments>false</ignoreComments>
-              </con:configuration>
-            </con:assertion>
-            <con:credentials>
-              <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
-              <con:authType>No Authorization</con:authType>
-            </con:credentials>
-            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
-            <con:jmsPropertyConfig/>
-            <con:parameters>
-              <entry key="filter" value="1" xmlns="http://eviware.com/soapui/config"/>
-            </con:parameters>
-            <con:parameterOrder>
-              <con:entry>filter</con:entry>
-            </con:parameterOrder>
-          </con:restRequest>
-        </con:config>
-      </con:testStep>
-      <con:properties/>
-      <con:reportParameters/>
-    </con:testCase>
-    <con:testCase id="54905d98-5f57-4b9e-937a-49e92a9f8bb3" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="QuizListTest" searchProperties="true" timeout="0" maxResults="0">
+    <con:testCase id="d4f6298a-c7b7-4a8f-846d-15191a7e8dd3" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="QuizListTest" searchProperties="true" timeout="0" maxResults="0">
       <con:settings>
         <con:setting id="2887fb15-71e1-4b2e-bf08-5e6e63a6fdb4fileName">QuizListTest</con:setting>
       </con:settings>
       <con:savedRecentRuns>1</con:savedRecentRuns>
-      <con:testStep type="restrequest" name="QuizListTest" id="61d4dd9e-76e9-4a4e-b469-bcf591f7d26e">
+      <con:testStep type="restrequest" name="QuizListTest" id="6eb7667d-f961-4135-aae2-f8cadaf5ac36">
         <con:settings/>
         <con:config service="http://digisurveyapi.clidiem.com" resourcePath="/api/ClidiemUser/" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
           <con:restRequest name="QuizListTest" id="94780f26-b034-4d3c-880c-79ce265a3396" mediaType="application/json">
