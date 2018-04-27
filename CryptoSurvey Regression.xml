@@ -3,8 +3,8 @@
   <con:settings/>
   <con:interface xsi:type="con:RestService" id="219ba2a5-5ac1-4aca-97df-00497b140d68" wadlVersion="http://wadl.dev.java.net/2009/02" name="http://digisurveyapi.clidiem.com" type="rest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <con:settings/>
-    
-    <con:definitionCache type="TEXT" rootPart=""/><con:endpoints>
+    <con:definitionCache type="TEXT" rootPart=""/>
+    <con:endpoints>
       <con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint>
     </con:endpoints>
     <con:resource name="Account" path="/api/account" id="6d3f313b-075d-44fb-9ed1-dc69c91c648e">
@@ -916,7 +916,13 @@ FEIN
             <con:mediaType>application/json</con:mediaType>
             <con:params/>
           </con:representation>
-          <con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>0</con:status><con:params/><con:element>data</con:element></con:representation><con:request name="Request 1" id="4d056a9d-b86f-440a-b295-c3f82cb73fb5" mediaType="application/json" postQueryString="false">
+          <con:representation type="RESPONSE">
+            <con:mediaType xsi:nil="true"/>
+            <con:status>0</con:status>
+            <con:params/>
+            <con:element>data</con:element>
+          </con:representation>
+          <con:request name="Request 1" id="4d056a9d-b86f-440a-b295-c3f82cb73fb5" mediaType="application/json" postQueryString="false">
             <con:settings>
               <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
             </con:settings>
@@ -1420,7 +1426,13 @@ FEIN
             <con:params/>
             <con:element xmlns:get="http://digisurveyapi.clidiem.com/api/account/api/Account/getwalletrecenttransactions">get:Fault</con:element>
           </con:representation>
-          <con:representation type="RESPONSE"><con:mediaType>application/json; charset=utf-8</con:mediaType><con:status>200</con:status><con:params/><con:element>Response</con:element></con:representation><con:request name="Request 1" id="1fe02ccd-b6d8-4712-a33a-9c50b2a16480" mediaType="application/json" postQueryString="false">
+          <con:representation type="RESPONSE">
+            <con:mediaType>application/json; charset=utf-8</con:mediaType>
+            <con:status>200</con:status>
+            <con:params/>
+            <con:element>Response</con:element>
+          </con:representation>
+          <con:request name="Request 1" id="1fe02ccd-b6d8-4712-a33a-9c50b2a16480" mediaType="application/json" postQueryString="false">
             <con:settings>
               <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
             </con:settings>
@@ -1480,8 +1492,13 @@ FEIN
       <con:resource name="userloginid 2" path="getuserpaymentdetailstopay/{userloginid}" id="5ab87ae9-4f5f-4e40-b652-35ed76448dab">
         <con:settings/>
         <con:parameters>
-          
-        <con:parameter><con:name>userloginid</con:name><con:value>1</con:value><con:style>TEMPLATE</con:style><con:default>1</con:default></con:parameter></con:parameters>
+          <con:parameter>
+            <con:name>userloginid</con:name>
+            <con:value>1</con:value>
+            <con:style>TEMPLATE</con:style>
+            <con:default>1</con:default>
+          </con:parameter>
+        </con:parameters>
         <con:method name="Method 1" id="0a3b72b4-0d93-4e66-9008-4eee457fa951" method="GET">
           <con:settings/>
           <con:parameters/>
@@ -1504,7 +1521,9 @@ FEIN
             </con:credentials>
             <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
             <con:parameters/>
-            <con:parameterOrder><con:entry>userloginid</con:entry></con:parameterOrder>
+            <con:parameterOrder>
+              <con:entry>userloginid</con:entry>
+            </con:parameterOrder>
           </con:request>
         </con:method>
       </con:resource>
@@ -1703,7 +1722,13 @@ FEIN
             <con:mediaType>application/json</con:mediaType>
             <con:params/>
           </con:representation>
-          <con:representation type="RESPONSE"><con:mediaType>application/json; charset=utf-8</con:mediaType><con:status>200</con:status><con:params/><con:element xmlns:sub="http://digisurveyapi.clidiem.com/api/account/api/Account/submitpaymentbywepay">sub:Response</con:element></con:representation><con:request name="Request 1" id="f4bce0df-87d2-4d5f-b283-78223afd107f" mediaType="application/json" postQueryString="false">
+          <con:representation type="RESPONSE">
+            <con:mediaType>application/json; charset=utf-8</con:mediaType>
+            <con:status>200</con:status>
+            <con:params/>
+            <con:element xmlns:sub="http://digisurveyapi.clidiem.com/api/account/api/Account/submitpaymentbywepay">sub:Response</con:element>
+          </con:representation>
+          <con:request name="Request 1" id="f4bce0df-87d2-4d5f-b283-78223afd107f" mediaType="application/json" postQueryString="false">
             <con:settings>
               <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
             </con:settings>
@@ -1748,7 +1773,13 @@ FEIN
             <con:mediaType>application/json</con:mediaType>
             <con:params/>
           </con:representation>
-          <con:representation type="RESPONSE"><con:mediaType>application/json; charset=utf-8</con:mediaType><con:status>200</con:status><con:params/><con:element xmlns:upd="http://digisurveyapi.clidiem.com/api/account/api/Account/updatewepaypaymentstatus">upd:Response</con:element></con:representation><con:request name="Request 1" id="9398a003-5f56-47a8-9fef-329356506253" mediaType="application/json" postQueryString="false">
+          <con:representation type="RESPONSE">
+            <con:mediaType>application/json; charset=utf-8</con:mediaType>
+            <con:status>200</con:status>
+            <con:params/>
+            <con:element xmlns:upd="http://digisurveyapi.clidiem.com/api/account/api/Account/updatewepaypaymentstatus">upd:Response</con:element>
+          </con:representation>
+          <con:request name="Request 1" id="9398a003-5f56-47a8-9fef-329356506253" mediaType="application/json" postQueryString="false">
             <con:settings>
               <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
             </con:settings>
@@ -4355,7 +4386,13 @@ FEIN
           <con:params/>
           <con:element xmlns:tok="http://digisurveyapi.clidiem.com/token">tok:Response</con:element>
         </con:representation>
-        <con:representation type="FAULT"><con:mediaType>application/json;charset=UTF-8</con:mediaType><con:status>400</con:status><con:params/><con:element xmlns:tok="http://digisurveyapi.clidiem.com/token">tok:Fault</con:element></con:representation><con:request name="Request 1" id="d3eda42a-9baa-4fb0-a1e4-3c721672c58c" mediaType="application/json" postQueryString="false">
+        <con:representation type="FAULT">
+          <con:mediaType>application/json;charset=UTF-8</con:mediaType>
+          <con:status>400</con:status>
+          <con:params/>
+          <con:element xmlns:tok="http://digisurveyapi.clidiem.com/token">tok:Fault</con:element>
+        </con:representation>
+        <con:request name="Request 1" id="d3eda42a-9baa-4fb0-a1e4-3c721672c58c" mediaType="application/json" postQueryString="false">
           <con:settings>
             <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
           </con:settings>
@@ -4886,6 +4923,16 @@ Companyid: Fa4SDTmM//9wP2D/fO/0kQ==
       <con:method name="Method 1" id="06c73521-e783-4a08-8e45-164592dece89" method="POST">
         <con:settings/>
         <con:parameters/>
+        <con:representation type="REQUEST">
+          <con:mediaType>application/json</con:mediaType>
+          <con:params/>
+        </con:representation>
+        <con:representation type="FAULT">
+          <con:mediaType>text/html</con:mediaType>
+          <con:status>404</con:status>
+          <con:params/>
+          <con:element xmlns:xht="http://www.w3.org/1999/xhtml">xht:html</con:element>
+        </con:representation>
         <con:request name="Request 1" id="2e343409-f5a0-452e-95b6-186fcddc6bce" mediaType="application/json" postQueryString="false">
           <con:settings/>
           <con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint>
@@ -4932,7 +4979,8 @@ Companyid: Fa4SDTmM//9wP2D/fO/0kQ==
             <con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint>
             <con:request/>
             <con:credentials>
-              <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType>
+              <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
             </con:credentials>
             <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
             <con:parameters/>
@@ -4942,15 +4990,102 @@ Companyid: Fa4SDTmM//9wP2D/fO/0kQ==
           </con:request>
         </con:method>
       </con:resource>
+      <con:resource name="Allsurveylist" path="getallsurveylist" id="36100bc3-b9c0-4227-b01e-2651a4f0ce1e">
+        <con:settings/>
+        <con:parameters>
+          <con:parameter>
+            <con:name>filter</con:name>
+            <con:style>QUERY</con:style>
+          </con:parameter>
+        </con:parameters>
+        <con:method name="Method 1" id="e44a6458-c3f0-470d-b34d-b916da8fbf1a" method="GET">
+          <con:settings/>
+          <con:parameters/>
+          <con:representation type="FAULT">
+            <con:mediaType>application/json; charset=utf-8</con:mediaType>
+            <con:status>401</con:status>
+            <con:params/>
+            <con:element xmlns:get="http://digisurveyapi.clidiem.com/api/ClidiemUser/getallsurveylist">get:Fault</con:element>
+          </con:representation>
+          <con:representation type="RESPONSE">
+            <con:mediaType>application/json; charset=utf-8</con:mediaType>
+            <con:status>200</con:status>
+            <con:params/>
+            <con:element>Response</con:element>
+          </con:representation>
+          <con:request name="Request 1" id="944490ed-242d-42a3-bcc0-54f612719980" mediaType="application/json">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="${#Project#access_token}" xmlns="http://eviware.com/soapui/config"/></con:setting>
+            </con:settings>
+            <con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint>
+            <con:request/>
+            <con:originalUri>http://digisurveyapi.clidiem.com/api/ClidiemUser/getallsurveylist</con:originalUri>
+            <con:credentials>
+              <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:jmsPropertyConfig/>
+            <con:parameters>
+              <entry key="filter" value="1" xmlns="http://eviware.com/soapui/config"/>
+            </con:parameters>
+            <con:parameterOrder>
+              <con:entry>filter</con:entry>
+            </con:parameterOrder>
+          </con:request>
+        </con:method>
+      </con:resource>
+      <con:resource name="QuizList" path="GetAllQuizList/" id="744efa30-28a2-4fe6-bf1d-e68b983a3243">
+        <con:settings/>
+        <con:parameters/>
+        <con:method name="Method 1" id="3bfe75ed-5f60-464d-9b58-55018843b21e" method="GET">
+          <con:settings/>
+          <con:parameters/>
+          <con:representation type="FAULT">
+            <con:mediaType>application/json; charset=utf-8</con:mediaType>
+            <con:status>401</con:status>
+            <con:params/>
+            <con:element xmlns:get="http://digisurveyapi.clidiem.com/api/ClidiemUser/GetAllQuizList/">get:Fault</con:element>
+          </con:representation>
+          <con:representation type="RESPONSE">
+            <con:mediaType>application/json; charset=utf-8</con:mediaType>
+            <con:status>200</con:status>
+            <con:params/>
+            <con:element>Response</con:element>
+          </con:representation>
+          <con:request name="Request 1" id="94780f26-b034-4d3c-880c-79ce265a3396" mediaType="application/json">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="${#Project#access_token}" xmlns="http://eviware.com/soapui/config"/></con:setting>
+            </con:settings>
+            <con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint>
+            <con:request/>
+            <con:originalUri>http://digisurveyapi.clidiem.com/api/ClidiemUser/GetAllQuizList/</con:originalUri>
+            <con:credentials>
+              <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:jmsPropertyConfig/>
+            <con:parameters/>
+          </con:request>
+        </con:method>
+      </con:resource>
       <con:method name="Method 1" id="5890f7b1-31da-4967-8de6-9b929716402d" method="GET">
         <con:settings/>
         <con:parameters/>
+        <con:representation type="FAULT">
+          <con:mediaType>text/html</con:mediaType>
+          <con:status>404</con:status>
+          <con:params/>
+          <con:element xmlns:xht="http://www.w3.org/1999/xhtml">xht:html</con:element>
+        </con:representation>
         <con:request name="Request 1" id="3fe8e4d6-0dbb-4780-bd7a-7b2641597635" mediaType="application/json">
           <con:settings/>
           <con:endpoint>http://digisurveyapi.clidiem.com</con:endpoint>
           <con:request/>
           <con:credentials>
-            <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType>
+            <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+            <con:authType>No Authorization</con:authType>
           </con:credentials>
           <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
           <con:parameters/>
@@ -4969,14 +5104,34 @@ Companyid: Fa4SDTmM//9wP2D/fO/0kQ==
         <con:settings/>
         <con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
           <con:dataSource type="Excel">
-            <con:configuration><file>SoapUI.xlsx</file><worksheet>Scenarios</worksheet><cell>A2</cell><ignoreEmpty>false</ignoreEmpty><evaluateFormulas>false</evaluateFormulas></con:configuration>
+            <con:configuration>
+              <file>SoapUI.xlsx</file>
+              <worksheet>Scenarios</worksheet>
+              <cell>A2</cell>
+              <ignoreEmpty>false</ignoreEmpty>
+              <evaluateFormulas>false</evaluateFormulas>
+            </con:configuration>
           </con:dataSource>
           <con:shared>true</con:shared>
           <con:restartShared>true</con:restartShared>
-          
-          <con:property>Scenario</con:property><con:property>Run</con:property><con:property>EmailId</con:property><con:property>Password</con:property><con:startRow/><con:endRow/><con:recordsPerIteration>1</con:recordsPerIteration><con:completeLastOperation>true</con:completeLastOperation><con:trimValues>false</con:trimValues><con:entitizeValues>false</con:entitizeValues><con:restartOnRun>true</con:restartOnRun>
-        <con:expandProperties>false</con:expandProperties></con:config>
-      </con:testStep><con:testStep type="groovy" name="Groovy Script" id="01f48f78-3d7b-4e56-a864-82dac1c0660a"><con:settings/><con:config><script>def ds = testRunner.testCase.testSteps['DataSource']
+          <con:property>Scenario</con:property>
+          <con:property>Run</con:property>
+          <con:property>EmailId</con:property>
+          <con:property>Password</con:property>
+          <con:startRow/>
+          <con:endRow/>
+          <con:recordsPerIteration>1</con:recordsPerIteration>
+          <con:completeLastOperation>true</con:completeLastOperation>
+          <con:trimValues>false</con:trimValues>
+          <con:entitizeValues>false</con:entitizeValues>
+          <con:restartOnRun>true</con:restartOnRun>
+          <con:expandProperties>false</con:expandProperties>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="groovy" name="Groovy Script" id="01f48f78-3d7b-4e56-a864-82dac1c0660a">
+        <con:settings/>
+        <con:config>
+          <script>def ds = testRunner.testCase.testSteps['DataSource']
 rowAdd = ds.getPropertyValue("Run")
 
 log.info rowAdd
@@ -4996,7 +5151,10 @@ else
 def testStep2 = testRunner.testCase.testSuite.project.getTestSuiteByName("Account").getTestCaseByName("Wallet Transacations").getTestStepByName("getwalletrecenttransactions")
 
 testStep2.run(testRunner, context)
-}</script></con:config></con:testStep><con:testStep type="restrequest" name="Token" id="01628435-660d-4be3-a8c3-741c9f3c2030">
+}</script>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="restrequest" name="Token" id="01628435-660d-4be3-a8c3-741c9f3c2030">
         <con:settings/>
         <con:config service="http://digisurveyapi.clidiem.com" resourcePath="/token" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
           <con:restRequest name="Token" id="d3eda42a-9baa-4fb0-a1e4-3c721672c58c" mediaType="application/json" postQueryString="false">
@@ -5082,23 +5240,62 @@ messageExchange.modelItem.testCase.testSuite.project.setPropertyValue("Encrypted
 */</scriptText>
               </con:configuration>
             </con:assertion>
-            <con:assertion type="Valid HTTP Status Codes" id="4ca6594a-0688-4fa4-9a7f-897ce01ac15d" name="Valid HTTP Status Codes"><con:settings/><con:configuration><codes>200</codes></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="c05b3e0a-c92e-4960-a2ec-62dc69943e58" name="Successful Login"><con:configuration><path>$['StatusMessage']</path><content>Successful login</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:credentials>
+            <con:assertion type="Valid HTTP Status Codes" id="4ca6594a-0688-4fa4-9a7f-897ce01ac15d" name="Valid HTTP Status Codes">
+              <con:settings/>
+              <con:configuration>
+                <codes>200</codes>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="c05b3e0a-c92e-4960-a2ec-62dc69943e58" name="Successful Login">
+              <con:configuration>
+                <path>$['StatusMessage']</path>
+                <content>Successful login</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:credentials>
               <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
               <con:authType>No Authorization</con:authType>
             </con:credentials>
             <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
-            <con:jmsPropertyConfig/><con:parameters/>
+            <con:jmsPropertyConfig/>
+            <con:parameters/>
           </con:restRequest>
         </con:config>
       </con:testStep>
-      <con:testStep type="goto" name="Conditional Goto" id="00e82bda-37a6-41b8-ac29-e7485d36662f" disabled="true"><con:settings/><con:config xsi:type="con:GotoStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:condition><con:name>Condition 1</con:name><con:type>XPATH</con:type><con:targetStep>Token</con:targetStep></con:condition></con:config></con:testStep>
+      <con:testStep type="goto" name="Conditional Goto" id="00e82bda-37a6-41b8-ac29-e7485d36662f" disabled="true">
+        <con:settings/>
+        <con:config xsi:type="con:GotoStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:condition>
+            <con:name>Condition 1</con:name>
+            <con:type>XPATH</con:type>
+            <con:targetStep>Token</con:targetStep>
+          </con:condition>
+        </con:config>
+      </con:testStep>
       <con:testStep type="datasourceloop" name="DataSource Loop" id="1e808f02-ab4e-4f34-9c0d-6cd7ba2fdb0f">
         <con:settings/>
-        <con:config><dataSourceStep>DataSource</dataSourceStep><targetStep>Token</targetStep><discardResults>true</discardResults></con:config>
+        <con:config>
+          <dataSourceStep>DataSource</dataSourceStep>
+          <targetStep>Token</targetStep>
+          <discardResults>true</discardResults>
+        </con:config>
       </con:testStep>
       <con:properties/>
       <con:reportParameters/>
-    <con:breakPoints><con:testStepId>00e82bda-37a6-41b8-ac29-e7485d36662f</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints><con:breakPoints><con:testStepId>01f48f78-3d7b-4e56-a864-82dac1c0660a</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints></con:testCase>
+      <con:breakPoints>
+        <con:testStepId>00e82bda-37a6-41b8-ac29-e7485d36662f</con:testStepId>
+        <con:status>NONE</con:status>
+        <con:properties/>
+      </con:breakPoints>
+      <con:breakPoints>
+        <con:testStepId>01f48f78-3d7b-4e56-a864-82dac1c0660a</con:testStepId>
+        <con:status>NONE</con:status>
+        <con:properties/>
+      </con:breakPoints>
+    </con:testCase>
     <con:properties/>
     <con:reportParameters/>
   </con:testSuite>
@@ -5136,9 +5333,56 @@ messageExchange.modelItem.testCase.testSuite.project.setPropertyValue("Encrypted
       <con:reportParameters/>
     </con:testCase>
     <con:testCase id="4dbc8d2b-00fb-4cd8-9580-c65dfc783616" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="CandidateRegistration" searchProperties="true" timeout="0" maxResults="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword="">
-      <con:settings><con:setting id="IncludeOverview">true</con:setting><con:setting id="IncludeResults">true</con:setting><con:setting id="FlowLayout">false</con:setting><con:setting id="ErrorDetails">true</con:setting><con:setting id="IncludeCoverage">true</con:setting></con:settings>
+      <con:settings>
+        <con:setting id="IncludeOverview">true</con:setting>
+        <con:setting id="IncludeResults">true</con:setting>
+        <con:setting id="FlowLayout">false</con:setting>
+        <con:setting id="ErrorDetails">true</con:setting>
+        <con:setting id="IncludeCoverage">true</con:setting>
+      </con:settings>
       <con:savedRecentRuns>1</con:savedRecentRuns>
-      <con:testStep type="datasource" name="DataSource" id="7a50a4ad-f5f6-4656-8883-a5ffa1118c75"><con:settings/><con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:dataSource type="Excel"><con:configuration><file>SoapUI.xlsx</file><worksheet>Candidate</worksheet><cell>A2</cell><ignoreEmpty>false</ignoreEmpty><evaluateFormulas>false</evaluateFormulas></con:configuration></con:dataSource><con:shared>true</con:shared><con:restartShared>true</con:restartShared><con:property>FirstName</con:property><con:property>LastName</con:property><con:property>EmailID</con:property><con:property>ContactNumber</con:property><con:property>Password</con:property><con:property>IPAddress</con:property><con:property>WebProjectID</con:property><con:property>Location</con:property><con:property>Browser</con:property><con:property>Latitude</con:property><con:property>Longitude</con:property><con:property>CountryName</con:property><con:property>PackageID</con:property><con:property>ReferralCode</con:property><con:property>VerificationCode</con:property><con:property>RandomKey</con:property><con:property>RegistrationString</con:property><con:property>StatusMessage</con:property><con:startRow/><con:endRow>10</con:endRow><con:recordsPerIteration>1</con:recordsPerIteration><con:completeLastOperation>true</con:completeLastOperation><con:trimValues>false</con:trimValues><con:entitizeValues>false</con:entitizeValues><con:restartOnRun>true</con:restartOnRun><con:expandProperties>false</con:expandProperties></con:config></con:testStep>
+      <con:testStep type="datasource" name="DataSource" id="7a50a4ad-f5f6-4656-8883-a5ffa1118c75">
+        <con:settings/>
+        <con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:dataSource type="Excel">
+            <con:configuration>
+              <file>SoapUI.xlsx</file>
+              <worksheet>Candidate</worksheet>
+              <cell>A2</cell>
+              <ignoreEmpty>false</ignoreEmpty>
+              <evaluateFormulas>false</evaluateFormulas>
+            </con:configuration>
+          </con:dataSource>
+          <con:shared>true</con:shared>
+          <con:restartShared>true</con:restartShared>
+          <con:property>FirstName</con:property>
+          <con:property>LastName</con:property>
+          <con:property>EmailID</con:property>
+          <con:property>ContactNumber</con:property>
+          <con:property>Password</con:property>
+          <con:property>IPAddress</con:property>
+          <con:property>WebProjectID</con:property>
+          <con:property>Location</con:property>
+          <con:property>Browser</con:property>
+          <con:property>Latitude</con:property>
+          <con:property>Longitude</con:property>
+          <con:property>CountryName</con:property>
+          <con:property>PackageID</con:property>
+          <con:property>ReferralCode</con:property>
+          <con:property>VerificationCode</con:property>
+          <con:property>RandomKey</con:property>
+          <con:property>RegistrationString</con:property>
+          <con:property>StatusMessage</con:property>
+          <con:startRow/>
+          <con:endRow>10</con:endRow>
+          <con:recordsPerIteration>1</con:recordsPerIteration>
+          <con:completeLastOperation>true</con:completeLastOperation>
+          <con:trimValues>false</con:trimValues>
+          <con:entitizeValues>false</con:entitizeValues>
+          <con:restartOnRun>true</con:restartOnRun>
+          <con:expandProperties>false</con:expandProperties>
+        </con:config>
+      </con:testStep>
       <con:testStep type="restrequest" name="Candidate Registration" id="5d2e03c9-fd35-4daf-9de2-8caa956ecbec">
         <con:settings/>
         <con:config service="http://digisurveyapi.clidiem.com" resourcePath="/api/account/CandidateRegistration" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
@@ -5164,7 +5408,27 @@ messageExchange.modelItem.testCase.testSuite.project.setPropertyValue("Encrypted
 	"ReferralCode" :"${DataSource#ReferralCode}"
 }</con:request>
             <con:originalUri>http://digisurveyapi.clidiem.com/api/account/candidateregistration</con:originalUri>
-            <con:assertion type="JsonPath Match" id="10dffd9a-46e5-4f75-b4ae-65e8c6c422fa" name="VerificationCodde"><con:configuration><path>$['VerificationCode']</path><content>*</content><allowWildcards>true</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="d2fbab75-bb89-4e59-8f0b-c36b6a60f418" name="StatusMessage"><con:configuration><path>$['StatusMessage']</path><content>Please check your email &lt;span style="font-size: 14px; font-weight: bold;">${DataSource#EmailID}&lt;/span> for the Verification code and enter it below. Or You can use the verification link in the email to verify and login. The Code and link are valid for the next 24 Hours only. If you don't find the email please check in Spam or All Mail folder.</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="GroovyScriptAssertion" id="c7f58054-0df8-42e0-8ec5-58f7ef2130c5" name="Script Assertion"><con:configuration><scriptText>import groovy.json.JsonSlurper
+            <con:assertion type="JsonPath Match" id="10dffd9a-46e5-4f75-b4ae-65e8c6c422fa" name="VerificationCodde">
+              <con:configuration>
+                <path>$['VerificationCode']</path>
+                <content>*</content>
+                <allowWildcards>true</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="d2fbab75-bb89-4e59-8f0b-c36b6a60f418" name="StatusMessage">
+              <con:configuration>
+                <path>$['StatusMessage']</path>
+                <content>Please check your email &lt;span style="font-size: 14px; font-weight: bold;">${DataSource#EmailID}&lt;/span> for the Verification code and enter it below. Or You can use the verification link in the email to verify and login. The Code and link are valid for the next 24 Hours only. If you don't find the email please check in Spam or All Mail folder.</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="GroovyScriptAssertion" id="c7f58054-0df8-42e0-8ec5-58f7ef2130c5" name="Script Assertion">
+              <con:configuration>
+                <scriptText>import groovy.json.JsonSlurper
 def groovyUtils = new com.eviware.soapui.support.GroovyUtils( context )
 
 def slurper = new JsonSlurper()
@@ -5190,13 +5454,21 @@ groovyUtils.setPropertyValue("DataSink", "VerificationCode", VerificationCode)
 
 groovyUtils.setPropertyValue("DataSink", "RandomKey", RandomKey)
 
-groovyUtils.setPropertyValue("DataSink", "RegistrationString", RegistrationIdString)
-</scriptText></con:configuration></con:assertion><con:assertion type="Response SLA Assertion" id="d2ef8db3-316c-4ed3-8786-fa11442d7e15" name="Response SLA"><con:configuration><SLA>200</SLA></con:configuration></con:assertion><con:credentials>
+groovyUtils.setPropertyValue("DataSink", "RegistrationString", RegistrationIdString)</scriptText>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="Response SLA Assertion" id="d2ef8db3-316c-4ed3-8786-fa11442d7e15" name="Response SLA">
+              <con:configuration>
+                <SLA>200</SLA>
+              </con:configuration>
+            </con:assertion>
+            <con:credentials>
               <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
               <con:authType>No Authorization</con:authType>
             </con:credentials>
             <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
-            <con:jmsPropertyConfig/><con:parameters/>
+            <con:jmsPropertyConfig/>
+            <con:parameters/>
             <con:parameterOrder/>
           </con:restRequest>
         </con:config>
@@ -5216,7 +5488,36 @@ groovyUtils.setPropertyValue("DataSink", "RegistrationString", RegistrationIdStr
      "WebProjectId":"${DataSource#WebProjectID}"
 }</con:request>
             <con:originalUri>http://digisurveyapi.clidiem.com/api/account/verifycandidateverificationcode</con:originalUri>
-            <con:assertion type="JsonPath Match" id="aade4bd0-2511-4d0d-a071-944c943f7bd2" name="StatusMessage"><con:configuration><path>$['StatusMessage']</path><content>Valid</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="04443b7b-d53c-4116-b366-680e6a9fac41" name="Name"><con:configuration><path>$['Name']</path><content>${DataSource#FirstName} ${DataSource#LastName}</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="0656959a-846a-408b-b878-97d55f5008f6" name="EmailId"><con:configuration><path>$['EmailId']</path><content>${DataSource#EmailID}</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="GroovyScriptAssertion" id="7b432a13-c473-4072-972a-38613d897028" name="Script Assertion"><con:configuration><scriptText>import groovy.json.JsonSlurper
+            <con:assertion type="JsonPath Match" id="aade4bd0-2511-4d0d-a071-944c943f7bd2" name="StatusMessage">
+              <con:configuration>
+                <path>$['StatusMessage']</path>
+                <content>Valid</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="04443b7b-d53c-4116-b366-680e6a9fac41" name="Name">
+              <con:configuration>
+                <path>$['Name']</path>
+                <content>${DataSource#FirstName} ${DataSource#LastName}</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="0656959a-846a-408b-b878-97d55f5008f6" name="EmailId">
+              <con:configuration>
+                <path>$['EmailId']</path>
+                <content>${DataSource#EmailID}</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="GroovyScriptAssertion" id="7b432a13-c473-4072-972a-38613d897028" name="Script Assertion">
+              <con:configuration>
+                <scriptText>import groovy.json.JsonSlurper
 def groovyUtils = new com.eviware.soapui.support.GroovyUtils( context )
 
 def slurper = new JsonSlurper()
@@ -5242,8 +5543,10 @@ groovyUtils.setPropertyValue("DataSink", "VerificationCode", VerificationCode)
 
 groovyUtils.setPropertyValue("DataSink", "RandomKey", RandomKey)
 
-groovyUtils.setPropertyValue("DataSink", "RegistrationString", RegistrationIdString)
-</scriptText></con:configuration></con:assertion><con:credentials>
+groovyUtils.setPropertyValue("DataSink", "RegistrationString", RegistrationIdString)</scriptText>
+              </con:configuration>
+            </con:assertion>
+            <con:credentials>
               <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
               <con:authType>No Authorization</con:authType>
             </con:credentials>
@@ -5253,7 +5556,43 @@ groovyUtils.setPropertyValue("DataSink", "RegistrationString", RegistrationIdStr
             <con:parameterOrder/>
           </con:restRequest>
         </con:config>
-      </con:testStep><con:testStep type="datasink" name="DataSink" id="8f25a746-23e5-4a4d-97b8-350789251110"><con:settings/><con:config xsi:type="con:DataSinkStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:dataSink type="Excel"><con:configuration><file>SoapUI.xlsx</file><outfile>SoapUI.xlsx</outfile><worksheet>Candidate</worksheet><cell>O2</cell><evaluateFormulas>false</evaluateFormulas></con:configuration></con:dataSink><con:properties><con:property><con:name>VerificationCode</con:name><con:value>883750</con:value></con:property><con:property><con:name>RandomKey</con:name><con:value>UChU8TzblQpwT3pmDP4I%20LFgmuplCTD1mrjZpzrZuIo=</con:value></con:property><con:property><con:name>RegistrationString</con:name><con:value>DUMhygyFJPIvFXh9A898SQ==</con:value></con:property><con:property><con:name>StatusMessage</con:name><con:value> </con:value></con:property></con:properties></con:config></con:testStep><con:testStep type="groovy" name="Datasink-Wipeoff" id="9cebe4d5-41a8-4d92-b79e-7e9516b59913"><con:settings/><con:config><script>def groovyUtils = new com.eviware.soapui.support.GroovyUtils( context )
+      </con:testStep>
+      <con:testStep type="datasink" name="DataSink" id="8f25a746-23e5-4a4d-97b8-350789251110">
+        <con:settings/>
+        <con:config xsi:type="con:DataSinkStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:dataSink type="Excel">
+            <con:configuration>
+              <file>SoapUI.xlsx</file>
+              <outfile>SoapUI.xlsx</outfile>
+              <worksheet>Candidate</worksheet>
+              <cell>O2</cell>
+              <evaluateFormulas>false</evaluateFormulas>
+            </con:configuration>
+          </con:dataSink>
+          <con:properties>
+            <con:property>
+              <con:name>VerificationCode</con:name>
+              <con:value>883750</con:value>
+            </con:property>
+            <con:property>
+              <con:name>RandomKey</con:name>
+              <con:value>UChU8TzblQpwT3pmDP4I%20LFgmuplCTD1mrjZpzrZuIo=</con:value>
+            </con:property>
+            <con:property>
+              <con:name>RegistrationString</con:name>
+              <con:value>DUMhygyFJPIvFXh9A898SQ==</con:value>
+            </con:property>
+            <con:property>
+              <con:name>StatusMessage</con:name>
+              <con:value/>
+            </con:property>
+          </con:properties>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="groovy" name="Datasink-Wipeoff" id="9cebe4d5-41a8-4d92-b79e-7e9516b59913">
+        <con:settings/>
+        <con:config>
+          <script>def groovyUtils = new com.eviware.soapui.support.GroovyUtils( context )
 
 groovyUtils.setPropertyValue("DataSink", "VerificationCode", " ")
 
@@ -5261,10 +5600,17 @@ groovyUtils.setPropertyValue("DataSink", "RandomKey", " ")
 
 groovyUtils.setPropertyValue("DataSink", "RegistrationString", " ")
 
-groovyUtils.setPropertyValue("DataSink", "StatusMessage", " ")
-
-
-</script></con:config></con:testStep><con:testStep type="datasourceloop" name="DataSource Loop" id="a2301ee8-5681-451e-86fd-f0d48562dbf4"><con:settings/><con:config><dataSourceStep>DataSource</dataSourceStep><targetStep>Candidate Registration</targetStep><discardResults>true</discardResults></con:config></con:testStep>
+groovyUtils.setPropertyValue("DataSink", "StatusMessage", " ")</script>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="datasourceloop" name="DataSource Loop" id="a2301ee8-5681-451e-86fd-f0d48562dbf4">
+        <con:settings/>
+        <con:config>
+          <dataSourceStep>DataSource</dataSourceStep>
+          <targetStep>Candidate Registration</targetStep>
+          <discardResults>true</discardResults>
+        </con:config>
+      </con:testStep>
       <con:testStep type="restrequest" name="resendcandidateverificationcode" id="d50f0745-4b04-4618-9de4-db0bedf34cfb" disabled="true">
         <con:settings/>
         <con:config service="http://digisurveyapi.clidiem.com" resourcePath="/api/account/api/Account/resendcandidateverificationcode" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
@@ -5288,9 +5634,30 @@ groovyUtils.setPropertyValue("DataSink", "StatusMessage", " ")
             <con:parameterOrder/>
           </con:restRequest>
         </con:config>
-      </con:testStep><con:properties/>
+      </con:testStep>
+      <con:properties/>
       <con:reportParameters/>
-    <con:breakPoints><con:testStepId>7a50a4ad-f5f6-4656-8883-a5ffa1118c75</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints><con:breakPoints><con:testStepId>a2301ee8-5681-451e-86fd-f0d48562dbf4</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints><con:breakPoints><con:testStepId>8f25a746-23e5-4a4d-97b8-350789251110</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints><con:breakPoints><con:testStepId>9cebe4d5-41a8-4d92-b79e-7e9516b59913</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints></con:testCase>
+      <con:breakPoints>
+        <con:testStepId>7a50a4ad-f5f6-4656-8883-a5ffa1118c75</con:testStepId>
+        <con:status>NONE</con:status>
+        <con:properties/>
+      </con:breakPoints>
+      <con:breakPoints>
+        <con:testStepId>a2301ee8-5681-451e-86fd-f0d48562dbf4</con:testStepId>
+        <con:status>NONE</con:status>
+        <con:properties/>
+      </con:breakPoints>
+      <con:breakPoints>
+        <con:testStepId>8f25a746-23e5-4a4d-97b8-350789251110</con:testStepId>
+        <con:status>NONE</con:status>
+        <con:properties/>
+      </con:breakPoints>
+      <con:breakPoints>
+        <con:testStepId>9cebe4d5-41a8-4d92-b79e-7e9516b59913</con:testStepId>
+        <con:status>NONE</con:status>
+        <con:properties/>
+      </con:breakPoints>
+    </con:testCase>
     <con:testCase id="61513409-dcd6-4789-8945-4183793a6294" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Wallet Transacations" searchProperties="true">
       <con:settings/>
       <con:savedRecentRuns>1</con:savedRecentRuns>
@@ -5304,7 +5671,22 @@ groovyUtils.setPropertyValue("DataSink", "StatusMessage", " ")
             <con:endpoint>${#Project#Endpoint}</con:endpoint>
             <con:request>{"UserLoginId":"${#Project#EncryptedLoginID}"}</con:request>
             <con:originalUri>http://digisurveyapi.clidiem.com/api/account/api/Account/getwalletrecenttransactions</con:originalUri>
-            <con:assertion type="Valid HTTP Status Codes" id="fa5f202a-bae7-4803-b3fa-829345edb1a0" name="Valid HTTP Status Codes"><con:settings/><con:configuration><codes>200</codes></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="7676a23e-68c1-478c-9989-25ebc395a0d7" name="JsonPath Match"><con:configuration><path>$[0]['PaymentId']</path><content>*</content><allowWildcards>true</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:credentials>
+            <con:assertion type="Valid HTTP Status Codes" id="fa5f202a-bae7-4803-b3fa-829345edb1a0" name="Valid HTTP Status Codes">
+              <con:settings/>
+              <con:configuration>
+                <codes>200</codes>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="7676a23e-68c1-478c-9989-25ebc395a0d7" name="JsonPath Match">
+              <con:configuration>
+                <path>$[0]['PaymentId']</path>
+                <content>*</content>
+                <allowWildcards>true</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:credentials>
               <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
               <con:authType>No Authorization</con:authType>
             </con:credentials>
@@ -5686,6 +6068,7 @@ groovyUtils.setPropertyValue("DataSink", "StatusMessage", " ")
   </con:testSuite>
   <con:testSuite id="0f265476-b162-41ac-80d1-46c77a16c480" name="Company">
     <con:settings/>
+    <con:savedRecentRuns>1</con:savedRecentRuns>
     <con:runType>SEQUENTIAL</con:runType>
     <con:testCase id="f575463c-3249-401e-824f-893dd38cdc9a" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="CompanyRelated" searchProperties="true" timeout="0" maxResults="0">
       <con:settings/>
@@ -5851,6 +6234,122 @@ groovyUtils.setPropertyValue("DataSink", "StatusMessage", " ")
     <con:properties/>
     <con:reportParameters/>
   </con:testSuite>
+  <con:testSuite id="2793be51-3221-4e61-9acc-aa98297fb5be" name="ClidiemUser">
+    <con:settings/>
+    <con:savedRecentRuns>1</con:savedRecentRuns>
+    <con:runType>SEQUENTIAL</con:runType>
+    <con:testCase id="75b92795-9ed8-4604-abdc-715a8d3d8c09" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="AllSurveyList" searchProperties="true">
+      <con:settings>
+        <con:setting id="7b897e67-4517-460a-9b86-6872b291c2b2fileName">AllSurveyList</con:setting>
+      </con:settings>
+      <con:savedRecentRuns>1</con:savedRecentRuns>
+      <con:testStep type="restrequest" name="AllSurveyListRequest" id="f4c14581-50d4-4ad0-84a9-938b68fc9f18">
+        <con:settings/>
+        <con:config service="http://digisurveyapi.clidiem.com" resourcePath="/api/ClidiemUser/" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="AllSurveyListRequest" id="944490ed-242d-42a3-bcc0-54f612719980" mediaType="application/json">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="${#Project#access_token}" xmlns="http://eviware.com/soapui/config"/></con:setting>
+            </con:settings>
+            <con:endpoint>${#Project#EndPoint}</con:endpoint>
+            <con:request/>
+            <con:originalUri>http://digisurveyapi.clidiem.com/api/ClidiemUser/getallsurveylist</con:originalUri>
+            <con:assertion type="Valid HTTP Status Codes" id="32174d5b-3f43-4168-9808-ce815d7ef3a9" name="Valid HTTP Status Codes">
+              <con:settings/>
+              <con:configuration>
+                <codes>200</codes>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="a99f0cd6-fe0f-4fd3-8b00-f9d367ba7775" name="SurveyId">
+              <con:configuration>
+                <path>$[0].['SurveyId']</path>
+                <content>74</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="a99f0cd6-fe0f-4fd3-8b00-f9d367ba7775" name="SurveyName">
+              <con:configuration>
+                <path>$[0].['SurveyName']</path>
+                <content>survey3</content>
+                <allowWildcards>true</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="a99f0cd6-fe0f-4fd3-8b00-f9d367ba7775" name="CompanyName">
+              <con:configuration>
+                <path>$[0].['CompanyName']</path>
+                <content>Cldiiem</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="a99f0cd6-fe0f-4fd3-8b00-f9d367ba7775" name="EncryptedPetitionId">
+              <con:configuration>
+                <path>$[0].['EncryptedPetitionId']</path>
+                <content>tOb4qPH5OSO3NNUlPGoiyw==</content>
+                <allowWildcards>true</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:credentials>
+              <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:jmsPropertyConfig/>
+            <con:parameters>
+              <entry key="filter" value="1" xmlns="http://eviware.com/soapui/config"/>
+            </con:parameters>
+            <con:parameterOrder>
+              <con:entry>filter</con:entry>
+            </con:parameterOrder>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:properties/>
+      <con:reportParameters/>
+    </con:testCase>
+    <con:testCase id="54905d98-5f57-4b9e-937a-49e92a9f8bb3" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="QuizListTest" searchProperties="true" timeout="0" maxResults="0">
+      <con:settings>
+        <con:setting id="2887fb15-71e1-4b2e-bf08-5e6e63a6fdb4fileName">QuizListTest</con:setting>
+      </con:settings>
+      <con:savedRecentRuns>1</con:savedRecentRuns>
+      <con:testStep type="restrequest" name="QuizListTest" id="61d4dd9e-76e9-4a4e-b469-bcf591f7d26e">
+        <con:settings/>
+        <con:config service="http://digisurveyapi.clidiem.com" resourcePath="/api/ClidiemUser/" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="QuizListTest" id="94780f26-b034-4d3c-880c-79ce265a3396" mediaType="application/json">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="${#Project#Token}" xmlns="http://eviware.com/soapui/config"/></con:setting>
+            </con:settings>
+            <con:endpoint>${#Project#EndPoint}</con:endpoint>
+            <con:request/>
+            <con:originalUri>http://digisurveyapi.clidiem.com/api/ClidiemUser/GetAllQuizList/</con:originalUri>
+            <con:assertion type="Valid HTTP Status Codes" id="b12c6bcc-0c84-4cb0-81fd-8657fcda3533" name="Valid HTTP Status Codes">
+              <con:settings/>
+              <con:configuration>
+                <codes>200</codes>
+              </con:configuration>
+            </con:assertion>
+            <con:credentials>
+              <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:jmsPropertyConfig/>
+            <con:parameters/>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:properties/>
+      <con:reportParameters/>
+    </con:testCase>
+    <con:properties/>
+    <con:reportParameters/>
+  </con:testSuite>
   <con:savedRecentRuns>1</con:savedRecentRuns>
   <con:requirements/>
   <con:properties>
@@ -5860,19 +6359,19 @@ groovyUtils.setPropertyValue("DataSink", "StatusMessage", " ")
     </con:property>
     <con:property>
       <con:name>EncryptedCompanyId</con:name>
-      <con:value>0+T2iLXE75v1gHMcLJeA0g==</con:value>
+      <con:value xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
     </con:property>
     <con:property>
       <con:name>EncryptedLoginID</con:name>
-      <con:value>Fa4SDTmM//9wP2D/fO/0kQ==</con:value>
+      <con:value xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
     </con:property>
     <con:property>
       <con:name>EncryptedUserId</con:name>
-      <con:value>0+T2iLXE75v1gHMcLJeA0g==</con:value>
+      <con:value xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
     </con:property>
     <con:property>
       <con:name>EncryptedCompanyRoleId</con:name>
-      <con:value>o38+mfhAW/CbdGwpsLNQZA==</con:value>
+      <con:value xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
     </con:property>
     <con:property>
       <con:name>EncryptedDefaultRoleId</con:name>
@@ -5880,7 +6379,7 @@ groovyUtils.setPropertyValue("DataSink", "StatusMessage", " ")
     </con:property>
     <con:property>
       <con:name>access_token</con:name>
-      <con:value>bearer   uD_sR4_eNZM4RfCAcsREXGEcBkuUIera7iuS2cYM45j3Xp6ECN5sySC1jwD3iWa3hPEL7I0gEIvvBT21ElTLdE9p78iO3Nst_YWi9FXw1IlqNaS3QJPYp0FnMTh36XoW7tHT-hlcAaVpFOjEeA92aT0YbJ9QVEY6FXh9ui3158zshfhttdGK_l-fSk0D8_Y-alrZFbVYhQwh_NiZPSR364RON5_dFOpqfHIOXrm21ekh-FNmmO65XdM_f6Mq-KpsIHr2vKJI_6xvykrWWWa3xe8EiCV27Tbxg0tjIus_2YSDTITU7gOSGBOgX-89YSW5YS0osenWJjqi0Q-2CtQ_mhxpHpeUBY1HJkpZx9uKLuHCNw3VJ5GBS-ZWgh2EBtb8R82kvOTla6tGVdcv9N2Qf7ZbTW8-qNbOddY380_tOPAOq-gg5l1l-BoHBChYJn_CIp9dhfIiyTqWf87Z_3zMdum9Cn0DI6t8wXAmdGWfb5D-h3nCfOmV1YBcPdac1cQHabWmUFcu152r33rd4J2e61MLkrf99dnKgRpS7T77_Gd3_-LT3_u0ONguwPYwEPiQSp2qgSHo0Hwpb9-ki3yI8wX2qBs5pSeorwg72cwgH3Zftso4JIJVQLdzCw7DQylTuqy6VKUjhVs75xh_sFFIS9fO_dDL6pmntvdfNaDVbKZY4uJ9YpWMUksYm-sHEZLj3R-BfEtSJ1lQ9dv_H24j79l9xjPaI11SkcFRmOM2AWk1iJRMqG88uI5q-djfs9Mhhas-3Hic7NnAnezGhCvX1A</con:value>
+      <con:value>bearer   null</con:value>
     </con:property>
   </con:properties>
   <con:wssContainer/>
