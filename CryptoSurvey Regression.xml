@@ -5120,7 +5120,7 @@ Companyid: Fa4SDTmM//9wP2D/fO/0kQ==
             <con:configuration>
               <file>SoapUI.xlsx</file>
               <worksheet>Scenarios</worksheet>
-              <cell>A2</cell>
+              <cell>A1</cell>
               <ignoreEmpty>false</ignoreEmpty>
               <evaluateFormulas>false</evaluateFormulas>
             </con:configuration>
@@ -5149,7 +5149,7 @@ rowAdd = ds.getPropertyValue("Run")
 
 log.info rowAdd
 
-if (rowAdd=="X")
+if (rowAdd!="X")
 
 {
 
